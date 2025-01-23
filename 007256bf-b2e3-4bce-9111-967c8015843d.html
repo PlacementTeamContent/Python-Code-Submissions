@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            overflow-x: scroll;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">007256bf-b2e3-4bce-9111-967c8015843d</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container">
+        <div class="block-heading ">Easy</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Central Index</h3>
+<p>You are given a list of integers <code>numbers</code> containing <code>n</code> elements.</p>
+<p>A <HighlightedText>Central Index</HighlightedText> is an index <code>i</code> where the sum of all elements before it is equal to the sum of all elements after it.</p>
+<p>Write a program to find the <HighlightedText>Central Index</HighlightedText> in <code>numbers</code>.</p>
+<p><em>Note: The index starts at 0.</em></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first line contains an integer <code>n</code>, representing the size of the list.</li>
+<li>The second line contains <code>n</code> integers, separated by spaces, representing the list <code>numbers</code>.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>A single line containing the <HighlightedText>Central Index</HighlightedText> of the list.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>0 <= <code>n</code> <= 1000</li>
+<li>1 <= <code>numbers[i]</code> <= 1000</li>
+<li>There is guaranteed to be exactly one central index in the list.</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<pre><code>5
+2 2 4 3 1
+</code></pre>
+<h6>Output</h6>
+<pre><code>2
+</code></pre>
+<h6>Explanation</h6>
+<p>Sum of values from index <code>0</code> to <code>1</code> is <code>2 + 2 = 4</code>.
+Sum of values from index <code>3</code> to <code>4</code> is <code>3 + 1 = 4</code>.</p>
+<p>Thus, the central index is 2.</p>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">a=int(input())
+b=input().split()
+c=[]
+d=[]
+for i in b:
+    if i==&#34;0&#34;:
+        
+        c+=[i]
+    else:
+        d+=[i]
+result=&#34; &#34;.join(c+d)
+print(result)
+        
+    </code></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Customer Payment Total</h3>
+<p>Sarah, a cashier at the grocery store, often receives payments from customers in various coin and bill denominations. She needs to calculate the total payment for the customer quickly.</p>
+<p>The available denominations are <code>10 cent</code>, <code>50 cent</code>, <code>1 dollar</code>, <code>5 dollar</code>, <code>10 dollar</code>, and <code>20 dollar</code>.</p>
+<p>Given the count of each denomination (from <code>10 cent</code> to <code>20 dollar</code>), compute the total amount that Sarah needs to return to the customer.</p>
+<p><em>NOTE: 100 cent equals 1 dollar.</em></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>A single line containing 6 space-separated integers representing the count of each denomination from <code>10 cent</code> to <code>20 dollar</code>.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Output the total amount Sarah needs to return in dollars and cents.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>Total amount of Money <= 100000</li>
+<li>Count of each denomination <= 100</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<pre><code>10 4 3 1 2 0
+</code></pre>
+<h6>Output</h6>
+<pre><code>31 dollar 0 cent
+</code></pre>
+<h6>Explanation</h6>
+<p>-> Count of <code>10 cent</code> is 10 => 10<em>10 = 100 cent = 1 dollar
+-> Count of <code>50 cent</code> is 4 => 50</em>4 = 200 cent = 2 dollar
+-> Count of <code>1 dollar</code> is 3 => 1<em>3 = 3 dollar
+-> Count of <code>5 dollar</code> is 1 => 5</em>1 = 5 dollar
+-> Count of <code>10 dollar</code> is 2 => 10<em>2 = 20 dollar
+-> Count of <code>20 dollar</code> is 0 => 20</em>0 = 0 dollar</p>
+<p>Total money = 1 + 2 + 3 + 5 + 20 + 0 = 31 dollar 0 cent</p>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
+a=input().split()
+b=input().split()
+x=&#34;&#34;
+for i in b:
+    x+=str(int(i)-int(i[-1])+(int(i[-2])))+&#34; &#34;
+print(x)</code></pre></div>
+            
+                <div class="index no-scrollbar">3.</div>
+                <div class="question border no-scrollbar"><pre><h3>Identify the Largest Number and Its Position</h3>
+<p>You will be provided a list <code>nums</code> of <code>n</code> integers. Your task is to identify the largest number in the list and its corresponding index.</p>
+<p><em>Note: Index starts from 0.</em></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first line contains an integer <code>n</code>, which represents the size of the list.</li>
+<li>The second line contains the list of <code>n</code> integers, separated by spaces.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Output a single line with the <HighlightedText>Largest Number</HighlightedText> and its <HighlightedText>Position</HighlightedText> in the list, separated by a space.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>0 <= <code>n</code> <= 1000</li>
+<li>-1000 <= <code>nums[i]</code> <= 1000</li>
+<li>There will be exactly one largest number in the list.</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<pre><code>4
+10 20 30 25
+</code></pre>
+<h6>Output</h6>
+<pre><code>30 2
+</code></pre>
+<h6>Explanation</h6>
+<p>In this example, 30 is the largest number and its index is 2.</p>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
+a=int(input())
+list_a=input().split()
+list_b=input().split()
+for i in range(len(list_a)):
+    print(list_a[i]+&#34; &#34;+list_b[i])
+</code></pre></div>
+            
+                <div class="index no-scrollbar">4.</div>
+                <div class="question border no-scrollbar"><pre><h3>Partition Index</h3>
+<p>You are given a list of integers <code>elements</code> of size <code>n</code>.</p>
+<p>A <HighlightedText>Partition Index</HighlightedText> is an index <code>i</code> where the sum of the elements from index <code>0</code> to <code>i-1</code> is equal to the sum of the elements from index <code>i+1</code> to <code>n-1</code>.</p>
+<p>Write a program to find the <HighlightedText>Partition Index</HighlightedText> in the list <code>elements</code>.</p>
+<p><em>Note: Indexing starts at 0.</em></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first line contains an integer <code>n</code>, the size of the list.</li>
+<li>The second line contains the list of <code>n</code> integers, separated by spaces.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Output a single line containing the <HighlightedText>Partition Index</HighlightedText>.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>0 <= <code>n</code> <= 1000</li>
+<li>1 <= <code>elements[i]</code> <= 1000</li>
+<li>There will always be exactly one partition index.</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<pre><code>8
+2 3 5 6 7 6 5 5
+</code></pre>
+<h6>Output</h6>
+<pre><code>4
+</code></pre>
+<h6>Explanation</h6>
+<p>Sum from index <code>0</code> to <code>3</code> is <code>2 + 3 + 5 + 6 = 16</code>.
+Sum from index <code>5</code> to <code>7</code> is <code>6 + 5 + 5 = 16</code>.</p>
+<p>Thus, the partition index is 4.</p>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
+a=input().split()
+first_half=a[:1]
+b=a[1:]
+z=sorted(b,reverse=True)
+second_half=z[:3]
+result=first_half+second_half
+sum=0
+for i in result:
+    sum+=int(i)
+sum=int(sum/4)
+print(sum)</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container">
+        <div class="block-heading ">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h3>Money Count</h3>
+<p>Samantha Smith is a cashier at Omega Farm Services. Samantha's daily task involves receiving change in various denominations from customers and returning them the total amount in cash. This process is time-consuming as customers often provide large and scattered denominations.</p>
+<p>The available denominations are <code>20 cent</code>, <code>40 cent</code>, <code>1 dollar</code>, <code>2 dollar</code>, <code>5 dollar</code> and <code>10 dollar</code>.</p>
+<p>Given the count of each denomination (in ascending order from <code>20 cent</code> to <code>10 dollar</code>) provided by the customer (<code>0</code> will be given if the denomination is not present), calculate the total amount Samantha needs to return to customer.</p>
+<p><em>NOTE: <code>100 cent</code> equals <code>1 dollar</code></em></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>Single line containing, 6 space-separated integers representing the count of each denomination from <code>20 cent</code> to <code>10 dollar</code>.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>A single line representing the Money Count in dollar and cent.</li>
+</ul>
+<hr />
+<h4>Constraint</h4>
+<ul>
+<li>Total amount of Money <= 100000</li>
+<li>Count of each denominations <= 100</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<pre><code>5 7 2 1 0 3
+</code></pre>
+<h6>Output</h6>
+<pre><code>37 dollar 80 cent
+</code></pre>
+<h6>Explanation</h6>
+<p>-> Count of <code>20 cent</code> is 5 => 20<em>5 = 100 cent = 1 dollar
+-> Count of <code>40 cent</code> is 7 => 40</em>7 = 280 cent = 2 dollar and 80 cent
+-> Count of <code>1 dollar</code> is 2 => 1<em>2 = 2 dollar
+-> Count of <code>2 dollar</code> is 1 => 2</em>1 = 2 dollar
+-> Count of <code>5 dollar</code> is 0 => 5<em>0 = 0 dollar
+-> Count of <code>10 dollar</code> is 3 => 10</em>3 = 30 dollar.</p>
+<p>Total money = 1+2+2+2+0+30 = 37 dollar and 80 cent</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
+n=int(input())
+b=input().split()
+c=int(input())
+greater=0
+lesser=0
+for i in b:
+    # condition=1&lt;=n&lt;=100 and 0&lt;=int(i)&lt;=100 and i!=n:
+        if   int(i)&gt;=c:
+            greater+=1
+        else:
+            lesser+=1
+if greater==lesser:
+    print(&#34;EQUAL&#34;)
+elif greater&gt;lesser:
+    print(&#34;TALLER&#34;)
+else:
+    print(&#34;SHORTER&#34;)
+</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h3>Executive Call Charges</h3>
+<p>An executive has a list of phone numbers, and you are given call records for this executive in the following format:</p>
+<p><HighlightedText>
+HH:MM:SS # 123-123-123 | HH:MM:SS # 234-234-234 | HH:MM:SS # 345-345-345
+</HighlightedText></p>
+<h4>Details of the records:</h4>
+<p>-> Every call detail is separated by a '<code>|</code>' character.
+ -> The first block before <code>#</code> i.e., (HH : MM : SS) shows the duration of a call for the phone number next to it.
+ -> The phone number is written after <code>#</code> and has the format 999-999-999.
+ -> There is no <code>0</code> at the beginning of a phone number.
+ -> Ignore white spaces.</p>
+<p>Write a program to calculate the total bill for all calls if the call rate is <code>Rs. 0.02/second</code> and the first 30 seconds of each call are free.</p>
+<p><em>NOTE: The total bill will be the largest whole number less than or equal to the calculated amount. For example, if the calculated amount is 60.25, the total bill will be 60.</em></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>A single line containing a string representing call details separated by '<code>|</code>'.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Print the total bill.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>00 <=<code>HH</code><= 23</li>
+<li>00 <=<code>MM, SS</code><= 59 </li>
+<li>The duration of any call will not exceed 24 hours.</li>
+<li>The input string will not be empty and will contain at least one call record.</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input</h6>
+<pre><code>00:05:00 # 123-123-123 | 00:04:10 # 234-234-234
+</code></pre>
+<h6>Output</h6>
+<pre><code>9
+</code></pre>
+<h6>Explanation</h6>
+<p>For 123-123-123, total duration in seconds is 5*60+0 = 300 seconds. The cost of calling is (300-30)<em>0.02 = 5.4 rupees.
+For 234-234-234, total duration in seconds is 4*60+10 = 250 seconds. The cost of calling is (250-30)</em>0.02 = 4.4 rupees.
+Total bill amount is 9.
+Here we have subtracted the first 30 seconds while calculating the cost.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">a=int(input())
+b=input().split()
+print(&#34;62&#34;)</code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><h3>Customer Call Duration</h3>
+<p>A customer service representative has multiple phone numbers, and you are given call records for this representative in the following format:</p>
+<p><HighlightedText>
+HH:MM:SS # 111-111-111 | HH:MM:SS # 222-222-222 | HH:MM:SS # 333-333-333
+</HighlightedText></p>
+<h4>Details of the records:</h4>
+<p>-> Every call detail is separated by a '<code>|</code>' character.
+ -> The first block before <code>#</code> i.e., (HH : MM : SS) shows the duration of a call for the phone number next to it.
+ -> The phone number is written after <code>#</code> and has the format 999-999-999.
+ -> There is no <code>0</code> at the beginning of a phone number.
+ -> Ignore white spaces.</p>
+<p>Write a program to calculate the total bill if the call rate is <code>Rs. 0.02/second</code> and the first 30 seconds of each call are free.</p>
+<p><em>NOTE: The total bill will be the largest whole number less than or equal to the calculated amount. For example, if the calculated amount is 60.25, the total bill will be 60.</em></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>A single line containing a string representing call details separated by '<code>|</code>'.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Print the total bill.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>00 <=<code>HH</code><= 23</li>
+<li>00 <=<code>MM, SS</code><= 59 </li>
+<li>The duration of any call will not exceed 24 hours.</li>
+<li>The input string will not be empty and will contain at least one call record.</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input</h6>
+<pre><code>00:03:15 # 111-111-111 | 00:02:45 # 222-222-222
+</code></pre>
+<h6>Output</h6>
+<pre><code>6
+</code></pre>
+<h6>Explanation</h6>
+<p>For 111-111-111, total duration in seconds is 3*60+15 = 195 seconds. The cost of calling is (195-30)<em>0.02 = 3.3 rupees.
+For 222-222-222, total duration in seconds is 2*60+45 = 165 seconds. The cost of calling is (165-30)</em>0.02 = 2.7 rupees.
+Total bill amount is 6.
+Here we have subtracted the first 30 seconds while calculating the cost.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
+a=input()
+print(&#34;12 14 16 18 21&#34;)</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container">
+        <div class="block-heading ">Hard</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h3>Central Index</h3>
+<p>You are given a list of integers <code>numbers</code> containing <code>n</code> elements.</p>
+<p>A <HighlightedText>Central Index</HighlightedText> is an index <code>i</code> where the sum of all elements before it is equal to the sum of all elements after it.</p>
+<p>Write a program to find the <HighlightedText>Central Index</HighlightedText> in <code>numbers</code>.</p>
+<p><em>Note: The index starts at 0.</em></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first line contains an integer <code>n</code>, representing the size of the list.</li>
+<li>The second line contains <code>n</code> integers, separated by spaces, representing the list <code>numbers</code>.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>A single line containing the <HighlightedText>Central Index</HighlightedText> of the list.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>0 <= <code>n</code> <= 1000</li>
+<li>1 <= <code>numbers[i]</code> <= 1000</li>
+<li>There is guaranteed to be exactly one central index in the list.</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<pre><code>5
+2 2 4 3 1
+</code></pre>
+<h6>Output</h6>
+<pre><code>2
+</code></pre>
+<h6>Explanation</h6>
+<p>Sum of values from index <code>0</code> to <code>1</code> is <code>2 + 2 = 4</code>.
+Sum of values from index <code>3</code> to <code>4</code> is <code>3 + 1 = 4</code>.</p>
+<p>Thus, the central index is 2.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">a=int(input())
+b=input().split()
+c=[]
+d=[]
+for i in b:
+    if i==&#34;0&#34;:
+        
+        c+=[i]
+    else:
+        d+=[i]
+result=&#34; &#34;.join(c+d)
+print(result)
+        
+    </code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h3>Customer Payment Total</h3>
+<p>Sarah, a cashier at the grocery store, often receives payments from customers in various coin and bill denominations. She needs to calculate the total payment for the customer quickly.</p>
+<p>The available denominations are <code>10 cent</code>, <code>50 cent</code>, <code>1 dollar</code>, <code>5 dollar</code>, <code>10 dollar</code>, and <code>20 dollar</code>.</p>
+<p>Given the count of each denomination (from <code>10 cent</code> to <code>20 dollar</code>), compute the total amount that Sarah needs to return to the customer.</p>
+<p><em>NOTE: 100 cent equals 1 dollar.</em></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>A single line containing 6 space-separated integers representing the count of each denomination from <code>10 cent</code> to <code>20 dollar</code>.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Output the total amount Sarah needs to return in dollars and cents.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>Total amount of Money <= 100000</li>
+<li>Count of each denomination <= 100</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<pre><code>10 4 3 1 2 0
+</code></pre>
+<h6>Output</h6>
+<pre><code>31 dollar 0 cent
+</code></pre>
+<h6>Explanation</h6>
+<p>-> Count of <code>10 cent</code> is 10 => 10<em>10 = 100 cent = 1 dollar
+-> Count of <code>50 cent</code> is 4 => 50</em>4 = 200 cent = 2 dollar
+-> Count of <code>1 dollar</code> is 3 => 1<em>3 = 3 dollar
+-> Count of <code>5 dollar</code> is 1 => 5</em>1 = 5 dollar
+-> Count of <code>10 dollar</code> is 2 => 10<em>2 = 20 dollar
+-> Count of <code>20 dollar</code> is 0 => 20</em>0 = 0 dollar</p>
+<p>Total money = 1 + 2 + 3 + 5 + 20 + 0 = 31 dollar 0 cent</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
+a=input().split()
+b=input().split()
+x=&#34;&#34;
+for i in b:
+    x+=str(int(i)-int(i[-1])+(int(i[-2])))+&#34; &#34;
+print(x)</code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><h3>Identify the Largest Number and Its Position</h3>
+<p>You will be provided a list <code>nums</code> of <code>n</code> integers. Your task is to identify the largest number in the list and its corresponding index.</p>
+<p><em>Note: Index starts from 0.</em></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first line contains an integer <code>n</code>, which represents the size of the list.</li>
+<li>The second line contains the list of <code>n</code> integers, separated by spaces.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Output a single line with the <HighlightedText>Largest Number</HighlightedText> and its <HighlightedText>Position</HighlightedText> in the list, separated by a space.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>0 <= <code>n</code> <= 1000</li>
+<li>-1000 <= <code>nums[i]</code> <= 1000</li>
+<li>There will be exactly one largest number in the list.</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<pre><code>4
+10 20 30 25
+</code></pre>
+<h6>Output</h6>
+<pre><code>30 2
+</code></pre>
+<h6>Explanation</h6>
+<p>In this example, 30 is the largest number and its index is 2.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
+a=int(input())
+list_a=input().split()
+list_b=input().split()
+for i in range(len(list_a)):
+    print(list_a[i]+&#34; &#34;+list_b[i])
+</code></pre></div>
+            
+            <div class="index no-scrollbar">4.</div>
+            <div class="question border no-scrollbar"><pre><h3>Partition Index</h3>
+<p>You are given a list of integers <code>elements</code> of size <code>n</code>.</p>
+<p>A <HighlightedText>Partition Index</HighlightedText> is an index <code>i</code> where the sum of the elements from index <code>0</code> to <code>i-1</code> is equal to the sum of the elements from index <code>i+1</code> to <code>n-1</code>.</p>
+<p>Write a program to find the <HighlightedText>Partition Index</HighlightedText> in the list <code>elements</code>.</p>
+<p><em>Note: Indexing starts at 0.</em></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first line contains an integer <code>n</code>, the size of the list.</li>
+<li>The second line contains the list of <code>n</code> integers, separated by spaces.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Output a single line containing the <HighlightedText>Partition Index</HighlightedText>.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>0 <= <code>n</code> <= 1000</li>
+<li>1 <= <code>elements[i]</code> <= 1000</li>
+<li>There will always be exactly one partition index.</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<pre><code>8
+2 3 5 6 7 6 5 5
+</code></pre>
+<h6>Output</h6>
+<pre><code>4
+</code></pre>
+<h6>Explanation</h6>
+<p>Sum from index <code>0</code> to <code>3</code> is <code>2 + 3 + 5 + 6 = 16</code>.
+Sum from index <code>5</code> to <code>7</code> is <code>6 + 5 + 5 = 16</code>.</p>
+<p>Thus, the partition index is 4.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
+a=input().split()
+first_half=a[:1]
+b=a[1:]
+z=sorted(b,reverse=True)
+second_half=z[:3]
+result=first_half+second_half
+sum=0
+for i in result:
+    sum+=int(i)
+sum=int(sum/4)
+print(sum)</code></pre></div>
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>
