@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            overflow-x: scroll;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Ashritha</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Username Encoding</h3>
+<p>You are given a username string <code>U</code> of length <code>N</code>. The username needs to be encoded before storing it in the system. The username string can be encoded using the following rules:</p>
+<ul>
+<li>If the <code>k-th</code> character in <code>U</code> is a <em>vowel</em>, change it to the <em>third next character</em> in the alphabetical sequence. For example, the third next character of <code>o</code> is <code>r</code>.</li>
+<li>If the <code>k-th</code> character in <code>U</code> is a <em>consonant</em>, change it to the <em>third previous character</em> in the alphabetical sequence. For example, the third previous character of <code>h</code> is <code>e</code>.</li>
+</ul>
+<p>Implement the function <code>encode</code> which will take username string <code>U</code> as argument and return encoded string.</p>
+<p><MultiLineNote>
+1) The third previous character of <code>c</code> is <code>z</code>, <code>b</code> is <code>y</code>.
+</MultiLineNote></p>
+<p><em>Note: You need not to write code to handle input and output.</em></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>Single line containing the username string.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>Single line containing the encoded username string.</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<pre><code>abc
+</code></pre>
+<h6>Output</h6>
+<pre><code>dyz
+</code></pre>
+<h6>Explanation</h6>
+<p>a is vowel so change to d<br />
+b is consonant so change to y<br />
+c is consonant so change to z<br />
+So, encoded username for abc will be dyz.</p>
+<h4>Example 2</h4>
+<h6>Input</h6>
+<pre><code>programmer
+</code></pre>
+<h6>Output</h6>
+<pre><code>mordodjjho
+</code></pre>
+<h6>Explanation</h6>
+<p>p is consonant so change to m<br />
+r is consonant so change to o<br />
+o is vowel so change to r 
+g is consonant so change to d<br />
+r is consonant so change to o<br />
+a is vowel so change to d<br />
+m is consonant so change to j<br />
+m is consonant so change to j<br />
+e is vowel so change to h<br />
+r is consonant so change to o<br />
+So, encoded username for programmer will be mordodjjho.</p>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <=<code>N</code><= 10<sup>6</sup></li>
+<li>The username string <code>U</code> contains only lowercase alphabets.</li>
+</ul>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">def encode(U):
+    string=&#34;&#34;
+    vowels=&#34;aeiou&#34;#Replace pass with your code
+    for i in U:
+        if i in vowels:
+            character_order=(ord(i)+3)
+            character=chr(character_order)
+            string+=character
+        else:
+            if i==&#34;a&#34;:
+                character=&#34;x&#34;
+                string+=character
+            elif i==&#34;b&#34;:
+                character=&#34;y&#34;
+                string+=character
+            elif i==&#34;c&#34;:
+                character=&#34;z&#34;
+                string+=character
+            else:
+                character_order=(ord(i)-3)
+                character=chr(character_order)
+                string+=character
+    return string</code></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Weighted Product of Matches</h3>
+<p>For a list of integers <code>nums</code>, calculate the <HighlightedText>Product</HighlightedText> of all elements such that <HighlightedText>nums[i]</HighlightedText> is equal to its index plus 1.</p>
+<p>Implement the function <code>product_matches</code> which will take <code>n</code>, size of list and <code>nums</code> as argument and return an integer, the product.</p>
+<p><em>Note: You need not to write code to handle input and output.</em></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>First line contains an integer <code>n</code>, the size of <code>nums</code>.</li>
+<li>Second line contains <code>n</code> space-separated integers, numbers in list.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>One line containing an integer, the product.</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<pre><code>3
+1 3 3
+</code></pre>
+<h6>Output</h6>
+<pre><code>3
+</code></pre>
+<h6>Explanation</h6>
+<ul>
+<li>For <code>i = 0</code>, <code>nums[0] = 1</code>, <code>0 + 1 = 1</code>. Matches.</li>
+<li>For <code>i = 1</code>, <code>nums[1] = 3</code>, <code>1 + 1 != 3</code>. Does not match.</li>
+<li>For <code>i = 2</code>, <code>nums[2] = 3</code>, <code>2 + 1 = 3</code>. Matches.</li>
+</ul>
+<p>Weighted product: <code>1 * 3 = 3</code>.</p>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <= <code>nums.size()</code> <= 10<sup>6</sup></li>
+<li>1 <= <code>nums[i]</code> <= 1000</li>
+<li>Index starts from 0</li>
+</ul>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">def product_matches(n, nums):
+    number=1
+    for i in range(n):
+        if (nums[i])==(i+1):
+            number*=nums[i]
+    return number
+    
+    # if len(list_a)&gt;=2:
+    #     number=1
+    #     for i in range(len(list_a)):
+    #         number+=list_a[i]*list_a[i-1]
+    # return number#Replace pass with your code
+    </code></pre></div>
+            
+                <div class="index no-scrollbar">3.</div>
+                <div class="question border no-scrollbar"><pre><h3>Unique Product Codes</h3>
+<p>In a warehouse, products are identified by unique codes. However, due to a software bug, some product codes are duplicated. The warehouse manager needs help to identify the unique product codes.</p>
+<p>You are given a list <code>arr</code> of product codes, but some codes are repeated. Your task is to remove the duplicate codes and provide the manager with a list of unique product codes in <strong>increasing order</strong>.</p>
+<hr />
+<h4>Input Format</h4>
+<p>The input consists of:</p>
+<ul>
+<li><code>n</code> -> number of product codes in list <code>arr</code>.</li>
+<li><code>arr</code> -> <code>n</code> space separated integers representing product codes.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>A list of unique product codes.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <=<code>n</code><= 10<sup>5</sup></li>
+<li>The product code list <code>arr</code> consists only of Positive Integers.</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input</h6>
+<pre><code>6
+5001 5002 5001 5003 5002 5004
+</code></pre>
+<h6>Output</h6>
+<pre><code>5001 5002 5003 5004
+</code></pre>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
+N = int(input())
+list_a=[int(i) for i in input().split()]
+set_a=sorted(set(list_a))
+new_list=[str(i) for i in set_a]
+print(&#34; &#34;.join(new_list))
+# new_list=[]
+# for i in list_a:
+#     if list_a.count(i)==1:
+#         new_list+=[i]
+# print()</code></pre></div>
+            
+                <div class="index no-scrollbar">4.</div>
+                <div class="question border no-scrollbar"><pre><h3>Total Population Growth</h3>
+<p>Implement a function <code>total_population</code> to determine the total population of a city after <code>T</code> years, starting at an initial population of <code>P</code>. The population grows at a constant rate of <code>R</code> individuals per year.</p>
+<p>Function <code>total_population</code> will take <code>P</code>, <code>R</code>, and <code>T</code> as first, second, and third arguments respectively and return the total population after <code>T</code> years.</p>
+<p><em>Note: You need not to write code to handle input and output.</em></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>Single line containing 3 space-separated integers representing <code>P</code>, <code>R</code>, and <code>T</code> respectively.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>Single line having 1 integer representing the total population after <code>T</code> years.</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<pre><code>1000 200 5
+</code></pre>
+<h6>Output</h6>
+<pre><code>2000
+</code></pre>
+<h6>Explanation</h6>
+<p>Initial population is 1000.
+At time 1 year, total population will be 1000+200 = 1200.
+At time 2 years, total population will be 1200+200 = 1400.
+At time 2 years, total population will be 1400+200 = 1600.
+At time 2 years, total population will be 1600+200 = 1800.
+At time 5 years, total population will be 1800+200 = 2000.</p>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>0 <= <code>P, R, T</code> < 10000</li>
+</ul>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">def total_population(P, R, T):
+    result = P + (R*T)
+    return result#Replace pass with your code</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h3>Strict Superset Check</h3>
+<p>You are given a set <strong><code>A</code></strong>  and <strong><code>N</code></strong> other sets.</p>
+<p>Your job is to find whether set <strong><code>A</code></strong> is a strict superset of each of the <strong><code>N</code></strong>  sets.</p>
+<p>If <strong><code>A</code></strong>  is a strict superset of each of the <strong><code>N</code></strong>  subsets, print <code>True</code>, followed by the count of elements in the set <code>A</code> that are present in  <code>N</code> sets. Otherwise, print <code>False</code>, followed by the number of sets for which set <code>A</code> failed as a superset.
+<MultiLineNote>
+- A strict superset has at least one element that does not exist in its subset.
+</MultiLineNote></p>
+<h4>Example</h4>
+<ul>
+<li><code>set([1, 3, 4])</code> is a strict superset of <code>set([1, 3])</code>.</li>
+<li><code>set([1, 3, 4])</code> is not a strict superset of <code>set([1, 3, 4])</code>.</li>
+<li><code>set([1, 3, 4])</code> is not a strict superset of <code>set([1, 3, 5])</code>.</li>
+</ul>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The First Line contains an integer representing the number of elements in the main set <code>A</code>.</li>
+<li>The second line contains the space-separated elements of the main set <code>A</code>.</li>
+<li>The third line contains an integer <code>N</code> that specifies the number of other sets.</li>
+<li>The next <code>2*N</code> lines contains the size of the set and followed by space-separated elements of the set.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Print <code>True</code> or  <code>False</code> followed by an integer separated by space.</li>
+</ul>
+<hr />
+<h4>Sample Input</h4>
+<pre><code>16
+1 2 3 4 5 6 7 8 9 10 11 12 23 45 84 78
+2
+5
+1 2 3 4 5
+3
+100 11 12
+</code></pre>
+<h4>Sample Output</h4>
+<pre><code>False 1
+</code></pre>
+<h4>Explanation</h4>
+<p>Main Set <strong><code>A = {1,2,3,4,5,6,7,8,9,10,11,12,23,45,84,78}</code></strong>  is the strict superset of the <code>set([1, 2, 3, 4, 5])</code> but not of the <code>set([100, 11, 12])</code> because <strong>100</strong> is not in set <strong><code>A</code></strong> .</p>
+<p>Hence, the output is <code>False</code>.
+And superset condition is failed for 1 set out of 2. So print <code>1</code>.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
+length_of_set=int(input())
+set_a=set([int(i) for i in input().split()])
+number_of_sets=int(input())
+condition_list=[]
+common=[]
+for i in range(number_of_sets):
+    length_of_given_set=int(input())
+    set_b = set([int(i) for i in input().split()])
+    condition=set_a.issuperset(set_b) and (set_a &amp; set_b != len(set_b))
+    condition_list+=[condition]
+    common.extend(set_a &amp; set_b)
+set_of_common=set(common)
+if all(condition_list):
+    print(&#34;True &#34;+str(len(set_of_common)))
+else:
+    print(&#34;False &#34;+str(condition_list.count(False)))</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h3>Comfortable Number</h3>
+<p>Given an array of integers <code>A</code>, and an integer <code>D</code> find number of Comfortable numbers.</p>
+<p>Element <code>X</code> is Comfortable if there exists at least 1 element whose absolute difference with <code>X</code> is less than or equal to <code>D</code> i.e. an element <code>X</code> is Comfortable, if there is another element in the range <code>[X-D, X+D]</code> other than <code>X</code> itself.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>First line contains two integers <code>N</code> and <code>D</code> respectively.</li>
+<li>Second line contains <code>N</code> integers separated by space.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>Print a single integer denoting the total number of comfortable elements.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <=<code>N</code><= 1000</li>
+<li>0 <=<code>D</code><= 1000</li>
+<li>0 <=<code>A[i]</code><= 1000</li>
+</ul>
+<hr />
+<h4>Explanation</h4>
+<p>Let's take an example:</p>
+<pre><code>4 5
+10 21 13 14
+</code></pre>
+<p>arr = [10, 21, 13, 14]</p>
+<p>For X=10 to be Comfortable element, 
+there should be atleast one element in range: [10-5, 10+5] = [5, 15].
+So, this is a Comfortable element. </p>
+<p>For X=21 to be Comfortable element, 
+there should be atleast one element in range: [21-5, 21+5] = [16, 26].
+There is no element in this range.
+So, this is a not Comfortable element.</p>
+<p>Similarily,
+13 and 14 are Comfortable element 
+Hence we have 3 Comfortable element.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python"># Write your code here
+N, D = [int(i) for i in input().split()]
+main_list = [int(i) for i in input().split()]
+count = 0
+for i in range(len(main_list)):
+    is_true=False
+    new_list=[]
+    X = main_list[i]
+    number_1, number_2=[X-D,X+D]
+    for j in range(number_1,number_2+1):
+        if j in main_list[i+1:]+main_list[:i]:
+            is_true=True
+            break
+    if is_true:
+        count+=1
+print(count)</code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><h3>String Similarity</h3>
+<p>Two strings are said to be similar if they are composed of the same characters. For example, <code>abababc</code> and <code>accccbaa</code> are similar since both of them are composed of characters <code>a</code>, <code>b</code> and <code>c</code>. However, <code>cabca</code> and <code>badcd</code> are not similar since they do not share all of the same letters.</p>
+<p>Given an array of strings <code>strArr</code> of length <code>m</code>, find the number of pairs of strings that are similar.</p>
+<p><MultiLineNote>
+1. Each string is composed of lowercase English alphabets only
+2. Pairs are considered index-wise, i.e. two same strings at different indices are counted as separated pairs
+3. A pair of indices (i,j) is same as the pair (j,i)
+</MultiLineNote></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first line consists of an Integer <code>n</code> denoting size of string array <code>strArr</code>.</li>
+<li>The second line consists of <code>n</code> space separated strings representing the elements of <code>strArr</code> array.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Print an Integer denoting count of number of pairs of strings that are similar in <code>strArr</code> array.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <= n <= 10<sup>4</sup></li>
+<li>a <=<code>strArr[i][j]</code><= z</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<p>Let's take an example:</p>
+<pre><code>3
+xyz foo of
+</code></pre>
+<p>Here, the strings "foo" and "of" are similar because they are composed of the same characters ['o', 'f']. There are no other similar pairs so the answer is 1.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
+N = int(input())
+list_a=set(input().split())
+set_a=set()
+for i in list_a:
+    for j in list_a:
+        if i!=j:
+            if (set(i).issubset(set(j))) or (set(j).issubset(set(i))):
+                pair=(i,j)
+                sorting=tuple(sorted(pair))
+                set_a.add(sorting)
+print(len(set_a))</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h3>Alternating Sum</h3>
+<p>Write a program that traverses an array from left to right, where in each step it examines a sub-array of size <code>k</code> and skips <code>m</code> positions forward after each examination. Your task is to print the alternating sum of values found in each sub-array considered.</p>
+<p>Alternating sum of an array can be calculated by adding first value subtracting second and so on.</p>
+<p>For example: arr = [a1, a2, a3, a4, a5]
+alternating sum of arr will be: (a1-a2+a3-a4-a5)</p>
+<p><MultiLineNote>
+Processing should stop if there are fewer than <code>k</code> elements remaining in the array after skipping <code>m</code> elements.
+</MultiLineNote></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first line contains <code>n</code> size of array.</li>
+<li>The second line contains space-separated integers representing the elements of the array <code>arr</code>.</li>
+<li>The third line contains an integer <code>k</code>, indicating the size of each sub-array to be considered.</li>
+<li>The fourth line contains an integer <code>m</code>, specifying the number of elements to skip after processing each sub-array.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>The output should be a single line consisting of space-separated values, each representing the alternating sum found in the respective sub-array.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>The number of elements in the array <code>arr</code> is greater than zero.</li>
+<li>Sub-array size <code>k</code> and the number of skips <code>m</code> are positive integers.</li>
+<li><code>k</code> is less than or equal to the length of the array.</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<p>Let's take a sample input:</p>
+<pre><code>8
+4 7 3 9 6 1 8 0
+3
+1
+</code></pre>
+<p>We need to print:</p>
+<pre><code>0 13 0 4 13 -7
+</code></pre>
+<h4>Explanation</h4>
+<p>[4 7 3] 9 6 1 8 0 -> alternating sum is <code>4-7+3</code> = 0.
+4 [7 3 9] 6 1 8 0 -> moving right by 1 place, alternating sum is <code>7-3+9</code> = 13.
+4 7 [3 9 6] 1 8 0 -> moving right by 1 place, alternating sum is <code>3-9+6</code> = 0.
+4 7 3 [9 6 1] 8 0 -> moving right by 1 place, alternating sum is <code>9-6+1</code> = 4.
+4 7 3 9 [6 1 8] 0 -> moving right by 1 place, alternating sum is <code>6-1+8</code> = 13.
+4 7 3 9 6 [1 8 0] -> moving right by 1 place, alternating sum is <code>1-8+0</code> = -7.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
+size_of_the_array = int(input())
+list_a =input().split()
+size_of_sub_array = int(input())
+element_to_skip = int(input())
+number = 0
+for i in range(size_of_sub_array):
+    sub_array=list_a[number+i]+list_a</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h3>Flipping Bulbs</h3>
+<p>You have <code>N</code> bulbs that start in the off state. In each round, you apply a specific rule to toggle the bulbs. Initially, you turn on all the bulbs. In the second round, you turn off every second bulb. In the third round, you toggle every third bulb.</p>
+<p>For the <code>j</code><sup>th</sup> round, you toggle every <code>j</code><sup>th</sup> bulb. For the <code>N</code><sup>th</sup> round, you toggle only the last bulb.</p>
+<p>Return the count of bulbs that remain on after <code>N</code> rounds.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>A single integer <code>N</code></li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>A single integer representing the number of bulbs that remain on after <code>N</code> rounds.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <= <code>N</code> <= 1000</li>
+</ul>
+<hr />
+<h4>Sample Input 1</h4>
+<pre><code>5
+</code></pre>
+<h4>Sample Output 1</h4>
+<pre><code>2
+</code></pre>
+<h4>Explanation</h4>
+<p>Let's take an example:</p>
+<pre><code>5
+</code></pre>
+<ul>
+<li>At first, the five bulbs are <code>[off, off, off, off, off]</code>.</li>
+<li>After the first round, the five bulbs are <code>[on, on, on, on, on]</code>.</li>
+<li>After the second round, the five bulbs are <code>[on, off, on, off, on]</code>.</li>
+<li>After the third round, the five bulbs are <code>[on, off, off, off, on]</code>.</li>
+<li>After the fourth round, the five bulbs are <code>[on, off, off, on, on]</code>.</li>
+<li>After the fifth round, the five bulbs are <code>[on, off, off, on, off]</code>.</li>
+<li>So you should print <code>2</code> because there are two bulbs that are on.</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
+N = int(input())
+print(int(N**0.5))</code></pre></div>
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

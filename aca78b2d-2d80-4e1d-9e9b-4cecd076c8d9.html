@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            overflow-x: scroll;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Kanaka Hasini</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Unique Employee IDs</h3>
+<p>In a company, each employee is assigned a unique ID. However, due to a data synchronization issue, some employee IDs are duplicated in the system. The HR department wants to ensure all employee IDs are unique.</p>
+<p>You are given a list <code>arr</code> of employee IDs, but some IDs are repeated. Your task is to remove the duplicate IDs and provide the HR department with a list of unique IDs in <strong>increasing order</strong>.</p>
+<hr />
+<h4>Input Format</h4>
+<p>The input consists of:</p>
+<ul>
+<li><code>n</code> -> number of employee IDs in list <code>arr</code>.</li>
+<li><code>arr</code> -> <code>n</code> space separated integers representing employee IDs.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>A list of unique employee IDs.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <=<code>n</code><= 10<sup>5</sup></li>
+<li>The employee ID list <code>arr</code> consists only of Positive Integers.</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input</h6>
+<pre><code>10
+1 3 2 2 3 4 5 5 6 7
+</code></pre>
+<h6>Output</h6>
+<pre><code>1 2 3 4 5 6 7
+</code></pre>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
+n=int(input())
+m=[int(i) for i in input().split()]
+set_m=set(m)
+for i in sorted(list(set_m)):
+    if i&gt;0:
+        print(str(i),end=&#34; &#34;)</code></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Good Number Sum</h3>
+<p>For a list of integers <code>nums</code>, <HighlightedText>nums[i]</HighlightedText> is said to be <HighlightedText>Good Number</HighlightedText> if parity of <HighlightedText>i</HighlightedText> and <HighlightedText>nums[i]</HighlightedText> will be same.</p>
+<p>Implement the function <code>sum_good_number</code> which will take <code>n</code>, size of list and <code>nums</code> as argument and return an integer, sum of good number in the list.</p>
+<p><em>Note: You need not to write code to handle input and output.</em></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>First line contains an integer <code>n</code>, the size of <code>nums</code>.</li>
+<li>Second line contains <code>n</code> space-separated integers, numbers in list.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>One line containing an integer, the sum of good numbers.</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<pre><code>3
+1 2 3
+</code></pre>
+<h6>Output</h6>
+<pre><code>0
+</code></pre>
+<h6>Explanation</h6>
+<ul>
+<li>For <code>i = 0</code>, <code>nums[0] = 1</code>, 1 % 2 = 1 and i % 2 = 0. Not a good number.</li>
+<li>For <code>i = 1</code>, <code>nums[1] = 2</code>, 2 % 2 = 0 and i % 2 = 1. Not a good number.</li>
+<li>For <code>i = 2</code>, <code>nums[2] = 3</code>, 3 % 2 = 1 and i % 2 = 0. Not a good number.</li>
+</ul>
+<p>Hence, the answer is <code>0</code>.</p>
+<h4>Example 2</h4>
+<h6>Input</h6>
+<pre><code>4
+2 3 4 5
+</code></pre>
+<h6>Output</h6>
+<pre><code>14
+</code></pre>
+<h6>Explanation</h6>
+<ul>
+<li>For <code>i = 0</code>, <code>values[0] = 2</code>, 2 % 2 = 0 and i % 2 = 0. Good number.</li>
+<li>For <code>i = 1</code>, <code>values[1] = 3</code>, 3 % 2 = 1 and i % 2 = 1. Good number.</li>
+<li>For <code>i = 2</code>, <code>values[2] = 4</code>, 4 % 2 = 0 and i % 2 = 0. Good number.</li>
+<li>For <code>i = 3</code>, <code>values[3] = 5</code>, 5 % 2 = 1 and i % 2 = 1. Good number.</li>
+</ul>
+<p>Sum of elements added: <code>2 + 3 + 4 + 5 = 14</code>.
+Hence, the answer is <code>14</code>.</p>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <=<code>nums.size()</code><= 10<sup>6</sup></li>
+<li>1 <=<code>nums[i]</code><= 1000</li>
+<li>Index starts from 0</li>
+</ul>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">def sum_good_number(n, nums):
+    count=0
+    for i in range(n):
+        if i%2==nums[i]%2:
+            count+=nums[i]
+
+    return count
+    </code></pre></div>
+            
+                <div class="index no-scrollbar">3.</div>
+                <div class="question border no-scrollbar"><pre><h3>Total Energy Generated</h3>
+<p>Implement a function <code>total_energy</code> to determine the total energy generated by combining two nuclear chemicals after <code>T</code> seconds, producing initial energy as <code>E</code> units. This energy <code>E</code> increases at a constant rate of <code>R</code> units every second. </p>
+<p>Function <code>total_energy</code> will take <code>E</code>, <code>R</code> and <code>T</code> as first, second and third argument respectively and returns total energy after <code>T</code> seconds.</p>
+<p><em>Note: You need not to write code to handle input and output.</em></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>Single line containing 3 space-separated integers representing <code>E</code>, <code>R</code> and <code>T</code> respectively.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>Single line having 1 integer representing total unit of energy after <code>T</code> seconds.</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<pre><code>5 2 3
+</code></pre>
+<h6>Output</h6>
+<pre><code>11
+</code></pre>
+<h6>Explanation</h6>
+<p>Initial energy is 5 units
+at time 1 second total energy will be 5+2 = 7
+at time 2 second total energy will be 7+2 = 9
+at time 3 second total energy will be 9+2 = 11</p>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>0<=<code>E, R, T</code><1000</li>
+</ul>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">def total_energy(E, R, T):
+    total=E
+    for i in range(T):
+        total+=R
+    return total</code></pre></div>
+            
+                <div class="index no-scrollbar">4.</div>
+                <div class="question border no-scrollbar"><pre><h3>Message Encryption</h3>
+<p>You are given a message string <code>M</code> of length <code>N</code>. The message needs to be encrypted before sending it. The message string can be encrypted using the following rules:</p>
+<ul>
+<li>If the <code>k-th</code> character in <code>M</code> is a <em>vowel</em>, change it to the <em>first next character</em> in the alphabetical sequence. For example, the first next character of <code>o</code> is <code>p</code>.</li>
+<li>If the <code>k-th</code> character in <code>M</code> is a <em>consonant</em>, change it to the <em>first previous character</em> in the alphabetical sequence. For example, the first previous character of <code>h</code> is <code>g</code>.</li>
+</ul>
+<p>Implement the function <code>encrypt</code> which will take message string <code>M</code> as argument and return encrypted string.</p>
+<p><em>Note: You need not to write code to handle input and output.</em></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>Single line containing the message string.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>Single line containing the encrypted message string.</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<pre><code>cat
+</code></pre>
+<h6>Output</h6>
+<pre><code>bbs
+</code></pre>
+<h6>Explanation</h6>
+<p>c is consonant so change to b<br />
+a is vowel so change to b<br />
+t is consonant so change to s<br />
+So, encrypted message for cat will be bbs.</p>
+<h4>Example 2</h4>
+<h6>Input</h6>
+<pre><code>hello
+</code></pre>
+<h6>Output</h6>
+<pre><code>gfkkp
+</code></pre>
+<h6>Explanation</h6>
+<p>h is consonant so change to g<br />
+e is vowel so change to f<br />
+l is consonant so change to k<br />
+l is consonant so change to k<br />
+o is vowel so change to p<br />
+So, encrypted message for hello will be gfkkp.</p>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <=<code>N</code><= 10<sup>6</sup></li>
+<li>The message string <code>M</code> contains only lowercase alphabets.</li>
+</ul>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">def encrypt(M):
+    string=&#34;&#34;
+    vowels=&#34;aeiou&#34;
+    consonants=&#34;bcdfghjklmnpqrstvwxyz&#34;
+    alpha=&#34;abcdefghijklmnopqrstuvwxyz&#34;
+    for i in M:
+        if i in vowels:
+            index=alpha.index(i)
+            string+=alpha[index+1]
+        else:
+            index=alpha.index(i)
+            string+=alpha[index-1]
+    
+    return string</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h3>Comfortable Number</h3>
+<p>Given an array of integers <code>A</code>, and an integer <code>D</code> find number of Comfortable numbers.</p>
+<p>Element <code>X</code> is Comfortable if there exists at least 1 element whose absolute difference with <code>X</code> is less than or equal to <code>D</code> i.e. an element <code>X</code> is Comfortable, if there is another element in the range <code>[X-D, X+D]</code> other than <code>X</code> itself.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>First line contains two integers <code>N</code> and <code>D</code> respectively.</li>
+<li>Second line contains <code>N</code> integers separated by space.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>Print a single integer denoting the total number of comfortable elements.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <=<code>N</code><= 1000</li>
+<li>0 <=<code>D</code><= 1000</li>
+<li>0 <=<code>A[i]</code><= 1000</li>
+</ul>
+<hr />
+<h4>Explanation</h4>
+<p>Let's take an example:</p>
+<pre><code>4 5
+10 21 13 14
+</code></pre>
+<p>arr = [10, 21, 13, 14]</p>
+<p>For X=10 to be Comfortable element, 
+there should be atleast one element in range: [10-5, 10+5] = [5, 15].
+So, this is a Comfortable element. </p>
+<p>For X=21 to be Comfortable element, 
+there should be atleast one element in range: [21-5, 21+5] = [16, 26].
+There is no element in this range.
+So, this is a not Comfortable element.</p>
+<p>Similarily,
+13 and 14 are Comfortable element 
+Hence we have 3 Comfortable element.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python"># Write your code here
+# lst=input().split()
+# num_list=[int(i) for i in input().split()]
+# # print(num_list)
+# n=int(lst[0])
+# ref_num=int(lst[1])
+# count=0
+# for i in range(n):
+#     a=num_list[i]-ref_num
+#     b=num_list[i]+ref_num 
+#     print(a,b)
+#     for j in range(a,b+1):
+#         if j in num_list:
+#             if j==i:
+#                 continue
+#             count+=1 
+#             break
+              
+# print(count)
+    
+m,n=list(map(int,input().split()))
+s=list(map(int,input().split()))
+count=0
+for i in range(m):
+    w=s[i]
+    mini=w-n
+    maxi=w+n
+    for j in range(mini,maxi+1):
+        if j in s:
+            if j==w:
+                continue 
+            count+=1 
+            break 
+print(count)
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h3>Distinct Subset Union</h3>
+<p>You are given a set <strong><code>C</code></strong> and <strong><code>P</code></strong> other sets.</p>
+<p>Check if all <strong><code>P</code></strong> sets are strict subsets of the set <strong><code>C</code></strong> then print <code>True</code>, followed by the total number of elements in the union of all P sets. Otherwise, print <code>False</code>, followed by the number of sets that failed the strict subset condition.
+<MultiLineNote>
+- A strict subset must have all its elements in the main set and have fewer elements than the main set.
+</MultiLineNote></p>
+<h4>Example</h4>
+<ul>
+<li>The <code>set([1, 2])</code>is a strict subset of <code>set([1, 2, 3])</code>.</li>
+<li>The <code>set([1, 2, 3, 4])</code>is not a strict subset of <code>set([1, 2, 3])</code>.</li>
+</ul>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The First Line contains an integer representing the number of elements in the main set <code>C</code>.</li>
+<li>The second line contains the space-separated elements of the main set <code>C</code>.</li>
+<li>The third line contains an integer <code>P</code> that specifies the number of other sets.</li>
+<li>The next <code>2*P</code> lines contain the size of each set followed by space-separated elements of the set.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Print <code>True</code> or <code>False</code> followed by an integer separated by space.</li>
+</ul>
+<hr />
+<h4>Sample Input</h4>
+<pre><code>8 
+1 2 3 4 5 6 7 8 
+2 
+2 
+1 2 
+3 
+3 4 5
+</code></pre>
+<h4>Sample Output</h4>
+<pre><code>True 5
+</code></pre>
+<h4>Explanation</h4>
+<p>Set C = {1,2,3,4,5,6,7,8}
+set-1 = {1,2} is a strict subset of set C
+set-2 = {3,4,5} is a strict subset of C.</p>
+<p>All the sets are strict subsets of set C
+So, union of set-1 and set-2 is {1,2,3,4,5}, i.e, 5 elements
+Answer will be True 5</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
+c=int(input())
+main_set=set(input().split())
+p=int(input())
+count=0
+n_count=0
+for i in range(2*p):
+    m=set(input().split())
+    if m.issubset(main_set) and len(m)&lt;len(main_set):
+        count+=1 
+    else:
+        n_count+=1 
+if n_count&gt;=1:
+    print(&#34;False &#34;+str(n_count))
+elif count==2*p:
+    print(&#34;True &#34;+str(count))</code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><h3>Substring Commonality</h3>
+<p>Two strings are said to be related if one is a substring of the other. For example, <code>abc</code> and <code>abcd</code> are related because <code>abc</code> is a substring of <code>abcd</code>, but <code>xyz</code> and <code>abc</code> are not.</p>
+<p>Given an array <code>strArr</code> of size <code>n</code>, determine how many pairs of strings are related through substring commonality.</p>
+<p><MultiLineNote>
+1. Strings are composed of lowercase English letters only.
+2. Index-wise evaluation is required, and identical strings at different indices count as separate pairs.
+3. A pair of indices (i, j) is the same as (j, i).
+</MultiLineNote></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>First line: Integer <code>n</code> (number of strings in the array).</li>
+<li>Second line: <code>n</code> space-separated strings (<code>strArr</code>).</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Output the number of related pairs of strings.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <= n <= 10<sup>4</sup></li>
+<li><code>a</code> <= <code>strArr[i][j]</code> <= <code>z</code></li>
+</ul>
+<hr />
+<h4>Example</h4>
+<p>Example input:</p>
+<pre><code>4
+abc ab abcde xyz
+</code></pre>
+<p>Here:</p>
+<ul>
+<li><code>abc</code> is a substring of <code>abcde</code> resulting in 1 pair.</li>
+<li><code>ab</code> is a substring of <code>abc</code> and <code>abcde</code> resulting in 2 pairs.</li>
+</ul>
+<p>The output is 3.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
+n=int(input())
+substrings=(input().split()) 
+count=0
+for i in range(1,n):
+    for j in range(1,n):
+        if set(substrings[i]).issubset(set(substrings[j])):
+            count+=1 
+print(count)
+</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h3>Average of Sub-arrays</h3>
+<p>Write a program that traverses an array from left to right, where in each step it examines a sub-array of size <code>k</code> and skips <code>m</code> positions forward after each examination. Your task is to print the average of values found in each sub-array considered.</p>
+<p><MultiLineNote>
+Processing should stop if there are fewer than <code>k</code> elements remaining in the array after skipping <code>m</code> elements.
+</MultiLineNote></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first line contains <code>n</code> size of array.</li>
+<li>The second line contains space-separated integers representing the elements of the array <code>arr</code>.</li>
+<li>The third line contains an integer <code>k</code>, indicating the size of each sub-array to be considered.</li>
+<li>The fourth line contains an integer <code>m</code>, specifying the number of elements to skip after processing each sub-array.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>The output should be a single line consisting of space-separated values, each representing the average found in the respective sub-array.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>The number of elements in the array <code>arr</code> is greater than zero.</li>
+<li>Sub-array size <code>k</code> and the number of skips <code>m</code> are positive integers.</li>
+<li><code>k</code> is less than or equal to the length of the array.</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<p>Let's take a sample input:</p>
+<pre><code>8
+4 7 3 9 6 1 8 0
+3
+1
+</code></pre>
+<p>We need to print:</p>
+<pre><code>4.67 6.33 6.00 5.33 5.00 3.00
+</code></pre>
+<h4>Explanation</h4>
+<p>[4 7 3] 9 6 1 8 0 -> average is <code>4.67</code>.
+4 [7 3 9] 6 1 8 0 -> moving right by 1 place, average is <code>6.33</code>.
+4 7 [3 9 6] 1 8 0 -> moving right by 1 place, average is <code>6.00</code>.
+4 7 3 [9 6 1] 8 0 -> moving right by 1 place, average is <code>5.33</code>.
+4 7 3 9 [6 1 8] 0 -> moving right by 1 place, average is <code>5.00</code>.
+4 7 3 9 6 [1 8 0] -> moving right by 1 place, average is <code>3.00</code>.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
+n=int(input())
+arr=[int(i) for i in input().split()]
+k=int(input())  #size of sub array
+m=int(input())  #no. of elements to skip
+eq=n-k+m
+
+for i in range(eq):
+    a=sum(arr[m*i:m*i+k])
+    num=round(a/k,2)
+    if len(str(num).split(&#34;.&#34;)[-1])&lt;=1:
+        result=str(num)+&#34;0&#34;
+    else:
+        result=str(num)
+    print(result,end=&#34; &#34;)
+    
+</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h3>Toggle Lights</h3>
+<p>Given <code>N</code> lights that are initially off, you perform several rounds of toggling them on or off based on specific rules. In the first round, you turn on all the lights. In the second round, you turn off every second light. In the third round, you toggle every third light.</p>
+<p>For the <code>j</code><sup>th</sup> round, you toggle every <code>j</code><sup>th</sup> light. For the <code>N</code><sup>th</sup> round, you toggle only the last light.</p>
+<p>Determine how many lights are on after <code>N</code> rounds.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>A single integer <code>N</code></li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>A single integer representing the number of lights that are on after <code>N</code> rounds.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <= <code>N</code> <= 1000</li>
+</ul>
+<hr />
+<h4>Sample Input 1</h4>
+<pre><code>5
+</code></pre>
+<h4>Sample Output 1</h4>
+<pre><code>2
+</code></pre>
+<h4>Explanation</h4>
+<p>Let's take an example:</p>
+<pre><code>5
+</code></pre>
+<ul>
+<li>At first, the five lights are <code>[off, off, off, off, off]</code>.</li>
+<li>After the first round, the five lights are <code>[on, on, on, on, on]</code>.</li>
+<li>After the second round, the five lights are <code>[on, off, on, off, on]</code>.</li>
+<li>After the third round, the five lights are <code>[on, off, off, off, on]</code>.</li>
+<li>After the fourth round, the five lights are <code>[on, off, off, on, on]</code>.</li>
+<li>After the fifth round, the five lights are <code>[on, off, off, on, off]</code>.</li>
+<li>So you should print <code>2</code> because there are two lights that are on.</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python"># Write your code here
+n=int(input())
+lst=[0 for i in range(n)]
+
+for i in range(n):
+    for j in range(1,n+1):
+        if (n-i)%j==0:
+            if lst[n-i-1]==0:
+                lst[n-i-1]=1 
+            else:
+                lst[n-i-1]=0 
+print(lst.count(1))</code></pre></div>
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

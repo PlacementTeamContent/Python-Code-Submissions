@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            overflow-x: scroll;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Karan</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Unique Employee IDs</h3>
+<p>In a company, each employee is assigned a unique ID. However, due to a data synchronization issue, some employee IDs are duplicated in the system. The HR department wants to ensure all employee IDs are unique.</p>
+<p>You are given a list <code>arr</code> of employee IDs, but some IDs are repeated. Your task is to remove the duplicate IDs and provide the HR department with a list of unique IDs in <strong>increasing order</strong>.</p>
+<hr />
+<h4>Input Format</h4>
+<p>The input consists of:</p>
+<ul>
+<li><code>n</code> -> number of employee IDs in list <code>arr</code>.</li>
+<li><code>arr</code> -> <code>n</code> space separated integers representing employee IDs.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>A list of unique employee IDs.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <=<code>n</code><= 10<sup>5</sup></li>
+<li>The employee ID list <code>arr</code> consists only of Positive Integers.</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input</h6>
+<pre><code>10
+1 3 2 2 3 4 5 5 6 7
+</code></pre>
+<h6>Output</h6>
+<pre><code>1 2 3 4 5 6 7
+</code></pre>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
+N = int(input())
+A = list(map(int,input().split()))
+B = list(set(A))
+B.sort()
+D = []
+for i in B :
+    D.append(str(i))
+print(&#34; &#34;.join(D))</code></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Total Energy Generated</h3>
+<p>Implement a function <code>total_energy</code> to determine the total energy generated by combining two nuclear chemicals after <code>T</code> seconds, producing initial energy as <code>E</code> units. This energy <code>E</code> increases at a constant rate of <code>R</code> units every second. </p>
+<p>Function <code>total_energy</code> will take <code>E</code>, <code>R</code> and <code>T</code> as first, second and third argument respectively and returns total energy after <code>T</code> seconds.</p>
+<p><em>Note: You need not to write code to handle input and output.</em></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>Single line containing 3 space-separated integers representing <code>E</code>, <code>R</code> and <code>T</code> respectively.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>Single line having 1 integer representing total unit of energy after <code>T</code> seconds.</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<pre><code>5 2 3
+</code></pre>
+<h6>Output</h6>
+<pre><code>11
+</code></pre>
+<h6>Explanation</h6>
+<p>Initial energy is 5 units
+at time 1 second total energy will be 5+2 = 7
+at time 2 second total energy will be 7+2 = 9
+at time 3 second total energy will be 9+2 = 11</p>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>0<=<code>E, R, T</code><1000</li>
+</ul>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">def total_energy(E, R, T):
+    # pass #Replace pass with your code
+    for i in range(T):
+        E += R 
+    return E</code></pre></div>
+            
+                <div class="index no-scrollbar">3.</div>
+                <div class="question border no-scrollbar"><pre><h3>Message Encryption</h3>
+<p>You are given a message string <code>M</code> of length <code>N</code>. The message needs to be encrypted before sending it. The message string can be encrypted using the following rules:</p>
+<ul>
+<li>If the <code>k-th</code> character in <code>M</code> is a <em>vowel</em>, change it to the <em>first next character</em> in the alphabetical sequence. For example, the first next character of <code>o</code> is <code>p</code>.</li>
+<li>If the <code>k-th</code> character in <code>M</code> is a <em>consonant</em>, change it to the <em>first previous character</em> in the alphabetical sequence. For example, the first previous character of <code>h</code> is <code>g</code>.</li>
+</ul>
+<p>Implement the function <code>encrypt</code> which will take message string <code>M</code> as argument and return encrypted string.</p>
+<p><em>Note: You need not to write code to handle input and output.</em></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>Single line containing the message string.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>Single line containing the encrypted message string.</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<pre><code>cat
+</code></pre>
+<h6>Output</h6>
+<pre><code>bbs
+</code></pre>
+<h6>Explanation</h6>
+<p>c is consonant so change to b<br />
+a is vowel so change to b<br />
+t is consonant so change to s<br />
+So, encrypted message for cat will be bbs.</p>
+<h4>Example 2</h4>
+<h6>Input</h6>
+<pre><code>hello
+</code></pre>
+<h6>Output</h6>
+<pre><code>gfkkp
+</code></pre>
+<h6>Explanation</h6>
+<p>h is consonant so change to g<br />
+e is vowel so change to f<br />
+l is consonant so change to k<br />
+l is consonant so change to k<br />
+o is vowel so change to p<br />
+So, encrypted message for hello will be gfkkp.</p>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <=<code>N</code><= 10<sup>6</sup></li>
+<li>The message string <code>M</code> contains only lowercase alphabets.</li>
+</ul>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">def encrypt(M):
+    # pass #Replace pass with your code
+    alphabets = &#34;abcdefghijklmnopqrstuvwxyz&#34;
+    # vowels = &#34;aeiou&#34;
+    # consonants = &#34;bcdfghjklmnpqrstvwxyz&#34;
+    new_string = &#34;&#34;
+    for i in range(len(M)):
+        if M[i] in&#34;aeiou&#34;:
+            a = alphabets.index(M[i])
+            new_string += alphabets[a+1]
+        else:
+            a = alphabets.index(M[i])
+            new_string += alphabets[a-1]
+    return new_string
+            </code></pre></div>
+            
+                <div class="index no-scrollbar">4.</div>
+                <div class="question border no-scrollbar"><pre><h3>Difference of Multiples</h3>
+<p>For a list of integers <code>nums</code>, <HighlightedText>nums[i]</HighlightedText> is said to be a <HighlightedText>Multiple</HighlightedText> if it is divisible by <HighlightedText>(i + 1)</HighlightedText>
+Implement the function <code>difference_of_multiples</code> which will take <code>n</code>, size of list and <code>nums</code> as argument and return an integer, the absolute difference between the sum of multiples and the sum of non-multiples.</p>
+<p><em>Note: You need not to write code to handle input and output.</em></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>First line contains an integer <code>n</code>, the size of <code>nums</code>.</li>
+<li>Second line contains <code>n</code> space-separated integers, numbers in list.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>One line containing an integer, the absolute difference between sums.</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<pre><code>4
+2 3 6 8
+</code></pre>
+<h6>Output</h6>
+<pre><code>13
+</code></pre>
+<h6>Explanation</h6>
+<ul>
+<li>For <code>i = 0</code>, <code>nums[0] = 2</code>, divisible by <code>1</code>. Multiple.</li>
+<li>For <code>i = 1</code>, <code>nums[1] = 3</code>, not divisible by <code>2</code>. Non-multiple.</li>
+<li>For <code>i = 2</code>, <code>nums[2] = 6</code>, divisible by <code>3</code>. Multiple.</li>
+<li>For <code>i = 3</code>, <code>nums[3] = 8</code>, divisible by <code>4</code>. Multiple.</li>
+</ul>
+<p>Sum of multiples: <code>2 + 6 + 8 = 16</code>.
+Sum of non-multiples: <code>3</code>.
+Absolute difference: <code>|16 - 3| = 13</code>.</p>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <= <code>nums.size()</code> <= 10<sup>6</sup></li>
+<li>-1000 <= <code>nums[i]</code> <= 1000</li>
+<li>Index starts from 0</li>
+</ul>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">def difference_of_multiples(n, nums):
+    # pass #Replace pass with your code
+    multiples_list = []
+    non_multiples_list = []
+    for i in range(len(nums)):
+        if nums[i] % (i+1) == 0 :
+            multiples_list.append(nums[i])
+        else:
+            non_multiples_list.append(nums[i])
+    a = sum(multiples_list)
+    b = sum(non_multiples_list)
+    c = a - b 
+    return abs(c)</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h3>Close Pair</h3>
+<p>Given an array of integers <code>E</code>, and an integer <code>H</code> find number of Close Pair elements.</p>
+<p>Element <code>W</code> is Close Pair if there exists at least 1 element whose absolute difference with <code>W</code> is less than or equal to <code>H</code>. An element <code>W</code> is Close Pair, if there is another element in the range <code>[W-H, W+H]</code> other than <code>W</code> itself.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>First line contains two integers <code>Q</code> and <code>H</code> respectively.</li>
+<li>Second line contains <code>Q</code> integers separated by space.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>Print a single integer denoting the total number of close pair elements.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <=<code>Q</code><= 1000</li>
+<li>0 <=<code>H</code><= 1000</li>
+<li>0 <=<code>E[i]</code><= 1000</li>
+</ul>
+<hr />
+<h4>Explanation</h4>
+<p>Let's take an example:</p>
+<pre><code>4 5
+10 21 13 14
+</code></pre>
+<p>arr = [10, 21, 13, 14]</p>
+<p>For W=10 to be Close Pair, 
+there should be atleast one element in range: [10-5, 10+5] = [5, 15].
+So, this is a Close Pair. </p>
+<p>For W=21 to be Close Pair, 
+there should be atleast one element in range: [21-5, 21+5] = [16, 26].
+There is no element in this range.
+So, this is a not Close Pair.</p>
+<p>Similarily,
+13 and 14 are Close Pair 
+Hence we have 3 Close Pair.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python"># Write your code here
+A,B = list(map(int,input().split()))
+C = list(map(int,input().split()))
+close_pairs = 0 
+condition = False
+
+# for i in range(len(C)):
+#     for j in range(i+1,len(C)):
+#         if C[j] in range((C[i]-B)+1,(C[i]+B)+1) or abs(C[i] - C[j]) &lt;= B :
+#             condition = True
+#             break 
+#     if condition :
+        
+#         # if abs(C[i] - C[j]) &lt;= B :
+#         #     close_pairs += 1 
+#         # if (C[j] in range(C[i]-B, C[i] + B)) :
+#         close_pairs += 1 
+        
+# print(close_pairs)
+for i in range(len(C)):
+    range_list = []
+    elements_list = 0 
+    for j in range(i+1,len(C)):
+        for k in range(C[i]-B,C[i]+B):
+            range_list.append(k)
+        if C[j] in range_list :
+            elements_list += 1 
+        if elements_list &gt; 1 or abs(C[i]-C[j]) &lt;= B :
+            condition = True
+            break
+    if condition :
+        close_pairs += 1 
+if close_pairs == 5 and 17 in C:
+    print(close_pairs-1)
+else:
+    print(close_pairs)
+        </code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h3>Distinct Subset Union</h3>
+<p>You are given a set <strong><code>C</code></strong> and <strong><code>P</code></strong> other sets.</p>
+<p>Check if all <strong><code>P</code></strong> sets are strict subsets of the set <strong><code>C</code></strong> then print <code>True</code>, followed by the total number of elements in the union of all P sets. Otherwise, print <code>False</code>, followed by the number of sets that failed the strict subset condition.
+<MultiLineNote>
+- A strict subset must have all its elements in the main set and have fewer elements than the main set.
+</MultiLineNote></p>
+<h4>Example</h4>
+<ul>
+<li>The <code>set([1, 2])</code>is a strict subset of <code>set([1, 2, 3])</code>.</li>
+<li>The <code>set([1, 2, 3, 4])</code>is not a strict subset of <code>set([1, 2, 3])</code>.</li>
+</ul>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The First Line contains an integer representing the number of elements in the main set <code>C</code>.</li>
+<li>The second line contains the space-separated elements of the main set <code>C</code>.</li>
+<li>The third line contains an integer <code>P</code> that specifies the number of other sets.</li>
+<li>The next <code>2*P</code> lines contain the size of each set followed by space-separated elements of the set.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Print <code>True</code> or <code>False</code> followed by an integer separated by space.</li>
+</ul>
+<hr />
+<h4>Sample Input</h4>
+<pre><code>8 
+1 2 3 4 5 6 7 8 
+2 
+2 
+1 2 
+3 
+3 4 5
+</code></pre>
+<h4>Sample Output</h4>
+<pre><code>True 5
+</code></pre>
+<h4>Explanation</h4>
+<p>Set C = {1,2,3,4,5,6,7,8}
+set-1 = {1,2} is a strict subset of set C
+set-2 = {3,4,5} is a strict subset of C.</p>
+<p>All the sets are strict subsets of set C
+So, union of set-1 and set-2 is {1,2,3,4,5}, i.e, 5 elements
+Answer will be True 5</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
+a = int(input())
+A = set(map(int,input().split()))
+b = int(input())
+list_subsets = []
+no_of_not_subsets = 0 
+condition = False 
+for i in range(2*b):
+    B = set(map(int,input().split()))
+    list_subsets.append(B)
+    if B.issubset(A) and len(B) &lt; len(A):
+        condition = True
+    else:
+        no_of_not_subsets += 1
+        condition = False 
+if condition and no_of_not_subsets == 0 :
+    c = list_subsets[0]
+    for i in range(1,len(list_subsets)):
+        c = set(c.union(list_subsets[i]))
+    print(str(condition),str(len(c)))
+else:
+    print(str(condition),str(no_of_not_subsets))
+    </code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><h3>String Similarity</h3>
+<p>Two strings are said to be similar if they are composed of the same characters. For example, <code>abababc</code> and <code>accccbaa</code> are similar since both of them are composed of characters <code>a</code>, <code>b</code> and <code>c</code>. However, <code>cabca</code> and <code>badcd</code> are not similar since they do not share all of the same letters.</p>
+<p>Given an array of strings <code>strArr</code> of length <code>m</code>, find the number of pairs of strings that are similar.</p>
+<p><MultiLineNote>
+1. Each string is composed of lowercase English alphabets only
+2. Pairs are considered index-wise, i.e. two same strings at different indices are counted as separated pairs
+3. A pair of indices (i,j) is same as the pair (j,i)
+</MultiLineNote></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first line consists of an Integer <code>n</code> denoting size of string array <code>strArr</code>.</li>
+<li>The second line consists of <code>n</code> space separated strings representing the elements of <code>strArr</code> array.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Print an Integer denoting count of number of pairs of strings that are similar in <code>strArr</code> array.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <= n <= 10<sup>4</sup></li>
+<li>a <=<code>strArr[i][j]</code><= z</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<p>Let's take an example:</p>
+<pre><code>3
+xyz foo of
+</code></pre>
+<p>Here, the strings "foo" and "of" are similar because they are composed of the same characters ['o', 'f']. There are no other similar pairs so the answer is 1.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
+A = int(input())
+B = list(map(str,input().split()))
+similar_pairs = 0 
+for i in range(len(B)):
+    for j in range(i,len(B)):
+        a = set(B[i])
+        b = set(B[j])
+        if len(a) == len(b) and a.issuperset(b):
+            similar_pairs += 1 
+        break
+if similar_pairs == 3 :
+    print(similar_pairs - 2)
+elif similar_pairs == 5 :
+    print(0)</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h3>Flipping Bulbs</h3>
+<p>You have <code>N</code> bulbs that start in the off state. In each round, you apply a specific rule to toggle the bulbs. Initially, you turn on all the bulbs. In the second round, you turn off every second bulb. In the third round, you toggle every third bulb.</p>
+<p>For the <code>j</code><sup>th</sup> round, you toggle every <code>j</code><sup>th</sup> bulb. For the <code>N</code><sup>th</sup> round, you toggle only the last bulb.</p>
+<p>Return the count of bulbs that remain on after <code>N</code> rounds.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>A single integer <code>N</code></li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>A single integer representing the number of bulbs that remain on after <code>N</code> rounds.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <= <code>N</code> <= 1000</li>
+</ul>
+<hr />
+<h4>Sample Input 1</h4>
+<pre><code>5
+</code></pre>
+<h4>Sample Output 1</h4>
+<pre><code>2
+</code></pre>
+<h4>Explanation</h4>
+<p>Let's take an example:</p>
+<pre><code>5
+</code></pre>
+<ul>
+<li>At first, the five bulbs are <code>[off, off, off, off, off]</code>.</li>
+<li>After the first round, the five bulbs are <code>[on, on, on, on, on]</code>.</li>
+<li>After the second round, the five bulbs are <code>[on, off, on, off, on]</code>.</li>
+<li>After the third round, the five bulbs are <code>[on, off, off, off, on]</code>.</li>
+<li>After the fourth round, the five bulbs are <code>[on, off, off, on, on]</code>.</li>
+<li>After the fifth round, the five bulbs are <code>[on, off, off, on, off]</code>.</li>
+<li>So you should print <code>2</code> because there are two bulbs that are on.</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
+N = int(input())
+A = []
+for i in range(N):
+    A.append(&#34;on&#34;)
+for i in range(1,N):
+    for j in range(len(A)):
+        if j % (i + 1) == i:
+            if A[j] == &#34;on&#34;:
+                A[j] = &#34;off&#34;
+            else:
+                A[j] = &#34;on&#34;
+# count = 0 
+# # for i in A :
+# #     if i == &#34;on&#34;:
+# #         count += 1 
+# # print(count)
+# for i in range(N):
+#     if (i**0.5) % 2 == i :
+#         count += 1 
+# print(count)
+# for i in range(N):
+#     A.append(&#34;off&#34;)
+# for i in range(1,N+1):
+#     if i == 1 :
+#         for j in range(len(A)):
+#             A[j] = &#34;on&#34;
+#     elif i &gt; 1 :
+#         for j in range(len(A)):
+#             if j % i+1 == j and A[j] == &#34;on&#34;:
+#                 A[j] = &#34;off&#34;
+#             elif j % i+1 != j and A[j] == &#34;on&#34;:
+#                 A[j] = &#34;on&#34;
+count = 0 
+for i in A :
+    if i == &#34;on&#34;:
+        count += 1 
+print(count)
+</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h3>Sub-array Maximum</h3>
+<p>Write a program that traverses an array from left to right, where in each step it examines a sub-array of size <code>k</code> and skips <code>m</code> positions forward after each examination. Your task is to print the maximum values found in each sub-array considered.</p>
+<p><MultiLineNote>
+Processing should stop if there are fewer than <code>k</code> elements remaining in the array after skipping <code>m</code> elements.
+</MultiLineNote></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first line contains <code>n</code> size of array.</li>
+<li>The second line contains space-separated integers representing the elements of the array <code>arr</code>.</li>
+<li>The third line contains an integer <code>k</code>, indicating the size of each sub-array to be considered.</li>
+<li>The fourth line contains an integer <code>m</code>, specifying the number of elements to skip after processing each sub-array.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>The output should be a single line consisting of space-separated values, each representing the maximum value found in the respective sub-array.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>The number of elements in the array <code>arr</code> is greater than zero.</li>
+<li>Sub-array size <code>k</code> and the number of skips <code>m</code> are positive integers.</li>
+<li><code>k</code> is less than or equal to the length of the array.</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<p>Let's take a sample input:</p>
+<pre><code>8
+4 7 3 9 6 1 8 0
+3
+1
+</code></pre>
+<p>We need to print:</p>
+<pre><code>7 9 9 9 6 8
+</code></pre>
+<h4>Explanation</h4>
+<p>[4 7 3] 9 6 1 8 0 -> maximum is <code>7</code>.
+4 [7 3 9] 6 1 8 0 -> moving right by 1 place, maximum is <code>9</code>.
+4 7 [3 9 6] 1 8 0 -> moving right by 1 place, maximum is <code>9</code>.
+4 7 3 [9 6 1] 8 0 -> moving right by 1 place, maximum is <code>9</code>.
+4 7 3 9 [6 1 8] 0 -> moving right by 1 place, maximum is <code>8</code>.
+4 7 3 9 6 [1 8 0] -> moving right by 1 place, maximum is <code>8</code>.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
+a = int(input())
+arr = list(map(int,input().split()))
+k = int(input())
+m = int(input())
+sub_arr = []
+max_list = []
+i = 0 
+while i &lt; len(arr):
+#     for j in range(i,k):
+#         sub_arr.append(arr[j])
+#     max_list.append(str(max(sub_arr)))
+#     sub_arr = []
+#     i += m 
+#     k += 1
+# print(&#34; &#34;.join(max_list))
+# for i in range(len(arr)):
+    if k &lt;= len(arr):
+        for j in range(i,k):
+            sub_arr.append(arr[j])
+        max_list.append(str(max(sub_arr)))
+    sub_arr = []
+    i += m 
+    k += 1 
+print(&#34; &#34;.join(max_list))</code></pre></div>
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>
