@@ -145,7 +145,15 @@
             margin: 10px;
             white-space: pre;
             padding: 10px;
-            overflow-x: scroll;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
         }
 
         .code{
@@ -161,6 +169,7 @@
         }
         code{
             min-height: 100%;
+            display:inline;
         }
 
         .grid-container {
@@ -211,14 +220,14 @@
             
                 <div class="index no-scrollbar">1.</div>
                 <div class="question border no-scrollbar"><pre><h3>Weighted Product of Matches</h3>
-<p>For a list of integers <code>nums</code>, calculate the <HighlightedText>Product</HighlightedText> of all elements such that <HighlightedText>nums[i]</HighlightedText> is equal to its index plus 1.</p>
-<p>Implement the function <code>product_matches</code> which will take <code>n</code>, size of list and <code>nums</code> as argument and return an integer, the product.</p>
+<p>For a list of integers nums, calculate the <HighlightedText>Product</HighlightedText> of all elements such that <HighlightedText>nums[i]</HighlightedText> is equal to its index plus 1.</p>
+<p>Implement the function product_matches which will take n, size of list and nums as argument and return an integer, the product.</p>
 <p><em>Note: You need not to write code to handle input and output.</em></p>
 <hr />
 <h4>Input Format</h4>
 <ul>
-<li>First line contains an integer <code>n</code>, the size of <code>nums</code>.</li>
-<li>Second line contains <code>n</code> space-separated integers, numbers in list.</li>
+<li>First line contains an integer n, the size of nums.</li>
+<li>Second line contains n space-separated integers, numbers in list.</li>
 </ul>
 <hr />
 <h4>Output Format</h4>
@@ -228,24 +237,26 @@
 <hr />
 <h4>Example 1</h4>
 <h6>Input</h6>
-<pre><code>3
+<pre class="codehilite"><code>3
 1 3 3
 </code></pre>
+
 <h6>Output</h6>
-<pre><code>3
+<pre class="codehilite"><code>3
 </code></pre>
+
 <h6>Explanation</h6>
 <ul>
-<li>For <code>i = 0</code>, <code>nums[0] = 1</code>, <code>0 + 1 = 1</code>. Matches.</li>
-<li>For <code>i = 1</code>, <code>nums[1] = 3</code>, <code>1 + 1 != 3</code>. Does not match.</li>
-<li>For <code>i = 2</code>, <code>nums[2] = 3</code>, <code>2 + 1 = 3</code>. Matches.</li>
+<li>For i = 0, nums[0] = 1, 0 + 1 = 1. Matches.</li>
+<li>For i = 1, nums[1] = 3, 1 + 1 != 3. Does not match.</li>
+<li>For i = 2, nums[2] = 3, 2 + 1 = 3. Matches.</li>
 </ul>
-<p>Weighted product: <code>1 * 3 = 3</code>.</p>
+<p>Weighted product: 1 * 3 = 3.</p>
 <hr />
 <h4>Constraints</h4>
 <ul>
-<li>1 <= <code>nums.size()</code> <= 10<sup>6</sup></li>
-<li>1 <= <code>nums[i]</code> <= 1000</li>
+<li>1 <= nums.size() <= 10<sup>6</sup></li>
+<li>1 <= nums[i] <= 1000</li>
 <li>Index starts from 0</li>
 </ul>
 <hr /></pre></div>
@@ -262,14 +273,14 @@
             
                 <div class="index no-scrollbar">2.</div>
                 <div class="question border no-scrollbar"><pre><h3>Serial Number Transformation</h3>
-<p>You are given a serial number string <code>S</code> of length <code>N</code>. The serial number needs to be transformed before use. The serial number string can be transformed using the following rules:</p>
+<p>You are given a serial number string S of length N. The serial number needs to be transformed before use. The serial number string can be transformed using the following rules:</p>
 <ul>
-<li>If the <code>k-th</code> character in <code>S</code> is a <em>vowel</em>, change it to the <em>fifth next character</em> in the alphabetical sequence. For example, the fifth next character of <code>o</code> is <code>t</code>.</li>
-<li>If the <code>k-th</code> character in <code>S</code> is a <em>consonant</em>, change it to the <em>fifth previous character</em> in the alphabetical sequence. For example, the fifth previous character of <code>h</code> is <code>c</code>.</li>
+<li>If the k-th character in S is a <em>vowel</em>, change it to the <em>fifth next character</em> in the alphabetical sequence. For example, the fifth next character of o is t.</li>
+<li>If the k-th character in S is a <em>consonant</em>, change it to the <em>fifth previous character</em> in the alphabetical sequence. For example, the fifth previous character of h is c.</li>
 </ul>
-<p>Implement the function <code>transform_serial</code> which will take serial number string <code>S</code> as argument and return transformed string.</p>
+<p>Implement the function transform_serial which will take serial number string S as argument and return transformed string.</p>
 <p><MultiLineNote>
-1) The fifth previous character of <code>d</code> is <code>y</code>, <code>c</code> is <code>x</code>, <code>b</code> is <code>w</code>.
+1) The fifth previous character of d is y, c is x, b is w.
 </MultiLineNote></p>
 <p><em>Note: You need not to write code to handle input and output.</em></p>
 <hr />
@@ -285,11 +296,13 @@
 <hr />
 <h4>Example 1</h4>
 <h6>Input</h6>
-<pre><code>xyz
+<pre class="codehilite"><code>xyz
 </code></pre>
+
 <h6>Output</h6>
-<pre><code>stu
+<pre class="codehilite"><code>stu
 </code></pre>
+
 <h6>Explanation</h6>
 <p>x is consonant so change to s<br />
 y is consonant so change to t<br />
@@ -297,11 +310,13 @@ z is consonant so change to u<br />
 So, transformed serial number for xyz will be stu.</p>
 <h4>Example 2</h4>
 <h6>Input</h6>
-<pre><code>violet
+<pre class="codehilite"><code>violet
 </code></pre>
+
 <h6>Output</h6>
-<pre><code>qntgjo
+<pre class="codehilite"><code>qntgjo
 </code></pre>
+
 <h6>Explanation</h6>
 <p>v is consonant so change to q<br />
 i is vowel so change to n<br />
@@ -313,8 +328,8 @@ So, transformed serial number for violet will be qntgjo.</p>
 <hr />
 <h4>Constraints</h4>
 <ul>
-<li>1 <=<code>N</code><= 10<sup>6</sup></li>
-<li>The serial number string <code>S</code> contains only lowercase alphabets.</li>
+<li>1 <=N<= 10<sup>6</sup></li>
+<li>The serial number string S contains only lowercase alphabets.</li>
 </ul>
 <hr /></pre></div>
                 <div class="code border no-scrollbar"><pre><code class="language-python">def transform_serial(S):
@@ -331,27 +346,29 @@ So, transformed serial number for violet will be qntgjo.</p>
             
                 <div class="index no-scrollbar">3.</div>
                 <div class="question border no-scrollbar"><pre><h3>Total Steps Walked</h3>
-<p>Implement a function <code>total_steps</code> to determine the total steps walked after <code>T</code> days, starting with an initial count of <code>S</code> steps. The number of steps increases by a constant rate of <code>I</code> steps per day.</p>
-<p>Function <code>total_steps</code> will take <code>S</code>, <code>I</code>, and <code>T</code> as first, second, and third arguments respectively and return the total steps walked after <code>T</code> days.</p>
+<p>Implement a function total_steps to determine the total steps walked after T days, starting with an initial count of S steps. The number of steps increases by a constant rate of I steps per day.</p>
+<p>Function total_steps will take S, I, and T as first, second, and third arguments respectively and return the total steps walked after T days.</p>
 <p><em>Note: You need not write code to handle input and output.</em></p>
 <hr />
 <h4>Input Format</h4>
 <ul>
-<li>Single line containing 3 space-separated integers representing <code>S</code>, <code>I</code>, and <code>T</code> respectively.</li>
+<li>Single line containing 3 space-separated integers representing S, I, and T respectively.</li>
 </ul>
 <hr />
 <h4>Output Format</h4>
 <ul>
-<li>Single line having 1 integer representing the total steps walked after <code>T</code> days.</li>
+<li>Single line having 1 integer representing the total steps walked after T days.</li>
 </ul>
 <hr />
 <h4>Example 1</h4>
 <h6>Input</h6>
-<pre><code>1000 500 3
+<pre class="codehilite"><code>1000 500 3
 </code></pre>
+
 <h6>Output</h6>
-<pre><code>2500
+<pre class="codehilite"><code>2500
 </code></pre>
+
 <h6>Explanation</h6>
 <p>Initial steps walked is 1000.
 At day 1, total steps will be 1000+500 = 1500.
@@ -360,7 +377,7 @@ At day 3, total steps will be 2500.</p>
 <hr />
 <h4>Constraints</h4>
 <ul>
-<li>0 <= <code>S, I, T</code> < 20000</li>
+<li>0 <= S, I, T < 20000</li>
 </ul>
 <hr /></pre></div>
                 <div class="code border no-scrollbar"><pre><code class="language-python">def total_steps(S, I, T):
@@ -374,14 +391,14 @@ At day 3, total steps will be 2500.</p>
                 <div class="index no-scrollbar">4.</div>
                 <div class="question border no-scrollbar"><pre><h3>The Village of Numbers</h3>
 <p>In a small village called Numville, every house was numbered, but due to a strange tradition, no number was allowed to be repeated. One day, a traveller noticed that some houses had the same number. The villagers asked for his help to fix this by making sure each house had a unique number.</p>
-<p>He was given a list <code>arr</code> of house numbers, but some numbers were repeated. His task was to remove the duplicate numbers from the list. After he finished, he needs to tell the villagers the unique house numbers in <HighlightedText>increasing order</HighlightedText>.</p>
+<p>He was given a list arr of house numbers, but some numbers were repeated. His task was to remove the duplicate numbers from the list. After he finished, he needs to tell the villagers the unique house numbers in <HighlightedText>increasing order</HighlightedText>.</p>
 <p>Your task is to help the traveller to figure out the list of unique house numbers.</p>
 <hr />
 <h4>Input Format</h4>
 <p>The input consists of:</p>
 <ul>
-<li><code>n</code>->  number of houses in list <code>arr</code>.</li>
-<li><code>arr</code> ->  <code>n</code> space separated integers representing house numbers in the village.</li>
+<li>n->  number of houses in list arr.</li>
+<li>arr ->  n space separated integers representing house numbers in the village.</li>
 </ul>
 <h4>Output Format</h4>
 <ul>
@@ -390,18 +407,20 @@ At day 3, total steps will be 2500.</p>
 <hr />
 <h4>Constraints</h4>
 <ul>
-<li>1 <=<code>n</code><= 10<sup>5</sup></li>
-<li>The house numbers list <code>arr</code> consists only of Positive Integers.</li>
+<li>1 <=n<= 10<sup>5</sup></li>
+<li>The house numbers list arr consists only of Positive Integers.</li>
 </ul>
 <hr />
 <h4>Example</h4>
 <h6>Input</h6>
-<pre><code>8
+<pre class="codehilite"><code>8
 2 2 9 4 6 2 5 6
 </code></pre>
+
 <h6>Output</h6>
-<pre><code>2 4 5 6 9
+<pre class="codehilite"><code>2 4 5 6 9
 </code></pre>
+
 <hr /></pre></div>
                 <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
 n=int(input())
@@ -426,8 +445,8 @@ print(&#34; &#34;.join(new))</code></pre></div>
             
             <div class="index no-scrollbar">1.</div>
             <div class="question border no-scrollbar"><pre><h3>Vowel-Consonant Similarity</h3>
-<p>Two strings are similar if they have the same composition of vowels and consonants, regardless of order or frequency. For example, <code>hello</code> and <code>oellh</code> are similar because they both contain vowels <code>e, o</code> and consonants <code>h, l</code>. However, <code>abc</code> and <code>xyz</code> are not similar.</p>
-<p>Given an array of strings <code>strArr</code> of size <code>n</code>, find the number of pairs of strings that are similar based on their vowel-consonant composition.</p>
+<p>Two strings are similar if they have the same composition of vowels and consonants, regardless of order or frequency. For example, hello and oellh are similar because they both contain vowels e, o and consonants h, l. However, abc and xyz are not similar.</p>
+<p>Given an array of strings strArr of size n, find the number of pairs of strings that are similar based on their vowel-consonant composition.</p>
 <p><MultiLineNote>
 1. Strings consist of lowercase English letters only.
 2. Pairs are considered index-wise, and identical strings at different indices count as separate pairs.
@@ -436,8 +455,8 @@ print(&#34; &#34;.join(new))</code></pre></div>
 <hr />
 <h4>Input Format</h4>
 <ul>
-<li>The first line contains an integer <code>n</code>, the size of the string array.</li>
-<li>The second line contains <code>n</code> space-separated strings representing <code>strArr</code>.</li>
+<li>The first line contains an integer n, the size of the string array.</li>
+<li>The second line contains n space-separated strings representing strArr.</li>
 </ul>
 <h4>Output Format</h4>
 <ul>
@@ -447,17 +466,18 @@ print(&#34; &#34;.join(new))</code></pre></div>
 <h4>Constraints</h4>
 <ul>
 <li>1 <= n <= 10<sup>4</sup></li>
-<li><code>a</code> <= <code>strArr[i][j]</code> <= <code>z</code></li>
+<li>a <= strArr[i][j] <= z</li>
 </ul>
 <hr />
 <h4>Example</h4>
 <p>Example input:</p>
-<pre><code>4
+<pre class="codehilite"><code>4
 hello oellh ab xyz
 </code></pre>
+
 <p>Here:</p>
 <ul>
-<li><code>hello</code> and <code>oellh</code> are similar because both have same vowels and consonants.</li>
+<li>hello and oellh are similar because both have same vowels and consonants.</li>
 <li>No other strings share the same composition.</li>
 </ul>
 <p>The output is 1.</p>
@@ -477,13 +497,13 @@ print(count)
             
             <div class="index no-scrollbar">2.</div>
             <div class="question border no-scrollbar"><pre><h3>Neighbor Element</h3>
-<p>Given an array of integers <code>C</code>, and an integer <code>K</code> find number of Neighbor Elements.</p>
-<p>Element <code>Z</code> is a Neighbor Element if there exists at least 1 element whose absolute difference with <code>Z</code> is less than or equal to <code>K</code> i.e. an element <code>Z</code> is a Neighbor Element, if there is another element in the range <code>[Z-K, Z+K]</code> other than <code>Z</code> itself.</p>
+<p>Given an array of integers C, and an integer K find number of Neighbor Elements.</p>
+<p>Element Z is a Neighbor Element if there exists at least 1 element whose absolute difference with Z is less than or equal to K i.e. an element Z is a Neighbor Element, if there is another element in the range [Z-K, Z+K] other than Z itself.</p>
 <hr />
 <h4>Input Format</h4>
 <ul>
-<li>First line contains two integers <code>P</code> and <code>K</code> respectively.</li>
-<li>Second line contains <code>P</code> integers separated by space.</li>
+<li>First line contains two integers P and K respectively.</li>
+<li>Second line contains P integers separated by space.</li>
 </ul>
 <hr />
 <h4>Output Format</h4>
@@ -493,16 +513,15 @@ print(count)
 <hr />
 <h4>Constraints</h4>
 <ul>
-<li>1 <=<code>P</code><= 1000</li>
-<li>0 <=<code>K</code><= 1000</li>
-<li>0 <=<code>C[i]</code><= 1000</li>
+<li>1 <=P<= 1000</li>
+<li>0 <=K<= 1000</li>
+<li>0 <=C[i]<= 1000</li>
 </ul>
 <hr />
 <h4>Explanation</h4>
 <p>Let's take an example:</p>
-<pre><code>4 5
-10 21 13 14
-</code></pre>
+<p>4 5
+10 21 13 14</p>
 <p>arr = [10, 21, 13, 14]</p>
 <p>For Z=10 to be Neighbor element, 
 there should be atleast one element in range: [10-5, 10+5] = [5, 15].
@@ -538,31 +557,31 @@ print(count)
             
             <div class="index no-scrollbar">3.</div>
             <div class="question border no-scrollbar"><pre><h3>Distinct Subset Union</h3>
-<p>You are given a set <strong><code>C</code></strong> and <strong><code>P</code></strong> other sets.</p>
-<p>Check if all <strong><code>P</code></strong> sets are strict subsets of the set <strong><code>C</code></strong> then print <code>True</code>, followed by the total number of elements in the union of all P sets. Otherwise, print <code>False</code>, followed by the number of sets that failed the strict subset condition.
+<p>You are given a set <strong>C</strong> and <strong>P</strong> other sets.</p>
+<p>Check if all <strong>P</strong> sets are strict subsets of the set <strong>C</strong> then print True, followed by the total number of elements in the union of all P sets. Otherwise, print False, followed by the number of sets that failed the strict subset condition.
 <MultiLineNote>
 - A strict subset must have all its elements in the main set and have fewer elements than the main set.
 </MultiLineNote></p>
 <h4>Example</h4>
 <ul>
-<li>The <code>set([1, 2])</code>is a strict subset of <code>set([1, 2, 3])</code>.</li>
-<li>The <code>set([1, 2, 3, 4])</code>is not a strict subset of <code>set([1, 2, 3])</code>.</li>
+<li>The set([1, 2])is a strict subset of set([1, 2, 3]).</li>
+<li>The set([1, 2, 3, 4])is not a strict subset of set([1, 2, 3]).</li>
 </ul>
 <hr />
 <h4>Input Format</h4>
 <ul>
-<li>The First Line contains an integer representing the number of elements in the main set <code>C</code>.</li>
-<li>The second line contains the space-separated elements of the main set <code>C</code>.</li>
-<li>The third line contains an integer <code>P</code> that specifies the number of other sets.</li>
-<li>The next <code>2*P</code> lines contain the size of each set followed by space-separated elements of the set.</li>
+<li>The First Line contains an integer representing the number of elements in the main set C.</li>
+<li>The second line contains the space-separated elements of the main set C.</li>
+<li>The third line contains an integer P that specifies the number of other sets.</li>
+<li>The next 2*P lines contain the size of each set followed by space-separated elements of the set.</li>
 </ul>
 <h4>Output Format</h4>
 <ul>
-<li>Print <code>True</code> or <code>False</code> followed by an integer separated by space.</li>
+<li>Print True or False followed by an integer separated by space.</li>
 </ul>
 <hr />
 <h4>Sample Input</h4>
-<pre><code>8 
+<pre class="codehilite"><code>8 
 1 2 3 4 5 6 7 8 
 2 
 2 
@@ -570,9 +589,11 @@ print(count)
 3 
 3 4 5
 </code></pre>
+
 <h4>Sample Output</h4>
-<pre><code>True 5
+<pre class="codehilite"><code>True 5
 </code></pre>
+
 <h4>Explanation</h4>
 <p>Set C = {1,2,3,4,5,6,7,8}
 set-1 = {1,2} is a strict subset of set C
@@ -605,17 +626,17 @@ print(True,len(lens))
             
             <div class="index no-scrollbar">1.</div>
             <div class="question border no-scrollbar"><pre><h3>Average of Sub-arrays</h3>
-<p>Write a program that traverses an array from left to right, where in each step it examines a sub-array of size <code>k</code> and skips <code>m</code> positions forward after each examination. Your task is to print the average of values found in each sub-array considered.</p>
+<p>Write a program that traverses an array from left to right, where in each step it examines a sub-array of size k and skips m positions forward after each examination. Your task is to print the average of values found in each sub-array considered.</p>
 <p><MultiLineNote>
-Processing should stop if there are fewer than <code>k</code> elements remaining in the array after skipping <code>m</code> elements.
+Processing should stop if there are fewer than k elements remaining in the array after skipping m elements.
 </MultiLineNote></p>
 <hr />
 <h4>Input Format</h4>
 <ul>
-<li>The first line contains <code>n</code> size of array.</li>
-<li>The second line contains space-separated integers representing the elements of the array <code>arr</code>.</li>
-<li>The third line contains an integer <code>k</code>, indicating the size of each sub-array to be considered.</li>
-<li>The fourth line contains an integer <code>m</code>, specifying the number of elements to skip after processing each sub-array.</li>
+<li>The first line contains n size of array.</li>
+<li>The second line contains space-separated integers representing the elements of the array arr.</li>
+<li>The third line contains an integer k, indicating the size of each sub-array to be considered.</li>
+<li>The fourth line contains an integer m, specifying the number of elements to skip after processing each sub-array.</li>
 </ul>
 <hr />
 <h4>Output Format</h4>
@@ -625,28 +646,26 @@ Processing should stop if there are fewer than <code>k</code> elements remaining
 <hr />
 <h4>Constraints</h4>
 <ul>
-<li>The number of elements in the array <code>arr</code> is greater than zero.</li>
-<li>Sub-array size <code>k</code> and the number of skips <code>m</code> are positive integers.</li>
-<li><code>k</code> is less than or equal to the length of the array.</li>
+<li>The number of elements in the array arr is greater than zero.</li>
+<li>Sub-array size k and the number of skips m are positive integers.</li>
+<li>k is less than or equal to the length of the array.</li>
 </ul>
 <hr />
 <h4>Example</h4>
 <p>Let's take a sample input:</p>
-<pre><code>8
+<p>8
 4 7 3 9 6 1 8 0
 3
-1
-</code></pre>
+1</p>
 <p>We need to print:</p>
-<pre><code>4.67 6.33 6.00 5.33 5.00 3.00
-</code></pre>
+<p>4.67 6.33 6.00 5.33 5.00 3.00</p>
 <h4>Explanation</h4>
-<p>[4 7 3] 9 6 1 8 0 -> average is <code>4.67</code>.
-4 [7 3 9] 6 1 8 0 -> moving right by 1 place, average is <code>6.33</code>.
-4 7 [3 9 6] 1 8 0 -> moving right by 1 place, average is <code>6.00</code>.
-4 7 3 [9 6 1] 8 0 -> moving right by 1 place, average is <code>5.33</code>.
-4 7 3 9 [6 1 8] 0 -> moving right by 1 place, average is <code>5.00</code>.
-4 7 3 9 6 [1 8 0] -> moving right by 1 place, average is <code>3.00</code>.</p>
+<p>[4 7 3] 9 6 1 8 0 -> average is 4.67.
+4 [7 3 9] 6 1 8 0 -> moving right by 1 place, average is 6.33.
+4 7 [3 9 6] 1 8 0 -> moving right by 1 place, average is 6.00.
+4 7 3 [9 6 1] 8 0 -> moving right by 1 place, average is 5.33.
+4 7 3 9 [6 1 8] 0 -> moving right by 1 place, average is 5.00.
+4 7 3 9 6 [1 8 0] -> moving right by 1 place, average is 3.00.</p>
 <hr /></pre></div>
             <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
 n=int(input())
@@ -682,42 +701,39 @@ print(&#34; &#34;.join(new))</code></pre></div>
             
             <div class="index no-scrollbar">2.</div>
             <div class="question border no-scrollbar"><pre><h3>On-Off Lamps</h3>
-<p>In this exercise, you have <code>N</code> lamps that are initially off. In a sequence of rounds, you toggle these lamps according to specific rules. Initially, you turn on all the lamps. In the second round, you turn off every second lamp. In the third round, you toggle every third lamp.</p>
-<p>For the <code>j</code><sup>th</sup> round, you toggle every <code>j</code><sup>th</sup> lamp. For the <code>N</code><sup>th</sup> round, you toggle only the last lamp.</p>
-<p>Calculate the number of lamps that remain on after <code>N</code> rounds.</p>
+<p>In this exercise, you have N lamps that are initially off. In a sequence of rounds, you toggle these lamps according to specific rules. Initially, you turn on all the lamps. In the second round, you turn off every second lamp. In the third round, you toggle every third lamp.</p>
+<p>For the j<sup>th</sup> round, you toggle every j<sup>th</sup> lamp. For the N<sup>th</sup> round, you toggle only the last lamp.</p>
+<p>Calculate the number of lamps that remain on after N rounds.</p>
 <hr />
 <h4>Input Format</h4>
 <ul>
-<li>A single integer <code>N</code></li>
+<li>A single integer N</li>
 </ul>
 <h4>Output Format</h4>
 <ul>
-<li>A single integer representing the number of lamps that remain on after <code>N</code> rounds.</li>
+<li>A single integer representing the number of lamps that remain on after N rounds.</li>
 </ul>
 <hr />
 <h4>Constraints</h4>
 <ul>
-<li>1 <= <code>N</code> <= 1000</li>
+<li>1 <= N <= 1000</li>
 </ul>
 <hr />
 <h4>Sample Input 1</h4>
-<pre><code>5
-</code></pre>
+<p>5</p>
 <h4>Sample Output 1</h4>
-<pre><code>2
-</code></pre>
+<p>2</p>
 <h4>Explanation</h4>
 <p>Let's take an example:</p>
-<pre><code>5
-</code></pre>
+<p>5</p>
 <ul>
-<li>At first, the five lamps are <code>[off, off, off, off, off]</code>.</li>
-<li>After the first round, the five lamps are <code>[on, on, on, on, on]</code>.</li>
-<li>After the second round, the five lamps are <code>[on, off, on, off, on]</code>.</li>
-<li>After the third round, the five lamps are <code>[on, off, off, off, on]</code>.</li>
-<li>After the fourth round, the five lamps are <code>[on, off, off, on, on]</code>.</li>
-<li>After the fifth round, the five lamps are <code>[on, off, off, on, off]</code>.</li>
-<li>So you should print <code>2</code> because there are two lamps that are on.</li>
+<li>At first, the five lamps are [off, off, off, off, off].</li>
+<li>After the first round, the five lamps are [on, on, on, on, on].</li>
+<li>After the second round, the five lamps are [on, off, on, off, on].</li>
+<li>After the third round, the five lamps are [on, off, off, off, on].</li>
+<li>After the fourth round, the five lamps are [on, off, off, on, on].</li>
+<li>After the fifth round, the five lamps are [on, off, off, on, off].</li>
+<li>So you should print 2 because there are two lamps that are on.</li>
 </ul>
 <hr /></pre></div>
             <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here

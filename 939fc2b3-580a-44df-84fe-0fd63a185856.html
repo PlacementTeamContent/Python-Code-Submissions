@@ -145,7 +145,15 @@
             margin: 10px;
             white-space: pre;
             padding: 10px;
-            overflow-x: scroll;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
         }
 
         .code{
@@ -161,6 +169,7 @@
         }
         code{
             min-height: 100%;
+            display:inline;
         }
 
         .grid-container {
@@ -211,14 +220,14 @@
             
                 <div class="index no-scrollbar">1.</div>
                 <div class="question border no-scrollbar"><pre><h3>Password Encoding</h3>
-<p>You are given a password string <code>P</code> of length <code>N</code>. The password needs to be encoded before storing it to the database. The password string can be encoded using the following rules:</p>
+<p>You are given a password string P of length N. The password needs to be encoded before storing it to the database. The password string can be encoded using the following rules:</p>
 <ul>
-<li>If the <code>k-th</code> character in <code>P</code> is a <em>vowel</em>, change it to the <em>second next character</em> in the alphabetical sequence. For example, the second next character of <code>o</code> is <code>q</code>.</li>
-<li>If the <code>k-th</code> character in <code>P</code> is a <em>consonant</em>, change it to the <em>second previous character</em> in the alphabetical sequence. For example, the second previous character of <code>h</code> is <code>f</code>.</li>
+<li>If the k-th character in P is a <em>vowel</em>, change it to the <em>second next character</em> in the alphabetical sequence. For example, the second next character of o is q.</li>
+<li>If the k-th character in P is a <em>consonant</em>, change it to the <em>second previous character</em> in the alphabetical sequence. For example, the second previous character of h is f.</li>
 </ul>
-<p>Implement the function <code>encode</code> which will take password string <code>P</code> as argument and return encoded string.</p>
+<p>Implement the function encode which will take password string P as argument and return encoded string.</p>
 <p><MultiLineNote>
-1) The second previous character of <code>b</code> is <code>z</code>.
+1) The second previous character of b is z.
 </MultiLineNote></p>
 <p><em>Note: You need not to write code to handle input and output.</em></p>
 <hr />
@@ -234,11 +243,13 @@
 <hr />
 <h4>Example 1</h4>
 <h6>Input</h6>
-<pre><code>abc
+<pre class="codehilite"><code>abc
 </code></pre>
+
 <h6>Output</h6>
-<pre><code>cza
+<pre class="codehilite"><code>cza
 </code></pre>
+
 <h6>Explanation</h6>
 <p>a is vowel so change to c
 b is consonant so change to z
@@ -246,11 +257,13 @@ c is consonant so change to a
 So, encoded password for abc will be cza</p>
 <h4>Example 2</h4>
 <h6>Input</h6>
-<pre><code>iloveniat
+<pre class="codehilite"><code>iloveniat
 </code></pre>
+
 <h6>Output</h6>
-<pre><code>kjqtglkcr
+<pre class="codehilite"><code>kjqtglkcr
 </code></pre>
+
 <h6>Explanation</h6>
 <p>i is vowel so change to k
 l is consonant so change to j
@@ -265,8 +278,8 @@ So, encoded password for iloveniat will be kjqtglkcr</p>
 <hr />
 <h4>Constraints</h4>
 <ul>
-<li>1 <=<code>N</code><= 10<sup>6</sup></li>
-<li>The password string <code>P</code> contains only lowercase alphabets.</li>
+<li>1 <=N<= 10<sup>6</sup></li>
+<li>The password string P contains only lowercase alphabets.</li>
 </ul>
 <hr /></pre></div>
                 <div class="code border no-scrollbar"><pre><code class="language-python">def encode(P) :
@@ -297,27 +310,29 @@ So, encoded password for iloveniat will be kjqtglkcr</p>
             
                 <div class="index no-scrollbar">2.</div>
                 <div class="question border no-scrollbar"><pre><h3>Total Calories Consumed</h3>
-<p>Implement a function <code>total_calories</code> to determine the total calories consumed after <code>T</code> meals, starting with an initial calorie intake of <code>C</code> calories. Each subsequent meal adds a constant number of <code>A</code> calories.</p>
-<p>Function <code>total_calories</code> will take <code>C</code>, <code>A</code>, and <code>T</code> as first, second, and third arguments respectively and return the total calories consumed after <code>T</code> meals.</p>
+<p>Implement a function total_calories to determine the total calories consumed after T meals, starting with an initial calorie intake of C calories. Each subsequent meal adds a constant number of A calories.</p>
+<p>Function total_calories will take C, A, and T as first, second, and third arguments respectively and return the total calories consumed after T meals.</p>
 <p><em>Note: You need not write code to handle input and output.</em></p>
 <hr />
 <h4>Input Format</h4>
 <ul>
-<li>Single line containing 3 space-separated integers representing <code>C</code>, <code>A</code>, and <code>T</code> respectively.</li>
+<li>Single line containing 3 space-separated integers representing C, A, and T respectively.</li>
 </ul>
 <hr />
 <h4>Output Format</h4>
 <ul>
-<li>Single line having 1 integer representing the total calories consumed after <code>T</code> meals.</li>
+<li>Single line having 1 integer representing the total calories consumed after T meals.</li>
 </ul>
 <hr />
 <h4>Example 1</h4>
 <h6>Input</h6>
-<pre><code>500 200 4
+<pre class="codehilite"><code>500 200 4
 </code></pre>
+
 <h6>Output</h6>
-<pre><code>1300
+<pre class="codehilite"><code>1300
 </code></pre>
+
 <h6>Explanation</h6>
 <p>Initial calories consumed is 500.
 At meal 1, total calories will be 500+200 = 700.
@@ -327,7 +342,7 @@ At meal 4, total calories will be 1100+200 = 1300.</p>
 <hr />
 <h4>Constraints</h4>
 <ul>
-<li>0 <= <code>C, A, T</code> < 5000</li>
+<li>0 <= C, A, T < 5000</li>
 </ul>
 <hr /></pre></div>
                 <div class="code border no-scrollbar"><pre><code class="language-python">def total_calories(C, A, T):
@@ -339,13 +354,13 @@ At meal 4, total calories will be 1100+200 = 1300.</p>
                 <div class="index no-scrollbar">3.</div>
                 <div class="question border no-scrollbar"><pre><h3>Unique Student IDs</h3>
 <p>In a university, each student is assigned a unique ID, but sometimes data errors cause duplicate IDs to be recorded. The university administrator wants to fix the issue and ensure that each student has a unique ID.</p>
-<p>You are given a list <code>arr</code> of student IDs, but some IDs are repeated. Your task is to remove the duplicate IDs and provide the university with a list of unique IDs in <em>increasing order</em>.</p>
+<p>You are given a list arr of student IDs, but some IDs are repeated. Your task is to remove the duplicate IDs and provide the university with a list of unique IDs in <em>increasing order</em>.</p>
 <hr />
 <h4>Input Format</h4>
 <p>The input consists of:</p>
 <ul>
-<li><code>n</code> ->  number of student IDs in list <code>arr</code>.</li>
-<li><code>arr</code> ->  <code>n</code> space separated integers representing student IDs.</li>
+<li>n ->  number of student IDs in list arr.</li>
+<li>arr ->  n space separated integers representing student IDs.</li>
 </ul>
 <h4>Output Format</h4>
 <ul>
@@ -354,18 +369,20 @@ At meal 4, total calories will be 1100+200 = 1300.</p>
 <hr />
 <h4>Constraints</h4>
 <ul>
-<li>1 <=<code>n</code><= 10<sup>5</sup></li>
-<li>The student ID list <code>arr</code> consists only of Positive Integers.</li>
+<li>1 <=n<= 10<sup>5</sup></li>
+<li>The student ID list arr consists only of Positive Integers.</li>
 </ul>
 <hr />
 <h4>Example</h4>
 <h6>Input</h6>
-<pre><code>7
+<pre class="codehilite"><code>7
 101 102 101 103 104 103 105
 </code></pre>
+
 <h6>Output</h6>
-<pre><code>101 102 103 104 105
+<pre class="codehilite"><code>101 102 103 104 105
 </code></pre>
+
 <hr /></pre></div>
                 <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
 n = int(input())
@@ -379,14 +396,14 @@ print(*result, sep=&#34; &#34;)
             
                 <div class="index no-scrollbar">4.</div>
                 <div class="question border no-scrollbar"><pre><h3>Count of Divisible Indices</h3>
-<p>For a list of integers <code>nums</code>, <HighlightedText>nums[i]</HighlightedText> is said to be <HighlightedText>Index Divisible</HighlightedText> if <HighlightedText>i</HighlightedText> is divisible by <HighlightedText>nums[i]</HighlightedText>.</p>
-<p>Implement the function <code>count_divisible_indices</code> which will take <code>n</code>, size of list and <code>nums</code> as argument and return an integer, count of index-divisible numbers in the list.</p>
+<p>For a list of integers nums, <HighlightedText>nums[i]</HighlightedText> is said to be <HighlightedText>Index Divisible</HighlightedText> if <HighlightedText>i</HighlightedText> is divisible by <HighlightedText>nums[i]</HighlightedText>.</p>
+<p>Implement the function count_divisible_indices which will take n, size of list and nums as argument and return an integer, count of index-divisible numbers in the list.</p>
 <p><em>Note: You need not to write code to handle input and output.</em></p>
 <hr />
 <h4>Input Format</h4>
 <ul>
-<li>First line contains an integer <code>n</code>, the size of <code>nums</code>.</li>
-<li>Second line contains <code>n</code> space-separated integers, numbers in list.</li>
+<li>First line contains an integer n, the size of nums.</li>
+<li>Second line contains n space-separated integers, numbers in list.</li>
 </ul>
 <hr />
 <h4>Output Format</h4>
@@ -396,25 +413,27 @@ print(*result, sep=&#34; &#34;)
 <hr />
 <h4>Example 1</h4>
 <h6>Input</h6>
-<pre><code>4
+<pre class="codehilite"><code>4
 1 2 1 4
 </code></pre>
+
 <h6>Output</h6>
-<pre><code>2
+<pre class="codehilite"><code>2
 </code></pre>
+
 <h6>Explanation</h6>
 <ul>
-<li>For <code>i = 0</code>, <code>nums[0] = 1</code>, <code>0 % 1 = 0</code>. Index divisible.</li>
-<li>For <code>i = 1</code>, <code>nums[1] = 2</code>, <code>1 % 2 != 0</code>. Not index divisible.</li>
-<li>For <code>i = 2</code>, <code>nums[2] = 1</code>, <code>2 % 1 = 0</code>. Index divisible.</li>
-<li>For <code>i = 3</code>, <code>nums[3] = 4</code>, <code>3 % 4 != 3</code>. Not index divisible.</li>
+<li>For i = 0, nums[0] = 1, 0 % 1 = 0. Index divisible.</li>
+<li>For i = 1, nums[1] = 2, 1 % 2 != 0. Not index divisible.</li>
+<li>For i = 2, nums[2] = 1, 2 % 1 = 0. Index divisible.</li>
+<li>For i = 3, nums[3] = 4, 3 % 4 != 3. Not index divisible.</li>
 </ul>
-<p>Total index divisible numbers: <code>2</code>.</p>
+<p>Total index divisible numbers: 2.</p>
 <hr />
 <h4>Constraints</h4>
 <ul>
-<li>1 <= <code>nums.size()</code> <= 10<sup>6</sup></li>
-<li>-1000 <= <code>nums[i]</code> <= 1000</li>
+<li>1 <= nums.size() <= 10<sup>6</sup></li>
+<li>-1000 <= nums[i] <= 1000</li>
 <li>Index starts from 0</li>
 </ul>
 <hr /></pre></div>
@@ -436,8 +455,8 @@ print(*result, sep=&#34; &#34;)
             
             <div class="index no-scrollbar">1.</div>
             <div class="question border no-scrollbar"><pre><h3>String Set Matching</h3>
-<p>Two strings belong to the same set if the frequency of their characters matches. For example, <code>aabb</code> and <code>bbaa</code> belong to the same set because they both have two <code>a</code> and two <code>b</code>, but <code>abd</code> and <code>cba</code> do not belong to the same set.</p>
-<p>Given an array <code>strArr</code> of size <code>n</code>, count the number of pairs of strings that belong to the same set.</p>
+<p>Two strings belong to the same set if the frequency of their characters matches. For example, aabb and bbaa belong to the same set because they both have two a and two b, but abd and cba do not belong to the same set.</p>
+<p>Given an array strArr of size n, count the number of pairs of strings that belong to the same set.</p>
 <p><MultiLineNote>
 1. Strings consist of lowercase English letters only.
 2. Pairs are considered index-wise, with identical strings at different indices counting as separate pairs.
@@ -446,8 +465,8 @@ print(*result, sep=&#34; &#34;)
 <hr />
 <h4>Input Format</h4>
 <ul>
-<li>First line: Integer <code>n</code> (size of the array).</li>
-<li>Second line: <code>n</code> space-separated strings values in (<code>strArr</code>).</li>
+<li>First line: Integer n (size of the array).</li>
+<li>Second line: n space-separated strings values in (strArr).</li>
 </ul>
 <h4>Output Format</h4>
 <ul>
@@ -457,19 +476,20 @@ print(*result, sep=&#34; &#34;)
 <h4>Constraints</h4>
 <ul>
 <li>1 <= n <= 10<sup>4</sup></li>
-<li><code>a</code> <= <code>strArr[i][j]</code> <= <code>z</code></li>
+<li>a <= strArr[i][j] <= z</li>
 </ul>
 <hr />
 <h4>Example</h4>
 <p>Example input:</p>
-<pre><code>5
+<pre class="codehilite"><code>5
 aabb bbaa ab xyz aabb
 </code></pre>
+
 <p>Here:</p>
 <ul>
-<li><code>aabb</code> and <code>bbaa</code> belong to the same set.</li>
-<li><code>aabb</code> occurs twice and matches itself.</li>
-<li><code>bbaa</code> and <code>aabb</code> belong to the same set.</li>
+<li>aabb and bbaa belong to the same set.</li>
+<li>aabb occurs twice and matches itself.</li>
+<li>bbaa and aabb belong to the same set.</li>
 </ul>
 <p>The output is 3.</p>
 <hr /></pre></div>
@@ -501,32 +521,32 @@ else:
             
             <div class="index no-scrollbar">2.</div>
             <div class="question border no-scrollbar"><pre><h3>Mutual Intersection Evaluation</h3>
-<p>You are given a set <strong><code>E</code></strong> and <strong><code>R</code></strong> other sets.</p>
-<p>Your job is to evaluate if the intersection of the set <strong><code>E</code></strong> with each of the <strong><code>R</code></strong> sets is non-empty.</p>
-<p>If all intersections are non-empty, print <code>True</code>, followed by the total count of unique elements across all intersections. Otherwise, print <code>False</code>, followed by the number of sets with empty intersections.
+<p>You are given a set <strong>E</strong> and <strong>R</strong> other sets.</p>
+<p>Your job is to evaluate if the intersection of the set <strong>E</strong> with each of the <strong>R</strong> sets is non-empty.</p>
+<p>If all intersections are non-empty, print True, followed by the total count of unique elements across all intersections. Otherwise, print False, followed by the number of sets with empty intersections.
 <MultiLineNote>
 - The intersection of two sets is the set of elements common to both.
 </MultiLineNote></p>
 <h4>Example</h4>
 <ul>
-<li><code>set([1, 2, 3]) ∩ set([2, 4])</code> is <code>set([2])</code>, which is non-empty.</li>
-<li><code>set([1, 2, 3]) ∩ set([4, 5])</code> is an empty set.</li>
+<li>set([1, 2, 3]) ∩ set([2, 4]) is set([2]), which is non-empty.</li>
+<li>set([1, 2, 3]) ∩ set([4, 5]) is an empty set.</li>
 </ul>
 <hr />
 <h4>Input Format</h4>
 <ul>
-<li>The First Line contains an integer representing the number of elements in the main set <code>E</code>.</li>
-<li>The second line contains the space-separated elements of the main set <code>E</code>.</li>
-<li>The third line contains an integer <code>R</code> that specifies the number of other sets.</li>
-<li>The next <code>2*R</code> lines contain the size of the set followed by space-separated elements of the set.</li>
+<li>The First Line contains an integer representing the number of elements in the main set E.</li>
+<li>The second line contains the space-separated elements of the main set E.</li>
+<li>The third line contains an integer R that specifies the number of other sets.</li>
+<li>The next 2*R lines contain the size of the set followed by space-separated elements of the set.</li>
 </ul>
 <h4>Output Format</h4>
 <ul>
-<li>Print <code>True</code> or <code>False</code> followed by an integer separated by space.</li>
+<li>Print True or False followed by an integer separated by space.</li>
 </ul>
 <hr />
 <h4>Sample Input</h4>
-<pre><code>6 
+<pre class="codehilite"><code>6 
 1 2 3 4 5 6 
 2 
 2 
@@ -534,9 +554,11 @@ else:
 3 
 7 8 9
 </code></pre>
+
 <h4>Sample Output</h4>
-<pre><code>False 1
+<pre class="codehilite"><code>False 1
 </code></pre>
+
 <h4>Explanation</h4>
 <p>Set E = {1,2,3,4,5,6}
 Set-1 = {1,3}
@@ -576,13 +598,13 @@ else:
             
             <div class="index no-scrollbar">3.</div>
             <div class="question border no-scrollbar"><pre><h3>Neighbor Element</h3>
-<p>Given an array of integers <code>C</code>, and an integer <code>K</code> find number of Neighbor Elements.</p>
-<p>Element <code>Z</code> is a Neighbor Element if there exists at least 1 element whose absolute difference with <code>Z</code> is less than or equal to <code>K</code> i.e. an element <code>Z</code> is a Neighbor Element, if there is another element in the range <code>[Z-K, Z+K]</code> other than <code>Z</code> itself.</p>
+<p>Given an array of integers C, and an integer K find number of Neighbor Elements.</p>
+<p>Element Z is a Neighbor Element if there exists at least 1 element whose absolute difference with Z is less than or equal to K i.e. an element Z is a Neighbor Element, if there is another element in the range [Z-K, Z+K] other than Z itself.</p>
 <hr />
 <h4>Input Format</h4>
 <ul>
-<li>First line contains two integers <code>P</code> and <code>K</code> respectively.</li>
-<li>Second line contains <code>P</code> integers separated by space.</li>
+<li>First line contains two integers P and K respectively.</li>
+<li>Second line contains P integers separated by space.</li>
 </ul>
 <hr />
 <h4>Output Format</h4>
@@ -592,16 +614,15 @@ else:
 <hr />
 <h4>Constraints</h4>
 <ul>
-<li>1 <=<code>P</code><= 1000</li>
-<li>0 <=<code>K</code><= 1000</li>
-<li>0 <=<code>C[i]</code><= 1000</li>
+<li>1 <=P<= 1000</li>
+<li>0 <=K<= 1000</li>
+<li>0 <=C[i]<= 1000</li>
 </ul>
 <hr />
 <h4>Explanation</h4>
 <p>Let's take an example:</p>
-<pre><code>4 5
-10 21 13 14
-</code></pre>
+<p>4 5
+10 21 13 14</p>
 <p>arr = [10, 21, 13, 14]</p>
 <p>For Z=10 to be Neighbor element, 
 there should be atleast one element in range: [10-5, 10+5] = [5, 15].
@@ -644,20 +665,20 @@ print(count)
             
             <div class="index no-scrollbar">1.</div>
             <div class="question border no-scrollbar"><pre><h3>Alternating Sum</h3>
-<p>Write a program that traverses an array from left to right, where in each step it examines a sub-array of size <code>k</code> and skips <code>m</code> positions forward after each examination. Your task is to print the alternating sum of values found in each sub-array considered.</p>
+<p>Write a program that traverses an array from left to right, where in each step it examines a sub-array of size k and skips m positions forward after each examination. Your task is to print the alternating sum of values found in each sub-array considered.</p>
 <p>Alternating sum of an array can be calculated by adding first value subtracting second and so on.</p>
 <p>For example: arr = [a1, a2, a3, a4, a5]
 alternating sum of arr will be: (a1-a2+a3-a4-a5)</p>
 <p><MultiLineNote>
-Processing should stop if there are fewer than <code>k</code> elements remaining in the array after skipping <code>m</code> elements.
+Processing should stop if there are fewer than k elements remaining in the array after skipping m elements.
 </MultiLineNote></p>
 <hr />
 <h4>Input Format</h4>
 <ul>
-<li>The first line contains <code>n</code> size of array.</li>
-<li>The second line contains space-separated integers representing the elements of the array <code>arr</code>.</li>
-<li>The third line contains an integer <code>k</code>, indicating the size of each sub-array to be considered.</li>
-<li>The fourth line contains an integer <code>m</code>, specifying the number of elements to skip after processing each sub-array.</li>
+<li>The first line contains n size of array.</li>
+<li>The second line contains space-separated integers representing the elements of the array arr.</li>
+<li>The third line contains an integer k, indicating the size of each sub-array to be considered.</li>
+<li>The fourth line contains an integer m, specifying the number of elements to skip after processing each sub-array.</li>
 </ul>
 <hr />
 <h4>Output Format</h4>
@@ -667,28 +688,26 @@ Processing should stop if there are fewer than <code>k</code> elements remaining
 <hr />
 <h4>Constraints</h4>
 <ul>
-<li>The number of elements in the array <code>arr</code> is greater than zero.</li>
-<li>Sub-array size <code>k</code> and the number of skips <code>m</code> are positive integers.</li>
-<li><code>k</code> is less than or equal to the length of the array.</li>
+<li>The number of elements in the array arr is greater than zero.</li>
+<li>Sub-array size k and the number of skips m are positive integers.</li>
+<li>k is less than or equal to the length of the array.</li>
 </ul>
 <hr />
 <h4>Example</h4>
 <p>Let's take a sample input:</p>
-<pre><code>8
+<p>8
 4 7 3 9 6 1 8 0
 3
-1
-</code></pre>
+1</p>
 <p>We need to print:</p>
-<pre><code>0 13 0 4 13 -7
-</code></pre>
+<p>0 13 0 4 13 -7</p>
 <h4>Explanation</h4>
-<p>[4 7 3] 9 6 1 8 0 -> alternating sum is <code>4-7+3</code> = 0.
-4 [7 3 9] 6 1 8 0 -> moving right by 1 place, alternating sum is <code>7-3+9</code> = 13.
-4 7 [3 9 6] 1 8 0 -> moving right by 1 place, alternating sum is <code>3-9+6</code> = 0.
-4 7 3 [9 6 1] 8 0 -> moving right by 1 place, alternating sum is <code>9-6+1</code> = 4.
-4 7 3 9 [6 1 8] 0 -> moving right by 1 place, alternating sum is <code>6-1+8</code> = 13.
-4 7 3 9 6 [1 8 0] -> moving right by 1 place, alternating sum is <code>1-8+0</code> = -7.</p>
+<p>[4 7 3] 9 6 1 8 0 -> alternating sum is 4-7+3 = 0.
+4 [7 3 9] 6 1 8 0 -> moving right by 1 place, alternating sum is 7-3+9 = 13.
+4 7 [3 9 6] 1 8 0 -> moving right by 1 place, alternating sum is 3-9+6 = 0.
+4 7 3 [9 6 1] 8 0 -> moving right by 1 place, alternating sum is 9-6+1 = 4.
+4 7 3 9 [6 1 8] 0 -> moving right by 1 place, alternating sum is 6-1+8 = 13.
+4 7 3 9 6 [1 8 0] -> moving right by 1 place, alternating sum is 1-8+0 = -7.</p>
 <hr /></pre></div>
             <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
 n = int(input())
@@ -724,41 +743,38 @@ while i &lt;= (len(list_a) - length):
             
             <div class="index no-scrollbar">2.</div>
             <div class="question border no-scrollbar"><pre><h3>Toggle Switches</h3>
-<p>In this task, there are <code>N</code> switches that are initially turned off. You first turn on all the switches, then turn off every second switch. On the third round, you toggle every third switch (turning on if it's off or turning off if it's on).</p>
-<p>For the <code>j</code><sup>th</sup> round, you toggle every <code>j</code><sup>th</sup> switch. For the <code>N</code><sup>th</sup> round, you only toggle the last switch.</p>
-<p>Print the number of switches that are on after <code>N</code> rounds.</p>
+<p>In this task, there are N switches that are initially turned off. You first turn on all the switches, then turn off every second switch. On the third round, you toggle every third switch (turning on if it's off or turning off if it's on).</p>
+<p>For the j<sup>th</sup> round, you toggle every j<sup>th</sup> switch. For the N<sup>th</sup> round, you only toggle the last switch.</p>
+<p>Print the number of switches that are on after N rounds.</p>
 <hr />
 <h4>Input Format</h4>
 <ul>
-<li>A single integer <code>N</code></li>
+<li>A single integer N</li>
 </ul>
 <h4>Output Format</h4>
 <ul>
-<li>A single integer representing the number of switches that are on after <code>N</code> rounds.</li>
+<li>A single integer representing the number of switches that are on after N rounds.</li>
 </ul>
 <hr />
 <h4>Constraints</h4>
 <ul>
-<li>1 <= <code>N</code> <= 1000</li>
+<li>1 <= N <= 1000</li>
 </ul>
 <hr />
 <h4>Sample Input 1</h4>
-<pre><code>4
-</code></pre>
+<p>4</p>
 <h4>Sample Output 1</h4>
-<pre><code>2
-</code></pre>
+<p>2</p>
 <h4>Explanation</h4>
 <p>Let's take an example:</p>
-<pre><code>4
-</code></pre>
+<p>4</p>
 <ul>
-<li>At first, the four switches are <code>[off, off, off, off]</code>.</li>
-<li>After the first round, the four switches are <code>[on, on, on, on]</code>.</li>
-<li>After the second round, the four switches are <code>[on, off, on, off]</code>.</li>
-<li>After the third round, the four switches are <code>[on, off, off, off]</code>.</li>
-<li>After the fourth round, the four switches are <code>[on, off, off, on]</code>.</li>
-<li>So you should print <code>2</code> because there are two switches that are on.</li>
+<li>At first, the four switches are [off, off, off, off].</li>
+<li>After the first round, the four switches are [on, on, on, on].</li>
+<li>After the second round, the four switches are [on, off, on, off].</li>
+<li>After the third round, the four switches are [on, off, off, off].</li>
+<li>After the fourth round, the four switches are [on, off, off, on].</li>
+<li>So you should print 2 because there are two switches that are on.</li>
 </ul>
 <hr /></pre></div>
             <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
