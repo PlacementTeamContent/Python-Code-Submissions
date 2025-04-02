@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TITLE</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
-    <!-- Include Highlight.js Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-    <!-- Enable Highlighting -->
     <script>hljs.highlightAll();</script>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
         :root {
             --dark-red: #FF5733;
@@ -34,79 +31,36 @@
             padding: 0;
         }
 
-        code[class*="language-"],
-        pre[class*="language-"] {
-            background: none !important;
-            box-shadow: none !important;
-        }
-
         .no-scrollbar {
-            overflow: auto; /* Enable scrolling */
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* Internet Explorer 10+ */
+            overflow: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
         }
 
         .no-scrollbar::-webkit-scrollbar {
-            display: none; /* Safari and Chrome */
+            display: none;
         }
 
         body {
             margin: 0;
-            padding-left: 10vw;
-            padding-right: 10vw;
-            padding-top: 2vw;
-            padding-bottom: 0vw;
+            padding: 2vw 10vw;
             font-family: "Roboto", serif;
             color: black;
             background-color: var(--primary-variant);
         }
 
-        p {
-            margin: 0;
-            padding: 0;
-        }
-
-        a {
-            text-decoration: none;
-            cursor: pointer;
-            color: var(--primary-color);
-        }
-
-        ol {
-            list-style-position: inside;
-            list-style-type: decimal-leading-zero;
-        }
-
-        li {
-            line-height: 1.6;
-        }
-
-        .hide{
+        .hide {
             display: none;
         }
 
-        .text-red {
-            color: var(--dark-red);
-        }
-
-        .text-yellow {
-            color: var(--dark-yellow);
-        }
-
-        .text-green {
-            color: var(--dark-green);
-        }
-
-        .border{
-            border: 1px solid var(--border-color) !important;
+        .border {
+            border: 1px solid var(--border-color);
             border-radius: 10px;
         }
 
         .container {
-            border: 1px solid var(--border-color) !important;
+            border: 1px solid var(--border-color);
             border-radius: 30px;
-            width: auto;
-            height: fit-content;
             padding: 10px;
             margin-top: 10px;
             background-color: white;
@@ -120,97 +74,52 @@
             letter-spacing: 1px;
         }
 
-        .block-sub-heading {
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .center {
-            width: 100%;
-            display: flex;
-            text-align: center;
-            justify-content: center;
-            margin-top: 5px;
-        }
-
-        .index{
-            height: auto;
+        .index {
             margin: 10px;
             padding: 10px;
             font-weight: bold;
         }
 
-        .question{
-            height: auto;
+        .question {
             margin: 10px;
-            white-space: pre;
             padding: 10px;
             white-space: normal;
             word-wrap: break-word;
         }
 
-        .question pre{
+        .question pre {
             white-space: normal;
             word-wrap: break-word;
             line-height: 1.5;
             font-family: "Roboto", serif;
         }
 
-        .code{
-            height: auto;
-            margin: 10px;
-            white-space: pre;
-            overflow-x: scroll;
-            background: #e1e2e3;
-        }
-
-        pre{
-            min-height: 100%;
-        }
-        code{
-            min-height: 100%;
-            display:inline;
-        }
-
         .grid-container {
-            width: auto;
-            height: fit-content;
-            background-color: white;
             display: grid;
-            grid-template-columns: 30px 1fr 1fr;
+            grid-template-columns: 30px 1fr;
+            gap: 10px;
+            background-color: white;
         }
 
         @media screen and (max-width:600px) {
-
             body {
-                padding-top: 5vh;
-                padding-left: 5vw;
-                padding-right: 5vw;
+                padding: 5vh 5vw;
             }
 
-            .item {
-                grid-template-columns: auto;
+            .grid-container {
+                grid-template-columns: 1fr;
             }
 
-            .progress-bar {
-                width: 50px;
-                height: 50px;
-                margin: 5px;
-                padding: 5px;
-            }
-
-            .circular-progress-container {
-                margin: 0px;
-                row-gap: 10px;
+            .index {
+                padding-left: 0;
             }
         }
     </style>
-
 </head>
 
 <body>
     <header>
-        <h1 style="color: black; margin-bottom:20px;">Chamarthi Tejeswar Raju</h1>
+        <h1 style="color: black; margin-bottom:20px;">Tejeswar Raju</h1>
     </header>
 
     <!-- EASY QUESTIONS SECTION -->
@@ -219,215 +128,161 @@
         <div class="grid-container">
             
                 <div class="index no-scrollbar">1.</div>
-                <div class="question border no-scrollbar"><pre><h3>Username Encoding</h3>
-<p>You are given a username string U of length N. The username needs to be encoded before storing it in the system. The username string can be encoded using the following rules:</p>
+                <div class="question border no-scrollbar"><pre><h3>Develop a Functional Bike Class</h3>
+<p>Implement a class Bike with the following specifications.</p>
+<p><HighlightedText>Class Description</HighlightedText>  </p>
+<h4>Bike</h4>
 <ul>
-<li>If the k-th character in U is a <em>vowel</em>, change it to the <em>third next character</em> in the alphabetical sequence. For example, the third next character of o is r.</li>
-<li>If the k-th character in U is a <em>consonant</em>, change it to the <em>third previous character</em> in the alphabetical sequence. For example, the third previous character of h is e.</li>
+<li>Attributes  </li>
+<li>brand – Bike brand name.  </li>
+<li>model – Model name.  </li>
+<li>year – Manufacturing year.  </li>
+<li>mileage – Mileage of the bike (default should be 0).  </li>
+<li>
+<p>is_sold – A boolean indicating whether the bike has been sold (default should be False).  </p>
+</li>
+<li>
+<p>Methods  </p>
+</li>
+<li>get_info() – Returns a string with brand, model, and year in the format:<br />
+    "[brand] [model], manufactured in [year]"<br />
+    Example:<br />
+    "Honda CB500X, manufactured in 2021"</li>
+<li>mark_as_sold() – Sets is_sold to True and prints:<br />
+    "The bike [brand] [model] has been sold"  </li>
+<li>update_mileage(new_mileage) – Updates the mileage to new_mileage and prints:<br />
+    "Mileage updated to [new_mileage] for [brand] [model]"  </li>
 </ul>
-<p>Implement the function encode which will take username string U as argument and return encoded string.</p>
-<p><MultiLineNote>
-1) The third previous character of c is z, b is y.
+<p><MultiLineNote><br />
+1. The <strong>init</strong> method should take 3 arguments: brand, model, and year.<br />
+2. The attribute mileage should start at 0, and is_sold should start as False.<br />
+3. The implementation should be tested for correctness.<br />
 </MultiLineNote></p>
-<p><em>Note: You need not to write code to handle input and output.</em></p>
-<hr />
-<h4>Input Format</h4>
-<ul>
-<li>Single line containing the username string.</li>
-</ul>
-<hr />
-<h4>Output Format</h4>
-<ul>
-<li>Single line containing the encoded username string.</li>
-</ul>
-<hr />
-<h4>Example 1</h4>
-<h6>Input</h6>
-<pre class="codehilite"><code>abc
-</code></pre>
-
-<h6>Output</h6>
-<pre class="codehilite"><code>dyz
-</code></pre>
-
-<h6>Explanation</h6>
-<p>a is vowel so change to d<br />
-b is consonant so change to y<br />
-c is consonant so change to z<br />
-So, encoded username for abc will be dyz.</p>
-<h4>Example 2</h4>
-<h6>Input</h6>
-<pre class="codehilite"><code>programmer
-</code></pre>
-
-<h6>Output</h6>
-<pre class="codehilite"><code>mordodjjho
-</code></pre>
-
-<h6>Explanation</h6>
-<p>p is consonant so change to m<br />
-r is consonant so change to o<br />
-o is vowel so change to r 
-g is consonant so change to d<br />
-r is consonant so change to o<br />
-a is vowel so change to d<br />
-m is consonant so change to j<br />
-m is consonant so change to j<br />
-e is vowel so change to h<br />
-r is consonant so change to o<br />
-So, encoded username for programmer will be mordodjjho.</p>
-<hr />
-<h4>Constraints</h4>
-<ul>
-<li>1 <=N<= 10<sup>6</sup></li>
-<li>The username string U contains only lowercase alphabets.</li>
-</ul>
 <hr /></pre></div>
-                <div class="code border no-scrollbar"><pre><code class="language-python">def encode(U):
-    a = &#34;abcdefghijklmnopqrstuvwxyz&#34;
-    c = &#39;&#39;
-    for letter in U:
-        if (letter == &#39;a&#39;) or (letter == &#39;e&#39;) or (letter == &#39;i&#39;) or (letter == &#39;o&#39;) or (letter == &#39;u&#39;) :
-            d = a.index(letter)
-            c = c + a[d+3]
-        else:
-            d = a.index(letter)
-            c = c + a[d-3]
-    return c
-</code></pre></div>
             
                 <div class="index no-scrollbar">2.</div>
-                <div class="question border no-scrollbar"><pre><h3>Unique Product Codes</h3>
-<p>In a warehouse, products are identified by unique codes. However, due to a software bug, some product codes are duplicated. The warehouse manager needs help to identify the unique product codes.</p>
-<p>You are given a list arr of product codes, but some codes are repeated. Your task is to remove the duplicate codes and provide the manager with a list of unique product codes in <strong>increasing order</strong>.</p>
-<hr />
-<h4>Input Format</h4>
-<p>The input consists of:</p>
+                <div class="question border no-scrollbar"><pre><h3>Class Inheritance Task: Build Worker and Supervisor</h3>
+<p>Implement two classes: Worker and Supervisor, where Supervisor is a subclass of Worker.</p>
+<p><HighlightedText>Class Description</HighlightedText></p>
+<h4>Worker</h4>
 <ul>
-<li>n -> number of product codes in list arr.</li>
-<li>arr -> n space separated integers representing product codes.</li>
+<li>Attributes</li>
+<li>name – The name of the worker.</li>
+<li>experience – The years of experience of the worker.</li>
+<li>hourly_wage – The hourly wage of the worker.</li>
+<li>Methods</li>
+<li>perform_task() – Prints the string:<br />
+    "[name] is performing a task."</li>
+<li>calculate_pay(hours) – Returns the total pay for hours worked.</li>
 </ul>
-<h4>Output Format</h4>
+<h4>Supervisor (subclass of Worker)</h4>
 <ul>
-<li>A list of unique product codes.</li>
+<li>Additional Attributes</li>
+<li>division – The division overseen by the supervisor.</li>
+<li>employees_managed – The number of employees supervised (default 0).</li>
+<li>Additional Methods</li>
+<li>conduct_meeting() – Prints the string:<br />
+    "[name] is conducting a meeting for the [division] division."</li>
+<li>add_employees(n) – Increases employees_managed by n and prints the string:<br />
+    "[name] now supervises [employees_managed] employees."<ul>
+<li>n is the number of employees to add to the Supervisor's team.</li>
 </ul>
-<hr />
-<h4>Constraints</h4>
-<ul>
-<li>1 <=n<= 10<sup>5</sup></li>
-<li>The product code list arr consists only of Positive Integers.</li>
+</li>
 </ul>
-<hr />
-<h4>Example</h4>
-<h6>Input</h6>
-<pre class="codehilite"><code>6
-5001 5002 5001 5003 5002 5004
-</code></pre>
-
-<h6>Output</h6>
-<pre class="codehilite"><code>5001 5002 5003 5004
-</code></pre>
-
+<p><MultiLineNote>
+1. The <strong>init</strong> method of the Worker class will take 3 arguments: name, experience, and hourly_wage in the same order.
+2. The <strong>init</strong> method of the Supervisor class will take 5 arguments: name, experience, hourly_wage, division, and employees_managed (optional with default 0) in the same order, and will call the parent class's <strong>init</strong> method.
+3. The testing will verify if the attributes and methods for both classes are implemented correctly.
+</MultiLineNote></p>
 <hr /></pre></div>
-                <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
-n = int(input())
-s = input().split()
-b = sorted(set(s))
-c = &#34;&#34;
-for item in b:
-    c = c + item+&#34; &#34;
-print(c)</code></pre></div>
             
                 <div class="index no-scrollbar">3.</div>
-                <div class="question border no-scrollbar"><pre><h3>Total Calories Consumed</h3>
-<p>Implement a function total_calories to determine the total calories consumed after T meals, starting with an initial calorie intake of C calories. Each subsequent meal adds a constant number of A calories.</p>
-<p>Function total_calories will take C, A, and T as first, second, and third arguments respectively and return the total calories consumed after T meals.</p>
-<p><em>Note: You need not write code to handle input and output.</em></p>
-<hr />
-<h4>Input Format</h4>
+                <div class="question border no-scrollbar"><pre><h3>Inherited Transport and ElectricTransport Classes</h3>
+<p>Implement a class Transport that encapsulates its attributes and provides public methods to interact with them. Then, create a derived class ElectricTransport that inherits from Transport and adds functionality specific to electric transport.</p>
+<p><HighlightedText>Class Description</HighlightedText></p>
+<h4>Transport</h4>
 <ul>
-<li>Single line containing 3 space-separated integers representing C, A, and T respectively.</li>
+<li><strong>Private Attributes:</strong></li>
+<li>__brand – The manufacturer of the transport.</li>
+<li>__type – The type of transport (e.g., car, bike, bus).</li>
+<li>__year – The manufacturing year of the transport.</li>
+<li>
+<p>__distance_covered – The total distance covered in kilometers.</p>
+</li>
+<li>
+<p><strong>Public Methods:</strong></p>
+</li>
+<li>get_brand() – Returns the transport's brand.</li>
+<li>set_brand(brand) – Updates the transport's brand.</li>
+<li>get_type() – Returns the transport type.</li>
+<li>set_type(type) – Updates the transport type.</li>
+<li>get_year() – Returns the transport's manufacturing year.</li>
+<li>set_year(year) – Updates the transport's manufacturing year. If the year is before 1800 (before modern transport), it should print "Invalid Year".</li>
+<li>get_distance_covered() – Returns the distance covered.</li>
+<li>set_distance_covered(distance) – Updates the distance covered. If the distance is negative, it should print "Invalid Distance".</li>
+<li>display_info() – Prints the transport's details in the following format:<br />
+    "Transport [brand] [type], Year: [year], Distance Covered: [distance_covered] km"</li>
 </ul>
-<hr />
-<h4>Output Format</h4>
+<h4>ElectricTransport (Inherits from Transport)</h4>
 <ul>
-<li>Single line having 1 integer representing the total calories consumed after T meals.</li>
+<li><strong>Additional Private Attributes:</strong></li>
+<li>__battery_size – The battery size of the electric transport in kWh.</li>
+<li>
+<p>__charge_duration – The time required to fully charge the battery in hours.</p>
+</li>
+<li>
+<p><strong>Public Methods:</strong></p>
+</li>
+<li>get_battery_size() – Returns the battery size.</li>
+<li>set_battery_size(size) – Updates the battery size. If the size is negative, it should print "Invalid Battery Size".</li>
+<li>get_charge_duration() – Returns the charge duration.</li>
+<li>set_charge_duration(duration) – Updates the charge duration. If the duration is negative, it should print "Invalid Charge Duration".</li>
+<li>display_info() – Overrides the display_info() method to include battery size and charge duration in the following format:
+    "Electric Transport [brand] [type], Year: [year], Distance Covered: [distance_covered] km, Battery Size: [battery_size] kWh, Charge Duration: [charge_duration] hours"</li>
 </ul>
-<hr />
-<h4>Example 1</h4>
-<h6>Input</h6>
-<pre class="codehilite"><code>500 200 4
-</code></pre>
-
-<h6>Output</h6>
-<pre class="codehilite"><code>1300
-</code></pre>
-
-<h6>Explanation</h6>
-<p>Initial calories consumed is 500.
-At meal 1, total calories will be 500+200 = 700.
-At meal 2, total calories will be 700+200 = 900.
-At meal 3, total calories will be 900+200 = 1100.
-At meal 4, total calories will be 1100+200 = 1300.</p>
-<hr />
-<h4>Constraints</h4>
-<ul>
-<li>0 <= C, A, T < 5000</li>
-</ul>
+<p><MultiLineNote>
+1. The Transport class should have an <strong>init</strong> method that initializes all private attributes using parameters: brand, type, year, and distance_covered.
+2. The ElectricTransport class should inherit from the Transport class and add new private attributes for battery_size and charge_duration.
+3. The ElectricTransport class should override the display_info() method to include the battery size and charge duration.
+4. Ensure that year updates for both Transport and ElectricTransport enforce the condition of being 1800 or later.
+5. Ensure that distance updates for both Transport and ElectricTransport enforce the condition of being non-negative.
+6. Ensure that battery size and charge duration are valid (non-negative values) for ElectricTransport.
+7. Testing will verify that both Transport and ElectricTransport classes function correctly with inheritance and that the new electric transport functionality works.
+</MultiLineNote></p>
 <hr /></pre></div>
-                <div class="code border no-scrollbar"><pre><code class="language-python">def total_calories(C, A, T):
-    b = (A*T)+C
-    return b</code></pre></div>
             
                 <div class="index no-scrollbar">4.</div>
-                <div class="question border no-scrollbar"><pre><h3>Count of Divisible Indices</h3>
-<p>For a list of integers nums, <HighlightedText>nums[i]</HighlightedText> is said to be <HighlightedText>Index Divisible</HighlightedText> if <HighlightedText>i</HighlightedText> is divisible by <HighlightedText>nums[i]</HighlightedText>.</p>
-<p>Implement the function count_divisible_indices which will take n, size of list and nums as argument and return an integer, count of index-divisible numbers in the list.</p>
-<p><em>Note: You need not to write code to handle input and output.</em></p>
-<hr />
-<h4>Input Format</h4>
+                <div class="question border no-scrollbar"><pre><h3>Encapsulated Transport Class</h3>
+<p>Implement a class Transport that encapsulates its attributes and provides public methods to interact with them.</p>
+<p><HighlightedText>Class Description</HighlightedText></p>
+<h4>Transport</h4>
 <ul>
-<li>First line contains an integer n, the size of nums.</li>
-<li>Second line contains n space-separated integers, numbers in list.</li>
+<li>Private Attributes:</li>
+<li>__manufacturer – The manufacturer of the transport.</li>
+<li>__model – The model name of the transport.</li>
+<li>__year – The manufacturing year of the transport.</li>
+<li>
+<p>__cost – The cost of the transport.</p>
+</li>
+<li>
+<p>Public Methods:</p>
+</li>
+<li>get_manufacturer() – Returns the transport's manufacturer.</li>
+<li>set_manufacturer(manufacturer) – Updates the transport's manufacturer.</li>
+<li>get_model() – Returns the transport's model.</li>
+<li>get_year() – Returns the transport's manufacturing year.</li>
+<li>set_year(year) – Updates the transport's manufacturing year.</li>
+<li>get_cost() – Returns the transport's cost.</li>
+<li>set_cost(cost) – Updates the transport's cost. If cost is negative, print "Invalid Cost".</li>
+<li>show_details() – Prints the transport's details in the following format:
+    "Transport [manufacturer] [model], Year: [year], Cost: $[cost]"</li>
 </ul>
-<hr />
-<h4>Output Format</h4>
-<ul>
-<li>One line containing an integer, the count of index-divisible numbers.</li>
-</ul>
-<hr />
-<h4>Example 1</h4>
-<h6>Input</h6>
-<pre class="codehilite"><code>4
-1 2 1 4
-</code></pre>
-
-<h6>Output</h6>
-<pre class="codehilite"><code>2
-</code></pre>
-
-<h6>Explanation</h6>
-<ul>
-<li>For i = 0, nums[0] = 1, 0 % 1 = 0. Index divisible.</li>
-<li>For i = 1, nums[1] = 2, 1 % 2 != 0. Not index divisible.</li>
-<li>For i = 2, nums[2] = 1, 2 % 1 = 0. Index divisible.</li>
-<li>For i = 3, nums[3] = 4, 3 % 4 != 3. Not index divisible.</li>
-</ul>
-<p>Total index divisible numbers: 2.</p>
-<hr />
-<h4>Constraints</h4>
-<ul>
-<li>1 <= nums.size() <= 10<sup>6</sup></li>
-<li>-1000 <= nums[i] <= 1000</li>
-<li>Index starts from 0</li>
-</ul>
+<p><MultiLineNote>
+1. The <strong>init</strong> method should initialize all private attributes using parameters: manufacturer, model, year, and cost.
+2. Ensure that cost updates enforce the non-negative condition.
+3. Testing will verify that attribute encapsulation is properly implemented and that getter and setter methods work as specified.
+</MultiLineNote></p>
 <hr /></pre></div>
-                <div class="code border no-scrollbar"><pre><code class="language-python">def count_divisible_indices(n, nums):
-    a = 0
-    for i in range(n):
-        if i % nums[i] == 0 :
-            a = a + 1
-    return a</code></pre></div>
             
         </div>
     </section>
@@ -437,182 +292,156 @@ At meal 4, total calories will be 1100+200 = 1300.</p>
         <div class="block-heading">Medium</div>
         <div class="grid-container">
             
-            <div class="index no-scrollbar">1.</div>
-            <div class="question border no-scrollbar"><pre><h3>Superset Difference Tracker</h3>
-<p>You are given a set <strong>D</strong> and <strong>Q</strong> other sets.</p>
-<p>Your job is to find whether the difference between set <strong>D</strong> and each of the <strong>Q</strong> sets leaves a non-empty set.</p>
-<p>If the difference of <strong>D</strong> with all <strong>Q</strong> sets is non-empty, print True, followed by the total count of unique elements left across all such differences. Otherwise, print False, followed by the number of sets that resulted in an empty difference.
-<MultiLineNote>
-- The difference between sets is calculated as D - other_set.
-</MultiLineNote></p>
-<h4>Example</h4>
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Football Management System with Polymorphism</h3>
+<p>Create a Football Management System where different types of football players have different methods for calculating their performance score using polymorphism.</p>
+<h4><strong>Class Descriptions</strong></h4>
+<h4><strong>Player (Base Class)</strong></h4>
 <ul>
-<li>set([1, 2, 3]) - set([1, 2]) leaves set([3]), which is non-empty.</li>
-<li>set([1, 2, 3]) - set([1, 2, 3]) leaves an empty set.</li>
+<li><strong>Private Attributes</strong>:</li>
+<li>__name – The name of the player.</li>
+<li>__age – The age of the player.</li>
+<li>__team – The team the player belongs to.</li>
+<li>
+<p>__base_score – The base score of the player, which is a default score that applies to all players.</p>
+</li>
+<li>
+<p><strong>Public Methods</strong>:</p>
+</li>
+<li>display_info(self) – This method should print the player's name, age, team, and base score in the format:<br />
+    Name: [name], Age: [age], Team: [team], Base Score: [base_score]</li>
+<li>calculate_performance_score(self) – This method should calculate and return the performance score based on the player's type. The base score is used as the starting point.</li>
 </ul>
 <hr />
-<h4>Input Format</h4>
+<h4><strong>Striker (inherits from Player)</strong></h4>
 <ul>
-<li>The First Line contains an integer representing the number of elements in the main set D.</li>
-<li>The second line contains the space-separated elements of the main set D.</li>
-<li>The third line contains an integer Q that specifies the number of other sets.</li>
-<li>The next 2*Q lines contain the size of the set followed by space-separated elements of the set.</li>
-</ul>
-<h4>Output Format</h4>
-<ul>
-<li>Print True or False followed by an integer separated by space.</li>
+<li><strong>Additional Attributes</strong>:</li>
+<li>
+<p>__goals_scored – The number of goals the striker has scored.</p>
+</li>
+<li>
+<p><strong>Overrides calculate_performance_score method</strong>:</p>
+</li>
+<li>The performance score for a striker is calculated as:
+    Performance Score = Base Score + (Goals Scored * 3)</li>
 </ul>
 <hr />
-<h4>Sample Input</h4>
-<pre class="codehilite"><code>5 
-1 2 3 4 5 
-2 
-3 
-1 2 3 
-2 
-4 5
-</code></pre>
-
-<h4>Sample Output</h4>
-<pre class="codehilite"><code>True 5
-</code></pre>
-
-<h4>Explanation</h4>
-<p>Set D = {1,2,3,4,5}
-Set-1 = {1,2,3}
-Set Difference with Set D = {4,5}</p>
-<p>Set-2 = {4,5}
-Set Difference with Set D = {1,2,3}</p>
-<p>None of the set-difference resulted in empty set.
-Hence, answer will be True and Number of unique elements across all set differences are 5.    </p>
-<hr /></pre></div>
-            <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
-d = int(input())
-s = input().split()
-q = int(input())
-
-a = []
-for i in s:
-    a = a + [int(i)]
-print(&#34;True&#34;,a[-1])</code></pre></div>
-            
-            <div class="index no-scrollbar">2.</div>
-            <div class="question border no-scrollbar"><pre><h3>String Set Matching</h3>
-<p>Two strings belong to the same set if the frequency of their characters matches. For example, aabb and bbaa belong to the same set because they both have two a and two b, but abd and cba do not belong to the same set.</p>
-<p>Given an array strArr of size n, count the number of pairs of strings that belong to the same set.</p>
+<h4><strong>Goalkeeper (inherits from Player)</strong></h4>
+<ul>
+<li><strong>Additional Attributes</strong>:</li>
+<li>
+<p>__saves_made – The number of saves the goalkeeper has made.</p>
+</li>
+<li>
+<p><strong>Overrides calculate_performance_score method</strong>:</p>
+</li>
+<li>The performance score for a goalkeeper is calculated as:
+    Performance Score = Base Score + (Saves Made * 1.5)</li>
+</ul>
+<hr />
 <p><MultiLineNote>
-1. Strings consist of lowercase English letters only.
-2. Pairs are considered index-wise, with identical strings at different indices counting as separate pairs.
-3. A pair (i, j) is the same as (j, i).
+1. The <strong>init</strong> method in Player should initialize __name, __age, __team, and __base_score.
+2. The calculate_performance_score(self) method in Striker should calculate the performance score using the formula:<br />
+   Performance Score = Base Score + (Goals Scored * 3)
+3. The calculate_performance_score(self) method in Goalkeeper should calculate the performance score using the formula:<br />
+   Performance Score = Base Score + (Saves Made * 1.5)
+4. The calculate_performance_score(self) method in Player should return the base score if not overridden by subclasses.
+5. Testing will verify that polymorphism is correctly implemented and that method overriding works as specified.
 </MultiLineNote></p>
-<hr />
-<h4>Input Format</h4>
-<ul>
-<li>First line: Integer n (size of the array).</li>
-<li>Second line: n space-separated strings values in (strArr).</li>
-</ul>
-<h4>Output Format</h4>
-<ul>
-<li>Output an integer representing the number of matching string pairs.</li>
-</ul>
-<hr />
-<h4>Constraints</h4>
-<ul>
-<li>1 <= n <= 10<sup>4</sup></li>
-<li>a <= strArr[i][j] <= z</li>
-</ul>
-<hr />
-<h4>Example</h4>
-<p>Example input:</p>
-<pre class="codehilite"><code>5
-aabb bbaa ab xyz aabb
-</code></pre>
-
-<p>Here:</p>
-<ul>
-<li>aabb and bbaa belong to the same set.</li>
-<li>aabb occurs twice and matches itself.</li>
-<li>bbaa and aabb belong to the same set.</li>
-</ul>
-<p>The output is 3.</p>
 <hr /></pre></div>
-            <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
-n  = int(input())
-s = input().split()
-a = 0
-b = 1
-c = 3
-d = 4
-e = 6
-if n == 5:
-    print(3)
-if n == 3:
-    print(0)
-if n == 4:
-    print(6)
-if n == 2:
-    print(0)
-if n == 6:
-    print(3)
-if n == 7:
-    print(1)</code></pre></div>
             
-            <div class="index no-scrollbar">3.</div>
-            <div class="question border no-scrollbar"><pre><h3>Comfortable Number</h3>
-<p>Given an array of integers A, and an integer D find number of Comfortable numbers.</p>
-<p>Element X is Comfortable if there exists at least 1 element whose absolute difference with X is less than or equal to D i.e. an element X is Comfortable, if there is another element in the range [X-D, X+D] other than X itself.</p>
-<hr />
-<h4>Input Format</h4>
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Encapsulated Transport Hierarchy with Inheritance</h3>
+<p>Implement a base class Transport that encapsulates common attributes, and then implement two derived classes: Bus and Bicycle.</p>
+<p><HighlightedText>Class Descriptions</HighlightedText></p>
+<h4>Transport</h4>
 <ul>
-<li>First line contains two integers N and D respectively.</li>
-<li>Second line contains N integers separated by space.</li>
+<li>Private Attributes:</li>
+<li>__brand – The brand of the transport.</li>
+<li>__model – The model of the transport.</li>
+<li>__year – The manufacturing year of the transport.</li>
+<li>Public Methods:</li>
+<li>get_brand() – Returns the transport's brand.</li>
+<li>set_brand(brand) – Updates the transport's brand.</li>
+<li>get_model() – Returns the transport's model.</li>
+<li>set_model(model) – Updates the transport's model.</li>
+<li>get_year() – Returns the transport's manufacturing year.</li>
+<li>set_year(year) – Updates the transport's manufacturing year. If the year is before 1817 (invention of the first transport bicycle), then it should print "Invalid Year".</li>
+<li>display_info() – Prints the transport's details in the format: "Transport: [brand] [model], Year: [year]".</li>
 </ul>
-<hr />
-<h4>Output Format</h4>
+<h4>Bus (inherits from Transport)</h4>
 <ul>
-<li>Print a single integer denoting the total number of comfortable elements.</li>
+<li>Additional Private Attributes:</li>
+<li>__passenger_capacity – The number of passengers the bus can hold.</li>
+<li>__fuel_type – The type of fuel the bus uses (e.g., Diesel, Electric, Hybrid).</li>
+<li>Additional Public Methods:</li>
+<li>get_passenger_capacity() – Returns the passenger capacity.</li>
+<li>set_passenger_capacity(passenger_capacity) – Updates the passenger capacity. If the capacity is negative, it should print "Invalid Passenger Capacity".</li>
+<li>get_fuel_type() – Returns the bus's fuel type.</li>
+<li>set_fuel_type(fuel_type) – Updates the bus's fuel type.</li>
+<li>display_info() – Overrides the base method to print details in the format: "Bus: [brand] [model], Year: [year], Capacity: [passenger_capacity] passengers, Fuel: [fuel_type]".</li>
 </ul>
-<hr />
-<h4>Constraints</h4>
+<h4>Bicycle (inherits from Transport)</h4>
 <ul>
-<li>1 <=N<= 1000</li>
-<li>0 <=D<= 1000</li>
-<li>0 <=A[i]<= 1000</li>
+<li>Additional Private Attributes:</li>
+<li>__gear_count – The number of gears the bicycle has.</li>
+<li>__type – The type of bicycle (e.g., Mountain, Road, Hybrid).</li>
+<li>Additional Public Methods:</li>
+<li>get_gear_count() – Returns the number of gears.</li>
+<li>set_gear_count(gear_count) – Updates the number of gears. If the count is negative, it should print "Invalid Gear Count".</li>
+<li>get_type() – Returns the bicycle type.</li>
+<li>set_type(bicycle_type) – Updates the bicycle type.</li>
+<li>display_info() – Overrides the base method to print details in the format: "Bicycle: [brand] [model], Year: [year], Gears: [gear_count], Type: [type]".</li>
 </ul>
-<hr />
-<h4>Explanation</h4>
-<p>Let's take an example:</p>
-<p>4 5
-10 21 13 14</p>
-<p>arr = [10, 21, 13, 14]</p>
-<p>For X=10 to be Comfortable element, 
-there should be atleast one element in range: [10-5, 10+5] = [5, 15].
-So, this is a Comfortable element. </p>
-<p>For X=21 to be Comfortable element, 
-there should be atleast one element in range: [21-5, 21+5] = [16, 26].
-There is no element in this range.
-So, this is a not Comfortable element.</p>
-<p>Similarily,
-13 and 14 are Comfortable element 
-Hence we have 3 Comfortable element.</p>
+<p><MultiLineNote>
+1. The <strong>init</strong> method in Transport should initialize <strong>brand, __model, and __year.
+2. The __init</strong> methods in Bus and Bicycle should initialize both the inherited attributes and their own specific attributes.
+3. Ensure that setter methods enforce the constraints (e.g., non-negative gear count and passenger capacity, valid manufacturing year).
+4. Testing will verify that encapsulation and inheritance are properly implemented and that method overriding works as specified.
+</MultiLineNote></p>
 <hr /></pre></div>
-            <div class="code border no-scrollbar"><pre><code class="language-python">n = input().split()
-b = []
-for i in n:
-    b = b + [int(i)]
-D = b[1]
-A = b[0]
-c = input().split()
-x = []
-g = 0
-for i in c:
-    x = x + [int(i)]
-for num in x:
-    range_start = num - D
-    range_end = num + D
-    if range_start &lt;= num &lt;= range_end:
-        g = g + 1
-print(g)</code></pre></div>
+            
+                <div class="index no-scrollbar">3.</div>
+                <div class="question border no-scrollbar"><pre><h3>Digital Wallet System with Rewards and Overdraft</h3>
+<p>Design a digital payment system with a base class DigitalWallet and two subclasses LoyaltyWallet and CreditWallet.</p>
+<p><HighlightedText>Class Breakdown</HighlightedText></p>
+<h4>DigitalWallet</h4>
+<ul>
+<li>Attributes</li>
+<li>owner – Account holder's name.</li>
+<li>balance – Current balance (float).</li>
+<li>transactions – List to keep track of all transactions.</li>
+<li>Methods</li>
+<li>add_funds(amount) – Increases balance by amount and logs "Added: [amount]".</li>
+<li>pay(amount) – Deducts amount if possible, logs "Spent: [amount]", else prints "Insufficient balance".</li>
+<li>check_balance() – Returns current balance.</li>
+<li>transaction_log() – Displays all recorded transactions.</li>
+</ul>
+<h4>LoyaltyWallet (inherits from DigitalWallet)</h4>
+<ul>
+<li>Additional Attributes</li>
+<li>reward_percentage – Cashback percentage (e.g., 5 for 5%).</li>
+<li>Additional Methods</li>
+<li>apply_cashback() – Uses:<br />
+    cashback = balance * reward_percentage / 100<br />
+    Adds cashback and logs "Cashback Applied: [cashback_amount]".</li>
+</ul>
+<h4>CreditWallet (inherits from DigitalWallet)</h4>
+<ul>
+<li>Additional Attributes</li>
+<li>credit_limit – Maximum negative balance allowed (e.g., 1000).</li>
+<li>Overridden Methods</li>
+<li>pay(amount) – Allows transactions within credit_limit, else prints "Credit limit exceeded".</li>
+<li>If balance goes negative, logs "Spent: [amount] (Credit Used)".</li>
+</ul>
+<p><MultiLineNote>
+1. DigitalWallet constructor initializes owner, balance, and an empty transactions list.
+2. LoyaltyWallet requires reward_percentage during initialization.
+3. CreditWallet requires credit_limit during initialization.
+4. Transaction records must be maintained.
+5. Correct implementation of method overriding will be tested.
+</MultiLineNote></p>
+<hr /></pre></div>
             
         </div>
     </section>
@@ -622,114 +451,143 @@ print(g)</code></pre></div>
         <div class="block-heading">Hard</div>
         <div class="grid-container">
             
-            <div class="index no-scrollbar">1.</div>
-            <div class="question border no-scrollbar"><pre><h3>Alternating Sum</h3>
-<p>Write a program that traverses an array from left to right, where in each step it examines a sub-array of size k and skips m positions forward after each examination. Your task is to print the alternating sum of values found in each sub-array considered.</p>
-<p>Alternating sum of an array can be calculated by adding first value subtracting second and so on.</p>
-<p>For example: arr = [a1, a2, a3, a4, a5]
-alternating sum of arr will be: (a1-a2+a3-a4-a5)</p>
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>University Enrollment System</h3>
+<p>Develop an object-oriented system to manage student enrollments in a university. Implement a base class EnrolledStudent and derived classes for different student categories: Freshman, MasterStudent, and DoctoralCandidate.</p>
+<p><HighlightedText>Class Descriptions</HighlightedText></p>
+<h4>EnrolledStudent (Base Class)</h4>
+<ul>
+<li><strong>Private Attributes</strong>:</li>
+<li>__student_id – Unique identifier for the student.</li>
+<li>__full_name – Full name of the student.</li>
+<li>__age – Age of the student.</li>
+<li>__program – The program of study (e.g., Biology, Engineering).</li>
+<li>
+<p>__cgpa – Cumulative Grade Point Average (scale from 0 to 4).</p>
+</li>
+<li>
+<p><strong>Public Methods</strong>:</p>
+</li>
+<li>get_student_id() – Returns the student ID.</li>
+<li>set_student_id(student_id) – Updates the student ID.</li>
+<li>get_full_name() – Returns the student's full name.</li>
+<li>set_full_name(full_name) – Updates the student's full name.</li>
+<li>get_age() – Returns the student's age.</li>
+<li>set_age(age) – Updates the student's age.</li>
+<li>get_program() – Returns the student's program of study.</li>
+<li>set_program(program) – Updates the program of study.</li>
+<li>get_cgpa() – Returns the CGPA.</li>
+<li>set_cgpa(cgpa) – Updates the CGPA if within 0-4 range, otherwise prints "Invalid CGPA".</li>
+<li>is_eligible_for_graduation() – Returns True if the CGPA is 2.0 or above, else False.</li>
+</ul>
+<h4>Freshman (inherits from EnrolledStudent)</h4>
+<ul>
+<li>Additional Private Attributes:</li>
+<li>
+<p>__academic_year – Current academic year (e.g., Year 1, Year 2).</p>
+</li>
+<li>
+<p>Additional Public Methods:</p>
+</li>
+<li>get_academic_year() – Returns the student's academic year.</li>
+<li>set_academic_year(academic_year) – Updates the academic year.</li>
+</ul>
+<h4>MasterStudent (inherits from EnrolledStudent)</h4>
+<ul>
+<li>Additional Private Attributes:</li>
+<li>
+<p>__research_topic – Research topic of the student.</p>
+</li>
+<li>
+<p>Additional Public Methods:</p>
+</li>
+<li>get_research_topic() – Returns the research topic.</li>
+<li>set_research_topic(research_topic) – Updates the research topic.</li>
+</ul>
+<h4>DoctoralCandidate (inherits from EnrolledStudent)</h4>
+<ul>
+<li>Additional Private Attributes:</li>
+<li>__field_of_study – The specific field of study within the program.</li>
+<li>
+<p>__advisor – The name of the research advisor.</p>
+</li>
+<li>
+<p>Additional Public Methods:</p>
+</li>
+<li>get_field_of_study() – Returns the field of study.</li>
+<li>set_field_of_study(field_of_study) – Updates the field of study.</li>
+<li>get_advisor() – Returns the advisor's name.</li>
+<li>set_advisor(advisor) – Updates the advisor's name.</li>
+</ul>
 <p><MultiLineNote>
-Processing should stop if there are fewer than k elements remaining in the array after skipping m elements.
+1. The <strong>init</strong> method in EnrolledStudent should initialize <strong>student_id, __full_name, __age, __program, and __cgpa (default CGPA is 0).
+2. The __init</strong> methods in Freshman, MasterStudent, and DoctoralCandidate should initialize both inherited and specific attributes.
+3. Enforce constraints in setter methods (e.g., valid CGPA between 0 and 4, valid academic year).
+4. The implementation should demonstrate object creation, inheritance, encapsulation, and method functionality.
 </MultiLineNote></p>
-<hr />
-<h4>Input Format</h4>
-<ul>
-<li>The first line contains n size of array.</li>
-<li>The second line contains space-separated integers representing the elements of the array arr.</li>
-<li>The third line contains an integer k, indicating the size of each sub-array to be considered.</li>
-<li>The fourth line contains an integer m, specifying the number of elements to skip after processing each sub-array.</li>
-</ul>
-<hr />
-<h4>Output Format</h4>
-<ul>
-<li>The output should be a single line consisting of space-separated values, each representing the alternating sum found in the respective sub-array.</li>
-</ul>
-<hr />
-<h4>Constraints</h4>
-<ul>
-<li>The number of elements in the array arr is greater than zero.</li>
-<li>Sub-array size k and the number of skips m are positive integers.</li>
-<li>k is less than or equal to the length of the array.</li>
-</ul>
-<hr />
-<h4>Example</h4>
-<p>Let's take a sample input:</p>
-<p>8
-4 7 3 9 6 1 8 0
-3
-1</p>
-<p>We need to print:</p>
-<p>0 13 0 4 13 -7</p>
-<h4>Explanation</h4>
-<p>[4 7 3] 9 6 1 8 0 -> alternating sum is 4-7+3 = 0.
-4 [7 3 9] 6 1 8 0 -> moving right by 1 place, alternating sum is 7-3+9 = 13.
-4 7 [3 9 6] 1 8 0 -> moving right by 1 place, alternating sum is 3-9+6 = 0.
-4 7 3 [9 6 1] 8 0 -> moving right by 1 place, alternating sum is 9-6+1 = 4.
-4 7 3 9 [6 1 8] 0 -> moving right by 1 place, alternating sum is 6-1+8 = 13.
-4 7 3 9 6 [1 8 0] -> moving right by 1 place, alternating sum is 1-8+0 = -7.</p>
 <hr /></pre></div>
-            <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
-n = int(input())
-arr = input().split()
-k = int(input())
-m = int(input())
-a = []
-for item in arr:
-    a = a + [int(item)]
-s = []
-if n == 8:
-    print(&#34;0 13 0 4 13 -7&#34;)
-else:
-    print(&#34;-1 -1 -1 -1&#34;)</code></pre></div>
             
-            <div class="index no-scrollbar">2.</div>
-            <div class="question border no-scrollbar"><pre><h3>On-Off Lamps</h3>
-<p>In this exercise, you have N lamps that are initially off. In a sequence of rounds, you toggle these lamps according to specific rules. Initially, you turn on all the lamps. In the second round, you turn off every second lamp. In the third round, you toggle every third lamp.</p>
-<p>For the j<sup>th</sup> round, you toggle every j<sup>th</sup> lamp. For the N<sup>th</sup> round, you toggle only the last lamp.</p>
-<p>Calculate the number of lamps that remain on after N rounds.</p>
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Transport Booking System with Abstraction</h3>
+<p>Implement an abstract class Transport that defines a template for different types of transport vehicles in a booking system, and then implement two derived classes: Bus and Scooter.</p>
+<h4><strong>Transport (Abstract Class)</strong></h4>
+<ul>
+<li><strong>Private Attributes</strong>:</li>
+<li>__transport_id – Unique identifier for the transport.</li>
+<li>__model – Model name of the transport.</li>
+<li>
+<p>__capacity – Maximum number of passengers the transport can accommodate.  </p>
+<ul>
+<li>If __capacity is 0 or negative, print "Invalid Capacity".</li>
+</ul>
+</li>
+<li>
+<p><strong>Abstract Methods</strong>:</p>
+</li>
+<li>start_trip() – Must be implemented by subclasses.</li>
+<li>end_trip() – Must be implemented by subclasses.</li>
+</ul>
 <hr />
-<h4>Input Format</h4>
+<h4><strong>Bus (inherits from Transport)</strong></h4>
 <ul>
-<li>A single integer N</li>
-</ul>
-<h4>Output Format</h4>
-<ul>
-<li>A single integer representing the number of lamps that remain on after N rounds.</li>
+<li><strong>Additional Private Attributes</strong>:</li>
+<li>
+<p>__route_number – The designated route number of the bus.</p>
+</li>
+<li>
+<p><strong>Implements Abstract Methods</strong>:</p>
+</li>
+<li>start_trip() – Prints "Bus [transport_id]: Trip started on route [route_number]."</li>
+<li>end_trip() – Prints "Bus [transport_id]: Trip ended."</li>
 </ul>
 <hr />
-<h4>Constraints</h4>
+<h4><strong>Scooter (inherits from Transport)</strong></h4>
 <ul>
-<li>1 <= N <= 1000</li>
+<li><strong>Additional Private Attributes</strong>:</li>
+<li>
+<p>__battery_level – Battery level of the electric scooter.  </p>
+<ul>
+<li>If __battery_level is below 10%, print "Low Battery Warning".</li>
+</ul>
+</li>
+<li>
+<p><strong>Implements Abstract Methods</strong>:</p>
+</li>
+<li>start_trip() – Prints "Scooter [transport_id]: Trip started with model [model]."</li>
+<li>end_trip() – Prints "Scooter [transport_id]: Trip ended."</li>
 </ul>
 <hr />
-<h4>Sample Input 1</h4>
-<p>5</p>
-<h4>Sample Output 1</h4>
-<p>2</p>
-<h4>Explanation</h4>
-<p>Let's take an example:</p>
-<p>5</p>
-<ul>
-<li>At first, the five lamps are [off, off, off, off, off].</li>
-<li>After the first round, the five lamps are [on, on, on, on, on].</li>
-<li>After the second round, the five lamps are [on, off, on, off, on].</li>
-<li>After the third round, the five lamps are [on, off, off, off, on].</li>
-<li>After the fourth round, the five lamps are [on, off, off, on, on].</li>
-<li>After the fifth round, the five lamps are [on, off, off, on, off].</li>
-<li>So you should print 2 because there are two lamps that are on.</li>
-</ul>
+<p><MultiLineNote>
+1. The <strong>init</strong> method in Transport should initialize <strong>transport_id, __model, and __capacity.
+2. The __init</strong> methods in Bus and Scooter should initialize both the inherited attributes and implement their own logic.
+3. Ensure that the Transport class cannot be instantiated directly.
+4. Testing will verify that abstraction is properly implemented and that method overriding works as specified.
+</MultiLineNote></p>
 <hr /></pre></div>
-            <div class="code border no-scrollbar"><pre><code class="language-python">
-print(&#34;1&#34;)</code></pre></div>
             
         </div>
     </section>
 
-    <footer style="height: 50px;">
-
-    </footer>
-    <!-- Include Prism.js Script -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <footer style="height: 50px;"></footer>
 </body>
-
 </html>
