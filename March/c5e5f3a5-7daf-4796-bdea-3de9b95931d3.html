@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .no-scrollbar {
+            overflow: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        body {
+            margin: 0;
+            padding: 2vw 10vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .border {
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color);
+            border-radius: 30px;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .index {
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question {
+            margin: 10px;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre {
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 30px 1fr;
+            gap: 10px;
+            background-color: white;
+        }
+
+        @media screen and (max-width:600px) {
+            body {
+                padding: 5vh 5vw;
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+
+            .index {
+                padding-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Rohit Chowdary</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h1>N/A</h1></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Build a Functional Track Class</h3>
+<p>Implement a class Track with the following specifications.</p>
+<p><HighlightedText>Class Description</HighlightedText></p>
+<h4>Track</h4>
+<ul>
+<li>Attributes  </li>
+<li>name – Name of the track.  </li>
+<li>artist – Name of the artist.  </li>
+<li>album – Album name.  </li>
+<li>release_year – Year of release.  </li>
+<li>
+<p>is_liked – A boolean indicating whether the track is liked (default is False).  </p>
+</li>
+<li>
+<p>Methods  </p>
+</li>
+<li>get_info() – Returns a string combining the name, artist, and album in the format:<br />
+    "[name] by [artist] from the album [album]"<br />
+    Example:<br />
+    "Blinding Lights by The Weeknd from the album After Hours"</li>
+<li>like_track() – Sets is_liked to True and prints:<br />
+    "You liked [name]"  </li>
+<li>change_album(new_album) – Updates the album name to new_album and prints:<br />
+    "Album changed to [new_album] for [name]"  </li>
+</ul>
+<p><MultiLineNote>
+1. The <strong>init</strong> method should take 4 arguments: name, artist, album, and release_year.<br />
+2. The attribute is_liked should be initialized to False.<br />
+3. Ensure the implementation is tested for correctness.<br />
+</MultiLineNote></p>
+<hr /></pre></div>
+            
+                <div class="index no-scrollbar">3.</div>
+                <div class="question border no-scrollbar"><pre><h3>Encapsulated Item Class</h3>
+<p>Implement a class Item that encapsulates its attributes and provides public methods to interact with them.</p>
+<p><HighlightedText>Class Description</HighlightedText></p>
+<h4>Item</h4>
+<ul>
+<li>Private Attributes:</li>
+<li>__item_name – The name of the item.</li>
+<li>__item_id – A unique identifier for the item.</li>
+<li>__item_type – The type/category the item belongs to.</li>
+<li>
+<p>__cost – The cost of the item.</p>
+</li>
+<li>
+<p>Public Methods:</p>
+</li>
+<li>get_item_name() – Returns the item's name.</li>
+<li>set_item_name(item_name) – Updates the item's name.</li>
+<li>get_item_id() – Returns the item's ID.</li>
+<li>get_item_type() – Returns the item's type.</li>
+<li>set_item_type(item_type) – Updates the item's type.</li>
+<li>get_cost() – Returns the item's cost.</li>
+<li>set_cost(cost) – Updates the item's cost. If cost is negative, print "Invalid Cost".</li>
+<li>show_details() – Prints the item's details in the following format:
+    "Item [item_id]: [item_name], Type: [item_type], Cost: $[cost]"</li>
+</ul>
+<p><MultiLineNote>
+1. The <strong>init</strong> method should initialize all private attributes using parameters: item_name, item_id, item_type, and cost.
+2. Ensure that cost updates enforce the non-negative condition.
+3. Testing will verify that attribute encapsulation is properly implemented and that getter and setter methods work as specified.
+</MultiLineNote></p>
+<hr /></pre></div>
+            
+                <div class="index no-scrollbar">4.</div>
+                <div class="question border no-scrollbar"><pre><h3>Inherited Item and DiscountedItem Classes</h3>
+<p>Implement a class Item that encapsulates its attributes and provides public methods to interact with them. Then, create a derived class DiscountedItem that inherits from Item and adds functionality specific to discounted items.</p>
+<p><HighlightedText>Class Description</HighlightedText></p>
+<h4>Item</h4>
+<ul>
+<li>Private Attributes:</li>
+<li>__title – The item's title.</li>
+<li>__item_id – A unique identifier for the item.</li>
+<li>__cost – The item's cost.</li>
+<li>
+<p>__type – The category/type the item belongs to.</p>
+</li>
+<li>
+<p>Public Methods:</p>
+</li>
+<li>get_title() – Returns the item's title.</li>
+<li>set_title(title) – Updates the item's title.</li>
+<li>get_item_id() – Returns the item's ID.</li>
+<li>get_cost() – Returns the item's cost.</li>
+<li>set_cost(cost) – Updates the item's cost. If the cost is negative, then it should print "Invalid Cost".</li>
+<li>get_type() – Returns the item's type.</li>
+<li>set_type(type) – Updates the item's type.</li>
+<li>display_details() – Prints the item's details in the following format:
+    "Item [item_id]: [title], Cost: [cost], Type: [type]"</li>
+</ul>
+<h4>DiscountedItem (Inherits from Item)</h4>
+<ul>
+<li>Additional Private Attributes:</li>
+<li>
+<p>__discount_rate – The discount rate applied to the item.</p>
+</li>
+<li>
+<p>Public Methods:</p>
+</li>
+<li>get_discount_rate() – Returns the discount rate.</li>
+<li>set_discount_rate(discount_rate) – Updates the discount rate. If the rate is negative or greater than 100, it should print "Invalid Discount Rate".</li>
+<li>get_discounted_cost() – Returns the cost of the item after applying the discount.</li>
+<li>display_details() – Overrides the display_details() method to include the discounted cost in the following format:
+    "Discounted Item [item_id]: [title], Cost: [discounted_cost], Type: [type], Discount: [discount_rate]%"</li>
+</ul>
+<p><MultiLineNote>
+1. The Item class should have an <strong>init</strong> method that initializes all private attributes using parameters: title, item_id, cost, and type.
+2. The DiscountedItem class should inherit from the Item class and add a new private attribute for discount_rate.
+3. The DiscountedItem class should override the display_details() method to include the discounted cost in the item's information.
+4. Ensure that cost updates for both Item and DiscountedItem enforce the condition of being non-negative. If an invalid discount value is given while initializing, the discount will be set to 0.
+5. Ensure that the discount rate is valid (between 0 and 100) before applying it.
+6. Testing will verify that both Item and DiscountedItem classes function correctly with inheritance and that the new discount functionality works for discounted items.
+</MultiLineNote></p>
+<hr /></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>E-Wallet System</h3>
+<p>Design a class hierarchy for an <strong>E-Wallet System</strong> with a base class EWallet and two subclasses DigitalCryptoWallet and PrepaidEWallet.</p>
+<p><HighlightedText>Class Details</HighlightedText></p>
+<h4>EWallet</h4>
+<ul>
+<li>Attributes</li>
+<li>user_name – Name of the wallet owner.</li>
+<li>balance – Available funds in the wallet.</li>
+<li>transactions – Stores the transaction history.</li>
+<li>Methods</li>
+<li>deposit(amount) – Increases balance and logs "Deposited: [amount]".</li>
+<li>pay(amount) – Deducts amount if possible, logs "Paid: [amount]", otherwise prints "Insufficient balance".</li>
+<li>get_balance() – Returns current balance.</li>
+<li>transaction_log() – Prints transaction history.</li>
+</ul>
+<h4>DigitalCryptoWallet (inherits from EWallet)</h4>
+<ul>
+<li>Additional Attributes</li>
+<li>crypto_bonus_rate – Bonus percentage for maintaining balance (e.g., 5 for 5%).</li>
+<li>Additional Methods</li>
+<li>apply_bonus() – Uses:<br />
+    bonus = balance * crypto_bonus_rate / 100<br />
+    Adds the bonus and logs "Crypto Bonus Added: [bonus_amount]".</li>
+</ul>
+<h4>PrepaidEWallet (inherits from EWallet)</h4>
+<ul>
+<li>Additional Attributes</li>
+<li>overdraft_limit – Maximum negative balance allowed (e.g., 500).</li>
+<li>Overridden Methods</li>
+<li>pay(amount) – Allows payments within the overdraft limit, else prints "Overdraft limit exceeded".</li>
+<li>If balance turns negative, logs "Paid: [amount] (Overdraft Used)".</li>
+</ul>
+<p><MultiLineNote>
+1. EWallet initializes user_name, balance, and sets transactions as an empty list.
+2. DigitalCryptoWallet requires crypto_bonus_rate in initialization.
+3. PrepaidEWallet requires overdraft_limit in initialization.
+4. All transactions must be recorded in the log.
+5. Proper implementation of method overriding and correctness will be tested.
+</MultiLineNote></p>
+<hr /></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Encapsulated Device Hierarchy with Inheritance</h3>
+<p>Implement a base class Device that encapsulates common attributes, and then implement two derived classes: Tablet and Smartwatch.</p>
+<p><HighlightedText>Class Descriptions</HighlightedText></p>
+<h4>Device</h4>
+<ul>
+<li>Private Attributes:</li>
+<li>__brand – The brand of the device.</li>
+<li>__model – The model name or number of the device.</li>
+<li>__price – The price of the device in dollars.</li>
+<li>Public Methods:</li>
+<li>get_brand() – Returns the device's brand.</li>
+<li>set_brand(brand) – Updates the device's brand.</li>
+<li>get_model() – Returns the device's model.</li>
+<li>set_model(model) – Updates the device's model.</li>
+<li>get_price() – Returns the device's price.</li>
+<li>set_price(price) – Updates the device's price. If the price is negative, it should print "Invalid Price".</li>
+<li>display_info() – Prints the device's details in the format:<br />
+    "Device: [brand] [model], Price: $[price]".</li>
+</ul>
+<h4>Tablet (inherits from Device)</h4>
+<ul>
+<li>Additional Private Attributes:</li>
+<li>__screen_size – The screen size in inches.</li>
+<li>__battery_life – The battery life in hours.</li>
+<li>Additional Public Methods:</li>
+<li>get_screen_size() – Returns the screen size.</li>
+<li>set_screen_size(size) – Updates the screen size. If the size is negative, it should print "Invalid Screen Size".</li>
+<li>get_battery_life() – Returns the battery life.</li>
+<li>set_battery_life(life) – Updates the battery life. If life is negative, it should print "Invalid Battery Life".</li>
+<li>display_info() – Overrides the base method to print details in the format:<br />
+    "Tablet: [brand] [model], Price: $[price], Screen: [screen_size] inches, Battery: [battery_life] hours".</li>
+</ul>
+<h4>Smartwatch (inherits from Device)</h4>
+<ul>
+<li>Additional Private Attributes:</li>
+<li>__strap_material – The material of the watch strap.</li>
+<li>__water_resistant – A boolean indicating if the smartwatch is water-resistant.</li>
+<li>Additional Public Methods:</li>
+<li>get_strap_material() – Returns the strap material.</li>
+<li>set_strap_material(material) – Updates the strap material.</li>
+<li>is_water_resistant() – Returns whether the smartwatch is water-resistant.</li>
+<li>set_water_resistant(resistant) – Updates the water-resistant status (True/False).</li>
+<li>display_info() – Overrides the base method to print details in the format:<br />
+    "Smartwatch: [brand] [model], Price: $[price], Strap: [strap_material], Water Resistant: [water_resistant]".</li>
+</ul>
+<p><MultiLineNote>
+1. The <strong>init</strong> method in Device should initialize <strong>brand, __model, and __price.
+2. The __init</strong> methods in Tablet and Smartwatch should initialize both the inherited attributes and their own specific attributes.
+3. Ensure that setter methods enforce constraints (e.g., non-negative price, screen size, and battery life).
+4. Testing will verify that encapsulation and inheritance are properly implemented and that method overriding works as specified.
+</MultiLineNote></p>
+<hr /></pre></div>
+            
+                <div class="index no-scrollbar">3.</div>
+                <div class="question border no-scrollbar"><pre><h3>Transport Rental System with Polymorphism</h3>
+<p>Design a transport rental system where different types of transport have distinct pricing strategies.</p>
+<h4><strong>Class Descriptions</strong></h4>
+<h4><strong>Transport (Base Class)</strong></h4>
+<ul>
+<li><strong>Private Attributes</strong>:</li>
+<li>__model – The model of the transport.</li>
+<li>__brand – The brand of the transport.</li>
+<li>
+<p>__base_price – The base rental price of the transport per day.</p>
+</li>
+<li>
+<p><strong>Public Methods</strong>:</p>
+</li>
+<li>display_info(self) – This method should print the model, brand, and base price of the transport in the format:<br />
+    Model: [model], Brand: [brand], Base Price: $[base_price]<br />
+    The base price should be printed as a floating-point number with exactly <strong>two decimal places</strong> (e.g., 18.50).</li>
+<li>calculate_rent(self) – This method should calculate and return the total rental price based on the transport type. The base price is used to determine the total rental price in the derived classes.</li>
+</ul>
+<hr />
+<h4><strong>Scooter (inherits from Transport)</strong></h4>
+<ul>
+<li><strong>Additional Attributes</strong>:</li>
+<li>
+<p>__electric – Whether the scooter is electric (True/False).</p>
+</li>
+<li>
+<p><strong>Overrides calculate_rent method</strong>:</p>
+</li>
+<li>The rent calculation for the scooter includes an additional <strong>electric surcharge</strong> of <strong>$12</strong> per day if the scooter is electric. The total rental price for the scooter is calculated as:
+    Total Rent = Base Price + Electric Surcharge (if applicable)</li>
+<li>The total rental price should be printed with <strong>exactly two decimal places</strong> (e.g., 25.00).</li>
+</ul>
+<hr />
+<h4><strong>Bicycle (inherits from Transport)</strong></h4>
+<ul>
+<li><strong>Additional Attributes</strong>:</li>
+<li>
+<p>__gear_count – The number of gears the bicycle has.</p>
+</li>
+<li>
+<p><strong>Overrides calculate_rent method</strong>:</p>
+</li>
+<li>The rent calculation for the bicycle includes an additional <strong>gear charge</strong> of <strong>$3</strong> per day for every gear beyond <strong>5 gears</strong>. If the bicycle has <strong>5 or fewer gears</strong>, there is no additional charge. The total rental price for the bicycle is calculated as:
+    Total Rent = Base Price + (Gear Charge per additional gear over 5)</li>
+<li>The total rental price should be printed with <strong>exactly two decimal places</strong> (e.g., 22.75).</li>
+</ul>
+<hr />
+<p><MultiLineNote>
+1. The <strong>init</strong> method in <strong>Transport</strong> should initialize __model, __brand, and __base_price.
+2. The display_info(self) method in <strong>Scooter</strong> should add $12 to the price for electric scooters and print the total price with two decimal places.
+3. The display_info(self) method in <strong>Bicycle</strong> should add $3 per gear if the bicycle has more than 5 gears and print the total price with two decimal places.
+4. Testing will confirm correct implementation of polymorphism and method overriding as specified.
+</MultiLineNote></p>
+<hr /></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Staff Management System with Abstraction</h3>
+<p>Create an abstract class Staff that serves as a template for different types of staff members, with two derived classes: Professor and Administrator.</p>
+<h4><strong>Staff (Abstract Class)</strong></h4>
+<ul>
+<li><strong>Private Attributes</strong>:</li>
+<li>__staff_id – Unique identifier for the staff member.</li>
+<li>__name – Name of the staff member.</li>
+<li>__age – Age of the staff member.</li>
+<li>
+<p>Ensure the Staff class cannot be instantiated directly due to its abstract nature.</p>
+</li>
+<li>
+<p><strong>Abstract Methods</strong>:</p>
+</li>
+<li>calculate_salary() – Must be implemented by subclasses.</li>
+<li>display_info() – Must be implemented by subclasses.</li>
+</ul>
+<hr />
+<h4><strong>Professor (inherits from Staff)</strong></h4>
+<ul>
+<li><strong>Additional Private Attributes</strong>:</li>
+<li>__subject – The subject the professor teaches.</li>
+<li>__experience – Years of teaching experience.</li>
+<li>
+<p>If __experience is negative, print "Invalid Experience".</p>
+</li>
+<li>
+<p><strong>Implements Abstract Methods</strong>:</p>
+</li>
+<li>calculate_salary() – Returns the message "Professor [staff_id]: Salary calculated based on experience [experience] years."</li>
+<li>display_info() – Prints "Professor [staff_id]: [name], Age: [age], Subject: [subject], Experience: [experience] years."</li>
+</ul>
+<hr />
+<h4><strong>Administrator (inherits from Staff)</strong></h4>
+<ul>
+<li><strong>Additional Private Attributes</strong>:</li>
+<li>__department – The department the administrator manages.</li>
+<li>__salary – The salary of the administrator.</li>
+<li>
+<p>If __salary is negative, print "Invalid Salary".</p>
+</li>
+<li>
+<p><strong>Implements Abstract Methods</strong>:</p>
+</li>
+<li>calculate_salary() – Returns the message "Administrator [staff_id]: Salary is $[salary]."</li>
+<li>display_info() – Prints "Administrator [staff_id]: [name], Age: [age], Department: [department], Salary: $[salary]."</li>
+</ul>
+<hr />
+<p><MultiLineNote>
+1. The <strong>init</strong> method in Staff should initialize <strong>staff_id, __name, and __age.
+2. The __init</strong> methods in Professor and Administrator should initialize both the inherited attributes and their own attributes.
+3. Ensure that the Staff class cannot be instantiated directly.
+4. Testing will verify that abstraction is properly implemented and that method overriding works as specified.
+</MultiLineNote></p>
+<hr /></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Resort Management with OOPs Design</h3>
+<p>Develop an Object-Oriented Program (OOP) to manage a resort’s room reservations. Implement a base class ResortRoom, with derived classes for specific room categories: StandardRoom, DeluxeRoom, and LuxurySuite.</p>
+<p><HighlightedText>Class Descriptions</HighlightedText></p>
+<h4>ResortRoom (Base Class)</h4>
+<ul>
+<li><strong>Private Attributes</strong>:</li>
+<li>__room_id – Unique identifier for the room.</li>
+<li>__category – The category of the room (e.g., Standard, Deluxe, LuxurySuite).</li>
+<li>__rate – The rate per night for the room.</li>
+<li>
+<p>__is_available – A boolean representing whether the room is available (default is True).</p>
+</li>
+<li>
+<p><strong>Public Methods</strong>:</p>
+</li>
+<li>get_room_id() – Returns the room ID.</li>
+<li>set_room_id(room_id) – Updates the room ID.</li>
+<li>get_category() – Returns the room category.</li>
+<li>set_category(category) – Updates the category of the room.</li>
+<li>get_rate() – Returns the room rate.</li>
+<li>set_rate(rate) – Updates the room rate if rate is positive, otherwise prints "Invalid rate".</li>
+<li>is_available() – Returns the availability status of the room.</li>
+<li>reserve_room() – Sets the availability to False (room is booked).<ul>
+<li>If the room is already reserved, print: "[room_id] is already reserved."</li>
+<li>If available, print: "Room [room_id] has been successfully reserved."</li>
+</ul>
+</li>
+<li>cancel_reservation() – Sets the availability back to True (cancellation) and prints: "Reservation for room [room_id] has been canceled."</li>
+</ul>
+<h4>StandardRoom (inherits from ResortRoom)</h4>
+<ul>
+<li>Additional Private Attributes:</li>
+<li>__bed_style – Type of bed (e.g., Twin, Full).</li>
+<li>
+<p>__wing – The wing of the resort where the room is located.</p>
+</li>
+<li>
+<p>Additional Public Methods:</p>
+</li>
+<li>get_bed_style() – Returns the bed style.</li>
+<li>set_bed_style(bed_style) – Updates the bed style.</li>
+<li>get_wing() – Returns the wing where the room is located.</li>
+<li>set_wing(wing) – Updates the wing.</li>
+</ul>
+<h4>DeluxeRoom (inherits from ResortRoom)</h4>
+<ul>
+<li>Additional Private Attributes:</li>
+<li>__bed_style – Type of bed (e.g., Queen, King).</li>
+<li>
+<p>__ocean_view – A boolean indicating if the room has an ocean view.</p>
+</li>
+<li>
+<p>Additional Public Methods:</p>
+</li>
+<li>get_bed_style() – Returns the bed style.</li>
+<li>set_bed_style(bed_style) – Updates the bed style.</li>
+<li>has_ocean_view() – Returns whether the room has an ocean view.</li>
+<li>set_ocean_view(ocean_view) – Updates ocean view availability.</li>
+</ul>
+<h4>LuxurySuite (inherits from ResortRoom)</h4>
+<ul>
+<li>Additional Private Attributes:</li>
+<li>__special_features – A list of special features (e.g., Hot Tub, Private Balcony).</li>
+<li>
+<p>__room_area – The size of the suite in square feet.</p>
+</li>
+<li>
+<p>Additional Public Methods:</p>
+</li>
+<li>get_special_features() – Returns the list of special features.</li>
+<li>set_special_features(features) – Updates the special features.</li>
+<li>get_room_area() – Returns the suite’s area.</li>
+<li>set_room_area(room_area) – Updates the room area.</li>
+</ul>
+<p><MultiLineNote>
+1. The <strong>init</strong> method in ResortRoom should initialize <strong>room_id, __category, __rate, and __is_available (default is True).
+2. The __init</strong> methods in StandardRoom, DeluxeRoom, and LuxurySuite should initialize both the inherited attributes and their own specific attributes.
+3. Ensure that setter methods enforce constraints (e.g., valid rates for rooms).
+4. Testing will confirm correct implementation of object creation, inheritance, encapsulation, and method functionality.
+</MultiLineNote></p>
+<hr /></pre></div>
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;"></footer>
+</body>
+</html>

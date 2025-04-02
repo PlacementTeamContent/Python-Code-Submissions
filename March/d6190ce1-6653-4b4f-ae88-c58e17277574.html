@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .no-scrollbar {
+            overflow: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        body {
+            margin: 0;
+            padding: 2vw 10vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .border {
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color);
+            border-radius: 30px;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .index {
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question {
+            margin: 10px;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre {
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 30px 1fr;
+            gap: 10px;
+            background-color: white;
+        }
+
+        @media screen and (max-width:600px) {
+            body {
+                padding: 5vh 5vw;
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+
+            .index {
+                padding-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Veda Purnima</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Inherited Learner and PostgraduateLearner Classes</h3>
+<p>Implement a class Learner that encapsulates its attributes and provides public methods to interact with them. Then, create a derived class PostgraduateLearner that inherits from Learner and adds functionality specific to postgraduate students.</p>
+<p><HighlightedText>Class Description</HighlightedText></p>
+<h4>Learner</h4>
+<ul>
+<li>Private Attributes:</li>
+<li>__full_name – The learner's full name.</li>
+<li>__id_number – A unique identification number for the learner.</li>
+<li>__score – The learner's current score.</li>
+<li>
+<p>__subjects – A list of subjects the learner is enrolled in.</p>
+</li>
+<li>
+<p>Public Methods:</p>
+</li>
+<li>get_full_name() – Returns the learner's name.</li>
+<li>set_full_name(name) – Updates the learner's name.</li>
+<li>get_id_number() – Returns the learner's ID number.</li>
+<li>get_score() – Returns the learner's score.</li>
+<li>set_score(score) – Updates the learner's score. If the score is not between 0 and 100, then it should print "Invalid Score".</li>
+<li>get_subjects() – Returns the list of subjects.</li>
+<li>add_subject(subject) – Adds a new subject to the learner's subject list.</li>
+<li>remove_subject(subject) – Removes a subject from the learner's subject list if it exists.</li>
+<li>
+<p>display_details() – Prints the learner's details in the following format:
+    "Learner [id_number]: [full_name], Score: [score], Subjects: [subject1, subject2, ...]"</p>
+<p><em>Note:</em> If the subject list is empty then print [No subjects enrolled]</p>
+</li>
+</ul>
+<h4>PostgraduateLearner (Inherits from Learner)</h4>
+<ul>
+<li>Additional Private Attributes:</li>
+<li>
+<p>__research_topic – The title of the learner's research topic.</p>
+</li>
+<li>
+<p>Public Methods:</p>
+</li>
+<li>get_research_topic() – Returns the title of the learner's research topic.</li>
+<li>set_research_topic(topic) – Updates the title of the research topic.</li>
+<li>display_details() – Overrides the display_details() method to include the research topic in the following format:
+    "Postgraduate Learner [id_number]: [full_name], Score: [score], Research: [research_topic], Subjects: [subject1, subject2, ...]"</li>
+</ul>
+<p><MultiLineNote>
+1. The Learner class should have an <strong>init</strong> method that initializes all private attributes using parameters: full_name, id_number, score, and subjects (where subjects is an optional list parameter that defaults to an empty list if not provided).
+2. The PostgraduateLearner class should inherit from the Learner class and add a new private attribute for research_topic.
+3. The PostgraduateLearner class should override the display_details() method to include the research topic in the learner's information.
+4. Ensure that score updates for both Learner and PostgraduateLearner enforce the condition of being between 0 and 100.
+5. Testing will verify that both Learner and PostgraduateLearner classes function correctly with inheritance and that the new research functionality works for postgraduate learners.
+</MultiLineNote></p>
+<hr /></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Class Inheritance Task: Build Vehicle and Bike</h3>
+<p>Implement two classes: Vehicle and Bike, where Bike is a subclass of Vehicle.</p>
+<p><HighlightedText>Class Description</HighlightedText></p>
+<h4>Vehicle</h4>
+<ul>
+<li>Attributes</li>
+<li>brand – Brand of the vehicle.</li>
+<li>model – Model of the vehicle.</li>
+<li>year – Manufacturing year of the vehicle.</li>
+<li>Methods</li>
+<li>start() – Prints the string:<br />
+    "[brand] [model] is starting."<br />
+    where [brand] and [model] are the brand and model of the vehicle.</li>
+<li>stop() – Prints the string:<br />
+    "[brand] [model] is stopping."<br />
+    where [brand] and [model] are the brand and model of the vehicle.</li>
+</ul>
+<h4>Bike (subclass of Vehicle)</h4>
+<ul>
+<li>Additional Attributes</li>
+<li>type – Type of the bike (e.g., "Mountain", "Road", "Hybrid").</li>
+<li>has_gear – A boolean indicating whether the bike has gears (default value should be False).</li>
+<li>Additional Methods</li>
+<li>ring_bell() – Prints the string:<br />
+    "[brand] [model] is ringing the bell!"<br />
+    where [brand] and [model] are the brand and model of the bike.</li>
+<li>enable_gears() – Sets has_gear to True and prints the string:<br />
+    "[brand] [model] now has gears enabled."<br />
+    where [brand] and [model] are the brand and model of the bike.</li>
+</ul>
+<p><MultiLineNote>
+1. The <strong>init</strong> method of the Vehicle class will take 3 arguments: brand, model, and year in the same order.
+2. The <strong>init</strong> method of the Bike class will take 5 arguments: brand, model, year, type, and has_gear (optional with default False) in the same order, and will call the parent class's <strong>init</strong> method.
+3. The testing will verify if the attributes and methods for both classes are implemented correctly.
+</MultiLineNote></p>
+<hr /></pre></div>
+            
+                <div class="index no-scrollbar">3.</div>
+                <div class="question border no-scrollbar"><pre><h3>Build a Functional Novel Class</h3>
+<p>Implement a class Novel with the following specifications.</p>
+<p><HighlightedText>Class Description</HighlightedText></p>
+<h4>Novel</h4>
+<ul>
+<li>Attributes</li>
+<li>title – Title of the novel.</li>
+<li>author – Name of the author.</li>
+<li>year – Year of publication.</li>
+<li>isbn – ISBN number of the novel.</li>
+<li>genre – Genre of the novel.</li>
+<li>
+<p>is_read – A boolean indicating whether the novel has been read (default value should be False).</p>
+</li>
+<li>
+<p>Methods</p>
+</li>
+<li>get_summary() – Returns a string combining the title, author, year, and genre in the following format:<br />
+    "[title] by [author], published in [year] - Genre: [genre]"<br />
+    For example, for a novel with title <em>To Kill a Mockingbird</em>, author <em>Harper Lee</em>, year <em>1960</em>, and genre <em>Fiction</em>, this method should return:<br />
+    "To Kill a Mockingbird by Harper Lee, published in 1960 - Genre: Fiction"</li>
+<li>mark_as_read() – Sets is_read to True and prints:<br />
+    "You have read [title]"<br />
+    where [title] is the title of the novel.</li>
+<li>change_genre(new_genre) – Updates the genre to new_genre and prints:<br />
+    "Genre updated to [new_genre] for [title]"<br />
+    where [title] is the title of the novel.</li>
+</ul>
+<p><MultiLineNote>
+1. The <strong>init</strong> method of the Novel class will take 5 arguments: title, author, year, isbn, and genre.<br />
+2. The attribute is_read should be initialized to False within the constructor.
+3. The testing will check if the attributes and methods are implemented correctly.
+</MultiLineNote></p>
+<hr /></pre></div>
+            
+                <div class="index no-scrollbar">4.</div>
+                <div class="question border no-scrollbar"><pre><h3>Encapsulated Worker Class</h3>
+<p>Implement a class Worker that encapsulates its attributes and provides public methods to interact with them.</p>
+<p><HighlightedText>Class Description</HighlightedText></p>
+<h4>Worker</h4>
+<ul>
+<li>Private Attributes:</li>
+<li>__name – The worker's full name.</li>
+<li>__worker_id – A unique identifier for the worker.</li>
+<li>__role – The role assigned to the worker.</li>
+<li>
+<p>__wage – The worker's hourly wage.</p>
+</li>
+<li>
+<p>Public Methods:</p>
+</li>
+<li>get_name() – Returns the worker's name.</li>
+<li>set_name(name) – Updates the worker's name.</li>
+<li>get_worker_id() – Returns the worker's ID.</li>
+<li>get_role() – Returns the worker's role.</li>
+<li>set_role(role) – Updates the worker's role.</li>
+<li>get_wage() – Returns the worker's hourly wage.</li>
+<li>set_wage(wage) – Updates the worker's wage. If the wage is negative, it will print "Invalid Wage".</li>
+<li>display_info() – Prints the worker's details in the following format:
+    "Worker [worker_id]: [name], Role: [role], Wage: $[wage]/hour"</li>
+</ul>
+<p><MultiLineNote>
+1. The <strong>init</strong> method should initialize all private attributes using parameters: name, worker_id, role, and wage.
+2. Ensure that wage updates enforce the non-negative condition.
+3. Testing will verify that attribute encapsulation is properly implemented and that getter and setter methods work as specified.
+</MultiLineNote></p>
+<hr /></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Encapsulated User Hierarchy with Inheritance</h3>
+<p>Implement a base class User that encapsulates common attributes, and then implement two derived classes: Customer and Admin.</p>
+<p><HighlightedText>Class Descriptions</HighlightedText></p>
+<h4>User</h4>
+<ul>
+<li>Private Attributes:</li>
+<li>__username – The user's unique username.</li>
+<li>__email – The user's email address.</li>
+<li>Public Methods:</li>
+<li>get_username() – Returns the username.</li>
+<li>set_username(username) – Updates the username.</li>
+<li>get_email() – Returns the email.</li>
+<li>set_email(email) – Updates the email. If the email format is invalid (does not contain '@'), print "Invalid Email".</li>
+<li>display_info() – Prints user details in the format: "Username: [username], Email: [email]".</li>
+</ul>
+<h4>Customer (inherits from User)</h4>
+<ul>
+<li>Additional Private Attributes:</li>
+<li>__customer_id – A unique identifier for the customer.</li>
+<li>__purchase_history – A list of purchased items.</li>
+<li>Additional Public Methods:</li>
+<li>get_customer_id() – Returns the customer ID.</li>
+<li>set_customer_id(customer_id) – Updates the customer ID.</li>
+<li>get_purchase_history() – Returns the list of purchased items.</li>
+<li>add_purchase(item) – Adds an item to the purchase history.</li>
+<li>remove_purchase(item) – Removes an item from the purchase history if it exists.</li>
+<li>display_info() – Overrides the base method to print details in the format: "Customer [customer_id]: [username], Email: [email], Purchases: [item1, item2, ...]".</li>
+</ul>
+<h4>Admin (inherits from User)</h4>
+<ul>
+<li>Additional Private Attributes:</li>
+<li>__admin_id – A unique identifier for the admin.</li>
+<li>__role – The role of the admin (e.g., "Moderator", "Super Admin").</li>
+<li>__permissions – A list of administrative permissions.</li>
+<li>Additional Public Methods:</li>
+<li>get_admin_id() – Returns the admin ID.</li>
+<li>set_admin_id(admin_id) – Updates the admin ID.</li>
+<li>get_role() – Returns the admin's role.</li>
+<li>set_role(role) – Updates the admin's role.</li>
+<li>get_permissions() – Returns the list of permissions.</li>
+<li>add_permission(permission) – Adds a permission to the admin's permissions list.</li>
+<li>remove_permission(permission) – Removes a permission if it exists.</li>
+<li>display_info() – Overrides the base method to print details in the format: "Admin [admin_id]: [username], Email: [email], Role: [role], Permissions: [perm1, perm2, ...]".</li>
+</ul>
+<p><MultiLineNote>
+1. The <strong>init</strong> method in User should initialize username and email.
+2. The <strong>init</strong> methods in Customer and Admin should initialize both the inherited attributes and their specific attributes.
+3. Ensure that setter methods enforce the constraints (e.g., valid email format).
+4. Testing will verify that encapsulation and inheritance are properly implemented and that method overriding works as specified.
+</MultiLineNote></p>
+<hr /></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Build a Tiered Bank Account System</h3>
+<p>Develop a class-based banking system that consists of a base class BankAccount and two derived classes FixedDepositAccount and CurrentAccount.</p>
+<p><HighlightedText>Class Description</HighlightedText></p>
+<h4>BankAccount</h4>
+<ul>
+<li>Attributes</li>
+<li>account_holder – The name of the person who owns the account.</li>
+<li>balance – The current balance as a float.</li>
+<li>history – A list that records all transactions, with each entry describing an action performed.</li>
+<li>Methods</li>
+<li>deposit(amount) – Increases the balance by amount and logs the transaction as "Deposited: [amount]".</li>
+<li>withdraw(amount) – Deducts amount from the balance if funds are sufficient, logging the transaction as "Withdrew: [amount]". If funds are insufficient, prints "Insufficient balance" without modifying the balance.</li>
+<li>get_balance() – Returns the account’s current balance.</li>
+<li>show_history() – Displays all transactions in chronological order.</li>
+</ul>
+<h4>FixedDepositAccount (subclass of BankAccount)</h4>
+<ul>
+<li>Additional Attributes</li>
+<li>interest_rate – The interest rate per annum (percentage, e.g., 4.5 for 4.5%).</li>
+<li>Additional Methods</li>
+<li>add_interest() – Computes interest using the formula:<br />
+    interest = balance * (interest_rate / 100)<br />
+    Adds the computed interest to the balance and records the transaction as "Interest Added: [interest_amount]".</li>
+</ul>
+<h4>CurrentAccount (subclass of BankAccount)</h4>
+<ul>
+<li>Additional Attributes</li>
+<li>overdraft_limit – The maximum negative balance allowed (positive float, e.g., 1500).</li>
+<li>Overridden Methods</li>
+<li>withdraw(amount) – Allows withdrawals beyond the balance, provided that the balance does not fall below -overdraft_limit.  <ul>
+<li>If withdrawing amount would exceed -overdraft_limit, print "Overdraft limit reached" and do not process the withdrawal.</li>
+<li>If the withdrawal results in a negative balance, log the transaction as "Withdrew: [amount] (Overdraft)".</li>
+</ul>
+</li>
+</ul>
+<p><MultiLineNote>
+1. The <strong>init</strong> method in BankAccount should initialize account_holder, balance, and set history as an empty list.
+2. The <strong>init</strong> method in FixedDepositAccount should take an additional interest_rate parameter and call the parent constructor.
+3. The <strong>init</strong> method in CurrentAccount should take an additional overdraft_limit parameter and call the parent constructor.
+4. Ensure that deposits, withdrawals, and interest additions are correctly recorded in the history list.
+5. The testing will confirm the correct behavior of attributes, methods, inheritance, and method overriding.
+</MultiLineNote></p>
+<hr /></pre></div>
+            
+                <div class="index no-scrollbar">3.</div>
+                <div class="question border no-scrollbar"><pre><h3>Transport Management System with Polymorphism</h3>
+<p>Implement the Transport class and its subclasses to demonstrate polymorphism through method overriding.</p>
+<h4><strong>Class Descriptions</strong></h4>
+<h4><strong>Transport (Base Class)</strong></h4>
+<ul>
+<li><strong>Private Attributes</strong>:</li>
+<li>__model – The model of the transport.</li>
+<li>__brand – The brand of the transport.</li>
+<li>
+<p>__cost – The base cost of the transport.</p>
+</li>
+<li>
+<p><strong>Public Methods</strong>:</p>
+</li>
+<li>display_details(self) – This method should print the model, brand, and cost of the transport in the format:<br />
+    Model: [model], Brand: [brand], Cost: $[cost]<br />
+    The cost should be printed as a floating-point number with exactly <strong>two decimal places</strong> (e.g., 25000.75).</li>
+</ul>
+<hr />
+<h4><strong>Bus (inherits from Transport)</strong></h4>
+<ul>
+<li><strong>Overrides display_details method</strong>:</li>
+<li>The cost of the bus should include an additional <strong>service fee</strong> of <strong>$750</strong>.</li>
+<li>The display_details method should print the model, brand, and total cost (including the service fee) in the format:<br />
+    Model: [model], Brand: [brand], Total Cost: $[total cost]
+    The total cost should be printed with <strong>exactly two decimal places</strong> (e.g., 40750.99).</li>
+</ul>
+<hr />
+<h4><strong>Scooter (inherits from Transport)</strong></h4>
+<ul>
+<li><strong>Overrides display_details method</strong>:</li>
+<li>The cost of the scooter should include an <strong>insurance fee</strong> of <strong>$200</strong>.</li>
+<li>The display_details method should <strong>print</strong> the model, brand, and total cost (including the insurance fee) in the format:<br />
+    Model: [model], Brand: [brand], Total Cost: $[total cost]
+    The total cost should be printed with <strong>exactly two decimal places</strong> (e.g., 13200.50).</li>
+</ul>
+<hr />
+<p><MultiLineNote>
+1. The <strong>init</strong> method in Transport should initialize __model, __brand, and __cost.
+2. The display_details(self) method in Bus should add $750 to the cost for the service fee and <strong>print</strong> the total cost with two decimal places.
+3. The display_details(self) method in Scooter should add $200 to the cost for insurance and <strong>print</strong> the total cost with two decimal places.
+4. The display_details(self) method in Transport should <strong>print</strong> the base cost without any additional fees, formatted to two decimal places and preceded by a <strong>$</strong> symbol.
+</MultiLineNote></p>
+<hr /></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Digital Transaction System with Abstraction</h3>
+<p>Design an abstract class TransactionMethod that acts as a blueprint for different digital transaction methods, and then implement two subclasses: DebitCardTransaction and UPITransaction.</p>
+<p><HighlightedText>Class Descriptions</HighlightedText></p>
+<h4><strong>TransactionMethod (Abstract Class)</strong></h4>
+<ul>
+<li><strong>Private Attributes</strong>:</li>
+<li>__transaction_id – Unique identifier for the transaction.</li>
+<li>__amount – The transaction amount.</li>
+<li>
+<p>__currency – The currency type.</p>
+</li>
+<li>
+<p><strong>Constructor (<strong>init</strong>)</strong>:</p>
+</li>
+<li>
+<p>The constructor should validate the amount and currency:</p>
+<ul>
+<li>If the amount is less than 0, print "Invalid Amount" and set the amount to 0.</li>
+<li>If the currency is not "USD", "EUR", or "INR", print "Invalid Currency" and set the currency to "USD" as a default.</li>
+</ul>
+</li>
+<li>
+<p><strong>Abstract Methods</strong>:</p>
+</li>
+<li>initiate_transaction() – Must be implemented by subclasses.</li>
+<li>cancel_transaction() – Must be implemented by subclasses.</li>
+</ul>
+<hr />
+<h4><strong>DebitCardTransaction (inherits from TransactionMethod)</strong></h4>
+<ul>
+<li><strong>Implements Abstract Methods</strong>:</li>
+<li>initiate_transaction() – Prints "Debit Card Transaction [transaction_id]: Processed amount [amount] [currency]."</li>
+<li>cancel_transaction() – Prints "Debit Card Transaction [transaction_id]: Reversed amount [amount] [currency]."</li>
+</ul>
+<hr />
+<h4><strong>UPITransaction (inherits from TransactionMethod)</strong></h4>
+<ul>
+<li><strong>Implements Abstract Methods</strong>:</li>
+<li>initiate_transaction() – Prints "UPI Transaction [transaction_id]: Processed amount [amount] [currency]."</li>
+<li>cancel_transaction() – Prints "UPI Transaction [transaction_id]: Reversed amount [amount] [currency]."</li>
+</ul>
+<hr />
+<p><MultiLineNote>
+1. The <strong>init</strong> method in TransactionMethod should initialize <strong>transaction_id, __amount, and __currency.
+2. The __init</strong> methods in DebitCardTransaction and UPITransaction should initialize both the inherited attributes and implement their own logic.
+3. The TransactionMethod class should not be instantiated directly.
+4. The implementation will be tested to ensure that abstraction is properly followed and that method overriding works as expected.
+</MultiLineNote></p>
+<hr /></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Digital Library System with OOPs</h3>
+<p>Develop an object-oriented program to manage a digital library's book collection. Implement a base class DigitalBook, with derived classes for specific types of digital books: Ebook, Audiobook, and ResearchPaper.</p>
+<p><HighlightedText>Class Descriptions</HighlightedText></p>
+<h4>DigitalBook (Base Class)</h4>
+<ul>
+<li><strong>Private Attributes</strong>:</li>
+<li>__title – The title of the book.</li>
+<li>__author – The author of the book.</li>
+<li>__isbn – The ISBN number of the book.</li>
+<li>
+<p>__availability – A boolean indicating whether the book is available for borrowing (default is True).</p>
+</li>
+<li>
+<p><strong>Public Methods</strong>:</p>
+</li>
+<li>get_title() – Returns the title of the book.</li>
+<li>set_title(title) – Updates the title of the book.</li>
+<li>get_author() – Returns the author of the book.</li>
+<li>set_author(author) – Updates the author of the book.</li>
+<li>get_isbn() – Returns the ISBN of the book.</li>
+<li>set_isbn(isbn) – Updates the ISBN of the book.</li>
+<li>check_availability() – Returns whether the book is available.</li>
+<li>borrow_book() – Sets the availability of the book to False (book is borrowed).<ul>
+<li>If the book is already borrowed, print: "[book title] is already borrowed."</li>
+<li>If the book is available, print: "Book Borrowed: [book title] by [author]"</li>
+</ul>
+</li>
+<li>return_book() – Sets the availability of the book to True (book is returned) and prints: "Book Returned: [book title] by [author]"</li>
+</ul>
+<h4>Ebook (inherits from DigitalBook)</h4>
+<ul>
+<li>Additional Private Attributes:</li>
+<li>__file_size – The size of the ebook file in MB.</li>
+<li>
+<p>__format – The format of the ebook (e.g., PDF, EPUB).</p>
+</li>
+<li>
+<p>Additional Public Methods:</p>
+</li>
+<li>get_file_size() – Returns the file size of the ebook.</li>
+<li>set_file_size(size) – Updates the file size of the ebook.</li>
+<li>get_format() – Returns the format of the ebook.</li>
+<li>set_format(format) – Updates the format of the ebook.</li>
+</ul>
+<h4>Audiobook (inherits from DigitalBook)</h4>
+<ul>
+<li>Additional Private Attributes:</li>
+<li>__narrator – The narrator of the audiobook.</li>
+<li>
+<p>__duration – The duration of the audiobook in hours.</p>
+</li>
+<li>
+<p>Additional Public Methods:</p>
+</li>
+<li>get_narrator() – Returns the narrator of the audiobook.</li>
+<li>set_narrator(narrator) – Updates the narrator of the audiobook.</li>
+<li>get_duration() – Returns the duration of the audiobook.</li>
+<li>set_duration(duration) – Updates the duration of the audiobook.</li>
+</ul>
+<h4>ResearchPaper (inherits from DigitalBook)</h4>
+<ul>
+<li>Additional Private Attributes:</li>
+<li>__field – The field of study the research paper belongs to (e.g., Computer Science, Physics).</li>
+<li>
+<p>__citation_count – The number of times the paper has been cited.</p>
+</li>
+<li>
+<p>Additional Public Methods:</p>
+</li>
+<li>get_field() – Returns the field of study of the research paper.</li>
+<li>set_field(field) – Updates the field of study.</li>
+<li>get_citation_count() – Returns the citation count.</li>
+<li>set_citation_count(count) – Updates the citation count.</li>
+</ul>
+<p><MultiLineNote>
+1. The <strong>init</strong> method in DigitalBook should initialize <strong>title, __author, __isbn, and __availability (default is True).
+2. The __init</strong> methods in Ebook, Audiobook, and ResearchPaper should initialize both inherited attributes and their own specific attributes.
+3. Ensure that setter methods enforce constraints (e.g., file size should be positive, duration should be non-negative).
+4. Testing will verify that object creation, inheritance, encapsulation, and method functionality are properly implemented.
+</MultiLineNote></p>
+<hr /></pre></div>
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;"></footer>
+</body>
+</html>

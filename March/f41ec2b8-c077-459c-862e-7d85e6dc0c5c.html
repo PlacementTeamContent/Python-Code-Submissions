@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .no-scrollbar {
+            overflow: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        body {
+            margin: 0;
+            padding: 2vw 10vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .border {
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color);
+            border-radius: 30px;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .index {
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question {
+            margin: 10px;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre {
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 30px 1fr;
+            gap: 10px;
+            background-color: white;
+        }
+
+        @media screen and (max-width:600px) {
+            body {
+                padding: 5vh 5vw;
+            }
+
+            .grid-container {
+                grid-template-columns: 1fr;
+            }
+
+            .index {
+                padding-left: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Roshitha</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Develop a Functional Bike Class</h3>
+<p>Implement a class Bike with the following specifications.</p>
+<p><HighlightedText>Class Description</HighlightedText>  </p>
+<h4>Bike</h4>
+<ul>
+<li>Attributes  </li>
+<li>brand – Bike brand name.  </li>
+<li>model – Model name.  </li>
+<li>year – Manufacturing year.  </li>
+<li>mileage – Mileage of the bike (default should be 0).  </li>
+<li>
+<p>is_sold – A boolean indicating whether the bike has been sold (default should be False).  </p>
+</li>
+<li>
+<p>Methods  </p>
+</li>
+<li>get_info() – Returns a string with brand, model, and year in the format:<br />
+    "[brand] [model], manufactured in [year]"<br />
+    Example:<br />
+    "Honda CB500X, manufactured in 2021"</li>
+<li>mark_as_sold() – Sets is_sold to True and prints:<br />
+    "The bike [brand] [model] has been sold"  </li>
+<li>update_mileage(new_mileage) – Updates the mileage to new_mileage and prints:<br />
+    "Mileage updated to [new_mileage] for [brand] [model]"  </li>
+</ul>
+<p><MultiLineNote><br />
+1. The <strong>init</strong> method should take 3 arguments: brand, model, and year.<br />
+2. The attribute mileage should start at 0, and is_sold should start as False.<br />
+3. The implementation should be tested for correctness.<br />
+</MultiLineNote></p>
+<hr /></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Class Inheritance Task: Build Worker and Supervisor</h3>
+<p>Implement two classes: Worker and Supervisor, where Supervisor is a subclass of Worker.</p>
+<p><HighlightedText>Class Description</HighlightedText></p>
+<h4>Worker</h4>
+<ul>
+<li>Attributes</li>
+<li>name – The name of the worker.</li>
+<li>experience – The years of experience of the worker.</li>
+<li>hourly_wage – The hourly wage of the worker.</li>
+<li>Methods</li>
+<li>perform_task() – Prints the string:<br />
+    "[name] is performing a task."</li>
+<li>calculate_pay(hours) – Returns the total pay for hours worked.</li>
+</ul>
+<h4>Supervisor (subclass of Worker)</h4>
+<ul>
+<li>Additional Attributes</li>
+<li>division – The division overseen by the supervisor.</li>
+<li>employees_managed – The number of employees supervised (default 0).</li>
+<li>Additional Methods</li>
+<li>conduct_meeting() – Prints the string:<br />
+    "[name] is conducting a meeting for the [division] division."</li>
+<li>add_employees(n) – Increases employees_managed by n and prints the string:<br />
+    "[name] now supervises [employees_managed] employees."<ul>
+<li>n is the number of employees to add to the Supervisor's team.</li>
+</ul>
+</li>
+</ul>
+<p><MultiLineNote>
+1. The <strong>init</strong> method of the Worker class will take 3 arguments: name, experience, and hourly_wage in the same order.
+2. The <strong>init</strong> method of the Supervisor class will take 5 arguments: name, experience, hourly_wage, division, and employees_managed (optional with default 0) in the same order, and will call the parent class's <strong>init</strong> method.
+3. The testing will verify if the attributes and methods for both classes are implemented correctly.
+</MultiLineNote></p>
+<hr /></pre></div>
+            
+                <div class="index no-scrollbar">3.</div>
+                <div class="question border no-scrollbar"><pre><h3>Inherited Transport and ElectricTransport Classes</h3>
+<p>Implement a class Transport that encapsulates its attributes and provides public methods to interact with them. Then, create a derived class ElectricTransport that inherits from Transport and adds functionality specific to electric transport.</p>
+<p><HighlightedText>Class Description</HighlightedText></p>
+<h4>Transport</h4>
+<ul>
+<li><strong>Private Attributes:</strong></li>
+<li>__brand – The manufacturer of the transport.</li>
+<li>__type – The type of transport (e.g., car, bike, bus).</li>
+<li>__year – The manufacturing year of the transport.</li>
+<li>
+<p>__distance_covered – The total distance covered in kilometers.</p>
+</li>
+<li>
+<p><strong>Public Methods:</strong></p>
+</li>
+<li>get_brand() – Returns the transport's brand.</li>
+<li>set_brand(brand) – Updates the transport's brand.</li>
+<li>get_type() – Returns the transport type.</li>
+<li>set_type(type) – Updates the transport type.</li>
+<li>get_year() – Returns the transport's manufacturing year.</li>
+<li>set_year(year) – Updates the transport's manufacturing year. If the year is before 1800 (before modern transport), it should print "Invalid Year".</li>
+<li>get_distance_covered() – Returns the distance covered.</li>
+<li>set_distance_covered(distance) – Updates the distance covered. If the distance is negative, it should print "Invalid Distance".</li>
+<li>display_info() – Prints the transport's details in the following format:<br />
+    "Transport [brand] [type], Year: [year], Distance Covered: [distance_covered] km"</li>
+</ul>
+<h4>ElectricTransport (Inherits from Transport)</h4>
+<ul>
+<li><strong>Additional Private Attributes:</strong></li>
+<li>__battery_size – The battery size of the electric transport in kWh.</li>
+<li>
+<p>__charge_duration – The time required to fully charge the battery in hours.</p>
+</li>
+<li>
+<p><strong>Public Methods:</strong></p>
+</li>
+<li>get_battery_size() – Returns the battery size.</li>
+<li>set_battery_size(size) – Updates the battery size. If the size is negative, it should print "Invalid Battery Size".</li>
+<li>get_charge_duration() – Returns the charge duration.</li>
+<li>set_charge_duration(duration) – Updates the charge duration. If the duration is negative, it should print "Invalid Charge Duration".</li>
+<li>display_info() – Overrides the display_info() method to include battery size and charge duration in the following format:
+    "Electric Transport [brand] [type], Year: [year], Distance Covered: [distance_covered] km, Battery Size: [battery_size] kWh, Charge Duration: [charge_duration] hours"</li>
+</ul>
+<p><MultiLineNote>
+1. The Transport class should have an <strong>init</strong> method that initializes all private attributes using parameters: brand, type, year, and distance_covered.
+2. The ElectricTransport class should inherit from the Transport class and add new private attributes for battery_size and charge_duration.
+3. The ElectricTransport class should override the display_info() method to include the battery size and charge duration.
+4. Ensure that year updates for both Transport and ElectricTransport enforce the condition of being 1800 or later.
+5. Ensure that distance updates for both Transport and ElectricTransport enforce the condition of being non-negative.
+6. Ensure that battery size and charge duration are valid (non-negative values) for ElectricTransport.
+7. Testing will verify that both Transport and ElectricTransport classes function correctly with inheritance and that the new electric transport functionality works.
+</MultiLineNote></p>
+<hr /></pre></div>
+            
+                <div class="index no-scrollbar">4.</div>
+                <div class="question border no-scrollbar"><pre><h3>Encapsulated Transport Class</h3>
+<p>Implement a class Transport that encapsulates its attributes and provides public methods to interact with them.</p>
+<p><HighlightedText>Class Description</HighlightedText></p>
+<h4>Transport</h4>
+<ul>
+<li>Private Attributes:</li>
+<li>__manufacturer – The manufacturer of the transport.</li>
+<li>__model – The model name of the transport.</li>
+<li>__year – The manufacturing year of the transport.</li>
+<li>
+<p>__cost – The cost of the transport.</p>
+</li>
+<li>
+<p>Public Methods:</p>
+</li>
+<li>get_manufacturer() – Returns the transport's manufacturer.</li>
+<li>set_manufacturer(manufacturer) – Updates the transport's manufacturer.</li>
+<li>get_model() – Returns the transport's model.</li>
+<li>get_year() – Returns the transport's manufacturing year.</li>
+<li>set_year(year) – Updates the transport's manufacturing year.</li>
+<li>get_cost() – Returns the transport's cost.</li>
+<li>set_cost(cost) – Updates the transport's cost. If cost is negative, print "Invalid Cost".</li>
+<li>show_details() – Prints the transport's details in the following format:
+    "Transport [manufacturer] [model], Year: [year], Cost: $[cost]"</li>
+</ul>
+<p><MultiLineNote>
+1. The <strong>init</strong> method should initialize all private attributes using parameters: manufacturer, model, year, and cost.
+2. Ensure that cost updates enforce the non-negative condition.
+3. Testing will verify that attribute encapsulation is properly implemented and that getter and setter methods work as specified.
+</MultiLineNote></p>
+<hr /></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Football Management System with Polymorphism</h3>
+<p>Create a Football Management System where different types of football players have different methods for calculating their performance score using polymorphism.</p>
+<h4><strong>Class Descriptions</strong></h4>
+<h4><strong>Player (Base Class)</strong></h4>
+<ul>
+<li><strong>Private Attributes</strong>:</li>
+<li>__name – The name of the player.</li>
+<li>__age – The age of the player.</li>
+<li>__team – The team the player belongs to.</li>
+<li>
+<p>__base_score – The base score of the player, which is a default score that applies to all players.</p>
+</li>
+<li>
+<p><strong>Public Methods</strong>:</p>
+</li>
+<li>display_info(self) – This method should print the player's name, age, team, and base score in the format:<br />
+    Name: [name], Age: [age], Team: [team], Base Score: [base_score]</li>
+<li>calculate_performance_score(self) – This method should calculate and return the performance score based on the player's type. The base score is used as the starting point.</li>
+</ul>
+<hr />
+<h4><strong>Striker (inherits from Player)</strong></h4>
+<ul>
+<li><strong>Additional Attributes</strong>:</li>
+<li>
+<p>__goals_scored – The number of goals the striker has scored.</p>
+</li>
+<li>
+<p><strong>Overrides calculate_performance_score method</strong>:</p>
+</li>
+<li>The performance score for a striker is calculated as:
+    Performance Score = Base Score + (Goals Scored * 3)</li>
+</ul>
+<hr />
+<h4><strong>Goalkeeper (inherits from Player)</strong></h4>
+<ul>
+<li><strong>Additional Attributes</strong>:</li>
+<li>
+<p>__saves_made – The number of saves the goalkeeper has made.</p>
+</li>
+<li>
+<p><strong>Overrides calculate_performance_score method</strong>:</p>
+</li>
+<li>The performance score for a goalkeeper is calculated as:
+    Performance Score = Base Score + (Saves Made * 1.5)</li>
+</ul>
+<hr />
+<p><MultiLineNote>
+1. The <strong>init</strong> method in Player should initialize __name, __age, __team, and __base_score.
+2. The calculate_performance_score(self) method in Striker should calculate the performance score using the formula:<br />
+   Performance Score = Base Score + (Goals Scored * 3)
+3. The calculate_performance_score(self) method in Goalkeeper should calculate the performance score using the formula:<br />
+   Performance Score = Base Score + (Saves Made * 1.5)
+4. The calculate_performance_score(self) method in Player should return the base score if not overridden by subclasses.
+5. Testing will verify that polymorphism is correctly implemented and that method overriding works as specified.
+</MultiLineNote></p>
+<hr /></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Encapsulated Transport Hierarchy with Inheritance</h3>
+<p>Implement a base class Transport that encapsulates common attributes, and then implement two derived classes: Bus and Bicycle.</p>
+<p><HighlightedText>Class Descriptions</HighlightedText></p>
+<h4>Transport</h4>
+<ul>
+<li>Private Attributes:</li>
+<li>__brand – The brand of the transport.</li>
+<li>__model – The model of the transport.</li>
+<li>__year – The manufacturing year of the transport.</li>
+<li>Public Methods:</li>
+<li>get_brand() – Returns the transport's brand.</li>
+<li>set_brand(brand) – Updates the transport's brand.</li>
+<li>get_model() – Returns the transport's model.</li>
+<li>set_model(model) – Updates the transport's model.</li>
+<li>get_year() – Returns the transport's manufacturing year.</li>
+<li>set_year(year) – Updates the transport's manufacturing year. If the year is before 1817 (invention of the first transport bicycle), then it should print "Invalid Year".</li>
+<li>display_info() – Prints the transport's details in the format: "Transport: [brand] [model], Year: [year]".</li>
+</ul>
+<h4>Bus (inherits from Transport)</h4>
+<ul>
+<li>Additional Private Attributes:</li>
+<li>__passenger_capacity – The number of passengers the bus can hold.</li>
+<li>__fuel_type – The type of fuel the bus uses (e.g., Diesel, Electric, Hybrid).</li>
+<li>Additional Public Methods:</li>
+<li>get_passenger_capacity() – Returns the passenger capacity.</li>
+<li>set_passenger_capacity(passenger_capacity) – Updates the passenger capacity. If the capacity is negative, it should print "Invalid Passenger Capacity".</li>
+<li>get_fuel_type() – Returns the bus's fuel type.</li>
+<li>set_fuel_type(fuel_type) – Updates the bus's fuel type.</li>
+<li>display_info() – Overrides the base method to print details in the format: "Bus: [brand] [model], Year: [year], Capacity: [passenger_capacity] passengers, Fuel: [fuel_type]".</li>
+</ul>
+<h4>Bicycle (inherits from Transport)</h4>
+<ul>
+<li>Additional Private Attributes:</li>
+<li>__gear_count – The number of gears the bicycle has.</li>
+<li>__type – The type of bicycle (e.g., Mountain, Road, Hybrid).</li>
+<li>Additional Public Methods:</li>
+<li>get_gear_count() – Returns the number of gears.</li>
+<li>set_gear_count(gear_count) – Updates the number of gears. If the count is negative, it should print "Invalid Gear Count".</li>
+<li>get_type() – Returns the bicycle type.</li>
+<li>set_type(bicycle_type) – Updates the bicycle type.</li>
+<li>display_info() – Overrides the base method to print details in the format: "Bicycle: [brand] [model], Year: [year], Gears: [gear_count], Type: [type]".</li>
+</ul>
+<p><MultiLineNote>
+1. The <strong>init</strong> method in Transport should initialize <strong>brand, __model, and __year.
+2. The __init</strong> methods in Bus and Bicycle should initialize both the inherited attributes and their own specific attributes.
+3. Ensure that setter methods enforce the constraints (e.g., non-negative gear count and passenger capacity, valid manufacturing year).
+4. Testing will verify that encapsulation and inheritance are properly implemented and that method overriding works as specified.
+</MultiLineNote></p>
+<hr /></pre></div>
+            
+                <div class="index no-scrollbar">3.</div>
+                <div class="question border no-scrollbar"><pre><h3>Digital Wallet System with Rewards and Overdraft</h3>
+<p>Design a digital payment system with a base class DigitalWallet and two subclasses LoyaltyWallet and CreditWallet.</p>
+<p><HighlightedText>Class Breakdown</HighlightedText></p>
+<h4>DigitalWallet</h4>
+<ul>
+<li>Attributes</li>
+<li>owner – Account holder's name.</li>
+<li>balance – Current balance (float).</li>
+<li>transactions – List to keep track of all transactions.</li>
+<li>Methods</li>
+<li>add_funds(amount) – Increases balance by amount and logs "Added: [amount]".</li>
+<li>pay(amount) – Deducts amount if possible, logs "Spent: [amount]", else prints "Insufficient balance".</li>
+<li>check_balance() – Returns current balance.</li>
+<li>transaction_log() – Displays all recorded transactions.</li>
+</ul>
+<h4>LoyaltyWallet (inherits from DigitalWallet)</h4>
+<ul>
+<li>Additional Attributes</li>
+<li>reward_percentage – Cashback percentage (e.g., 5 for 5%).</li>
+<li>Additional Methods</li>
+<li>apply_cashback() – Uses:<br />
+    cashback = balance * reward_percentage / 100<br />
+    Adds cashback and logs "Cashback Applied: [cashback_amount]".</li>
+</ul>
+<h4>CreditWallet (inherits from DigitalWallet)</h4>
+<ul>
+<li>Additional Attributes</li>
+<li>credit_limit – Maximum negative balance allowed (e.g., 1000).</li>
+<li>Overridden Methods</li>
+<li>pay(amount) – Allows transactions within credit_limit, else prints "Credit limit exceeded".</li>
+<li>If balance goes negative, logs "Spent: [amount] (Credit Used)".</li>
+</ul>
+<p><MultiLineNote>
+1. DigitalWallet constructor initializes owner, balance, and an empty transactions list.
+2. LoyaltyWallet requires reward_percentage during initialization.
+3. CreditWallet requires credit_limit during initialization.
+4. Transaction records must be maintained.
+5. Correct implementation of method overriding will be tested.
+</MultiLineNote></p>
+<hr /></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>University Enrollment System</h3>
+<p>Develop an object-oriented system to manage student enrollments in a university. Implement a base class EnrolledStudent and derived classes for different student categories: Freshman, MasterStudent, and DoctoralCandidate.</p>
+<p><HighlightedText>Class Descriptions</HighlightedText></p>
+<h4>EnrolledStudent (Base Class)</h4>
+<ul>
+<li><strong>Private Attributes</strong>:</li>
+<li>__student_id – Unique identifier for the student.</li>
+<li>__full_name – Full name of the student.</li>
+<li>__age – Age of the student.</li>
+<li>__program – The program of study (e.g., Biology, Engineering).</li>
+<li>
+<p>__cgpa – Cumulative Grade Point Average (scale from 0 to 4).</p>
+</li>
+<li>
+<p><strong>Public Methods</strong>:</p>
+</li>
+<li>get_student_id() – Returns the student ID.</li>
+<li>set_student_id(student_id) – Updates the student ID.</li>
+<li>get_full_name() – Returns the student's full name.</li>
+<li>set_full_name(full_name) – Updates the student's full name.</li>
+<li>get_age() – Returns the student's age.</li>
+<li>set_age(age) – Updates the student's age.</li>
+<li>get_program() – Returns the student's program of study.</li>
+<li>set_program(program) – Updates the program of study.</li>
+<li>get_cgpa() – Returns the CGPA.</li>
+<li>set_cgpa(cgpa) – Updates the CGPA if within 0-4 range, otherwise prints "Invalid CGPA".</li>
+<li>is_eligible_for_graduation() – Returns True if the CGPA is 2.0 or above, else False.</li>
+</ul>
+<h4>Freshman (inherits from EnrolledStudent)</h4>
+<ul>
+<li>Additional Private Attributes:</li>
+<li>
+<p>__academic_year – Current academic year (e.g., Year 1, Year 2).</p>
+</li>
+<li>
+<p>Additional Public Methods:</p>
+</li>
+<li>get_academic_year() – Returns the student's academic year.</li>
+<li>set_academic_year(academic_year) – Updates the academic year.</li>
+</ul>
+<h4>MasterStudent (inherits from EnrolledStudent)</h4>
+<ul>
+<li>Additional Private Attributes:</li>
+<li>
+<p>__research_topic – Research topic of the student.</p>
+</li>
+<li>
+<p>Additional Public Methods:</p>
+</li>
+<li>get_research_topic() – Returns the research topic.</li>
+<li>set_research_topic(research_topic) – Updates the research topic.</li>
+</ul>
+<h4>DoctoralCandidate (inherits from EnrolledStudent)</h4>
+<ul>
+<li>Additional Private Attributes:</li>
+<li>__field_of_study – The specific field of study within the program.</li>
+<li>
+<p>__advisor – The name of the research advisor.</p>
+</li>
+<li>
+<p>Additional Public Methods:</p>
+</li>
+<li>get_field_of_study() – Returns the field of study.</li>
+<li>set_field_of_study(field_of_study) – Updates the field of study.</li>
+<li>get_advisor() – Returns the advisor's name.</li>
+<li>set_advisor(advisor) – Updates the advisor's name.</li>
+</ul>
+<p><MultiLineNote>
+1. The <strong>init</strong> method in EnrolledStudent should initialize <strong>student_id, __full_name, __age, __program, and __cgpa (default CGPA is 0).
+2. The __init</strong> methods in Freshman, MasterStudent, and DoctoralCandidate should initialize both inherited and specific attributes.
+3. Enforce constraints in setter methods (e.g., valid CGPA between 0 and 4, valid academic year).
+4. The implementation should demonstrate object creation, inheritance, encapsulation, and method functionality.
+</MultiLineNote></p>
+<hr /></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Transport Booking System with Abstraction</h3>
+<p>Implement an abstract class Transport that defines a template for different types of transport vehicles in a booking system, and then implement two derived classes: Bus and Scooter.</p>
+<h4><strong>Transport (Abstract Class)</strong></h4>
+<ul>
+<li><strong>Private Attributes</strong>:</li>
+<li>__transport_id – Unique identifier for the transport.</li>
+<li>__model – Model name of the transport.</li>
+<li>
+<p>__capacity – Maximum number of passengers the transport can accommodate.  </p>
+<ul>
+<li>If __capacity is 0 or negative, print "Invalid Capacity".</li>
+</ul>
+</li>
+<li>
+<p><strong>Abstract Methods</strong>:</p>
+</li>
+<li>start_trip() – Must be implemented by subclasses.</li>
+<li>end_trip() – Must be implemented by subclasses.</li>
+</ul>
+<hr />
+<h4><strong>Bus (inherits from Transport)</strong></h4>
+<ul>
+<li><strong>Additional Private Attributes</strong>:</li>
+<li>
+<p>__route_number – The designated route number of the bus.</p>
+</li>
+<li>
+<p><strong>Implements Abstract Methods</strong>:</p>
+</li>
+<li>start_trip() – Prints "Bus [transport_id]: Trip started on route [route_number]."</li>
+<li>end_trip() – Prints "Bus [transport_id]: Trip ended."</li>
+</ul>
+<hr />
+<h4><strong>Scooter (inherits from Transport)</strong></h4>
+<ul>
+<li><strong>Additional Private Attributes</strong>:</li>
+<li>
+<p>__battery_level – Battery level of the electric scooter.  </p>
+<ul>
+<li>If __battery_level is below 10%, print "Low Battery Warning".</li>
+</ul>
+</li>
+<li>
+<p><strong>Implements Abstract Methods</strong>:</p>
+</li>
+<li>start_trip() – Prints "Scooter [transport_id]: Trip started with model [model]."</li>
+<li>end_trip() – Prints "Scooter [transport_id]: Trip ended."</li>
+</ul>
+<hr />
+<p><MultiLineNote>
+1. The <strong>init</strong> method in Transport should initialize <strong>transport_id, __model, and __capacity.
+2. The __init</strong> methods in Bus and Scooter should initialize both the inherited attributes and implement their own logic.
+3. Ensure that the Transport class cannot be instantiated directly.
+4. Testing will verify that abstraction is properly implemented and that method overriding works as specified.
+</MultiLineNote></p>
+<hr /></pre></div>
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;"></footer>
+</body>
+</html>
