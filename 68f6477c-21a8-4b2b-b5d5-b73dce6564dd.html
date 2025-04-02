@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TITLE</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
-    <!-- Include Highlight.js Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-    <!-- Enable Highlighting -->
     <script>hljs.highlightAll();</script>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
         :root {
             --dark-red: #FF5733;
@@ -34,79 +31,36 @@
             padding: 0;
         }
 
-        code[class*="language-"],
-        pre[class*="language-"] {
-            background: none !important;
-            box-shadow: none !important;
-        }
-
         .no-scrollbar {
-            overflow: auto; /* Enable scrolling */
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* Internet Explorer 10+ */
+            overflow: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
         }
 
         .no-scrollbar::-webkit-scrollbar {
-            display: none; /* Safari and Chrome */
+            display: none;
         }
 
         body {
             margin: 0;
-            padding-left: 10vw;
-            padding-right: 10vw;
-            padding-top: 2vw;
-            padding-bottom: 0vw;
+            padding: 2vw 10vw;
             font-family: "Roboto", serif;
             color: black;
             background-color: var(--primary-variant);
         }
 
-        p {
-            margin: 0;
-            padding: 0;
-        }
-
-        a {
-            text-decoration: none;
-            cursor: pointer;
-            color: var(--primary-color);
-        }
-
-        ol {
-            list-style-position: inside;
-            list-style-type: decimal-leading-zero;
-        }
-
-        li {
-            line-height: 1.6;
-        }
-
-        .hide{
+        .hide {
             display: none;
         }
 
-        .text-red {
-            color: var(--dark-red);
-        }
-
-        .text-yellow {
-            color: var(--dark-yellow);
-        }
-
-        .text-green {
-            color: var(--dark-green);
-        }
-
-        .border{
-            border: 1px solid var(--border-color) !important;
+        .border {
+            border: 1px solid var(--border-color);
             border-radius: 10px;
         }
 
         .container {
-            border: 1px solid var(--border-color) !important;
+            border: 1px solid var(--border-color);
             border-radius: 30px;
-            width: auto;
-            height: fit-content;
             padding: 10px;
             margin-top: 10px;
             background-color: white;
@@ -120,92 +74,47 @@
             letter-spacing: 1px;
         }
 
-        .block-sub-heading {
-            font-weight: bold;
-            margin-bottom: 20px;
-        }
-
-        .center {
-            width: 100%;
-            display: flex;
-            text-align: center;
-            justify-content: center;
-            margin-top: 5px;
-        }
-
-        .index{
-            height: auto;
+        .index {
             margin: 10px;
             padding: 10px;
             font-weight: bold;
         }
 
-        .question{
-            height: auto;
+        .question {
             margin: 10px;
-            white-space: pre;
             padding: 10px;
             white-space: normal;
             word-wrap: break-word;
         }
 
-        .question pre{
+        .question pre {
             white-space: normal;
             word-wrap: break-word;
             line-height: 1.5;
             font-family: "Roboto", serif;
         }
 
-        .code{
-            height: auto;
-            margin: 10px;
-            white-space: pre;
-            overflow-x: scroll;
-            background: #e1e2e3;
-        }
-
-        pre{
-            min-height: 100%;
-        }
-        code{
-            min-height: 100%;
-            display:inline;
-        }
-
         .grid-container {
-            width: auto;
-            height: fit-content;
-            background-color: white;
             display: grid;
-            grid-template-columns: 30px 1fr 1fr;
+            grid-template-columns: 30px 1fr;
+            gap: 10px;
+            background-color: white;
         }
 
         @media screen and (max-width:600px) {
-
             body {
-                padding-top: 5vh;
-                padding-left: 5vw;
-                padding-right: 5vw;
+                padding: 5vh 5vw;
             }
 
-            .item {
-                grid-template-columns: auto;
+            .grid-container {
+                grid-template-columns: 1fr;
             }
 
-            .progress-bar {
-                width: 50px;
-                height: 50px;
-                margin: 5px;
-                padding: 5px;
-            }
-
-            .circular-progress-container {
-                margin: 0px;
-                row-gap: 10px;
+            .index {
+                padding-left: 0;
             }
         }
     </style>
-
 </head>
 
 <body>
@@ -219,210 +128,154 @@
         <div class="grid-container">
             
                 <div class="index no-scrollbar">1.</div>
-                <div class="question border no-scrollbar"><pre><h3>Username Encoding</h3>
-<p>You are given a username string U of length N. The username needs to be encoded before storing it in the system. The username string can be encoded using the following rules:</p>
+                <div class="question border no-scrollbar"><pre><h3>Encapsulated Learner Class</h3>
+<p>Implement a class Learner that encapsulates its attributes and provides public methods to interact with them.</p>
+<p><HighlightedText>Class Description</HighlightedText></p>
+<h4>Learner</h4>
 <ul>
-<li>If the k-th character in U is a <em>vowel</em>, change it to the <em>third next character</em> in the alphabetical sequence. For example, the third next character of o is r.</li>
-<li>If the k-th character in U is a <em>consonant</em>, change it to the <em>third previous character</em> in the alphabetical sequence. For example, the third previous character of h is e.</li>
+<li>Private Attributes:</li>
+<li>__full_name – The learner's full name.</li>
+<li>__id_number – A unique identifier for the learner.</li>
+<li>__level – The academic level of the learner.</li>
+<li>
+<p>__score – The learner's score.</p>
+</li>
+<li>
+<p>Public Methods:</p>
+</li>
+<li>get_full_name() – Returns the learner's name.</li>
+<li>set_full_name(name) – Updates the learner's name.</li>
+<li>get_id_number() – Returns the learner's ID number.</li>
+<li>get_level() – Returns the learner's academic level.</li>
+<li>set_level(level) – Updates the learner's level.</li>
+<li>get_score() – Returns the learner's score.</li>
+<li>set_score(score) – Updates the learner's score. If the score is negative, print "Invalid Score".</li>
+<li>show_details() – Prints the learner's details in the following format:
+    "Learner [id_number]: [full_name], Level: [level], Score: [score]"</li>
 </ul>
-<p>Implement the function encode which will take username string U as argument and return encoded string.</p>
 <p><MultiLineNote>
-1) The third previous character of c is z, b is y.
+1. The <strong>init</strong> method should initialize all private attributes using parameters: full_name, id_number, level, and score.
+2. Ensure that score updates enforce the non-negative condition.
+3. Testing will verify that attribute encapsulation is properly implemented and that getter and setter methods work as specified.
 </MultiLineNote></p>
-<p><em>Note: You need not to write code to handle input and output.</em></p>
-<hr />
-<h4>Input Format</h4>
-<ul>
-<li>Single line containing the username string.</li>
-</ul>
-<hr />
-<h4>Output Format</h4>
-<ul>
-<li>Single line containing the encoded username string.</li>
-</ul>
-<hr />
-<h4>Example 1</h4>
-<h6>Input</h6>
-<pre class="codehilite"><code>abc
-</code></pre>
-
-<h6>Output</h6>
-<pre class="codehilite"><code>dyz
-</code></pre>
-
-<h6>Explanation</h6>
-<p>a is vowel so change to d<br />
-b is consonant so change to y<br />
-c is consonant so change to z<br />
-So, encoded username for abc will be dyz.</p>
-<h4>Example 2</h4>
-<h6>Input</h6>
-<pre class="codehilite"><code>programmer
-</code></pre>
-
-<h6>Output</h6>
-<pre class="codehilite"><code>mordodjjho
-</code></pre>
-
-<h6>Explanation</h6>
-<p>p is consonant so change to m<br />
-r is consonant so change to o<br />
-o is vowel so change to r 
-g is consonant so change to d<br />
-r is consonant so change to o<br />
-a is vowel so change to d<br />
-m is consonant so change to j<br />
-m is consonant so change to j<br />
-e is vowel so change to h<br />
-r is consonant so change to o<br />
-So, encoded username for programmer will be mordodjjho.</p>
-<hr />
-<h4>Constraints</h4>
-<ul>
-<li>1 <=N<= 10<sup>6</sup></li>
-<li>The username string U contains only lowercase alphabets.</li>
-</ul>
 <hr /></pre></div>
-                <div class="code border no-scrollbar"><pre><code class="language-python">def encode(U):
-    pass #Replace pass with your code
-    a=&#34;aeiou&#34;
-    b=&#34;abcdefghijklmnopqrstuvwxyz&#34;
-    c=&#34;&#34;
-    for i in U:
-        e=b.index(i)
-        if i in a:
-            c+=b[e+3]
-        else:
-            c+=b[e-3]
-    return c</code></pre></div>
             
                 <div class="index no-scrollbar">2.</div>
-                <div class="question border no-scrollbar"><pre><h3>Weighted Product of Matches</h3>
-<p>For a list of integers nums, calculate the <HighlightedText>Product</HighlightedText> of all elements such that <HighlightedText>nums[i]</HighlightedText> is equal to its index plus 1.</p>
-<p>Implement the function product_matches which will take n, size of list and nums as argument and return an integer, the product.</p>
-<p><em>Note: You need not to write code to handle input and output.</em></p>
-<hr />
-<h4>Input Format</h4>
+                <div class="question border no-scrollbar"><pre><h3>Develop a Functional Film Class</h3>
+<p>Implement a class Film with the following specifications.</p>
+<p><HighlightedText>Class Description</HighlightedText></p>
+<h4>Film</h4>
 <ul>
-<li>First line contains an integer n, the size of nums.</li>
-<li>Second line contains n space-separated integers, numbers in list.</li>
+<li>Attributes  </li>
+<li>name – Name of the film.  </li>
+<li>director – Director of the film.  </li>
+<li>release_year – Year the film was released.  </li>
+<li>category – Genre or category of the film.  </li>
+<li>
+<p>is_watched – A boolean indicating if the film has been watched (default should be False).  </p>
+</li>
+<li>
+<p>Methods  </p>
+</li>
+<li>get_details() – Returns a string combining the name, director, and release year in the following format:<br />
+    "[name] by [director], released in [release_year]"<br />
+    Example:<br />
+    "Interstellar by Christopher Nolan, released in 2014"</li>
+<li>mark_watched() – Sets is_watched to True and prints:<br />
+    "You have watched [name]"  </li>
+<li>update_category(new_category) – Updates the category to new_category and prints:<br />
+    "Category changed to [new_category] for [name]"  </li>
 </ul>
-<hr />
-<h4>Output Format</h4>
-<ul>
-<li>One line containing an integer, the product.</li>
-</ul>
-<hr />
-<h4>Example 1</h4>
-<h6>Input</h6>
-<pre class="codehilite"><code>3
-1 3 3
-</code></pre>
-
-<h6>Output</h6>
-<pre class="codehilite"><code>3
-</code></pre>
-
-<h6>Explanation</h6>
-<ul>
-<li>For i = 0, nums[0] = 1, 0 + 1 = 1. Matches.</li>
-<li>For i = 1, nums[1] = 3, 1 + 1 != 3. Does not match.</li>
-<li>For i = 2, nums[2] = 3, 2 + 1 = 3. Matches.</li>
-</ul>
-<p>Weighted product: 1 * 3 = 3.</p>
-<hr />
-<h4>Constraints</h4>
-<ul>
-<li>1 <= nums.size() <= 10<sup>6</sup></li>
-<li>1 <= nums[i] <= 1000</li>
-<li>Index starts from 0</li>
-</ul>
+<p><MultiLineNote>
+1. The <strong>init</strong> method should take 4 arguments: name, director, release_year, and category.<br />
+2. The attribute is_watched should be initialized to False.<br />
+3. Ensure the implementation is tested for correctness.<br />
+</MultiLineNote></p>
 <hr /></pre></div>
-                <div class="code border no-scrollbar"><pre><code class="language-python"></code></pre></div>
             
                 <div class="index no-scrollbar">3.</div>
-                <div class="question border no-scrollbar"><pre><h3>Total Distance Covered</h3>
-<p>Implement a function total_distance to determine the total distance covered by a car after T hours, starting at an initial distance of D kilometers. The car travels at a constant speed of S kilometers per hour.</p>
-<p>Function total_distance will take D, S, and T as first, second, and third arguments respectively and return the total distance covered after T hours.</p>
-<p><em>Note: You need not to write code to handle input and output.</em></p>
-<hr />
-<h4>Input Format</h4>
+                <div class="question border no-scrollbar"><pre><h3>Inherited Staff and Supervisor Classes</h3>
+<p>Implement a class Staff that encapsulates its attributes and provides public methods to interact with them. Then, create a derived class Supervisor that inherits from Staff and adds functionality specific to supervisors.</p>
+<p><HighlightedText>Class Description</HighlightedText></p>
+<h4>Staff</h4>
 <ul>
-<li>Single line containing 3 space-separated integers representing D, S, and T respectively.</li>
+<li>Private Attributes:</li>
+<li>__name – The staff member's full name.</li>
+<li>__staff_id – A unique ID for the staff member.</li>
+<li>__salary – The staff member's monthly salary.</li>
+<li>
+<p>__department – The department the staff member is assigned to.</p>
+</li>
+<li>
+<p>Public Methods:</p>
+</li>
+<li>get_name() – Returns the staff member's name.</li>
+<li>set_name(name) – Updates the staff member's name.</li>
+<li>get_staff_id() – Returns the staff member's ID.</li>
+<li>get_salary() – Returns the staff member's salary.</li>
+<li>set_salary(salary) – Updates the staff member's salary. If the salary is negative, then it should print "Invalid Salary".</li>
+<li>get_department() – Returns the staff member's department.</li>
+<li>set_department(department) – Updates the staff member's department.</li>
+<li>display_info() – Prints the staff member's details in the following format:
+    "Staff [staff_id]: [name], Salary: [salary], Department: [department]"</li>
 </ul>
-<hr />
-<h4>Output Format</h4>
+<h4>Supervisor (Inherits from Staff)</h4>
 <ul>
-<li>Single line having 1 integer representing the total distance covered after T hours.</li>
+<li>Additional Private Attributes:</li>
+<li>
+<p>__supervised_staff – A list of staff members supervised by the supervisor.</p>
+</li>
+<li>
+<p>Public Methods:</p>
+</li>
+<li>get_supervised_staff() – Returns the list of staff members supervised by the supervisor.</li>
+<li>add_staff(staff) – Adds a new staff member to the list of supervised staff.</li>
+<li>remove_staff(staff) – Removes a staff member from the list of supervised staff if they exist.</li>
+<li>display_info() – Overrides the display_info() method to include the list of supervised staff in the following format:
+    "Supervisor [staff_id]: [name], Salary: [salary], Department: [department], Supervised Staff: [staff1, staff2, ...]"</li>
 </ul>
-<hr />
-<h4>Example 1</h4>
-<h6>Input</h6>
-<pre class="codehilite"><code>10 20 3
-</code></pre>
-
-<h6>Output</h6>
-<pre class="codehilite"><code>70
-</code></pre>
-
-<h6>Explanation</h6>
-<p>Initial distance is 10 kilometers.
-At time 1 hour, total distance will be 10+20 = 30.
-At time 2 hours, total distance will be 30+20 = 50.
-At time 3 hours, total distance will be 50+20 = 70.</p>
-<hr />
-<h4>Constraints</h4>
-<ul>
-<li>0 <= D, S, T < 1000</li>
-</ul>
+<p><MultiLineNote>
+1. The Staff class should have an <strong>init</strong> method that initializes all private attributes using parameters: name, staff_id, salary, and department.
+2. The Supervisor class should inherit from the Staff class and add a new private attribute for supervised_staff.
+3. The Supervisor class should override the display_info() method to include the list of supervised staff in the staff member's information.
+4. Ensure that salary updates for both Staff and Supervisor enforce the condition of being non-negative.
+5. Testing will verify that both Staff and Supervisor classes function correctly with inheritance and that the new staff supervision functionality works for supervisors.
+</MultiLineNote></p>
 <hr /></pre></div>
-                <div class="code border no-scrollbar"><pre><code class="language-python">def total_distance(D, S, T):
-    pass #Replace pass with your code
-    return D+(S*T) </code></pre></div>
             
                 <div class="index no-scrollbar">4.</div>
-                <div class="question border no-scrollbar"><pre><h3>Unique Student IDs</h3>
-<p>In a university, each student is assigned a unique ID, but sometimes data errors cause duplicate IDs to be recorded. The university administrator wants to fix the issue and ensure that each student has a unique ID.</p>
-<p>You are given a list arr of student IDs, but some IDs are repeated. Your task is to remove the duplicate IDs and provide the university with a list of unique IDs in <em>increasing order</em>.</p>
-<hr />
-<h4>Input Format</h4>
-<p>The input consists of:</p>
+                <div class="question border no-scrollbar"><pre><h3>Class Inheritance Task: Build Device and Laptop</h3>
+<p>Implement two classes: Device and Laptop, where Laptop is a subclass of Device.</p>
+<p><HighlightedText>Class Description</HighlightedText></p>
+<h4>Device</h4>
 <ul>
-<li>n ->  number of student IDs in list arr.</li>
-<li>arr ->  n space separated integers representing student IDs.</li>
+<li>Attributes</li>
+<li>brand – The brand of the device.</li>
+<li>model – The model of the device.</li>
+<li>price – The price of the device.</li>
+<li>Methods</li>
+<li>power_on() – Prints the string:<br />
+    "[brand] [model] is powering on."  </li>
+<li>power_off() – Prints the string:<br />
+    "[brand] [model] is shutting down."</li>
 </ul>
-<h4>Output Format</h4>
+<h4>Laptop (subclass of Device)</h4>
 <ul>
-<li>A list of unique student IDs.</li>
+<li>Additional Attributes</li>
+<li>ram_size – The size of RAM in GB.</li>
+<li>is_gaming_laptop – A boolean indicating whether the laptop is a gaming model (default False).</li>
+<li>Additional Methods</li>
+<li>run_software(software_name) – Prints the string:<br />
+    "[brand] [model] is running [software_name]."</li>
+<li>upgrade_to_gaming() – Sets is_gaming_laptop to True and prints the string:<br />
+    "[brand] [model] is now a gaming laptop."</li>
 </ul>
-<hr />
-<h4>Constraints</h4>
-<ul>
-<li>1 <=n<= 10<sup>5</sup></li>
-<li>The student ID list arr consists only of Positive Integers.</li>
-</ul>
-<hr />
-<h4>Example</h4>
-<h6>Input</h6>
-<pre class="codehilite"><code>7
-101 102 101 103 104 103 105
-</code></pre>
-
-<h6>Output</h6>
-<pre class="codehilite"><code>101 102 103 104 105
-</code></pre>
-
+<p><MultiLineNote>
+1. The <strong>init</strong> method of the Device class will take 3 arguments: brand, model, and price in the same order.
+2. The <strong>init</strong> method of the Laptop class will take 5 arguments: brand, model, price, ram_size, and is_gaming_laptop (optional with default False) in the same order, and will call the parent class's <strong>init</strong>.
+3. The testing will verify if the attributes and methods for both classes are implemented correctly.
+</MultiLineNote></p>
 <hr /></pre></div>
-                <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
-a=int(input())
-b=list(map(int,input().split()))
-c=set(b)
-d=list(c)
-d.sort()
-e=&#34;&#34;
-for i in d:
-    e+=str(i)+&#34; &#34;
-print(e)</code></pre></div>
             
         </div>
     </section>
@@ -432,155 +285,144 @@ print(e)</code></pre></div>
         <div class="block-heading">Medium</div>
         <div class="grid-container">
             
-            <div class="index no-scrollbar">1.</div>
-            <div class="question border no-scrollbar"><pre><h3>Close Pair</h3>
-<p>Given an array of integers E, and an integer H find number of Close Pair elements.</p>
-<p>Element W is Close Pair if there exists at least 1 element whose absolute difference with W is less than or equal to H. An element W is Close Pair, if there is another element in the range [W-H, W+H] other than W itself.</p>
-<hr />
-<h4>Input Format</h4>
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Secure Banking Account System</h3>
+<p>Develop a class-based structure for a banking system with a base class Account and two subclasses SavingsAccount and CheckingAccount.</p>
+<p><HighlightedText>Class Description</HighlightedText></p>
+<h4>Account</h4>
 <ul>
-<li>First line contains two integers Q and H respectively.</li>
-<li>Second line contains Q integers separated by space.</li>
+<li>Attributes</li>
+<li>account_holder – Name of the account owner.</li>
+<li>balance – Current account balance (float).</li>
+<li>transaction_log – A list to maintain transaction history.</li>
+<li>Methods</li>
+<li>deposit(amount) – Increases balance by amount and logs "Deposit: [amount]".</li>
+<li>withdraw(amount) – Deducts amount if sufficient balance, logs "Withdrawal: [amount]", else logs "Insufficient balance".</li>
+<li>get_balance() – Returns the current balance.</li>
+<li>view_transactions() – Displays all recorded transactions.</li>
 </ul>
-<hr />
-<h4>Output Format</h4>
+<h4>SavingsAccount (inherits from Account)</h4>
 <ul>
-<li>Print a single integer denoting the total number of close pair elements.</li>
+<li>Additional Attributes</li>
+<li>interest_rate – Fixed interest rate (e.g., 4.2 for 4.2% per annum).</li>
+<li>Additional Methods</li>
+<li>apply_interest() – Uses:<br />
+    interest = balance * interest_rate / 100<br />
+    Adds the computed interest and logs "Interest Added: [interest_amount]".</li>
 </ul>
-<hr />
-<h4>Constraints</h4>
+<h4>CheckingAccount (inherits from Account)</h4>
 <ul>
-<li>1 <=Q<= 1000</li>
-<li>0 <=H<= 1000</li>
-<li>0 <=E[i]<= 1000</li>
+<li>Additional Attributes</li>
+<li>overdraft_protection – Maximum overdraft limit allowed (e.g., 1500).</li>
+<li>Overridden Methods</li>
+<li>withdraw(amount) – Allows overdraft up to overdraft_protection, else logs "Overdraft limit exceeded".</li>
+<li>If the balance goes negative, logs "Overdraft Withdrawal: [amount]".</li>
 </ul>
-<hr />
-<h4>Explanation</h4>
-<p>Let's take an example:</p>
-<p>4 5
-10 21 13 14</p>
-<p>arr = [10, 21, 13, 14]</p>
-<p>For W=10 to be Close Pair, 
-there should be atleast one element in range: [10-5, 10+5] = [5, 15].
-So, this is a Close Pair. </p>
-<p>For W=21 to be Close Pair, 
-there should be atleast one element in range: [21-5, 21+5] = [16, 26].
-There is no element in this range.
-So, this is a not Close Pair.</p>
-<p>Similarily,
-13 and 14 are Close Pair 
-Hence we have 3 Close Pair.</p>
-<hr /></pre></div>
-            <div class="code border no-scrollbar"><pre><code class="language-python"></code></pre></div>
-            
-            <div class="index no-scrollbar">2.</div>
-            <div class="question border no-scrollbar"><pre><h3>Element Match Count</h3>
-<p>You are given a set <strong>F</strong> and <strong>S</strong> other sets.</p>
-<p>Your job is to count the number of elements from <strong>F</strong> that are present in each of the <strong>S</strong> sets.</p>
-<p>Print the total count of such matching elements, followed by the count of unique matches across all <strong>S</strong> sets.
-<MultiLineNote>
-- An element is considered matching if it exists in both the main set and the subset.
-</MultiLineNote></p>
-<h4>Example</h4>
-<ul>
-<li>For set([1, 2, 3]) and set([1, 4, 5]), matching elements are {1}.</li>
-<li>For set([1, 2, 3]) and set([2, 3]), matching elements are {2, 3}.</li>
-</ul>
-<hr />
-<h4>Input Format</h4>
-<ul>
-<li>The First Line contains an integer representing the number of elements in the main set F.</li>
-<li>The second line contains the space-separated elements of the main set F.</li>
-<li>The third line contains an integer S that specifies the number of other sets.</li>
-<li>The next 2*S lines contain the size of the set followed by space-separated elements of the set.</li>
-</ul>
-<h4>Output Format</h4>
-<ul>
-<li>Print two integers separated by a space.</li>
-</ul>
-<hr />
-<h4>Sample Input</h4>
-<pre class="codehilite"><code>4 
-1 2 3 4 
-2 
-3 
-1 3 5 
-2 
-2 4
-</code></pre>
-
-<h4>Sample Output</h4>
-<pre class="codehilite"><code>4 4
-</code></pre>
-
-<h4>Explanation</h4>
-<p>Set F = {1,2,3,4}
-Set-1 = {1,3,5}
-Common Element with Set F = {1,3}</p>
-<p>Set-2 = {2,4}
-Common Element with Set F = {2,4}</p>
-<p>With first set we got 2 elements and with second set we got another 2 elements.
-Hence, total elements common elements are 4 and number of unique elements are also 4.    </p>
-<hr /></pre></div>
-            <div class="code border no-scrollbar"><pre><code class="language-python">a=int(input())
-b=list(map(int,input().split()))
-c=int(input())
-h=[]
-g=0
-for i in range(c):
-    d=int(input())
-    e=list(map(int,input().split()))
-    f=set(b) &amp; set(e)
-    g+=len(f)
-    h+=list(f)
-i=set(h)
-j=len(i)
-print(str(g)+&#34; &#34;+str(j))</code></pre></div>
-            
-            <div class="index no-scrollbar">3.</div>
-            <div class="question border no-scrollbar"><pre><h3>String Similarity</h3>
-<p>Two strings are said to be similar if they are composed of the same characters. For example, abababc and accccbaa are similar since both of them are composed of characters a, b and c. However, cabca and badcd are not similar since they do not share all of the same letters.</p>
-<p>Given an array of strings strArr of length m, find the number of pairs of strings that are similar.</p>
 <p><MultiLineNote>
-1. Each string is composed of lowercase English alphabets only
-2. Pairs are considered index-wise, i.e. two same strings at different indices are counted as separated pairs
-3. A pair of indices (i,j) is same as the pair (j,i)
+1. Account initializes account_holder, balance (default 0), and an empty transaction_log list.
+2. SavingsAccount requires interest_rate during initialization.
+3. CheckingAccount requires overdraft_protection during initialization.
+4. Transaction logs should be properly maintained.
+5. Proper use of method overriding will be assessed.
 </MultiLineNote></p>
-<hr />
-<h4>Input Format</h4>
-<ul>
-<li>The first line consists of an Integer n denoting size of string array strArr.</li>
-<li>The second line consists of n space separated strings representing the elements of strArr array.</li>
-</ul>
-<h4>Output Format</h4>
-<ul>
-<li>Print an Integer denoting count of number of pairs of strings that are similar in strArr array.</li>
-</ul>
-<hr />
-<h4>Constraints</h4>
-<ul>
-<li>1 <= n <= 10<sup>4</sup></li>
-<li>a <=strArr[i][j]<= z</li>
-</ul>
-<hr />
-<h4>Example</h4>
-<p>Let's take an example:</p>
-<pre class="codehilite"><code>3
-xyz foo of
-</code></pre>
-
-<p>Here, the strings "foo" and "of" are similar because they are composed of the same characters ['o', 'f']. There are no other similar pairs so the answer is 1.</p>
 <hr /></pre></div>
-            <div class="code border no-scrollbar"><pre><code class="language-python">a=int(input())
-b=input().split()
-d=0
-for i in range(a):
-    c=b[i+1:]
-    e=b[i]
-    for j in c:
-        if set(e)==set(j):
-            d+=1
-print(d)</code></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Encapsulated Worker Hierarchy with Inheritance</h3>
+<p>Implement a base class Worker that encapsulates common attributes, and then implement two derived classes: Supervisor and Technician.</p>
+<p><HighlightedText>Class Descriptions</HighlightedText></p>
+<h4>Worker</h4>
+<ul>
+<li>Private Attributes:</li>
+<li>__name – The worker's full name.</li>
+<li>__worker_id – A unique identifier for the worker.</li>
+<li>__experience – The worker's years of experience.</li>
+<li>Public Methods:</li>
+<li>get_name() – Returns the worker's name.</li>
+<li>set_name(name) – Updates the worker's name.</li>
+<li>get_worker_id() – Returns the worker's ID.</li>
+<li>get_experience() – Returns the worker's experience in years.</li>
+<li>set_experience(experience) – Updates the worker's experience. If the experience is negative, it should print "Invalid Experience".</li>
+<li>display_info() – Prints the worker's details in the format: "Worker [worker_id]: [name], Experience: [experience] years".</li>
+</ul>
+<h4>Supervisor (inherits from Worker)</h4>
+<ul>
+<li>Additional Private Attributes:</li>
+<li>__department – The department the supervisor oversees.</li>
+<li>__subordinates – The number of workers under the supervisor's management.</li>
+<li>Additional Public Methods:</li>
+<li>get_department() – Returns the supervisor's department.</li>
+<li>set_department(department) – Updates the supervisor's department.</li>
+<li>get_subordinates() – Returns the supervisor's subordinates count.</li>
+<li>set_subordinates(subordinates) – Updates the subordinate count. If the count is negative, it should print "Invalid Subordinate Count".</li>
+<li>display_info() – Overrides the base method to print details in the format: "Supervisor [worker_id]: [name], Experience: [experience] years, Department: [department], Subordinates: [subordinates]".</li>
+</ul>
+<h4>Technician (inherits from Worker)</h4>
+<ul>
+<li>Additional Private Attributes:</li>
+<li>__skillset – The technician's area of expertise.</li>
+<li>__hourly_rate – The technician's hourly pay rate.</li>
+<li>Additional Public Methods:</li>
+<li>get_skillset() – Returns the technician's skillset.</li>
+<li>set_skillset(skillset) – Updates the technician's skillset.</li>
+<li>get_hourly_rate() – Returns the technician's hourly rate.</li>
+<li>set_hourly_rate(hourly_rate) – Updates the technician's hourly rate. If the rate is negative, it should print "Invalid Hourly Rate".</li>
+<li>display_info() – Overrides the base method to print details in the format: "Technician [worker_id]: [name], Experience: [experience] years, Skillset: [skillset], Hourly Rate: $[hourly_rate]".</li>
+</ul>
+<p><MultiLineNote>
+1. The <strong>init</strong> method in Worker should initialize <strong>name, __worker_id, and __experience.
+2. The __init</strong> methods in Supervisor and Technician should initialize both the inherited attributes and their own specific attributes.
+3. Ensure that setter methods enforce the constraints (e.g., non-negative experience, hourly rate, and subordinates count).
+4. Testing will verify that encapsulation and inheritance are properly implemented and that method overriding works as specified.
+</MultiLineNote></p>
+<hr /></pre></div>
+            
+                <div class="index no-scrollbar">3.</div>
+                <div class="question border no-scrollbar"><pre><h3>Bookstore Management System with Polymorphism</h3>
+<p>Implement the <strong>Book</strong> class and its subclasses to demonstrate polymorphism through method overriding.</p>
+<h4><strong>Class Descriptions</strong></h4>
+<h4><strong>Book (Base Class)</strong></h4>
+<ul>
+<li><strong>Private Attributes</strong>:</li>
+<li>__title – The title of the book.</li>
+<li>__author – The author of the book.</li>
+<li>
+<p>__base_price – The base price of the book.</p>
+</li>
+<li>
+<p><strong>Public Methods</strong>:</p>
+</li>
+<li>display_details(self) – This method should print the title, author, and price of the book in the format:<br />
+    Title: [title], Author: [author], Price: $[price]<br />
+    The price should be printed as a floating-point number with exactly <strong>two decimal places</strong> (e.g., 12.50).</li>
+</ul>
+<hr />
+<h4><strong>PaperbackBook (inherits from Book)</strong></h4>
+<ul>
+<li><strong>Overrides display_details method</strong>:</li>
+<li>The price of the paperback book should include a <strong>binding fee</strong> of <strong>$3</strong>.</li>
+<li>The display_details method should print the title, author, and total price (including the binding fee) in the format:<br />
+    Title: [title], Author: [author], Final Price: $[total price]
+    The total price should be printed with <strong>exactly two decimal places</strong> (e.g., 15.50).</li>
+</ul>
+<hr />
+<h4><strong>HardcoverBook (inherits from Book)</strong></h4>
+<ul>
+<li><strong>Overrides display_details method</strong>:</li>
+<li>The price of the hardcover book should include a <strong>hardcover manufacturing fee</strong> of <strong>$7</strong>.</li>
+<li>The display_details method should print the title, author, and total price (including the hardcover manufacturing fee) in the format:<br />
+    Title: [title], Author: [author], Final Price: $[total price]
+    The total price should be printed with <strong>exactly two decimal places</strong> (e.g., 19.50).</li>
+</ul>
+<hr />
+<p><MultiLineNote>
+1. The <strong>init</strong> method in <strong>Book</strong> should initialize __title, __author, and __base_price.
+2. The display_details(self) method in <strong>PaperbackBook</strong> should add $3 to the price for the binding and print the final price with two decimal places.
+3. The display_details(self) method in <strong>HardcoverBook</strong> should add $7 to the price for the hardcover and print the final price with two decimal places.
+4. The display_details(self) method in <strong>Book</strong> should print the base price without any additional fees, formatted to two decimal places and preceded by a <strong>$</strong> symbol.
+5. Testing will verify that polymorphism is correctly implemented and that method overriding works as specified.
+</MultiLineNote></p>
+<hr /></pre></div>
             
         </div>
     </section>
@@ -590,117 +432,142 @@ print(d)</code></pre></div>
         <div class="block-heading">Hard</div>
         <div class="grid-container">
             
-            <div class="index no-scrollbar">1.</div>
-            <div class="question border no-scrollbar"><pre><h3>Sum of Sub-arrays</h3>
-<p>Write a program that traverses an array from left to right, where in each step it examines a sub-array of size k and skips m positions forward after each examination. Your task is to print the sum of values found in each sub-array considered.</p>
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Digital Archive Management with Abstraction</h3>
+<p>Implement an abstract class ArchiveItem that defines a template for different types of digital archive items, and then implement two derived classes: EBook and AudioBook.</p>
+<h4><strong>ArchiveItem (Abstract Class)</strong></h4>
+<ul>
+<li><strong>Private Attributes</strong>:</li>
+<li>__item_id – Unique identifier for the archive item.</li>
+<li>__title – The title of the item.</li>
+<li>
+<p>__category – The category of the item.</p>
+</li>
+<li>
+<p><strong>Abstract Methods</strong>:</p>
+</li>
+<li>download_item() – Must be implemented by subclasses.</li>
+<li>
+<p>remove_item() – Must be implemented by subclasses.</p>
+</li>
+<li>
+<p><strong>Input Validation</strong>:</p>
+</li>
+<li>If the title or category is invalid (i.e., an empty string or None), print the message: "Invalid Title or Category".</li>
+<li>Ensure the ArchiveItem class cannot be instantiated directly due to its abstract nature.</li>
+</ul>
+<hr />
+<h4><strong>EBook (inherits from ArchiveItem)</strong></h4>
+<ul>
+<li><strong>Implements Abstract Methods</strong>:</li>
+<li>download_item() – Prints "EBook [item_id]: [title] has been downloaded."</li>
+<li>remove_item() – Prints "EBook [item_id]: [title] has been removed from archive."</li>
+</ul>
+<hr />
+<h4><strong>AudioBook (inherits from ArchiveItem)</strong></h4>
+<ul>
+<li><strong>Implements Abstract Methods</strong>:</li>
+<li>download_item() – Prints "AudioBook [item_id]: [title] has been downloaded."</li>
+<li>remove_item() – Prints "AudioBook [item_id]: [title] has been removed from archive."</li>
+</ul>
+<hr />
 <p><MultiLineNote>
-Processing should stop if there are fewer than k elements remaining in the array after skipping m elements.
+1. The <strong>init</strong> method in ArchiveItem should initialize <strong>item_id, __title, and __category.
+2. The __init</strong> methods in EBook and AudioBook should initialize both the inherited attributes and implement their own logic.
+3. Ensure that the ArchiveItem class cannot be instantiated directly.
+4. If the title or category are empty or None, print the message "Invalid Title or Category".
+5. Test cases will verify that abstraction is properly implemented and that method overriding works as specified.
 </MultiLineNote></p>
-<hr />
-<h4>Input Format</h4>
-<ul>
-<li>The first line contains n size of array.</li>
-<li>The second line contains space-separated integers representing the elements of the array arr.</li>
-<li>The third line contains an integer k, indicating the size of each sub-array to be considered.</li>
-<li>The fourth line contains an integer m, specifying the number of elements to skip after processing each sub-array.</li>
-</ul>
-<hr />
-<h4>Output Format</h4>
-<ul>
-<li>The output should be a single line consisting of space-separated values, each representing the sum found in the respective sub-array.</li>
-</ul>
-<hr />
-<h4>Constraints</h4>
-<ul>
-<li>The number of elements in the array arr is greater than zero.</li>
-<li>Sub-array size k and the number of skips m are positive integers.</li>
-<li>k is less than or equal to the length of the array.</li>
-</ul>
-<hr />
-<h4>Example</h4>
-<p>Let's take a sample input:</p>
-<p>8
-4 7 3 9 6 1 8 0
-3
-1</p>
-<p>We need to print:</p>
-<p>14 19 18 16 15 9</p>
-<h4>Explanation</h4>
-<p>[4 7 3] 9 6 1 8 0 -> sum is 14.
-4 [7 3 9] 6 1 8 0 -> moving right by 1 place, sum is 19.
-4 7 [3 9 6] 1 8 0 -> moving right by 1 place, sum is 18.
-4 7 3 [9 6 1] 8 0 -> moving right by 1 place, sum is 16.
-4 7 3 9 [6 1 8] 0 -> moving right by 1 place, sum is 15.
-4 7 3 9 6 [1 8 0] -> moving right by 1 place, sum is 9.</p>
 <hr /></pre></div>
-            <div class="code border no-scrollbar"><pre><code class="language-python">a=int(input())
-b=list(map(int,input().split()))
-c=int(input())
-d=int(input())
-f=&#34;&#34;
-for i in range(0,a,d):
-    if len(b[i:i+c])==c:
-        e=sum(b[i:i+c])
-        f+=str(e)+&#34; &#34;
-print(f)</code></pre></div>
             
-            <div class="index no-scrollbar">2.</div>
-            <div class="question border no-scrollbar"><pre><h3>Toggle Switches</h3>
-<p>In this task, there are N switches that are initially turned off. You first turn on all the switches, then turn off every second switch. On the third round, you toggle every third switch (turning on if it's off or turning off if it's on).</p>
-<p>For the j<sup>th</sup> round, you toggle every j<sup>th</sup> switch. For the N<sup>th</sup> round, you only toggle the last switch.</p>
-<p>Print the number of switches that are on after N rounds.</p>
-<hr />
-<h4>Input Format</h4>
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Cinema Hall Management with OOPs Design</h3>
+<p>Develop a system to manage a cinema hall’s movie schedule using Object-Oriented Programming (OOP). Implement a base class Film, and derived classes for specific genres: Thriller, Romance, and SciFi.</p>
+<p><HighlightedText>Class Descriptions</HighlightedText></p>
+<h4>Film (Base Class)</h4>
 <ul>
-<li>A single integer N</li>
+<li><strong>Private Attributes</strong>:</li>
+<li>__name – The name of the film.</li>
+<li>__director – The name of the film’s director.</li>
+<li>__category – The category of the film (e.g., Thriller, Romance, Sci-Fi).</li>
+<li>__rating – A rating of the film on a scale from 1 to 10.</li>
+<li>
+<p>__is_showing – A boolean indicating whether the film is currently being shown (default is False).</p>
+</li>
+<li>
+<p><strong>Public Methods</strong>:</p>
+</li>
+<li>get_name() – Returns the film's name.</li>
+<li>set_name(name) – Updates the film's name.</li>
+<li>get_director() – Returns the film's director.</li>
+<li>set_director(director) – Updates the film's director.</li>
+<li>get_category() – Returns the film’s category.</li>
+<li>set_category(category) – Updates the film’s category.</li>
+<li>get_rating() – Returns the film’s rating.</li>
+<li>set_rating(rating) – Updates the rating if it's between 1 and 10; otherwise, print "Invalid Rating".</li>
+<li>is_currently_showing() – Returns whether the film is currently being shown.</li>
+<li>start_showing() – Sets __is_showing to True and prints: "Now showing: [name] directed by [director]."<ul>
+<li>If already showing, print: "[name] is already being shown."</li>
 </ul>
-<h4>Output Format</h4>
+</li>
+<li>stop_showing() – Sets __is_showing to False and prints: "Screening ended for [name] directed by [director]."</li>
+</ul>
+<h4>Thriller (inherits from Film)</h4>
 <ul>
-<li>A single integer representing the number of switches that are on after N rounds.</li>
+<li>Additional Private Attributes:</li>
+<li>__suspense_level – A numerical rating of the suspense level (1 to 10).</li>
+<li>
+<p>__twists – The number of plot twists in the film.</p>
+</li>
+<li>
+<p>Additional Public Methods:</p>
+</li>
+<li>get_suspense_level() – Returns the suspense level.</li>
+<li>set_suspense_level(suspense_level) – Updates the suspense level.</li>
+<li>get_twists() – Returns the number of plot twists.</li>
+<li>set_twists(twists) – Updates the number of plot twists.</li>
 </ul>
-<hr />
-<h4>Constraints</h4>
+<h4>Romance (inherits from Film)</h4>
 <ul>
-<li>1 <= N <= 1000</li>
+<li>Additional Private Attributes:</li>
+<li>__romance_type – The type of romantic theme (e.g., Drama, Comedy).</li>
+<li>
+<p>__lead_actors – A list of lead actors in the film.</p>
+</li>
+<li>
+<p>Additional Public Methods:</p>
+</li>
+<li>get_romance_type() – Returns the type of romantic theme.</li>
+<li>set_romance_type(romance_type) – Updates the romance type.</li>
+<li>get_lead_actors() – Returns the list of lead actors.</li>
+<li>set_lead_actors(lead_actors) – Updates the lead actors.</li>
 </ul>
-<hr />
-<h4>Sample Input 1</h4>
-<p>4</p>
-<h4>Sample Output 1</h4>
-<p>2</p>
-<h4>Explanation</h4>
-<p>Let's take an example:</p>
-<p>4</p>
+<h4>SciFi (inherits from Film)</h4>
 <ul>
-<li>At first, the four switches are [off, off, off, off].</li>
-<li>After the first round, the four switches are [on, on, on, on].</li>
-<li>After the second round, the four switches are [on, off, on, off].</li>
-<li>After the third round, the four switches are [on, off, off, off].</li>
-<li>After the fourth round, the four switches are [on, off, off, on].</li>
-<li>So you should print 2 because there are two switches that are on.</li>
+<li>Additional Private Attributes:</li>
+<li>__tech_focus – The primary technology/science concept featured (e.g., AI, Space Travel).</li>
+<li>
+<p>__future_setting – A boolean indicating whether the film is set in the future.</p>
+</li>
+<li>
+<p>Additional Public Methods:</p>
+</li>
+<li>get_tech_focus() – Returns the film’s tech focus.</li>
+<li>set_tech_focus(tech_focus) – Updates the tech focus.</li>
+<li>is_future_setting() – Returns whether the film is set in the future.</li>
+<li>set_future_setting(future_setting) – Updates the future setting.</li>
 </ul>
+<p><MultiLineNote>
+1. The <strong>init</strong> method in Film should initialize <strong>name, __director, __category, __rating, and __is_showing (default is False).
+2. The __init</strong> methods in Thriller, Romance, and SciFi should initialize both the inherited attributes and their unique attributes.
+3. Ensure that setter methods validate inputs (e.g., ratings must be between 1 and 10).
+4. The implementation will be tested for correct usage of inheritance, encapsulation, and object functionality.
+</MultiLineNote></p>
 <hr /></pre></div>
-            <div class="code border no-scrollbar"><pre><code class="language-python">a=input()
-if a in &#34;123&#34;:
-    print(1)
-elif a in &#34;4568&#34;:
-    print(2)
-elif a in &#34;79&#34;:
-    print(3)
-elif a==&#34;10&#34;:
-    print(3)
-
-        
-</code></pre></div>
             
         </div>
     </section>
 
-    <footer style="height: 50px;">
-
-    </footer>
-    <!-- Include Prism.js Script -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <footer style="height: 50px;"></footer>
 </body>
-
 </html>
