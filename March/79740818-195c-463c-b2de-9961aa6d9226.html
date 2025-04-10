@@ -219,262 +219,160 @@
         <div class="grid-container">
             
                 <div class="index no-scrollbar">1.</div>
-                <div class="question border no-scrollbar"><pre><h3>Create a Functional Student Class</h3>
-<p>Implement a class Student with the following specifications.</p>
+                <div class="question border no-scrollbar"><pre><h3>Develop a Functional Learner Class</h3>
+<p>Implement a class Learner with the following specifications.</p>
 <p><HighlightedText>Class Description</HighlightedText></p>
-<h4>Student</h4>
+<h4>Learner</h4>
 <ul>
 <li>Attributes  </li>
-<li>name – Name of the student.  </li>
-<li>student_id – Unique student ID.  </li>
-<li>major – Student's major.  </li>
-<li>gpa – Student's GPA (default is 0.0).  </li>
+<li>full_name – Full name of the learner.  </li>
+<li>learner_id – Unique learner ID.  </li>
+<li>course – Course the learner is enrolled in.  </li>
+<li>score – Learner's score (default is 0.0).  </li>
 <li>
-<p>graduated – A boolean indicating whether the student has graduated (default should be False).  </p>
+<p>completed – A boolean indicating whether the learner has completed the course (default should be False).  </p>
 </li>
 <li>
 <p>Methods</p>
 </li>
-<li>get_profile() – Returns a string combining the name, ID, and major in the format:<br />
-    "[name] (ID: [student_id]) is majoring in [major]"<br />
+<li>get_details() – Returns a string combining the full name, ID, and course in the format:<br />
+    "[full_name] (ID: [learner_id]) is enrolled in [course]"<br />
     Example:<br />
-    "Alice (ID: 12345) is majoring in Computer Science"</li>
-<li>mark_as_graduated() – Sets [graduated] to True and prints:<br />
-    "Student [name] has graduated"  </li>
-<li>update_gpa(new_gpa) – Updates the GPA to new_gpa and prints:<br />
-    "GPA updated to [new_gpa] for [name]"  </li>
+    "John Doe (ID: 67890) is enrolled in Data Science"</li>
+<li>mark_as_completed() – Sets [completed] to True and prints:<br />
+    "Learner [full_name] has completed the course"  </li>
+<li>update_score(new_score) – Updates the score to new_score and prints:<br />
+    "Score updated to [new_score] for [full_name]"  </li>
 </ul>
 <p><MultiLineNote> 
-1. The <strong>init</strong> method should take 3 arguments: name, student_id, and major.<br />
-2. The attribute gpa should start at 0.0, and graduated should start as False.<br />
+1. The <strong>init</strong> method should take 3 arguments: full_name, learner_id, and course.<br />
+2. The attribute score should start at 0.0, and completed should start as False.<br />
 3. The implementation should be tested for correctness.<br />
-</MultiLineNote></p></pre></div>
-                <div class="code border no-scrollbar"><pre><code class="language-python">class Student:
-    
-    def __init__(self,name,student_id,major):
-        self.name=name
-        self.student_id=student_id
-        self.major=major
-        self.gpa=0.0
-        self.graduated=False
-     
-    def get_profile(self):
-         a=(self.name,&#34;(ID:&#34;,self.student_id+&#34;)&#34;,&#34;is majoring in&#34;,self.major)
-         b=&#39;&#39;
-         for i in a:
-             b+=i+&#34; &#34;
-         return b     
-         
-    def mark_as_graduated(self):
-        print(&#34;Student&#34;,self.name,&#34;has graduated&#34;)
-    def update_gpa(self,new_gpa):
-        print(&#34;GPA updated to&#34;,new_gpa,&#34;for&#34;,self.name)</code></pre></div>
+</MultiLineNote></p>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">None</code></pre></div>
             
                 <div class="index no-scrollbar">2.</div>
-                <div class="question border no-scrollbar"><pre><h3>Encapsulated Book Class</h3>
-<p>Implement a class Book that encapsulates its attributes and provides public methods to interact with them.</p>
+                <div class="question border no-scrollbar"><pre><h3>Encapsulated Novel Class</h3>
+<p>Implement a class Novel that encapsulates its attributes and provides public methods to interact with them.</p>
 <p><HighlightedText>Class Description</HighlightedText></p>
-<h4>Book</h4>
+<h4>Novel</h4>
 <ul>
 <li>Private Attributes:</li>
-<li>__title – The title of the book.</li>
-<li>__author – The author of the book.</li>
-<li>__isbn – A unique identifier for the book.</li>
+<li>__name – The name of the novel.</li>
+<li>__writer – The author of the novel.</li>
+<li>__identifier – A unique identifier for the novel.</li>
 <li>
-<p>__price – The price of the book.</p>
+<p>__cost – The cost of the novel.</p>
 </li>
 <li>
 <p>Public Methods:</p>
 </li>
-<li>get_title() – Returns the book's title.</li>
-<li>set_title(title) – Updates the book's title.</li>
-<li>get_author() – Returns the book's author.</li>
-<li>get_isbn() – Returns the book's ISBN.</li>
-<li>get_price() – Returns the book's price.</li>
-<li>set_price(price) – Updates the book's price. If price is negative, print "Invalid Price".</li>
-<li>display_info() – Prints the book's details in the following format:
-    "Book [isbn]: [title] by [author], Price: $[price]"</li>
+<li>get_name() – Returns the novel's name.</li>
+<li>set_name(name) – Updates the novel's name.</li>
+<li>get_writer() – Returns the novel's writer.</li>
+<li>get_identifier() – Returns the novel's identifier.</li>
+<li>get_cost() – Returns the novel's cost.</li>
+<li>set_cost(cost) – Updates the novel's cost. If cost is negative, print "Invalid Cost".</li>
+<li>show_details() – Prints the novel's details in the following format:
+    "Novel [identifier]: [name] by [writer], Cost: $[cost]"</li>
 </ul>
 <p><MultiLineNote>
-1. The <strong>init</strong> method should initialize all private attributes using parameters: title, author, isbn, and price.
-2. Ensure that price updates enforce the non-negative condition.
+1. The <strong>init</strong> method should initialize all private attributes using parameters: name, writer, identifier, and cost.
+2. Ensure that cost updates enforce the non-negative condition.
 3. Testing will verify that attribute encapsulation is properly implemented and that getter and setter methods work as specified.
-</MultiLineNote></p></pre></div>
-                <div class="code border no-scrollbar"><pre><code class="language-python">class Book:
-    def __init__(self,__title,__author,__isbn,__price):
-        self.__title=__title
-        self.__author=__author
-        self.__isbn=__isbn
-        self.__price=__price
-    def get_title(self):
-        return self.__title
-    def set_title(self,title):
-        self.__title=title
-    def get_author(self):
-        return self.__author
-    def get_price(self):
-        return self.__price
-    def get_isbn(self):
-        return self.__isbn
-    def set_price(self,price):
-        if price&gt;0:
-            self.__price=price
-        else:
-            print(&#34;Invalid Price&#34;)
-    def display_info(self):
-        print(&#34;Book&#34;,self.__isbn+&#34;:&#34;,self.__title,&#34;by&#34;,self.__author+&#34;,&#34;,&#34;Price:&#34;,&#34;$&#34;+str(self.__price))</code></pre></div>
+</MultiLineNote></p>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">None</code></pre></div>
             
                 <div class="index no-scrollbar">3.</div>
-                <div class="question border no-scrollbar"><pre><h3>Inherited BankAccount and BusinessBankAccount Classes</h3>
-<p>Implement a class BankAccount that encapsulates its attributes and provides public methods to interact with them. Then, create a derived class BusinessBankAccount that inherits from BankAccount and adds functionality specific to business accounts.</p>
+                <div class="question border no-scrollbar"><pre><h3>Inherited Account and CorporateAccount Classes</h3>
+<p>Implement a class Account that encapsulates its attributes and provides public methods to interact with them. Then, create a derived class CorporateAccount that inherits from Account and adds functionality specific to corporate accounts.</p>
 <p><HighlightedText>Class Description</HighlightedText></p>
-<h4>BankAccount</h4>
+<h4>Account</h4>
 <ul>
 <li>Private Attributes:</li>
-<li>__account_number – The unique account number for the bank account.</li>
-<li>__account_holder – The name of the account holder.</li>
-<li>__balance – The current balance in the account.</li>
+<li>__account_id – The unique identifier for the account.</li>
+<li>__holder_name – The name of the account holder.</li>
+<li>__funds – The current funds in the account.</li>
 <li>
-<p>__account_type – The type of bank account (e.g., "Savings", "Checking").</p>
+<p>__account_category – The type of account (e.g., "Personal", "Business").</p>
 </li>
 <li>
 <p>Public Methods:</p>
 </li>
-<li>get_account_number() – Returns the account number.</li>
-<li>get_account_holder() – Returns the account holder's name.</li>
-<li>set_account_holder(name) – Updates the account holder's name.</li>
-<li>get_balance() – Returns the account balance.</li>
-<li>deposit(amount) – Adds the specified amount to the balance. If the amount is negative, it should print "Invalid Deposit Amount".</li>
-<li>withdraw(amount) – Deducts the specified amount from the balance if sufficient funds are available. If the amount is negative or greater than the balance, it should print "Invalid Withdrawal".</li>
-<li>get_account_type() – Returns the account type.</li>
-<li>set_account_type(account_type) – Updates the account type.</li>
-<li>display_info() – Prints the bank account details in the following format:
-    "Bank Account [account_number]: [account_holder], Balance: [balance], Type: [account_type]"</li>
+<li>get_account_id() – Returns the account ID.</li>
+<li>get_holder_name() – Returns the account holder's name.</li>
+<li>set_holder_name(name) – Updates the account holder's name.</li>
+<li>get_funds() – Returns the available funds.</li>
+<li>add_funds(amount) – Adds the specified amount to the funds. If the amount is negative, it should print "Invalid Deposit Amount".</li>
+<li>deduct_funds(amount) – Deducts the specified amount from the funds if sufficient funds are available. If the amount is negative or greater than the funds, it should print "Invalid Withdrawal".</li>
+<li>get_account_category() – Returns the account category.</li>
+<li>set_account_category(category) – Updates the account category.</li>
+<li>show_details() – Prints the account details in the following format:
+    "Account [account_id]: [holder_name], Funds: [funds], Category: [account_category]"</li>
 </ul>
-<h4>BusinessBankAccount (Inherits from BankAccount)</h4>
+<h4>CorporateAccount (Inherits from Account)</h4>
 <ul>
 <li>Additional Private Attributes:</li>
-<li>__business_name – The name of the business.</li>
+<li>__company_name – The name of the company.</li>
 <li>
-<p>__business_tax_id – The tax identification number of the business.</p>
+<p>__company_tax_id – The tax identification number of the company.</p>
 </li>
 <li>
 <p>Public Methods:</p>
 </li>
-<li>get_business_name() – Returns the business name.</li>
-<li>set_business_name(name) – Updates the business name.</li>
-<li>get_business_tax_id() – Returns the business's tax ID number.</li>
-<li>set_business_tax_id(tax_id) – Updates the business's tax ID number.</li>
-<li>display_info() – Overrides the display_info() method to include the business name and tax ID in the following format:
-    "Business Bank Account [account_number]: [account_holder] (Business: [business_name], Tax ID: [business_tax_id]), Balance: [balance], Type: [account_type]"</li>
+<li>get_company_name() – Returns the company name.</li>
+<li>set_company_name(name) – Updates the company name.</li>
+<li>get_company_tax_id() – Returns the company’s tax ID number.</li>
+<li>set_company_tax_id(tax_id) – Updates the company’s tax ID number.</li>
+<li>show_details() – Overrides the show_details() method to include the company name and tax ID in the following format:
+    "Corporate Account [account_id]: [holder_name] (Company: [company_name], Tax ID: [company_tax_id]), Funds: [funds], Category: [account_category]"</li>
 </ul>
 <p><MultiLineNote>
-1. The BankAccount class should have an <strong>init</strong> method that initializes all private attributes using parameters: account_number, account_holder, balance, and account_type.
-2. The BusinessBankAccount class should inherit from the BankAccount class and add new private attributes for business_name and business_tax_id.
-3. The BusinessBankAccount class should override the display_info() method to include the business name and tax ID in the account's information.
-4. Ensure that deposits and withdrawals for both BankAccount and BusinessBankAccount enforce the condition of non-negative values and that withdrawals do not exceed the current balance.
-5. Testing will verify that both BankAccount and BusinessBankAccount classes function correctly with inheritance and that the new business functionality works.
-</MultiLineNote></p></pre></div>
-                <div class="code border no-scrollbar"><pre><code class="language-python">class BankAccount:
-    def __init__(self,__account_number,__account_holder,__balance,__account_type):
-        self.__account_type=__account_type
-        self.__account_holder=__account_holder
-        self.__balance=__balance
-        self.__account_number=__account_number
-    def get_account_number(self):
-        return self.__account_number
-    def get_account_holder(self):
-        return self.__account_holder
-    def set_account_holder(self,name):
-        self.__account_holder=name
-    def get_balance(self):
-        return self.__balance
-    def deposit(self,amount):
-        if amount&gt;0:
-            self.__balance+=amount
-        else:
-            print(&#39;Invalid Deposit Amount&#39;)
-    def withdraw(self,amount):
-        if amount&gt;0 and self.__balance-amount&gt;0:
-            self.__balance-=amount
-        else:
-            print(&#34;Invalid withdrawal&#34;)
-    def get_account_type(self):
-        return self.__account_type
-    def set_account_type(self,account_type):
-        self.__account_type=account_type
-    def display_info(self):
-        print(&#34;Bank Account&#34;,str(self.__account_number)+&#34;:&#34;,self.__account_holder+&#34;,&#34;,&#34;Balance:&#34;,str(self.__balance)+&#34;,&#34;,&#34;Type:&#34;,self.__account_type)
-class BusinessBankAccount(BankAccount):
-    def __init__(self,__account_number,__account_holder,__balance,__account_type,__business_name,__business_tax_id):
-        
-        self.__business_name=__business_name
-        self.__business_tax_id=__business_tax_id
-    def get_business_name(self):
-        return self.__business_name
-    def set_business_name(self,name):
-        self.__business_name=name
-    def get_business_tax_id(self):
-        return self.__business_tax_id
-    def set_business_tax_id(self,tax_id):
-        self.__business_tax_id=tax_id
-    def displayinfo(self):
-        print(&#34;Business Bank Account&#34;,self.__account_number,&#34;Tax ID:&#34;,self.__business_tax_id,&#34;Balance:&#34;,self.__balance,&#34;Type:&#34;,self.__account_type)</code></pre></div>
+1. The Account class should have an <strong>init</strong> method that initializes all private attributes using parameters: account_id, holder_name, funds, and account_category.
+2. The CorporateAccount class should inherit from the Account class and add new private attributes for company_name and company_tax_id.
+3. The CorporateAccount class should override the show_details() method to include the company name and tax ID in the account's information.
+4. Ensure that deposits and withdrawals for both Account and CorporateAccount enforce the condition of non-negative values and that withdrawals do not exceed the current funds.
+5. Testing will verify that both Account and CorporateAccount classes function correctly with inheritance and that the new corporate functionality works.
+</MultiLineNote></p>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">None</code></pre></div>
             
                 <div class="index no-scrollbar">4.</div>
-                <div class="question border no-scrollbar"><pre><h3>Class Inheritance Task: Build Gadget and Smartphone</h3>
-<p>Implement two classes: Gadget and Smartphone, where Smartphone is a subclass of Gadget.</p>
+                <div class="question border no-scrollbar"><pre><h3>Class Inheritance Task: Build Device and Tablet</h3>
+<p>Implement two classes: Device and Tablet, where Tablet is a subclass of Device.</p>
 <p><HighlightedText>Class Description</HighlightedText></p>
-<h4>Gadget</h4>
+<h4>Device</h4>
 <ul>
 <li>Attributes</li>
-<li>brand – The brand of the gadget.</li>
-<li>battery_life – Battery life in hours (i.e 14 hours etc).</li>
-<li>price – Price of the gadget (must be a positive number).</li>
+<li>manufacturer – The name of the device manufacturer.</li>
+<li>battery_capacity – Battery capacity in mAh (i.e., 5000mAh etc.).</li>
+<li>cost – Cost of the device (must be a positive number).</li>
 <li>Methods</li>
-<li>power_on() – Prints the string:<br />
-    "[brand] gadget is now powered on."</li>
-<li>power_off() – Prints the string:<br />
-    "[brand] gadget is now powered off."</li>
+<li>turn_on() – Prints the string:<br />
+    "[manufacturer] device is now turned on."</li>
+<li>turn_off() – Prints the string:<br />
+    "[manufacturer] device is now turned off."</li>
 </ul>
-<h4>Smartphone (subclass of Gadget)</h4>
+<h4>Tablet (subclass of Device)</h4>
 <ul>
 <li>Additional Attributes</li>
-<li>camera_megapixels – The megapixels of the camera.</li>
-<li>is_5g_enabled – A boolean indicating whether the phone supports 5G (default False).</li>
+<li>screen_size – The size of the screen in inches.</li>
+<li>supports_stylus – A boolean indicating whether the tablet supports a stylus (default False).</li>
 <li>Additional Methods</li>
-<li>take_photo() – Prints the string:<br />
-    "[brand] smartphone takes a [camera_megapixels]MP photo."</li>
-<li>enable_5g() – Sets is_5g_enabled to True and prints the string:<br />
-    "[brand] smartphone now supports 5G."</li>
+<li>draw() – Prints the string:<br />
+    "[manufacturer] tablet with [screen_size]-inch screen is being used for drawing."</li>
+<li>enable_stylus() – Sets supports_stylus to True and prints the string:<br />
+    "[manufacturer] tablet now supports a stylus."</li>
 </ul>
 <p><MultiLineNote>
-1. The <strong>init</strong> method of the Gadget class will take 3 arguments: brand, battery_life, and price in the same order.
-2. The <strong>init</strong> method of the Smartphone class will take 5 arguments: brand, battery_life, price, camera_megapixels, and is_5g_enabled (optional with default False) in the same order, and will call the parent class's <strong>init</strong> method.
+1. The <strong>init</strong> method of the Device class will take 3 arguments: manufacturer, battery_capacity, and cost in the same order.
+2. The <strong>init</strong> method of the Tablet class will take 5 arguments: manufacturer, battery_capacity, cost, screen_size, and supports_stylus (optional with default False) in the same order, and will call the parent class's <strong>init</strong> method.
 3. The testing will verify if the attributes and methods for both classes are implemented correctly.
 </MultiLineNote></p>
 <hr /></pre></div>
-                <div class="code border no-scrollbar"><pre><code class="language-python">class Gadget:
-    def __init__(self,brand,battery_life,price):
-        self.brand=brand
-        self.battery_life=battery_life
-        self.price=price
-    def power_on(self):
-        print(self.brand,&#34;gadget is now powered on.&#34;)
-    def power_off(self):
-        print(self.brand,&#34;gadget is now powered off.&#34;) 
-class Smartphone(Gadget):
-    def __init__(self,brand,battery_life,price,camera_megapixels):
-        self.brand=brand
-        self.battery_life=battery_life
-        self.price=price
-        self.camera_megapixels=camera_megapixels
-        self.is_5g_enabled=False
-    def take_photo(self):
-        print(self.brand,&#34;smartphone takes a&#34;,str(self.camera_megapixels)+&#34;MP&#34;,&#34;photo.&#34;)
-    def enable_5g(self):
-        print(self.brand,&#34;smartphone now supports 5G.&#34;)
-        </code></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">None</code></pre></div>
             
         </div>
     </section>
@@ -485,152 +383,154 @@ class Smartphone(Gadget):
         <div class="grid-container">
             
             <div class="index no-scrollbar">1.</div>
-            <div class="question border no-scrollbar"><pre><h3>Encapsulated Appliance Hierarchy with Inheritance</h3>
-<p>Implement a base class Appliance that encapsulates common attributes, and then implement two derived classes: WashingMachine and Refrigerator.</p>
+            <div class="question border no-scrollbar"><pre><h3>Encapsulated Device Hierarchy with Inheritance</h3>
+<p>Implement a base class Device that encapsulates common attributes, and then implement two derived classes: Smartphone and Laptop.</p>
 <p><HighlightedText>Class Descriptions</HighlightedText></p>
-<h4>Appliance</h4>
+<h4>Device</h4>
 <ul>
 <li>Private Attributes:</li>
-<li>__brand – The brand of the appliance.</li>
-<li>__model – The model name or number of the appliance.</li>
-<li>__power – The power consumption of the appliance in watts.</li>
+<li>__brand – The brand of the device.</li>
+<li>__model – The model name or number of the device.</li>
+<li>__battery_capacity – The battery capacity of the device in mAh.</li>
 <li>Public Methods:</li>
-<li>get_brand() – Returns the appliance's brand.</li>
-<li>set_brand(brand) – Updates the appliance's brand.</li>
-<li>get_model() – Returns the appliance's model.</li>
-<li>set_model(model) – Updates the appliance's model.</li>
-<li>get_power() – Returns the appliance's power consumption.</li>
-<li>set_power(power) – Updates the appliance's power consumption. If the power is negative, it should print "Invalid Power Consumption".</li>
-<li>display_info() – Prints the appliance's details in the format: "Appliance: [brand] [model], Power: [power]W".</li>
+<li>get_brand() – Returns the device's brand.</li>
+<li>set_brand(brand) – Updates the device's brand.</li>
+<li>get_model() – Returns the device's model.</li>
+<li>set_model(model) – Updates the device's model.</li>
+<li>get_battery_capacity() – Returns the device's battery capacity.</li>
+<li>set_battery_capacity(battery_capacity) – Updates the battery capacity. If the capacity is negative, it should print "Invalid Battery Capacity".</li>
+<li>display_info() – Prints the device's details in the format: "Device: [brand] [model], Battery: [battery_capacity]mAh".</li>
 </ul>
-<h4>WashingMachine (inherits from Appliance)</h4>
+<h4>Smartphone (inherits from Device)</h4>
 <ul>
 <li>Additional Private Attributes:</li>
-<li>__capacity – The washing capacity in kilograms.</li>
-<li>__wash_modes – The number of wash modes available.</li>
+<li>__camera_megapixels – The camera resolution in megapixels.</li>
+<li>__storage_gb – The internal storage capacity in gigabytes.</li>
 <li>Additional Public Methods:</li>
-<li>get_capacity() – Returns the washing capacity.</li>
-<li>set_capacity(capacity) – Updates the washing capacity. If capacity is negative, it should print "Invalid Capacity".</li>
-<li>get_wash_modes() – Returns the number of wash modes.</li>
-<li>set_wash_modes(wash_modes) – Updates the number of wash modes. If the number is negative, it should print "Invalid Number of Wash Modes".</li>
-<li>display_info() – Overrides the base method to print details in the format: "Washing Machine: [brand] [model], Power: [power]W, Capacity: [capacity]kg, Wash Modes: [wash_modes]".</li>
+<li>get_camera_megapixels() – Returns the camera resolution.</li>
+<li>set_camera_megapixels(camera_megapixels) – Updates the camera resolution. If the value is negative, it should print "Invalid Camera Resolution".</li>
+<li>get_storage_gb() – Returns the internal storage capacity.</li>
+<li>set_storage_gb(storage_gb) – Updates the storage capacity. If the value is negative, it should print "Invalid Storage Capacity".</li>
+<li>display_info() – Overrides the base method to print details in the format: "Smartphone: [brand] [model], Battery: [battery_capacity]mAh, Camera: [camera_megapixels]MP, Storage: [storage_gb]GB".</li>
 </ul>
-<h4>Refrigerator (inherits from Appliance)</h4>
+<h4>Laptop (inherits from Device)</h4>
 <ul>
 <li>Additional Private Attributes:</li>
-<li>__capacity_liters – The storage capacity in liters.</li>
-<li>__door_count – The number of doors on the refrigerator.</li>
+<li>__ram_gb – The amount of RAM in gigabytes.</li>
+<li>__processor – The type of processor in the laptop.</li>
 <li>Additional Public Methods:</li>
-<li>get_capacity_liters() – Returns the refrigerator's capacity in liters.</li>
-<li>set_capacity_liters(capacity_liters) – Updates the refrigerator's capacity. If capacity is negative, it should print "Invalid Capacity".</li>
-<li>get_door_count() – Returns the number of doors.</li>
-<li>set_door_count(door_count) – Updates the number of doors. If the door count is negative, it should print "Invalid Number of Doors".</li>
-<li>display_info() – Overrides the base method to print details in the format: "Refrigerator: [brand] [model], Power: [power]W, Capacity: [capacity_liters]L, Doors: [door_count]".</li>
+<li>get_ram_gb() – Returns the amount of RAM.</li>
+<li>set_ram_gb(ram_gb) – Updates the RAM capacity. If the value is negative, it should print "Invalid RAM Size".</li>
+<li>get_processor() – Returns the processor type.</li>
+<li>set_processor(processor) – Updates the processor type.</li>
+<li>display_info() – Overrides the base method to print details in the format: "Laptop: [brand] [model], Battery: [battery_capacity]mAh, RAM: [ram_gb]GB, Processor: [processor]".</li>
 </ul>
 <p><MultiLineNote>
-1. The <strong>init</strong> method in Appliance should initialize <strong>brand, __model, and __power.
-2. The __init</strong> methods in WashingMachine and Refrigerator should initialize both the inherited attributes and their own specific attributes.
-3. Ensure that setter methods enforce the constraints (e.g., non-negative power, capacity, and door count).
+1. The <strong>init</strong> method in Device should initialize <strong>brand, __model, and __battery_capacity.
+2. The __init</strong> methods in Smartphone and Laptop should initialize both the inherited attributes and their own specific attributes.
+3. Ensure that setter methods enforce the constraints (e.g., non-negative battery capacity, camera resolution, and storage).
 4. Testing will verify that encapsulation and inheritance are properly implemented and that method overriding works as specified.
-</MultiLineNote></p></pre></div>
-            <div class="code border no-scrollbar"><pre><code class="language-python"></code></pre></div>
+</MultiLineNote></p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">None</code></pre></div>
             
             <div class="index no-scrollbar">2.</div>
-            <div class="question border no-scrollbar"><pre><h3>Multi-Purpose Bank Account System</h3>
-<p>Create a banking system with an Account superclass and two subclasses: InvestmentAccount and LoanAccount.</p>
+            <div class="question border no-scrollbar"><pre><h3>Versatile Financial Account System</h3>
+<p>Design a financial account management system with a base class FinancialAccount and two subclasses: SavingsAccount and CreditAccount.</p>
 <p><HighlightedText>Class Design</HighlightedText></p>
-<h4>Account</h4>
+<h4>FinancialAccount</h4>
 <ul>
 <li>Attributes</li>
-<li>account_holder – Name of the account owner.</li>
-<li>balance – Current balance in the account.</li>
-<li>transactions – List storing all transaction details.</li>
+<li>owner_name – Name of the account holder.</li>
+<li>balance – Current account balance.</li>
+<li>transactions – List to record all transaction details.</li>
 <li>Methods</li>
 <li>deposit(amount) – Increases balance and logs "Deposited: [amount]".</li>
-<li>withdraw(amount) – Deducts amount if possible, logs "Withdrew: [amount]", otherwise prints "Insufficient funds".</li>
-<li>check_balance() – Returns the current balance.</li>
+<li>withdraw(amount) – Deducts amount if sufficient, logs "Withdrew: [amount]", else prints "Insufficient balance".</li>
+<li>get_balance() – Returns the current balance.</li>
 <li>view_transactions() – Displays the transaction history.</li>
 </ul>
-<h4>InvestmentAccount (inherits from Account)</h4>
+<h4>SavingsAccount (inherits from FinancialAccount)</h4>
 <ul>
 <li>Additional Attributes</li>
-<li>growth_rate – Growth rate percentage per year (e.g., 4.5 for 4.5%).</li>
+<li>interest_rate – Annual interest rate (e.g., 3.5 for 3.5%).</li>
 <li>Additional Methods</li>
-<li>calculate_growth() – Uses:<br />
-    growth = balance * growth_rate / 100<br />
-    Adds the growth amount and logs "Investment Growth: [growth_amount]".</li>
+<li>apply_interest() – Uses:<br />
+    interest = balance * interest_rate / 100<br />
+    Adds the interest to balance and logs "Interest Applied: [interest]".</li>
 </ul>
-<h4>LoanAccount (inherits from Account)</h4>
+<h4>CreditAccount (inherits from FinancialAccount)</h4>
 <ul>
 <li>Additional Attributes</li>
-<li>loan_limit – Maximum allowed negative balance (e.g., 5000).</li>
+<li>credit_limit – Maximum negative balance allowed (e.g., 7000).</li>
 <li>Overridden Methods</li>
-<li>withdraw(amount) – Allows overdraft within loan_limit, else prints "Loan limit exceeded".</li>
-<li>If balance turns negative, logs "Withdrew: [amount] (Loan Taken)".</li>
+<li>withdraw(amount) – Allows withdrawal within credit_limit, otherwise prints "Credit limit exceeded".</li>
+<li>If balance becomes negative, logs "Withdrew: [amount] (Credit Used)".</li>
 </ul>
 <p><MultiLineNote>
-1. Account constructor initializes account_holder, balance, and an empty transactions list.
-2. InvestmentAccount requires growth_rate in initialization.
-3. LoanAccount requires loan_limit in initialization.
-4. Every transaction must be recorded.
-5. Proper method overriding and implementation will be assessed.
-</MultiLineNote></p></pre></div>
-            <div class="code border no-scrollbar"><pre><code class="language-python"></code></pre></div>
+1. FinancialAccount constructor initializes owner_name, balance, and an empty transactions list.
+2. SavingsAccount requires interest_rate in initialization.
+3. CreditAccount requires credit_limit in initialization.
+4. Every transaction must be logged.
+5. Proper method overriding and implementation will be evaluated.
+</MultiLineNote></p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">None</code></pre></div>
             
             <div class="index no-scrollbar">3.</div>
-            <div class="question border no-scrollbar"><pre><h3>Railway Management System with Polymorphism</h3>
-<p>Create a railway management system where different types of trains (e.g., <strong>Express Train</strong> and <strong>Local Train</strong>) have different pricing strategies based on their class and speed.</p>
+            <div class="question border no-scrollbar"><pre><h3>Bus Management System with Polymorphism</h3>
+<p>Create a bus management system where different types of buses (e.g., <strong>Luxury Bus</strong> and <strong>City Bus</strong>) have different pricing strategies based on their class and service level.</p>
 <h4><strong>Class Descriptions</strong></h4>
-<h4><strong>Train (Base Class)</strong></h4>
+<h4><strong>Bus (Base Class)</strong></h4>
 <ul>
 <li><strong>Private Attributes</strong>:</li>
-<li>__train_id – The unique identifier for the train.</li>
-<li>__train_name – The name of the train.</li>
+<li>__bus_id – The unique identifier for the bus.</li>
+<li>__bus_name – The name of the bus.</li>
 <li>
-<p>__base_fare – The base fare for the train per passenger.</p>
+<p>__base_fare – The base fare for the bus per passenger.</p>
 </li>
 <li>
 <p><strong>Public Methods</strong>:</p>
 </li>
-<li>display_info(self) – This method should print the train ID, name, and base fare of the train in the format: Train ID: [train_id], Train Name: [train_name], Base Fare: $[base_fare]</li>
-<li>calculate_fare(self, passengers) – This method should calculate and return the total fare based on the number of passengers. The base fare is multiplied by the number of passengers, and adjustments are made based on the train type.</li>
+<li>display_info(self) – This method should print the bus ID, name, and base fare of the bus in the format: Bus ID: [bus_id], Bus Name: [bus_name], Base Fare: $[base_fare]</li>
+<li>calculate_fare(self, passengers) – This method should calculate and return the total fare based on the number of passengers. The base fare is multiplied by the number of passengers, and adjustments are made based on the bus type.</li>
 </ul>
 <hr />
-<h4><strong>ExpressTrain (inherits from Train)</strong></h4>
+<h4><strong>LuxuryBus (inherits from Bus)</strong></h4>
 <ul>
 <li><strong>Additional Attributes</strong>:</li>
 <li>
-<p>__speed – The speed of the express train.</p>
+<p>__amenities – A list of amenities available in the luxury bus.</p>
 </li>
 <li>
 <p><strong>Overrides calculate_fare method</strong>:</p>
 </li>
-<li>The fare for an express train is calculated as:
-    Total Fare = Base Fare * Passengers * 1.5</li>
-<li><strong>Express trains charge 1.5x the base fare</strong> due to their speed.</li>
+<li>The fare for a luxury bus is calculated as:
+    Total Fare = Base Fare * Passengers * 1.8</li>
+<li><strong>Luxury buses charge 1.8x the base fare</strong> due to premium amenities.</li>
 </ul>
 <hr />
-<h4><strong>LocalTrain (inherits from Train)</strong></h4>
+<h4><strong>CityBus (inherits from Bus)</strong></h4>
 <ul>
 <li><strong>Additional Attributes</strong>:</li>
 <li>
-<p>__stops – The number of stops the local train makes.</p>
+<p>__routes – The number of routes the city bus covers.</p>
 </li>
 <li>
 <p><strong>Overrides calculate_fare method</strong>:</p>
 </li>
-<li>The fare for a local train is calculated as:
-    Total Fare = Base Fare * Passengers * 1.2</li>
-<li><strong>Local trains charge 1.2x the base fare</strong> due to their frequent stops.</li>
+<li>The fare for a city bus is calculated as:
+    Total Fare = Base Fare * Passengers * 1.1</li>
+<li><strong>City buses charge 1.1x the base fare</strong> due to frequent stops and accessibility features.</li>
 </ul>
 <hr />
 <p><MultiLineNote>
-1. The <strong>init</strong> method in Train should initialize __train_id, __train_name, and __base_fare.
-3. The calculate_fare(self, passengers) method in Train should return the basic fare multiplied by the number of passengers if not overridden by subclasses.
+1. The <strong>init</strong> method in Bus should initialize __bus_id, __bus_name, and __base_fare.
+2. The calculate_fare(self, passengers) method in Bus should return the basic fare multiplied by the number of passengers if not overridden by subclasses.
 3. Testing will verify that polymorphism is correctly implemented and that method overriding works as specified.
 </MultiLineNote></p>
 <hr /></pre></div>
-            <div class="code border no-scrollbar"><pre><code class="language-python"></code></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">None</code></pre></div>
             
         </div>
     </section>
@@ -641,151 +541,150 @@ class Smartphone(Gadget):
         <div class="grid-container">
             
             <div class="index no-scrollbar">1.</div>
-            <div class="question border no-scrollbar"><pre><h3>Banking System with Abstraction</h3>
-<p>Implement an abstract class BankAccount that defines a template for different types of bank accounts, and then implement two derived classes: SavingsAccount and CurrentAccount.</p>
-<h4><strong>BankAccount (Abstract Class)</strong></h4>
+            <div class="question border no-scrollbar"><pre><h3>Digital Banking System with Abstraction</h3>
+<p>Design an abstract class DigitalBankAccount that acts as a blueprint for different types of digital bank accounts. Implement two subclasses: FixedDepositAccount and CheckingAccount.</p>
+<h4><strong>DigitalBankAccount (Abstract Class)</strong></h4>
 <ul>
 <li><strong>Private Attributes</strong>:</li>
-<li>__account_number – Unique identifier for the bank account.</li>
-<li>__account_holder – Name of the account holder.</li>
+<li>__account_id – Unique identifier for the digital bank account.</li>
+<li>__owner_name – Name of the account owner.</li>
 <li>
-<p>__balance – Current balance in the account.  </p>
+<p>__funds – Current available funds in the account.  </p>
 <ul>
-<li>If __balance is negative, print "Invalid Balance".</li>
+<li>If __funds is negative, print "Invalid Funds".</li>
 </ul>
 </li>
 <li>
 <p><strong>Abstract Methods</strong>:</p>
 </li>
-<li>deposit(amount) – Must be implemented by subclasses.</li>
-<li>withdraw(amount) – Must be implemented by subclasses.</li>
+<li>add_funds(amount) – Must be implemented by subclasses.</li>
+<li>remove_funds(amount) – Must be implemented by subclasses.</li>
 </ul>
 <hr />
-<h4><strong>SavingsAccount (inherits from BankAccount)</strong></h4>
+<h4><strong>FixedDepositAccount (inherits from DigitalBankAccount)</strong></h4>
 <ul>
 <li><strong>Additional Private Attributes</strong>:</li>
 <li>
-<p>__interest_rate – The interest rate applied to the savings account.  </p>
+<p>__maturity_period – The period (in months) until funds can be withdrawn.  </p>
 <ul>
-<li>If __interest_rate is 0 or negative, print "Invalid Interest Rate".</li>
+<li>If __maturity_period is zero or negative, print "Invalid Maturity Period".</li>
 </ul>
 </li>
 <li>
 <p><strong>Implements Abstract Methods</strong>:</p>
 </li>
-<li>deposit(amount) – Adds the amount to the balance and prints: "Savings Account [account_number]: Deposited $[amount]. Current Balance: $[balance]."</li>
-<li>withdraw(amount) – If the balance is sufficient, deducts the amount and prints: "Savings Account [account_number]: Withdrawn $[amount]. Remaining Balance: $[balance]."<br />
-    Otherwise, prints: "Insufficient balance."</li>
+<li>add_funds(amount) – Adds the amount to the funds and prints: "Fixed Deposit Account [account_id]: Deposited $[amount]. Total Funds: $[funds]."</li>
+<li>remove_funds(amount) – Allows withdrawal only if the maturity period has passed. If eligible, prints: "Fixed Deposit Account [account_id]: Withdrawn $[amount]. Remaining Funds: $[funds]." Otherwise, prints: "Withdrawal denied. Maturity period not completed."</li>
 </ul>
 <hr />
-<h4><strong>CurrentAccount (inherits from BankAccount)</strong></h4>
+<h4><strong>CheckingAccount (inherits from DigitalBankAccount)</strong></h4>
 <ul>
 <li><strong>Additional Private Attributes</strong>:</li>
 <li>
-<p>__overdraft_limit – Maximum overdraft limit allowed for the current account.  </p>
+<p>__transaction_limit – The maximum amount allowed per transaction.  </p>
 <ul>
-<li>If __overdraft_limit is negative, print "Invalid Overdraft Limit".</li>
+<li>If __transaction_limit is negative, print "Invalid Transaction Limit".</li>
 </ul>
 </li>
 <li>
 <p><strong>Implements Abstract Methods</strong>:</p>
 </li>
-<li>deposit(amount) – Adds the amount to the balance and prints: "Current Account [account_number]: Deposited $[amount]. Current Balance: $[balance]."</li>
-<li>withdraw(amount) – Allows withdrawal up to the overdraft limit. If within the limit, prints:  "Current Account [account_number]: Withdrawn $[amount]. Remaining Balance: $[balance]." Otherwise, prints: "Exceeded overdraft limit."</li>
+<li>add_funds(amount) – Adds the amount to the funds and prints: "Checking Account [account_id]: Deposited $[amount]. Available Funds: $[funds]."</li>
+<li>remove_funds(amount) – If the amount is within the transaction limit and sufficient funds are available, prints: "Checking Account [account_id]: Withdrawn $[amount]. Remaining Funds: $[funds]." Otherwise, prints: "Transaction limit exceeded or insufficient funds."</li>
 </ul>
 <hr />
 <p><MultiLineNote>
-1. The <strong>init</strong> method in BankAccount should initialize <strong>account_number, __account_holder, and __balance.
-2. The __init</strong> methods in SavingsAccount and CurrentAccount should initialize both the inherited attributes and implement their own logic.
-3. Ensure that the BankAccount class cannot be instantiated directly.
-4. Testing will verify that abstraction is properly implemented and that method overriding works as specified.
+1. The <strong>init</strong> method in DigitalBankAccount should initialize <strong>account_id, __owner_name, and __funds.
+2. The __init</strong> methods in FixedDepositAccount and CheckingAccount should initialize inherited attributes and apply their own logic.
+3. The DigitalBankAccount class must not be directly instantiated.
+4. The implementation will be verified for abstraction, inheritance, and method overriding.
 </MultiLineNote></p>
 <hr /></pre></div>
-            <div class="code border no-scrollbar"><pre><code class="language-python"></code></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">None</code></pre></div>
             
             <div class="index no-scrollbar">2.</div>
-            <div class="question border no-scrollbar"><pre><h3>Employee Management with OOPs Design</h3>
-<p>Create a system to manage employee information in an organization using Object-Oriented Programming (OOP). Implement a base class Employee, and derived classes for specific roles of employees: Manager, Developer, and Intern.</p>
+            <div class="question border no-scrollbar"><pre><h3>Staff Management with OOPs Design</h3>
+<p>Develop a system to manage staff information in an organization using Object-Oriented Programming (OOP). Implement a base class Staff, and derived classes for specific roles of staff: Supervisor, Engineer, and Trainee.</p>
 <p><HighlightedText>Class Descriptions</HighlightedText></p>
-<h4>Employee (Base Class)</h4>
+<h4>Staff (Base Class)</h4>
 <ul>
 <li><strong>Private Attributes</strong>:</li>
-<li>__employee_id – The unique ID of the employee.</li>
-<li>__name – The name of the employee.</li>
-<li>__age – The age of the employee.</li>
-<li>__department – The department the employee works in (e.g., HR, IT, Sales).</li>
+<li>__staff_id – The unique ID of the staff member.</li>
+<li>__full_name – The full name of the staff member.</li>
+<li>__age – The age of the staff member.</li>
+<li>__department – The department where the staff member works (e.g., Finance, IT, Marketing).</li>
 <li>
-<p>__salary – The salary of the employee.</p>
+<p>__salary – The salary of the staff member.</p>
 </li>
 <li>
 <p><strong>Public Methods</strong>:</p>
 </li>
-<li>get_employee_id() – Returns the unique ID of the employee.</li>
-<li>set_employee_id(employee_id) – Updates the employee ID.</li>
-<li>get_name() – Returns the name of the employee.</li>
-<li>set_name(name) – Updates the name of the employee.</li>
-<li>get_age() – Returns the age of the employee.</li>
-<li>set_age(age) – Updates the age of the employee.</li>
-<li>get_department() – Returns the department of the employee.</li>
-<li>set_department(department) – Updates the department of the employee.</li>
-<li>get_salary() – Returns the salary of the employee.</li>
-<li>set_salary(salary) – Updates the salary of the employee if salary is greater than 0 else print "Invalid salary".</li>
-<li>get_bonus() – Calculates and returns the bonus of the employee (e.g., 10% of the salary).</li>
-<li>increase_salary(amount) – Increases the salary of the employee by a given amount.</li>
+<li>get_staff_id() – Returns the unique ID of the staff member.</li>
+<li>set_staff_id(staff_id) – Updates the staff ID.</li>
+<li>get_full_name() – Returns the full name of the staff member.</li>
+<li>set_full_name(full_name) – Updates the full name of the staff member.</li>
+<li>get_age() – Returns the age of the staff member.</li>
+<li>set_age(age) – Updates the age of the staff member.</li>
+<li>get_department() – Returns the department of the staff member.</li>
+<li>set_department(department) – Updates the department of the staff member.</li>
+<li>get_salary() – Returns the salary of the staff member.</li>
+<li>set_salary(salary) – Updates the salary of the staff member if salary is greater than 0 else print "Invalid salary".</li>
+<li>calculate_bonus() – Computes and returns the bonus (e.g., 12% of the salary).</li>
+<li>raise_salary(amount) – Increases the salary by a specified amount.</li>
 </ul>
-<h4>Manager (inherits from Employee)</h4>
+<h4>Supervisor (inherits from Staff)</h4>
 <ul>
 <li>Additional Private Attributes:</li>
-<li>__team_size – The number of team members managed by the manager.</li>
+<li>__team_count – The number of team members the supervisor manages.</li>
 <li>
-<p>__budget – The budget allocated to the manager’s department.</p>
+<p>__department_budget – The budget assigned to the supervisor's department.</p>
 </li>
 <li>
 <p>Additional Public Methods:</p>
 </li>
-<li>get_team_size() – Returns the number of team members managed by the manager.</li>
-<li>set_team_size(team_size) – Updates the number of team members managed by the manager.</li>
-<li>get_budget() – Returns the budget of the manager’s department.</li>
-<li>set_budget(budget) – Updates the department budget.</li>
+<li>get_team_count() – Returns the number of team members managed by the supervisor.</li>
+<li>set_team_count(team_count) – Updates the team count.</li>
+<li>get_department_budget() – Returns the department budget.</li>
+<li>set_department_budget(budget) – Updates the department budget.</li>
 </ul>
-<h4>Developer (inherits from Employee)</h4>
+<h4>Engineer (inherits from Staff)</h4>
 <ul>
 <li>Additional Private Attributes:</li>
-<li>__programming_languages – A list of programming languages the developer is proficient in.</li>
+<li>__technical_skills – A list of technical skills possessed by the engineer.</li>
 <li>
-<p>__projects_assigned – A list of projects the developer is currently assigned to.</p>
+<p>__current_projects – A list of ongoing projects assigned to the engineer.</p>
 </li>
 <li>
 <p>Additional Public Methods:</p>
 </li>
-<li>get_programming_languages() – Returns the list of programming languages the developer knows.</li>
-<li>set_programming_languages(languages) – Updates the list of programming languages.</li>
-<li>get_projects_assigned() – Returns the list of projects assigned to the developer.</li>
-<li>set_projects_assigned(projects) – Updates the list of projects.</li>
+<li>get_technical_skills() – Returns the list of technical skills.</li>
+<li>set_technical_skills(skills) – Updates the list of technical skills.</li>
+<li>get_current_projects() – Returns the list of ongoing projects.</li>
+<li>set_current_projects(projects) – Updates the list of projects.</li>
 </ul>
-<h4>Intern (inherits from Employee)</h4>
+<h4>Trainee (inherits from Staff)</h4>
 <ul>
 <li>Additional Private Attributes:</li>
-<li>__duration – The duration of the internship (in months).</li>
+<li>__training_period – The duration of the training program (in months).</li>
 <li>
-<p>__mentor – The name of the mentor guiding the intern.</p>
+<p>__assigned_mentor – The name of the mentor guiding the trainee.</p>
 </li>
 <li>
 <p>Additional Public Methods:</p>
 </li>
-<li>get_duration() – Returns the duration of the internship.</li>
-<li>set_duration(duration) – Updates the duration of the internship.</li>
-<li>get_mentor() – Returns the name of the intern's mentor.</li>
-<li>set_mentor(mentor) – Updates the name of the intern's mentor.</li>
+<li>get_training_period() – Returns the training period.</li>
+<li>set_training_period(period) – Updates the training period.</li>
+<li>get_assigned_mentor() – Returns the assigned mentor’s name.</li>
+<li>set_assigned_mentor(mentor) – Updates the mentor’s name.</li>
 </ul>
 <p><MultiLineNote>
-1. The <strong>init</strong> method in Employee should initialize <strong>employee_id, __name, __age, __department, and __salary.
-2. The __init</strong> methods in Manager, Developer, and Intern should initialize both the inherited attributes and their own specific attributes.
-3. Ensure that setter methods enforce constraints (e.g., valid salary for employees, appropriate team size for managers).
-4. Testing will verify that object creation, inheritance, encapsulation, and method functionality are properly implemented.
+1. The <strong>init</strong> method in Staff should initialize <strong>staff_id, __full_name, __age, __department, and __salary.
+2. The __init</strong> methods in Supervisor, Engineer, and Trainee should initialize both the inherited attributes and their role-specific attributes.
+3. Setter methods should validate constraints (e.g., salary must be positive, team count must be non-negative).
+4. The system should ensure correct implementation of object creation, inheritance, encapsulation, and method functionality.
 </MultiLineNote></p>
 <hr /></pre></div>
-            <div class="code border no-scrollbar"><pre><code class="language-python"></code></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">None</code></pre></div>
             
         </div>
     </section>
