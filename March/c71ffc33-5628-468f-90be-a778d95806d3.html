@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Thanuz Kumar</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Encapsulated Student Class</h3>
+<p>Implement a class Student that encapsulates its attributes and provides public methods to interact with them.</p>
+<p><HighlightedText>Class Description</HighlightedText></p>
+<h4>Student</h4>
+<ul>
+<li>Private Attributes:</li>
+<li>__name – The student's full name.</li>
+<li>__roll_number – A unique identifier for the student.</li>
+<li>__grade – The grade level of the student.</li>
+<li>
+<p>__marks – The student's marks.</p>
+</li>
+<li>
+<p>Public Methods:</p>
+</li>
+<li>get_name() – Returns the student's name.</li>
+<li>set_name(name) – Updates the student's name.</li>
+<li>get_roll_number() – Returns the student's roll number.</li>
+<li>get_grade() – Returns the student's grade.</li>
+<li>set_grade(grade) – Updates the student's grade.</li>
+<li>get_marks() – Returns the student's marks.</li>
+<li>set_marks(marks) – Updates the student's marks. If marks are negative, print "Invalid Marks".</li>
+<li>display_info() – Prints the student's details in the following format:
+    "Student [roll_number]: [name], Grade: [grade], Marks: [marks]"</li>
+</ul>
+<p><MultiLineNote>
+1. The <strong>init</strong> method should initialize all private attributes using parameters: name, roll_number, grade, and marks.
+2. Ensure that mark updates enforce the non-negative condition.
+3. Testing will verify that attribute encapsulation is properly implemented and that getter and setter methods work as specified.
+</MultiLineNote></p></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">class Student:
+    def __init__(self,name,roll_number,grade,marks):
+        self.__name = name
+        self.__roll_number = roll_number
+        self.__grade = grade
+        self.__marks = marks
+    def get_name(self):
+        return self.__name
+    def set_name(self,name):
+        self.__name = name
+    def get_roll_number(self):
+        return self.__roll_number
+    def get_grade(self):
+        return self.__grade
+    def set_grade(self,grade):
+        self.__grade = grade
+    def get_marks(self):
+        return self.__marks
+    def set_marks(self,marks):
+        if int(marks)&lt;0:
+            print(&#34;Invalid Marks&#34;)
+        else:
+            self.__marks = marks
+    def display_info(self):
+        print(f&#34;Student {self.__roll_number}: {self.__name}, Grade: {self.__grade}, Marks: {self.__marks}&#34;)</code></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Design a Functional Movie Class</h3>
+<p>Implement a class Movie with the following specifications.</p>
+<p><HighlightedText>Class Description</HighlightedText></p>
+<h4>Movie</h4>
+<ul>
+<li>Attributes  </li>
+<li>title – Title of the movie.  </li>
+<li>director – Name of the director.  </li>
+<li>year – Release year.  </li>
+<li>genre – Genre of the movie.  </li>
+<li>
+<p>watched – A boolean indicating whether the movie has been watched (default should be False).  </p>
+</li>
+<li>
+<p>Methods  </p>
+</li>
+<li>get_info() – Returns a string combining the title, director, and release year in the following format:<br />
+    "[title] directed by [director], released in [year]"<br />
+    Example:<br />
+    "Inception directed by Christopher Nolan, released in 2010"</li>
+<li>mark_as_watched() – Sets watched to True and prints:<br />
+    "You have watched [title]"  </li>
+<li>change_genre(new_genre) – Updates the genre to new_genre and prints:<br />
+    "Genre updated to [new_genre] for [title]"  </li>
+</ul>
+<p><MultiLineNote>
+1. The <strong>init</strong> method should take 4 arguments: title, director, year, and genre.<br />
+2. The attribute watched should be initialized to False.<br />
+3. The implementation should be tested for correctness.<br />
+</MultiLineNote></p></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">class Movie:
+    def __init__(self,title,director,year,genre):
+        self.title = title
+        self.director = director
+        self.year = year
+        self.genre = genre
+        self.watched = False
+    def get_info(self):
+        return (f&#34;{self.title} directed by {self.director}, released in {self.year}&#34;)
+    def mark_as_watched(self):
+        self.watched = True
+        print(f&#34;You have watched {self.title}&#34;)
+    def change_genre(self,new_genre):
+        self.genre = new_genre
+        print(f&#34;Genre updated to {self.genre} for {self.title}&#34;)
+        </code></pre></div>
+            
+                <div class="index no-scrollbar">3.</div>
+                <div class="question border no-scrollbar"><pre><h3>Inherited Employee and Manager Classes</h3>
+<p>Implement a class Employee that encapsulates its attributes and provides public methods to interact with them. Then, create a derived class Manager that inherits from Employee and adds functionality specific to managers.</p>
+<p><HighlightedText>Class Description</HighlightedText></p>
+<h4>Employee</h4>
+<ul>
+<li>Private Attributes:</li>
+<li>__name – The employee's full name.</li>
+<li>__employee_id – A unique ID for the employee.</li>
+<li>__salary – The employee's monthly salary.</li>
+<li>
+<p>__department – The department the employee is assigned to.</p>
+</li>
+<li>
+<p>Public Methods:</p>
+</li>
+<li>get_name() – Returns the employee's name.</li>
+<li>set_name(name) – Updates the employee's name.</li>
+<li>get_employee_id() – Returns the employee's ID.</li>
+<li>get_salary() – Returns the employee's salary.</li>
+<li>set_salary(salary) – Updates the employee's salary. If the salary is negative, then it should print "Invalid Salary".</li>
+<li>get_department() – Returns the employee's department.</li>
+<li>set_department(department) – Updates the employee's department.</li>
+<li>display_info() – Prints the employee's details in the following format:
+    "Employee [employee_id]: [name], Salary: [salary], Department: [department]"</li>
+</ul>
+<h4>Manager (Inherits from Employee)</h4>
+<ul>
+<li>Additional Private Attributes:</li>
+<li>
+<p>__managed_employees – A list of employees managed by the manager.</p>
+</li>
+<li>
+<p>Public Methods:</p>
+</li>
+<li>get_managed_employees() – Returns the list of employees managed by the manager.</li>
+<li>add_employee(employee) – Adds a new employee to the list of employees managed by the manager.</li>
+<li>remove_employee(employee) – Removes an employee from the list of managed employees if they exist.</li>
+<li>display_info() – Overrides the display_info() method to include the list of managed employees in the following format:
+    "Manager [employee_id]: [name], Salary: [salary], Department: [department], Managed Employees: [employee1, employee2, ...]"</li>
+</ul>
+<p><MultiLineNote>
+1. The Employee class should have an <strong>init</strong> method that initializes all private attributes using parameters: name, employee_id, salary, and department.
+2. The Manager class should inherit from the Employee class and add a new private attribute for managed_employees.
+3. The Manager class should override the display_info() method to include the list of managed employees in the employee's information.
+4. Ensure that salary updates for both Employee and Manager enforce the condition of being non-negative.
+5. Testing will verify that both Employee and Manager classes function correctly with inheritance and that the new employee management functionality works for managers.
+</MultiLineNote></p></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">class Employee:
+    def __init__(self,name,employee_id,salary,department):
+        self.__name = name
+        self.__employee_id = employee_id
+        self.__salary = salary
+        self.__department = department
+    def get_name(self):
+        return self.__name
+    def set_name(self,name):
+        self.__name = name
+    def get_employee_id(self):
+        return self.__employee_id
+    def get_salary(self):
+        return self.__salary
+    def set_salary(self,salary):
+        if salary&gt;0:
+            self.__salary = salary
+    def get_department(self):
+        return self.__department
+    def set_department(self,department):
+        self.__department = department
+    def display_info(self):
+        print(f&#34;Employee {self.__employee_id}: {self.__name}, Salary: {self.__salary}, Department: {self.__department}&#34;)
+class Manager(Employee):
+    def __init__(self,name,employee_id,salary,department,managed_employess):
+        super().__init__(name,employee_id,salary,department)
+        self.__managed_employess = []
+    def get__managed_employees(self):
+        return self.__managed_employess
+    def add_employee(self,employee):
+        self.__managed_employess.append(employee)
+    def remove_employee(self,employee):
+        self.__managed_employess.remove(employee)
+    def display_info(self):
+        print(f&#34;Manager {self.__employee_id}: {self.__name}, Salary: {self.__salary}, Department: {self.__department}, Managed Employees: {self.__managed_employess}&#34;)
+        </code></pre></div>
+            
+                <div class="index no-scrollbar">4.</div>
+                <div class="question border no-scrollbar"><pre><h3>Class Inheritance Task: Build Vehicle and Car</h3>
+<p>Implement two classes: Vehicle and Car, where Car is a subclass of Vehicle.</p>
+<p><HighlightedText>Class Description</HighlightedText></p>
+<h4>Vehicle</h4>
+<ul>
+<li>Attributes</li>
+<li>brand – The brand of the vehicle.</li>
+<li>model – The model of the vehicle.</li>
+<li>year – The manufacturing year of the vehicle.</li>
+<li>Methods</li>
+<li>start() – Prints the string:<br />
+    "[brand] [model] is starting."  </li>
+<li>stop() – Prints the string:<br />
+    "[brand] [model] is stopping."</li>
+</ul>
+<h4>Car (subclass of Vehicle)</h4>
+<ul>
+<li>Additional Attributes</li>
+<li>fuel_type – The type of fuel used (e.g., "Petrol", "Diesel", "Electric").</li>
+<li>is_sports_model – A boolean indicating whether the car is a sports model (default False).</li>
+<li>Additional Methods</li>
+<li>honk() – Prints the string:<br />
+    "[brand] [model] honks: Beep Beep!"</li>
+<li>upgrade_to_sports() – Sets is_sports_model to True and prints the string:<br />
+    "[brand] [model] is now a sports model."</li>
+</ul>
+<p><MultiLineNote>
+1. The <strong>init</strong> method of the Vehicle class will take 3 arguments: brand, model, and year in the same order.
+2. The <strong>init</strong> method of the Car class will take 5 arguments: brand, model, year, fuel_type, and is_sports_model (optional with default False) in the same order, and will call the parent class's <strong>init</strong> .
+3. The testing will verify if the attributes and methods for both classes are implemented correctly.
+</MultiLineNote></p>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">class Vehicle:
+    def __init__(self,brand,model,year):
+        self.brand = brand
+        self.model = model
+        self.year = year
+    def start(self):
+        print(f&#34;{self.brand} {self.model} is starting.&#34;)
+    def stop(self):
+        print(f&#34;{self.brand} {self.model} is stopping.&#34;) 
+class Car(Vehicle):
+    def __init__(self,brand,model,year,fuel_type):
+        super().__init__(brand,model,year)
+        self.fuel_type = fuel_type
+        self.is_sports_model = False
+    def honk(self):
+        print(f&#34;{self.brand} {self.model} honks: Beep Beep!&#34;)
+    def upgrade_to_sports(self):
+        self.is_sports_model = True
+        print(f&#34;{self.brand} {self.model} is now a sports model.&#34;)</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h3>Financial Account Management System</h3>
+<p>Design a class structure for a financial system with a base class BankAccount and two subclasses FixedDepositAccount and CurrentAccount.</p>
+<p><HighlightedText>Class Description</HighlightedText></p>
+<h4>BankAccount</h4>
+<ul>
+<li>Attributes</li>
+<li>customer_name – Name of the account owner.</li>
+<li>balance – Current account balance (float).</li>
+<li>transactions – A list to store transaction history.</li>
+<li>Methods</li>
+<li>deposit(amount) – Adds the amount to balance and logs "Deposited: [amount]".</li>
+<li>withdraw(amount) – Deducts amount if sufficient funds exist, logs "Withdrew: [amount]", else prints "Insufficient balance".</li>
+<li>get_balance() – Returns the current balance.</li>
+<li>show_transactions() – Displays all recorded transactions.</li>
+</ul>
+<h4>FixedDepositAccount (inherits from BankAccount)</h4>
+<ul>
+<li>Additional Attributes</li>
+<li>interest_rate – Annual interest rate (e.g., 5.5 for 5.5%).</li>
+<li>Additional Methods</li>
+<li>apply_interest() – Uses:<br />
+    interest = balance * interest_rate / 100<br />
+    Adds the calculated interest and logs "Interest Applied: [interest_amount]".</li>
+</ul>
+<h4>CurrentAccount (inherits from BankAccount)</h4>
+<ul>
+<li>Additional Attributes</li>
+<li>overdraft_limit – Maximum negative balance allowed (e.g., 2000).</li>
+<li>Overridden Methods</li>
+<li>withdraw(amount) – Allows overdraft up to overdraft_limit, else prints "Overdraft limit exceeded".</li>
+<li>If balance turns negative, logs "Withdrew: [amount] (Overdraft)".</li>
+</ul>
+<p><MultiLineNote>
+1. BankAccount initializes customer_name, balance in the same order, and an empty transactions list.
+2. FixedDepositAccount requires interest_rate in initialization.
+3. CurrentAccount requires overdraft_limit in initialization.
+4. Transactions should be properly recorded.
+5. Proper method overriding and implementation will be evaluated.
+</MultiLineNote></p></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">class BankAccount:
+    def __init__(self,customer_name,balance):
+        self.customer_name = customer_name
+        self.balance = balance
+        self.transactions = []
+    def deposit(self,amount):
+        self.balance = self.balance + amount
+        return (f&#34;Deposit: {amount}&#34;)
+    def withdraw(self,amount):
+        if self.balance &gt; amount:
+            return (f&#34;Withdrew: {amount}&#34;)
+        else:
+            print(&#34;Insufficient balance&#34;)
+    def get_balance(self):
+        return self.balance
+    def show_transactions(self):
+        print(self.transactions)
+class FixedDepositAccont(BankAccount):
+    def __init__(self,customer_name,balance,interest_rate):
+        super().__init__(customer_name,balance)
+        self.interest_rate = (interest_rate)
+    def apply_interest(self):
+        interest = (self.balance*self.interest_rate)/100
+        self.balance = self.balance +interest
+        return (f&#34;Interest Applied: {interest}&#34;)
+class CurrentAccount(BankAccount):
+    def __init__(self,customer_name,balance,overdraft_limit):
+        super().__init__(customer_name,balance)
+        self.overdraft_limit = overdraft_limit
+    def withdraw(self,amount):
+        if amount&gt;self.overdraft_limit:
+            print(&#34;Overdraft Iimit exceeded&#34;)
+        else:
+            self.balance = self.balance - amount 
+        if self.balance&lt;0:
+            return (f&#34;Withdrew: {amount} (Overdraft)&#34;)
+        
+
+        </code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h3>Encapsulated Employee Hierarchy with Inheritance</h3>
+<p>Implement a base class Employee that encapsulates common attributes, and then implement two derived classes: Manager and Engineer.</p>
+<p><HighlightedText>Class Descriptions</HighlightedText></p>
+<h4>Employee</h4>
+<ul>
+<li>Private Attributes:</li>
+<li>__name – The employee's full name.</li>
+<li>__employee_id – A unique identifier for the employee.</li>
+<li>__age – The employee's age.</li>
+<li>Public Methods:</li>
+<li>get_name() – Returns the employee's name.</li>
+<li>set_name(name) – Updates the employee's name.</li>
+<li>get_employee_id() – Returns the employee's ID.</li>
+<li>get_age() – Returns the employee's age.</li>
+<li>set_age(age) – Updates the employee's age. If the age is negative then it should print "Invalid Age".</li>
+<li>display_info() – Prints the employee's details in the format: "Employee [employee_id]: [name], Age: [age]".</li>
+</ul>
+<h4>Manager (inherits from Employee)</h4>
+<ul>
+<li>Additional Private Attributes:</li>
+<li>__department – The department the manager oversees.</li>
+<li>__team_size – The number of employees under the manager's supervision.</li>
+<li>Additional Public Methods:</li>
+<li>get_department() – Returns the manager's department.</li>
+<li>set_department(department) – Updates the manager's department.</li>
+<li>get_team_size() – Returns the manager's team size.</li>
+<li>set_team_size(team_size) – Updates the team size. If the team size is negative, it should print "Invalid Team Size".</li>
+<li>display_info() – Overrides the base method to print details in the format: "Manager [employee_id]: [name], Age: [age], Department: [department], Team Size: [team_size]".</li>
+</ul>
+<h4>Engineer (inherits from Employee)</h4>
+<ul>
+<li>Additional Private Attributes:</li>
+<li>__specialization – The engineer's area of expertise.</li>
+<li>__salary – The engineer's salary.</li>
+<li>Additional Public Methods:</li>
+<li>get_specialization() – Returns the engineer's specialization.</li>
+<li>set_specialization(specialization) – Updates the engineer's specialization.</li>
+<li>get_salary() – Returns the engineer's salary.</li>
+<li>set_salary(salary) – Updates the engineer's salary. If salary is negative then it should print "Invalid Salary".</li>
+<li>display_info() – Overrides the base method to print details in the format: "Engineer [employee_id]: [name], Age: [age], Specialization: [specialization], Salary: $[salary]".</li>
+</ul>
+<p><MultiLineNote>
+1. The <strong>init</strong> method in Employee should initialize <strong>name, __employee_id, and __age.
+2. The __init</strong> methods in Manager and Engineer should initialize both the inherited attributes and their own specific attributes.
+3. Ensure that setter methods enforce the constraints (e.g., non-negative age, salary, and team size).
+4. Testing will verify that encapsulation and inheritance are properly implemented and that method overriding works as specified.
+</MultiLineNote></p></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">class Employee:
+    def __init__(self,name,employee_id,age):
+        self.__name = name
+        self.__employee_id = employee_id
+        self.__age = age
+    def get_name(self):
+        return self.__name
+    def set_name(self,name):
+        self.__name = name
+    def get_employee_id(self):
+        return self.__employee_id
+    def get_age(self):
+        return self.__age
+    def set_age(self,age):
+        if age&lt;0:
+            print(&#34;Invalid Age&#34;)
+        else:
+            self.__age = age
+    def display_info(self):
+        print(f&#34;Employee Age: {self.__age}&#34;)
+class Manager(Employee):
+    def __init__(self,name,employee_id,age,department,team_size):
+        super().__init__(name,employee_id,age)
+        self.__department = department
+        self.__team_size = team_size
+    def get_department(self):
+        return self.__department
+    def set_department(self,department):
+        self.__department = department
+    def get_team_size(self):
+        return self.__team_size
+    def set_team_size(self,team_size):
+        self.__team_size = team_size
+    def display_info(self):
+        print(f&#34;Manager Age: {self.__age}, Department: {self.__department}, Team Size: {self.__team_size}&#34;)
+class Engineer(Employee):
+    def __init__(self,name,employee_id,age,specialization,salary):
+        super().__init__(name,employee_id,age)
+        self.__specialization = specialization
+        self.__salary = salary
+    def get_specialization(self):
+        return self.__specialization
+    def set_specialization(self,specialization):
+        self.__department = department
+    def get_salary(self):
+        return self.__salary
+    def set_salary(self,salary):
+        self.__salary = salary
+    def display_info(self):
+        print(f&#34;Engineer Age: {self.__age}, Specialization: {self.__specialization}, Salary: ${self.__salary}&#34;)     
+        </code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><h3>Library Management System with Polymorphism</h3>
+<p>Implement the <strong>Book</strong> class and its subclasses to demonstrate polymorphism through method overriding.</p>
+<h4><strong>Class Descriptions</strong></h4>
+<h4><strong>Book (Base Class)</strong></h4>
+<ul>
+<li><strong>Private Attributes</strong>:</li>
+<li>__title – The title of the book.</li>
+<li>__author – The author of the book.</li>
+<li>
+<p>__price – The price of the book.</p>
+</li>
+<li>
+<p><strong>Public Methods</strong>:</p>
+</li>
+<li>display_info(self) – This method should print the title, author, and price of the book in the format:<br />
+    Title: [title], Author: [author], Price: $[price]<br />
+    The price should be printed as a floating-point number with exactly <strong>two decimal places</strong> (e.g., 15.99).</li>
+</ul>
+<hr />
+<h4><strong>EBook (inherits from Book)</strong></h4>
+<ul>
+<li><strong>Overrides display_info method</strong>:</li>
+<li>The price of the ebook should include a <strong>digital download fee</strong> of <strong>$2</strong>.</li>
+<li>The display_info method should print the title, author, and total price (including the digital download fee) in the format:<br />
+    Title: [title], Author: [author], Total Price: $[total price]
+    The total price should also be printed with <strong>exactly two decimal places</strong> (e.g., 17.99).</li>
+</ul>
+<hr />
+<h4><strong>AudioBook (inherits from Book)</strong></h4>
+<ul>
+<li><strong>Overrides display_info method</strong>:</li>
+<li>The price of the audiobook should include a <strong>narration fee</strong> of <strong>$5</strong>.</li>
+<li>The display_info method should print the title, author, and total price (including the narration fee) in the format:<br />
+    Title: [title], Author: [author], Total Price: $[total price]
+    The total price should be printed with <strong>exactly two decimal places</strong> (e.g., 20.99).</li>
+</ul>
+<hr />
+<p><MultiLineNote>
+1. The <strong>init</strong> method in <strong>Book</strong> should initialize __title, __author, and __price.
+2. The display_info(self) method in <strong>EBook</strong> should add $2 to the price for the digital download and print the total price with two decimal places.
+3. The display_info(self) method in <strong>AudioBook</strong> should add $5 to the price for the narration and print the total price with two decimal places.
+4. The display_info(self) method in <strong>Book</strong> should print the base price without any additional fees, formatted to two decimal places and preceded by a <strong>$</strong> symbol.
+5. Testing will verify that polymorphism is correctly implemented and that method overriding works as specified.
+</MultiLineNote></p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">class Book:
+    def __init__(self,title,author,price):
+        self.__title = title
+        self.__author = author
+        self.__price = price
+    def display_info(self):
+        print(f&#34;Title: {self.__title}, Author: {self.__author}, Prise: ${str(self.__price)}&#34;)
+class EBook(Book):
+    def __init__(self,title,author,price):
+        super().__init__(title,author,price)
+    def display_info(self):
+        print(f&#34;Title: {self.__title}, Author: {self.__author}, Prise: ${str(self.__price + 2)}&#34;)
+class AudioBook(Book):
+    def __init__(self,title,author,price):
+        super().__init__(title,author,price)
+    def display_info(self):
+        print(f&#34;Title: {self.__title}, Author: {self.__author}, Prise: ${str(self.__price + 5)}&#34;)
+        </code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h3>Library Management System with Abstraction</h3>
+<p>Implement an abstract class LibraryItem that defines a template for different types of library items, and then implement two derived classes: Book and DVD.</p>
+<h4><strong>LibraryItem (Abstract Class)</strong></h4>
+<ul>
+<li><strong>Private Attributes</strong>:</li>
+<li>__item_id – Unique identifier for the library item.</li>
+<li>__title – The title of the item.</li>
+<li>
+<p>__genre – The genre/category of the item.</p>
+</li>
+<li>
+<p><strong>Abstract Methods</strong>:</p>
+</li>
+<li>borrow_item() – Must be implemented by subclasses.</li>
+<li>
+<p>return_item() – Must be implemented by subclasses.</p>
+</li>
+<li>
+<p><strong>Input Validation</strong>:</p>
+</li>
+<li>If the title or genre is invalid (i.e., an empty string or None), print the message: "Invalid Title or Genre".</li>
+<li>Ensure the LibraryItem class cannot be instantiated directly due to its abstract nature.</li>
+</ul>
+<hr />
+<h4><strong>Book (inherits from LibraryItem)</strong></h4>
+<ul>
+<li><strong>Implements Abstract Methods</strong>:</li>
+<li>borrow_item() – Prints "Book [item_id]: [title] has been borrowed."</li>
+<li>return_item() – Prints "Book [item_id]: [title] has been returned."</li>
+</ul>
+<hr />
+<h4><strong>DVD (inherits from LibraryItem)</strong></h4>
+<ul>
+<li><strong>Implements Abstract Methods</strong>:</li>
+<li>borrow_item() – Prints "DVD [item_id]: [title] has been borrowed."</li>
+<li>return_item() – Prints "DVD [item_id]: [title] has been returned."</li>
+</ul>
+<hr />
+<p><MultiLineNote>
+1. The <strong>init</strong> method in LibraryItem should initialize <strong>item_id, __title, and __genre.
+2. The __init</strong> methods in Book and DVD should initialize both the inherited attributes and implement their own logic.
+3. Ensure that the LibraryItem class cannot be instantiated directly.
+4. If the title or genre are empty or None, print the message "Invalid Title or Genre".
+5. Test cases will verify that abstraction is properly implemented and that method overriding works as specified.
+</MultiLineNote></p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python"></code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h3>Movie Theater Management with OOPs Design</h3>
+<p>Create a system to manage a movie theater’s movie collection using Object-Oriented Programming (OOP). Implement a base class Movie, and derived classes for specific types of movies: Action, Drama, and Comedy.</p>
+<p><HighlightedText>Class Descriptions</HighlightedText></p>
+<h4>Movie (Base Class)</h4>
+<ul>
+<li><strong>Private Attributes</strong>:</li>
+<li>__title – The title of the movie.</li>
+<li>__director – The director of the movie.</li>
+<li>__genre – The genre of the movie (e.g., Action, Drama, Comedy).</li>
+<li>__rating – The rating of the movie (scale of 1 to 10).</li>
+<li>
+<p>__availability – A boolean indicating whether the movie is available for screening in the theater (default is True).</p>
+</li>
+<li>
+<p><strong>Public Methods</strong>:</p>
+</li>
+<li>get_title() – Returns the title of the movie.</li>
+<li>set_title(title) – Updates the title of the movie.</li>
+<li>get_director() – Returns the director of the movie.</li>
+<li>set_director(director) – Updates the director of the movie.</li>
+<li>get_genre() – Returns the genre of the movie.</li>
+<li>set_genre(genre) – Updates the genre of the movie.</li>
+<li>get_rating() – Returns the rating of the movie.</li>
+<li>set_rating(rating) – Updates the rating of the movie if rating is between 1 to 10 else print "Invalid Rating".</li>
+<li>check_availability() – Returns whether the movie is available for screening.</li>
+<li>screen_movie() – Sets the availability of the movie to False (movie is being screened).<ul>
+<li>If the movie is already being screened, print: "[title] is already being screened."</li>
+<li>If the movie is available, it prints: "Movie is being screened: [title] directed by [director]."</li>
+</ul>
+</li>
+<li>end_screening() – Sets the availability of the movie to True (movie screening has ended) and prints: "Movie screening ended: [title] directed by [director]."</li>
+</ul>
+<h4>Action (inherits from Movie)</h4>
+<ul>
+<li>Additional Private Attributes:</li>
+<li>__action_type – The type of action (e.g., Adventure, Thriller).</li>
+<li>
+<p>__stunts – The number of stunts featured in the movie.</p>
+</li>
+<li>
+<p>Additional Public Methods:</p>
+</li>
+<li>get_action_type() – Returns the action type of the movie.</li>
+<li>set_action_type(action_type) – Updates the action type.</li>
+<li>get_stunts() – Returns the number of stunts in the movie.</li>
+<li>set_stunts(stunts) – Updates the number of stunts in the movie.</li>
+</ul>
+<h4>Drama (inherits from Movie)</h4>
+<ul>
+<li>Additional Private Attributes:</li>
+<li>__subgenre – The subgenre of the drama movie (e.g., Tragedy, Romance).</li>
+<li>
+<p>__actors – A list of key actors in the movie.</p>
+</li>
+<li>
+<p>Additional Public Methods:</p>
+</li>
+<li>get_subgenre() – Returns the subgenre of the drama movie.</li>
+<li>set_subgenre(subgenre) – Updates the subgenre.</li>
+<li>get_actors() – Returns a list of key actors in the movie.</li>
+<li>set_actors(actors) – Updates the list of key actors.</li>
+</ul>
+<h4>Comedy (inherits from Movie)</h4>
+<ul>
+<li>Additional Private Attributes:</li>
+<li>__humor_type – The type of humor in the comedy (e.g., Satire, Slapstick).</li>
+<li>
+<p>__audience_rating – The age group recommended for the comedy (e.g., General Audience, PG-13).</p>
+</li>
+<li>
+<p>Additional Public Methods:</p>
+</li>
+<li>get_humor_type() – Returns the type of humor in the comedy movie.</li>
+<li>set_humor_type(humor_type) – Updates the humor type.</li>
+<li>get_audience_rating() – Returns the audience rating for the movie.</li>
+<li>set_audience_rating(audience_rating) – Updates the audience rating.</li>
+</ul>
+<p><MultiLineNote>
+1. The <strong>init</strong> method in Movie should initialize <strong>title, __director, __genre, __rating, and __availability (default is True).
+2. The __init</strong> methods in Action, Drama, and Comedy should initialize both the inherited attributes and their own specific attributes.
+3. Ensure that setter methods enforce constraints (e.g., valid rating for movies between 1 and 10).
+4. Testing will verify that object creation, inheritance, encapsulation, and method functionality are properly implemented.
+</MultiLineNote></p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python"></code></pre></div>
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>
