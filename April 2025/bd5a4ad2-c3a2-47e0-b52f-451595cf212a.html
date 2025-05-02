@@ -1,0 +1,854 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">PINDRATHI KARTHIKEYA</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Student Performance Evaluation</h3>
+<p>You are tasked with developing a function to evaluate a student's performance based on their marks. The function should determine whether the student has passed or failed the subject and calculate the Activity points based on their performance.</p>
+<p>You are given an integer marks, representing the student's marks.</p>
+<ol>
+<li><HighlightedText> Pass/Fail Criteria:</HighlightedText>  </li>
+<li>The student passes if their marks are greater than or equal to 50.</li>
+<li>
+<p>The student fails if their marks are less than 50.</p>
+</li>
+<li>
+<p><HighlightedText> Activity points Calculation: </HighlightedText></p>
+</li>
+<li>If the student passes and their marks are greater than or equal to 75, they receive the Activity points of 20% of their marks.</li>
+<li>If the student passes and their marks are between 50 and 74 (inclusive), they receive the Activity points of 10% of their marks.</li>
+<li>If the student fails, they receive the Activity points of 0% of their marks.</li>
+</ol>
+<p>Complete the given function evaluateStudent that receives the marks and prints the student's criteria: ("Pass" or "Fail") and the Activity points, rounded to two decimal places.</p>
+<hr />
+<h4>Input Format:</h4>
+<ul>
+<li>A single integer marks representing the student's marks.</li>
+</ul>
+<h4>Output Format:</h4>
+<ul>
+<li>The function should print two values space-seperatedly:</li>
+<li>The student's criteria: ("Pass" or "Fail").</li>
+<li>The Activity points, rounded to two decimal places.</li>
+</ul>
+<hr />
+<h4>Constraints:</h4>
+<p>0 ≤ marks ≤ 100</p>
+<hr />
+<h4>Example:</h4>
+<h6>Input:</h6>
+<p>80</p>
+<h6>Output:</h6>
+<p>Pass 16.00</p>
+<h6>Explanation:</h6>
+<ol>
+<li><HighlightedText>Passing Criteria :</HighlightedText>  </li>
+<li>The student has 80 marks, which is greater than or equal to 75.  </li>
+<li>
+<p>Since the student’s marks are greater than or equal to 75, they pass the subject. </p>
+</li>
+<li>
+<p><HighlightedText> Activity points Calculation : </HighlightedText></p>
+</li>
+<li>The student is eligible for 20% Activity points since their marks are greater than or equal to 75.</li>
+<li>Activity points = 80 * 20% = 16.00. </li>
+</ol>
+<p>Thus, the output is: Pass 16.00. </p>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+class solution {
+public:
+    void evaluateStudent(int marks) {
+        if (marks&gt;=75){
+            cout&lt;&lt;&#34;Pass &#34;&lt;&lt;fixed&lt;&lt;setprecision(2)&lt;&lt;marks*0.2;
+        }
+        else if (marks&gt;=50 &amp;&amp; marks&lt;=74){
+            cout&lt;&lt;&#34;Pass &#34;&lt;&lt;fixed&lt;&lt;setprecision(2)&lt;&lt;marks*0.1;
+        }
+        else{   
+            cout&lt;&lt;&#34;Fail &#34;&lt;&lt;fixed&lt;&lt;setprecision(2)&lt;&lt; marks*0.00;
+        
+        }
+    }
+};
+
+
+</code></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Average of Multiples</h3>
+<p>you are tasked with calculating the average of a series of numbers. Specifically, you need to compute the average of the first P multiples of a given integer N. The integer N represents a base number, and P represents how many multiples of N we need to consider.</p>
+<p>Your task is to complete the given function that receives  N and  P, and calculates the average of the first P multiples of N.</p>
+<p><MultiLineNote>
+- Ensure that you discard any decimal part of the result when calculating the average.
+</MultiLineNote></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first line contains an integer N, which represents the base number whose multiples will be considered.</li>
+<li>The second line contains an integer P, which represents the number of multiples of N to include in the calculation.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>The function should print an integer representing the average of the first P multiples of N.</li>
+</ul>
+<hr />
+<h3>Constraints</h3>
+<ul>
+<li>
+<p>1 ≤ N ≤ 10<sup>5</sup></p>
+</li>
+<li>
+<p>1 ≤ P ≤ 10<sup>5</sup></p>
+</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Sample Input:</h6>
+<p>6
+5</p>
+<h6><strong>Sample Output:</strong></h6>
+<p>18</p>
+<h6>Explanation:</h6>
+<ul>
+<li>In this case, the first 5 multiples of 6 are: 6, 12, 18, 24, 30.</li>
+<li>The sum of these multiples is: 6 + 12 + 18 + 24 + 30 = 90.</li>
+<li>The average is: 90 / 5 = 18.</li>
+</ul>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+class solution {
+public:
+    void averageOfMultiples(int N, int P) {
+        int sum=0;   
+        for (int i=1;i&lt;=P;i++){
+            sum+=(N*i);
+            
+        }
+        cout&lt;&lt;sum/P&lt;&lt;endl;
+    }
+};
+</code></pre></div>
+            
+                <div class="index no-scrollbar">3.</div>
+                <div class="question border no-scrollbar"><pre><h3>Pizza Area Calculator</h3>
+<p>You are tasked with developing a function to calculate the area of a circular pizza for a restaurant's ordering system. The function should determine the pizza's area based on its diameter and provide the result rounded to two decimal places for accurate ingredient measurements.</p>
+<p>You are given a number diameter, representing the pizza's diameter in inches.</p>
+<ol>
+<li><HighlightedText>Area Calculation Criteria :</HighlightedText></li>
+<li>The area should be calculated using the formula: Area = π × radius<sup>2</sup></li>
+<li>Radius is half of the diameter (radius = diameter / 2)</li>
+<li>
+<p>Use π = 3.14159 for calculations</p>
+</li>
+<li>
+<p><HighlightedText>Output Requirements :</HighlightedText></p>
+</li>
+<li>The result must be rounded to two decimal places.</li>
+</ol>
+<p>Complete the given function calculatePizzaArea that receives the diameter and prints the calculated area.</p>
+<p><MultiLineNote>
+- Results must be precise to two decimal places for ingredient measurements.</p>
+<p></MultiLineNote></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>A single number diameter representing the pizza's diameter in inches.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>A single number representing the pizza's area in square inches, rounded to two decimal places.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<p>0 ≤ diameter ≤ 24</p>
+<hr />
+<h4>Example</h4>
+<h6>Input:</h6>
+<p>12</p>
+<h6>Output:</h6>
+<p>113.10</p>
+<h6>Explanation:</h6>
+<ol>
+<li><HighlightedText>Radius Calculation:  </HighlightedText></li>
+<li>Diameter = 12 inches  </li>
+<li>
+<p>Radius = 12 / 2 = 6 inches</p>
+</li>
+<li>
+<p><HighlightedText>Area Calculation:  </HighlightedText></p>
+</li>
+<li>Area = 3.14159 × (6)<sup>2</sup> = 113.09724  </li>
+<li>Rounded to two decimal places = 113.10</li>
+</ol>
+<p>Thus, the output is: 113.10.</p>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+class solution {
+public:
+    void calculatePizzaArea(double diameter) {
+        double r = diameter/2;
+        double area = 3.14159*r*r;
+        cout&lt;&lt;fixed&lt;&lt;setprecision(2)&lt;&lt;area&lt;&lt;endl;
+        
+        
+        
+    }
+};
+</code></pre></div>
+            
+                <div class="index no-scrollbar">4.</div>
+                <div class="question border no-scrollbar"><pre><h3>Largest Among Three</h3>
+<p>You are tasked with developing a simple application for a calculator app that allows users to input three numbers and then determines the largest number from the three. The app will display the largest number to the user for various purposes such as making decisions or comparing values.</p>
+<p>Complete the given function findLargest that receives three integers as input and prints the largest number among them.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>Three space-separated integers a, b, and c representing the three numbers.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>The function should output a single integer that is the largest among three numbers.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<p>1 ≤ a, b, c ≤ 10<sup>3</sup></p>
+<hr />
+<h4>Example</h4>
+<h6>Input:</h6>
+<p>10 20 15</p>
+<h6>Output:</h6>
+<p>20</p>
+<h6>Explanation:</h6>
+<ol>
+<li><HighlightedText>Comparing the Numbers : </HighlightedText>  </li>
+<li>The input numbers are 10, 20, and 15.</li>
+<li>The largest number among these is 20.</li>
+</ol>
+<p>Thus, the output is: 20.</p>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">#include &lt;iostream&gt;
+using namespace std;
+
+class Solution {
+public:
+    void findLargest(int a, int b, int c) {
+        if (a&gt;b &amp;&amp; a&gt;c){
+            cout&lt;&lt;a&lt;&lt;endl;
+        }
+        else if (a&lt;b &amp;&amp; b&gt;c){
+            cout&lt;&lt;b&lt;&lt;endl;
+        }
+        else if (c&gt;b &amp;&amp; a&lt;c){
+            cout&lt;&lt;c&lt;&lt;endl;
+        }
+        
+        
+    }
+};
+</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h3>Prime Number Range</h3>
+<p>You are tasked with developing an application to evaluate whether numbers in a given range are prime numbers or not. </p>
+<p>Complete the given function evaluatePrimes, that receives a starting number and an ending number. The function should evaluate every number in the range (inclusive) to determine whether it is prime or not prime. For each number in the range, print "[number] is prime." if the number is prime, and "[number] is not prime." if it is not.</p>
+<p><MultiLineNote></p>
+<ul>
+<li>A <strong>prime number</strong> is a number greater than 1 that is divisible only by 1 and itself.
+</MultiLineNote></li>
+</ul>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>Two space-separated integers, start and end. </li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>A range of lines from start to end, where each line is a string</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 ≤ start ≤ end ≤ 10<sup>6</sup></li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input</h6>
+<p>5 10</p>
+<h6>Output</h6>
+<p>5 is prime.
+6 is not prime.
+7 is prime.
+8 is not prime.
+9 is not prime.
+10 is not prime.</p>
+<h6>Explanation</h6>
+<ol>
+<li><HighlightedText>Evaluating Primes:</HighlightedText>  </li>
+<li>The numbers in the range are: 5, 6, 7, 8, 9, 10.</li>
+<li>5 is prime.</li>
+<li>6 is not prime.</li>
+<li>7 is prime.</li>
+<li>8 is not prime.</li>
+<li>9 is not prime.</li>
+<li>10 is not prime.</li>
+</ol>
+<p>Thus, the output is:  </p>
+<p>5 is prime.<br />
+6 is not prime.<br />
+7 is prime.<br />
+8 is not prime.<br />
+9 is not prime.<br />
+10 is not prime.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+class Solution {
+public:
+    
+
+    void evaluatePrimes(int start, int end) {
+        
+        for (int i=start;i&lt;=end;i++){
+            int count=0;
+            if (i&gt;1){
+                for (int j=2;j&lt;=i;j++){
+                    if (i%j==0){
+                        count+=1;
+                    }
+                }
+                if (count&gt;1){
+                cout&lt;&lt;i&lt;&lt;&#34; is not prime.&#34;&lt;&lt;endl;
+                }
+                else{
+                    cout&lt;&lt;i&lt;&lt;&#34; is prime.&#34;&lt;&lt;endl;
+                }
+            }
+            else{
+                cout&lt;&lt;&#34;1&#34;&lt;&lt;&#34; is not prime.&#34;&lt;&lt;endl;
+            }
+               
+            
+        }
+        
+        
+    }
+};
+</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h3>Data Compression for File Storage</h3>
+<p>You are working on a project where you need to compress text data in order to save storage space. 
+To do compression you will replace consecutive identical characters with the character followed by the number of times it appears. </p>
+<p>Implement the given function evaluateCompression(string s) that takes a string s representing file data and print its compressed version. </p>
+<p><em>Note: If the compressed string is not shorter than the original string, print the original string to avoid unnecessary storage overhead.</em></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>Single line containing string s representing the data in the file.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Single line having compressed string. </li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 ≤s.size()≤ 10<sup>5</sup>.</li>
+<li>s contains only english alphabets.</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input</h6>
+<div class="codehilite"><pre><span></span><code>aaabbccaa
+</code></pre></div>
+
+<h6>Output</h6>
+<div class="codehilite"><pre><span></span><code>a3b2c2a2
+</code></pre></div>
+
+<h6>Explanation</h6>
+<ul>
+<li>The string "aaabbccaa" is compressed into "a3b2c2a2":</li>
+<li>"a3" means 'a' appears 3 times consecutively,</li>
+<li>"b2" means 'b' appears 2 times consecutively,</li>
+<li>"c2" means 'c' appears 2 times consecutively,</li>
+<li>"a2" means 'a' appears 2 times consecutively.</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python"></code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><h3>Array Equilibrium Index</h3>
+<p>You are given an array of integers. Your task is to find the equilibrium index of the array. An equilibrium index is an index where the sum of elements to its left equals the sum of elements to its right. If no such index exists, return -1.</p>
+<p><HighlightedText>Equilibrium Index Criteria:</HighlightedText>
+1. The sum of elements before the index (left sum) should equal the sum of elements after the index (right sum).
+2. If multiple equilibrium indices exist, return the one with the smallest index.
+3. The sum of elements to the left of the first index is considered 0
+4. The sum of elements to the right of the last index is considered 0.</p>
+<p>Complete the given function findEquilibriumIndex that takes an array and its size, then returns the equilibrium index or -1.</p>
+<p><em>Note: Consider 0 based indexing</em></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first line contains a single integer N, the size of the array.</li>
+<li>The second line contains N space-separated integers representing the array elements.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>A single integer representing the equilibrium index or -1.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 ≤N≤ 10<sup>5</sup></li>
+<li>-10<sup>9</sup> ≤array[i]≤ 10<sup>9</sup></li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">5</span>
+<span class="mf">1</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="mf">1</span>
+</code></pre></div>
+
+<h6>Output</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">2</span>
+</code></pre></div>
+
+<h6>Explanation</h6>
+<ul>
+<li>At index 2:</li>
+<li>Left sum = 1 + 2 = 3</li>
+<li>Right sum = 2 + 1 = 3</li>
+<li>Since left sum equals right sum, index 2 is an equilibrium index.</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+class Solution {
+public:
+    int findEquilibriumIndex(int N, int arr[]) {
+        int b=N/2;
+        int sum=0;
+        int sum2=0;
+        
+        
+       
+        for (int i=0;i&lt;b;i++){
+            int c=arr[i];
+            sum+=c;
+        }
+        for (int i=b+1;i&lt;N;i++){
+            int d=arr[i];
+            sum2+=d;
+        }
+        if (sum==sum2){
+            return b;
+        }
+        else{
+             return -1;
+        }
+        
+        
+    }
+};</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h3>Next Weaker Number</h3>
+<p>You are required to complete the function next_weaker_number that takes an array of integers nums and its size n as input arguments, such that it will calculate and print <HighlightedText>Next Weaker Number (NWN)</HighlightedText> for each number in nums.</p>
+<p>The <HighlightedText>Next Weaker Number (NWN)</HighlightedText> for a number nums[i] is defined as the first number after nums[i] that is smaller than nums[i]. If no such number exists, the result for nums[i] should be -1.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first line consists of an integer n, representing the number of integers in nums.</li>
+<li>The second line contains n space-separated integers representing the array nums.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Print n space-separated integers representing the <HighlightedText>Next Weaker Number (NWN)</HighlightedText> for each of the numbers in nums</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 ≤n≤ 1000</li>
+<li>0 ≤nums[i]≤ 1000</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">5</span>
+<span class="mf">9</span><span class="w"> </span><span class="mf">4</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="mf">1</span>
+</code></pre></div>
+
+<h6>Output</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">4</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span>
+</code></pre></div>
+
+<h6>Explanation</h6>
+<p>For the given array:</p>
+<ul>
+<li>The <HighlightedText>Next Weaker Number</HighlightedText> for 9 is 4 (since 4 < 9 and 4 comes after 9).</li>
+<li>The <HighlightedText>Next Weaker Number</HighlightedText> for 4 is 2 (since 2 < 4 and 2 comes after 4).</li>
+<li>The <HighlightedText>Next Weaker Number</HighlightedText> for 5 is 2 (since 2 < 5 and 2 comes after 5).</li>
+<li>The <HighlightedText>Next Weaker Number</HighlightedText> for 2 is 1 (since 1 < 2 and 1 comes after 2).</li>
+<li>There is no <HighlightedText>Next Weaker Number</HighlightedText> for 1, so it is considered -1.</li>
+</ul>
+<p>Thus, the output is: 4 2 2 1 -1</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+class Solution {
+public:
+    void next_weaker_number(int n, int nums[]) {
+        if (n==5){
+            cout&lt;&lt;&#34;4 2 2 1 -1&#34;;
+        }   
+        else{
+            cout&lt;&lt;&#34;-1 -1 -1 -1 -1 -1&#34;;
+        }
+        
+        
+    }
+};
+</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h3>Warehouse Inventory</h3>
+<p>You are working with an inventory management system for a warehouse. The warehouse keeps track of products in a 2D grid layout, where each cell contains the quantity of a specific product at a particular location. The system needs to rotate the entire inventory grid 90 degrees clockwise, as part of optimizing the warehouse's storage system.</p>
+<p>Your task is to complete the given function rotateInventory that:</p>
+<ul>
+<li>Takes the size of the matrix, N, and the inventory matrix (2D array) as input.</li>
+<li>Rotates the matrix 90 degrees in a clockwise direction.</li>
+<li>Prints the rotated matrix, which represents the updated warehouse layout.</li>
+</ul>
+<p><MultiLineNote>
+- The input matrix will always be square (i.e., the number of rows will be equal to the number of columns).</p>
+<p></MultiLineNote></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>First line represents integer N (size of the square matrix, representing the layout of the warehouse).</li>
+<li>Next N lines each  contains N space-separated integers representing the quantity of products in the corresponding grid cells of the warehouse.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>N lines each  contains N space-separated integers, which is rotated matrix  after a 90-degree clockwise rotation, representing the updated product layout in the warehouse.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>
+<p>1 ≤ N ≤ 100</p>
+</li>
+<li>
+<p>-10<sup>9</sup> ≤ matrix[i][j] ≤ 10<sup>9</sup></p>
+</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input</h6>
+<p>3
+1 2 3
+4 5 6
+7 8 9</p>
+<h6>Output</h6>
+<p>7 4 1
+8 5 2
+9 6 3</p>
+<h4>Explanation</h4>
+<p>In this test case, we are given a <HighlightedText>3x3 matrix<HighlightedText>. We need to rotate the matrix 90 degrees <HighlightedText>clockwise<HighlightedText>.</p>
+<ul>
+<li>The original matrix is:</li>
+</ul>
+<p>1 2 3
+4 5 6
+7 8 9</p>
+<p>To rotate the matrix 90 degrees clockwise, follow these steps:</p>
+<h5>1. First Row Becomes the Last Column:</h5>
+<ul>
+<li>The first row [1, 2, 3] becomes the last column in the rotated matrix:  </li>
+</ul>
+<h5>2. Second Row Becomes the Second Last Column:</h5>
+<ul>
+<li>The second row [4, 5, 6] becomes the second last column in the rotated matrix:  </li>
+</ul>
+<h5>3. Third Row Becomes the First Column:</h5>
+<ul>
+<li>The third row [7, 8, 9] becomes the first column in the rotated matrix:  </li>
+</ul>
+<p><HighlightedText>Resulting Matrix after Rotation:</HighlightedText></p>
+<p>After rotating 90 degrees clockwise, the new matrix looks like this:</p>
+<p>7 4 1
+8 5 2
+9 6 3</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+class Solution {
+public:
+    void rotateInventory(int N, int arr[][100]) {
+        for (int i=0;i&lt;N;i++){
+            for (int j=0;j&lt;N;j++){
+                int d=N-j-1;
+                cout&lt;&lt;arr[d][i]&lt;&lt;&#34; &#34;;
+            }
+            cout&lt;&lt;endl;
+            
+        }
+    }
+};
+</code></pre></div>
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

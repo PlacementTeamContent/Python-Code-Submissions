@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Rakesh Kumar</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Smallest String Among Three</h3>
+<p>You are tasked with developing a simple application for a string comparison app that allows users to input three strings and determines the smallest string among them based on length of string. The app will display the smallest string to the user for various purposes such as decision-making or comparison.</p>
+<p>Complete the given function findSmallestString that receives three strings as input and prints the smallest string among them.</p>
+<p><MultiLineNote>
+- If two or more strings are smallest, the function will return the first string. </p>
+<p></MultiLineNote></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>Three space-separated strings str1, str2, and str3 representing the three strings.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>The function should output a single string that is the smallest of the three strings.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>The strings will contain only uppercase and lowercase English alphabets.</li>
+<li>The length of each string is between 1 and 1000.</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input:</h6>
+<p>apple banana cherry</p>
+<h6>Output:</h6>
+<p>apple</p>
+<h6>Explanation:</h6>
+<ol>
+<li><HighlightedText>Comparing the Strings:</HighlightedText>  </li>
+<li>The input strings are "apple", "banana", and "cherry".</li>
+<li>The smallest string (based on length of string ) among these is "apple".</li>
+</ol>
+<p>Thus, the output is: "apple".</p>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+
+class Solution {
+public:
+    void findSmallestString(string str1, string str2, string str3) {
+        int a_1 = str1.size() ;
+        int a_2 = str2.size() ;
+        int a_3 = str3.size() ;
+        if ((a_1&lt;=a_2)&amp;&amp;(a_1&lt;=a_3)){
+            cout&lt;&lt;str1&lt;&lt;endl;
+        }
+        else if((a_2&lt;=a_3)){
+            cout&lt;&lt;str2&lt;&lt;endl;
+        }
+        else if(a_3&lt;a_2){
+            cout&lt;&lt;str3&lt;&lt;endl;
+        }
+    }
+};
+</code></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Average of Odd Powers</h3>
+<p>You are tasked with calculating the average of the first M odd powers of a given integer K. Specifically, you need to compute the average of the first M values of K^1, K^3, K^5, ..., K^(2M-1), where the exponent is always odd.</p>
+<p>Your task is to complete the given function that receives K and M, and calculates the average of the first M odd powers of K.</p>
+<p><MultiLineNote>
+- Ensure that you discard any decimal part of the result when calculating the average.
+</MultiLineNote></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first line contains an integer K, which represents the base number.</li>
+<li>The second line contains an integer M, which represents how many odd powers of K to consider.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>The function should print an integer representing the average of the first M odd powers of K.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 ≤ K ≤ 10<sup>5</sup></li>
+<li>1 ≤ M ≤ 10<sup>5</sup></li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Sample Input:</h6>
+<p>3
+4</p>
+<h6>Sample Output:</h6>
+<p>615</p>
+<h6>Explanation:</h6>
+<ul>
+<li>In this case, the first 4 odd powers of 3 are:</li>
+<li>3<sup>1</sup> = 3</li>
+<li>3<sup>3</sup> = 27</li>
+<li>3<sup>5</sup> = 243</li>
+<li>3<sup>7</sup> = 2187</li>
+<li>The sum of these values is: 3 + 27 + 243 + 2187 = 2460</li>
+<li>The average is: 2460 / 4 = 615.</li>
+</ul>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+class solution {
+public:
+    void averageOfOddPowers(int K, int M) {
+        int a = 1;
+        int sum = 0 ;
+        for(int i=1;i&lt;=M;i++){
+            int P = a ;
+            sum += pow(K,P);
+            a += 2 ;
+            
+        }
+        cout&lt;&lt;sum/M;
+    }
+};</code></pre></div>
+            
+                <div class="index no-scrollbar">3.</div>
+                <div class="question border no-scrollbar"><pre><h3>Pool Area Calculator</h3>
+<p>You are tasked with developing a program to calculate the area of a circular swimming pool for a construction company's estimation tool. The program should determine the pool's area based on its diameter and provide the result rounded to two decimal places for accurate estimation of materials.</p>
+<p>You are given a number diameter, representing the pool's diameter in inches.</p>
+<ol>
+<li><HighlightedText>Area Calculation Criteria:</HighlightedText>  </li>
+<li>The area should be calculated using the formula: Area = π × radius²</li>
+<li>Radius is half of the diameter (radius = diameter / 2)</li>
+<li>
+<p>Use π = 3.14159 for calculations</p>
+</li>
+<li>
+<p><HighlightedText>Output Requirements:</HighlightedText>  </p>
+</li>
+<li>The result must be rounded to two decimal places.</li>
+</ol>
+<p>Complete the given function calculatePoolArea that receives the diameter and prints the calculated area.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>A single number diameter representing the pool's diameter in inches.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>A single number representing the pool's area in square inches, rounded to two decimal places.</li>
+</ul>
+<hr />
+<h4>Constraints:</h4>
+<ul>
+<li>0 ≤diameter≤ 24</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">12</span>
+</code></pre></div>
+
+<h6>Output</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">113.10</span>
+</code></pre></div>
+
+<h6>Explanation</h6>
+<ol>
+<li><HighlightedText>Radius Calculation:</HighlightedText>  </li>
+<li>Diameter = 12 inches  </li>
+<li>Radius = 12 / 2 = 6 inches</li>
+<li><HighlightedText>Area Calculation:</HighlightedText> <ul>
+<li>Area = 3.14159 × (6)<sup>2</sup> = 113.09724  </li>
+<li>Rounded to two decimal places = 113.10</li>
+</ul>
+</li>
+</ol>
+<p>Thus, the output is: 113.10.</p>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+class solution {
+public:
+    void calculatePoolArea(double diameter) {
+        double R = diameter/2;
+        double R2 = pow(R,2);
+        float area = R2*3.14159;
+        cout&lt;&lt;fixed&lt;&lt;setprecision(2)&lt;&lt;area&lt;&lt;endl;
+        
+    }
+};
+</code></pre></div>
+            
+                <div class="index no-scrollbar">4.</div>
+                <div class="question border no-scrollbar"><pre><h3>Sales Performance Evaluation</h3>
+<p>You are tasked with developing a function to evaluate a salesperson's performance based on their sales revenue. The function should determine whether the salesperson has met the target and calculate Commission points based on their performance.</p>
+<p>You are given an integer sales_revenue, representing the total sales revenue generated by the salesperson for the quarter.</p>
+<ol>
+<li><HighlightedText> Target Achievement Criteria:</HighlightedText>  </li>
+<li>If the salesperson's sales revenue is greater than or equal to 50,000, the salesperson meets the target. In this case, you should print "Met Target".</li>
+<li>
+<p>If the salesperson's sales revenue is less than 50,000, the salesperson does not meet the target. In this case, you should print "Did Not Meet Target".</p>
+</li>
+<li>
+<p><HighlightedText> Commission Points Calculation:</HighlightedText>  </p>
+</li>
+<li>If the salesperson meets the target and their sales revenue is greater than or equal to 100,000, they receive Commission points of 15% of their sales revenue.</li>
+<li>If the salesperson meets the target and their sales revenue is between 50,000 and 99,999 (inclusive), they receive Commission points of 7% of their sales revenue.</li>
+<li>If the salesperson does not meet the target, they receive Commission points of 0% of their sales revenue.</li>
+</ol>
+<p>Complete the given function evaluateSalesperson that receives the sales revenue and prints the salesperson's status: ("Met Target" or "Did Not Meet Target") and the Commission points, rounded to two decimal places.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>A single integer sales_revenue representing the total sales revenue of the salesperson.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>The function should print two space-separated values:</li>
+<li>The salesperson's Target Achievement Criteria: ("Met Target" or "Did Not Meet Target").</li>
+<li>The Commission points, rounded to two decimal places.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>0 ≤ sales_revenue ≤ 10^7</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input:</h6>
+<p>120000</p>
+<h6>Output:</h6>
+<p>Met Target 18000.00</p>
+<h6>Explanation:</h6>
+<ol>
+<li><HighlightedText> Target Achievement Criteria:</HighlightedText>  </li>
+<li>The salesperson has 120,000 in sales revenue, which is greater than or equal to 100,000.  </li>
+<li>
+<p>Since the salesperson's sales revenue is greater than or equal to 100,000, they meet the target. Hence, we print "Met Target".</p>
+</li>
+<li>
+<p><HighlightedText> Commission Points Calculation:</HighlightedText>  </p>
+</li>
+<li>The salesperson is eligible for 15% Commission points since their sales revenue is greater than or equal to 100,000.</li>
+<li>Commission points = 120,000 * 15% = 18,000.00.</li>
+</ol>
+<p>Thus, the output is: Met Target 18000.00.</p>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+class solution {
+public:
+    void evaluateSalesperson(int sales_revenue) {
+        string a = &#34;&#34; ;
+        float b = 0 ;
+        if (sales_revenue&gt;=50000){
+            a += &#34;Met Target&#34;;
+            if(sales_revenue&gt;=100000){
+                float c = (sales_revenue/100)*15;
+                b += c;
+            }
+            else if(sales_revenue&gt;=50000){
+                float d = (sales_revenue/100)*7;
+                b += d ;
+            }
+            else{
+                b += 0 ;
+            }
+        }
+        else{
+            a += &#34;Did Not Meet Target&#34;;
+        }
+        cout&lt;&lt;a&lt;&lt;&#34; &#34;;
+        cout&lt;&lt;fixed&lt;&lt;setprecision(2)&lt;&lt;b&lt;&lt;endl;
+    }
+};
+</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h3>Prime Number Sum</h3>
+<p>You are tasked with developing an application to calculate the sum of all prime numbers in a given range. The user will input two integers: a starting number and an ending number, and the program should compute the sum of all prime numbers within the range (inclusive).</p>
+<p>Complete the given function sumPrimes, that receives starting number and ending number and prints the sum of all prime numbers in that range.</p>
+<p><MultiLineNote></p>
+<ul>
+<li>A <strong>prime number</strong> is a number greater than 1 that is divisible only by 1 and itself.
+</MultiLineNote></li>
+</ul>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>Two space-separated integers start and end, representing the range of numbers to evaluate.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>A single line integer, which is the sum of all prime numbers in the given range.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<p>1 ≤ start ≤ end ≤ 10<sup>6</sup></p>
+<hr />
+<h4>Example</h4>
+<h6>Input</h6>
+<p>10 20</p>
+<h6>Output</h6>
+<p>60</p>
+<h6>Explanation</h6>
+<ol>
+<li><HighlightedText>Evaluating the Numbers:</HighlightedText>  </li>
+<li>The numbers in the range are 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20.</li>
+<li>The prime numbers in this range are 11, 13, 17, 19.</li>
+<li>The sum of the prime numbers is 11 + 13 + 17 + 19 = 60.</li>
+</ol>
+<p>Thus, the output is: 60.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+class Solution {
+public:
+   void sumPrimes(int start, int end) {
+       int sum = 0;
+        for(int i=start;i&lt;=end;i++){
+            int count = 0 ;
+            for(int j=1;j&lt;=i;j++){
+                if(i%j==0){
+                    count += 1 ;
+                }
+            }
+            if(count==2){
+                sum += i ;
+            }
+        }
+        cout&lt;&lt;sum;
+    }
+};
+</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h3>News Article Text Compression</h3>
+<p>You are tasked with compressing text data in a news article before storing it in an archive. The compression method involves replacing consecutive identical characters with the character and the count of its occurrences.</p>
+<p>Implement the function evaluateCompression(string s) that takes a string s representing the article text and print the compressed version.</p>
+<p><em>Note: If the compressed article is not shorter than the original, print the original article to avoid wasting storage.</em></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>A single line containing string s, which represents the article text.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>A single line containing the compressed text.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 ≤s.size()≤ 10<sup>5</sup>.</li>
+<li>s consists of English alphabets only.</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input</h6>
+<div class="codehilite"><pre><span></span><code>aabbccdde
+</code></pre></div>
+
+<h6>Output</h6>
+<div class="codehilite"><pre><span></span><code>a2b2c2d2e1
+</code></pre></div>
+
+<h6>Explanation</h6>
+<ul>
+<li>The string "aabbccdde" is compressed into "a2b2c2d2e1":</li>
+<li>"a2" means 'a' appears 2 times consecutively,</li>
+<li>"b2" means 'b' appears 2 times consecutively,</li>
+<li>"c2" means 'c' appears 2 times consecutively,</li>
+<li>"d2" means 'd' appears 2 times consecutively,</li>
+<li>"e1" means 'e' appears once.</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python"></code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><h3>Equal Split of Water Tanks</h3>
+<p>You are managing a set of water tanks in a small town, and the tanks are arranged in a linear fashion. Each tank is represented by an integer, where each number indicates the amount of water it holds. Your task is to find a point where the total water in the tanks before that point is equal to the total water in the tanks after it. If no such point exists, return -1.</p>
+<p><HighlightedText>Equilibrium Point Criteria:</HighlightedText>
+1. The total water before the index (left sum) should equal the total water after the index (right sum).
+2. If multiple equilibrium points exist, return the one with the smallest index.
+3. The water before the first tank is considered 0.
+4. The water after the last tank is considered 0.</p>
+<p>Complete the given function findEquilibriumPoint that takes an array representing the water levels in the tanks and its size, then returns the equilibrium point or -1.</p>
+<p><em>Note: Consider 0 based indexing</em></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first line contains a single integer N, the size of the array.</li>
+<li>The second line contains N space-separated integers representing the amount of water in each tank.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>A single integer representing the equilibrium point or -1.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 ≤ N ≤ 10<sup>5</sup></li>
+<li>-10<sup>9</sup> ≤ tanks[i] ≤ 10<sup>9</sup></li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">5</span>
+<span class="mf">1</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="mf">1</span>
+</code></pre></div>
+
+<h6>Output</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">2</span>
+</code></pre></div>
+
+<h6>Explanation</h6>
+<ul>
+<li>At index 2:</li>
+<li>Left sum = 1 + 2 = 3</li>
+<li>Right sum = 2 + 1 = 3</li>
+<li>Since left sum equals right sum, index 2 is the equilibrium point.</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+class Solution {
+public:
+    int findEquilibriumPoint(int N, int arr[]) {
+        int a = N/2 ;
+        int b = 0 ;
+        if(N%2==0){
+            b += a;
+        }
+        else{
+            b += (a);
+        }
+        int sum1 = 0 ;
+        int sum2 = 0 ;
+        for(int i=0;i&lt;N;i++){
+            if(i&lt;a){
+                sum1 += arr[i];
+            }
+            else if(i&gt;b){
+                sum2 += arr[i];
+            }
+        }
+        if(sum1==sum2){
+            return b ;
+        }
+        else{
+            return -1 ;
+        }
+        
+        
+        
+        
+    }
+};</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h3>Flight Simulation Rotation</h3>
+<p>You are working on a flight simulation system where the data is represented as a square matrix. Each element in the matrix represents a specific parameter of the flight at a certain time, such as speed, altitude, or fuel consumption. The system needs to rotate this matrix by 90 degrees clockwise to simulate the movement of the flight over time.</p>
+<p>Your task is to complete the given function rotateFlightData that:</p>
+<ul>
+<li>Takes the size of the matrix, N, and the flight simulation data matrix (2D array) as input.</li>
+<li>Rotates the matrix 90 degrees in a clockwise direction.</li>
+<li>Prints the rotated matrix, which represents the updated flight simulation data.</li>
+</ul>
+<p><MultiLineNote>
+- The input matrix will always be square (i.e., the number of rows will be equal to the number of columns).
+</MultiLineNote></p>
+<hr />
+<h4>Input Format:</h4>
+<ul>
+<li>First line represents integer N (size of the square matrix, representing the flight simulation data).</li>
+<li>Next N lines represent each line containing N space-separated integers representing the flight parameters in the corresponding simulation matrix.</li>
+</ul>
+<h4>Output Format:</h4>
+<ul>
+<li>The rotated matrix printed after a 90-degree clockwise rotation.</li>
+</ul>
+<hr />
+<h4>Constraints:</h4>
+<ul>
+<li>1 ≤ N ≤ 100</li>
+<li>-10<sup>9</sup> ≤ matrix[i][j] ≤ 10<sup>9</sup></li>
+</ul>
+<hr />
+<h4>Example:</h4>
+<h6>Input:</h6>
+<p>3
+1 2 3
+4 5 6
+7 8 9</p>
+<h6>Output:</h6>
+<p>7 4 1
+8 5 2
+9 6 3</p>
+<h4>Explanation:</h4>
+<p>In this case, we are given a 3x3 flight simulation matrix. We need to rotate the matrix 90 degrees clockwise.</p>
+<ul>
+<li>The original matrix is:</li>
+</ul>
+<p>1 2 3
+  4 5 6
+  7 8 9</p>
+<p>To rotate the matrix 90 degrees clockwise, follow these steps:</p>
+<h5>1. First Row Becomes the Last Column:</h5>
+<ul>
+<li>The first row [1, 2, 3] becomes the last column in the rotated matrix:<br />
+     The elements 1, 4, 7 move to the last column.</li>
+</ul>
+<h5>2. Second Row Becomes the Second Last Column:</h5>
+<ul>
+<li>The second row [4, 5, 6] becomes the second last column in the rotated matrix:<br />
+     The elements 2, 5, 8 move to the second column.</li>
+</ul>
+<h5>3. Third Row Becomes the First Column:</h5>
+<ul>
+<li>The third row [7, 8, 9] becomes the first column in the rotated matrix:<br />
+     The elements 3, 6, 9 move to the first column.</li>
+</ul>
+<p>Resulting Matrix after Rotation:</p>
+<p>7 4 1
+8 5 2
+9 6 3</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+class Solution {
+public:
+    void rotateFlightData(int N, int arr[][100]) {
+      for(int i=0;i&lt;N;i++){
+          string a = &#34;&#34;;
+          for(int j=1;j&lt;=N;j++){
+              int b = arr[N-j][i];
+              string c = to_string(b);
+              a += (c + &#34; &#34;);
+          }
+         cout&lt;&lt;a&lt;&lt;endl;
+      }
+    
+    }
+};
+</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h3>Rainfall Data Analysis</h3>
+<p>You are required to complete the function next_lower_rainfall that takes an array of integers rainfall and its size n as input arguments. This function will calculate and print <HighlightedText>Next Lower Rainfall (NLR)</HighlightedText> for each rainfall reading in rainfall.</p>
+<p>The <HighlightedText>Next Lower Rainfall (NLR)</HighlightedText> for a reading rainfall[i] is defined as the first rainfall value after rainfall[i] that is smaller than rainfall[i]. If no such value exists, the result for rainfall[i] should be -1.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first line consists of an integer n, representing the number of rainfall readings.</li>
+<li>The second line contains n space-separated integers representing the array rainfall.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Print n space-separated integers representing the <HighlightedText>Next Lower Rainfall (NLR)</HighlightedText> for each reading in rainfall.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 ≤ n ≤ 1000</li>
+<li>0 ≤ rainfall[i] ≤ 1000</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">5</span>
+<span class="mf">40</span><span class="w"> </span><span class="mf">30</span><span class="w"> </span><span class="mf">35</span><span class="w"> </span><span class="mf">25</span><span class="w"> </span><span class="mf">15</span>
+</code></pre></div>
+
+<h6>Output</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">30</span><span class="w"> </span><span class="mf">25</span><span class="w"> </span><span class="mf">25</span><span class="w"> </span><span class="mf">15</span><span class="w"> </span><span class="o">-</span><span class="mf">1</span>
+</code></pre></div>
+
+<h6>Explanation</h6>
+<p>For the given array:</p>
+<ul>
+<li>The <HighlightedText>Next Lower Rainfall</HighlightedText> for 40 is 30 (since 30 < 40 and 30 comes after 40).</li>
+<li>The <HighlightedText>Next Lower Rainfall</HighlightedText> for 30 is 25 (since 25 < 30 and 25 comes after 30).</li>
+<li>The <HighlightedText>Next Lower Rainfall</HighlightedText> for 35 is 25 (since 25 < 35 and 25 comes after 35).</li>
+<li>The <HighlightedText>Next Lower Rainfall</HighlightedText> for 25 is 15 (since 15 < 25 and 15 comes after 25).</li>
+<li>There is no <HighlightedText>Next Lower Rainfall</HighlightedText> for 15, so it is considered -1.</li>
+</ul>
+<p>Thus, the output is: 30 25 25 15 -1</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">#include &lt;bits/stdc++.h&gt;
+using namespace std;
+
+class Solution {
+public:
+    void next_lower_rainfall(int n, int rainfall[]) {
+        
+        string A = &#34;&#34;;
+        for(int i=0;i&lt;(n-1);i++){
+            int count = 0 ;
+            for(int j=i+1;j&lt;=n-1;j++){
+                int a = rainfall[i];
+                int b = rainfall[j];
+                if(a&gt;b){
+                    string c = to_string(b);
+                    A += (c+&#34; &#34;);
+                    count += 1 ;
+                    break ;
+                }
+            }
+            if(count==0){
+                string B = to_string(-1);
+                A += (B + &#34; &#34;);
+            }
+        }
+        cout&lt;&lt;A&lt;&lt;-1;
+        
+    }
+};
+</code></pre></div>
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>
