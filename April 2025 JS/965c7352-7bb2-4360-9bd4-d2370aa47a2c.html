@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Sai Nihal Kumar</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Number Range Checker</h3>
+<p>Write the function checkRange(N) to categorize a given integer N into one of the following ranges:</p>
+<ul>
+<li>Return "negative" if the number is less than 0.</li>
+<li>Return "small" if the number is between 0 and 10 (inclusive).</li>
+<li>Return "medium" if the number is between 11 and 100 (inclusive).</li>
+<li>Return "large" if the number is greater than 100.</li>
+</ul>
+<p>You are provided with a prefilled code structure. Your task is to implement the function checkRange(N).</p>
+<h4>Input Format</h4>
+<ul>
+<li>A single integer N.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>The function should return a string based on the categorization of N:</li>
+<li>"negative" if N is less than 0.</li>
+<li>"small" if N is between 0 and 10 (inclusive).</li>
+<li>"medium" if N is between 11 and 100 (inclusive).</li>
+<li>"large" if N is greater than 100.</li>
+</ul>
+<h4>Constraints</h4>
+<ul>
+<li>-10^3 <= N <= 10^3</li>
+</ul>
+<h4>Sample Input:</h4>
+<p>-5</p>
+<h4>Sample Output:</h4>
+<p>negative</p>
+<h4>Explanation:</h4>
+<ul>
+<li>The integer -5 is less than 0, so the function returns "negative".</li>
+</ul></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">&#34;use strict&#34;;
+process.stdin.resume();
+process.stdin.setEncoding(&#34;utf-8&#34;);
+let inputString = &#34;&#34;;
+let currentLine = 0;
+process.stdin.on(&#34;data&#34;, (inputStdin) =&gt; {
+    inputString += inputStdin;
+});
+
+process.stdin.on(&#34;end&#34;, (_) =&gt; {
+    inputString = inputString
+        .trim()
+        .split(&#34;\n&#34;)
+        .map((str) =&gt; str.trim());
+    main();
+
+});
+
+
+//Don&#39;t modify above code
+
+function checkRange(N) {
+    if(N&lt;0){
+        return &#34;negative&#34;;
+    }else if(N&gt;100){
+        return &#34;large&#34;;
+    }else if(11&lt;=N&lt;=100){
+        return &#34;medium&#34;;
+    }else{
+        return &#34;small&#34;;
+    }
+}
+
+
+//Don&#39;t modify code below
+
+
+function readLine() {
+
+    return inputString[currentLine++];
+
+}
+
+function main() {
+
+    let N = parseInt(readLine());
+    console.log(checkRange(N));
+}</code></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Check the Age Group</h3>
+<p>Given an age num, categorize the person into the following age groups:</p>
+<ul>
+<li>Return "Child" if the age is less than 13.</li>
+<li>Return "Teenager" if the age is between 13 and 19 (inclusive).</li>
+<li>Return "Adult" if the age is between 20 and 64 (inclusive).</li>
+<li>Return "Senior" if the age is 65 or above.</li>
+<li>Return "Invalid Age" if the age is outside the valid range (0 <= num <= 120).</li>
+</ul>
+<h4>Input Format</h4>
+<ul>
+<li>The input consists of a single integer num representing the age of the person.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Return a string representing the person's age group based on the specified conditions.</li>
+</ul>
+<h4>Sample Input:</h4>
+<p>16</p>
+<h4>Sample Output:</h4>
+<p>Teenager</p>
+<h4>Explanation:</h4>
+<ul>
+<li>The person's age is between 13 and 19, so the output is "Teenager".</li>
+</ul>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">&#34;use strict&#34;;
+process.stdin.resume();
+process.stdin.setEncoding(&#34;utf-8&#34;);
+let inputString = &#34;&#34;;
+let currentLine = 0;
+process.stdin.on(&#34;data&#34;, (inputStdin) =&gt; {
+    inputString += inputStdin;
+});
+
+process.stdin.on(&#34;end&#34;, (_) =&gt; {
+    inputString = inputString
+        .trim()
+        .split(&#34;\n&#34;)
+        .map((str) =&gt; str.trim());
+    main();
+
+});
+
+
+//Don&#39;t modify above code
+
+function checkAgeGroup(num) {
+  if(num&gt;120){
+      return &#34;Invalid Age&#34;;
+  } else if(num&gt;=65){
+      return &#34;Senior&#34;;
+  }else if(20&lt;=num&lt;=64){
+      return &#34;Adult&#34;;
+  } else if(13&lt;=num&lt;=19){
+      return &#34;Teenager&#34;;
+  }else{
+      return &#34;Child&#34;;
+  }
+ 
+}
+
+
+//Don&#39;t modify code below
+
+
+function readLine() {
+    return inputString[currentLine++];
+}
+
+function main() {
+
+    let N = parseInt(readLine());
+    console.log(checkAgeGroup(N));
+}</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

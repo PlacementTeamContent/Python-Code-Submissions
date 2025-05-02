@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Siva Sathwik</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>String Length Checker</h3>
+<p>Write the function stringLengthChecker(input) that processes an array of space-separated strings and determines whether each string is short or long based on its length.</p>
+<ul>
+<li>If the string has 5 or fewer characters, classify it as "short".</li>
+<li>If the string has more than 5 characters, classify it as "long".</li>
+</ul>
+<h4>Input Format</h4>
+<ul>
+<li>The input consists of an array of space-separated strings.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Print space-separated values where each string is classified as "short" or "long" based on its length.</li>
+</ul>
+<h4>Constraints</h4>
+<ul>
+<li>1 ≤ N ≤ 100, and each string has a length of at least 1 and at most 10 characters.</li>
+</ul>
+<h4>Sample Input:</h4>
+<p>apple banana cat elephant dog</p>
+<h4>Sample Output:</h4>
+<p>short long short long short</p>
+<h4>Explanation:</h4>
+<p>In the given space-separated words:</p>
+<ul>
+<li>'apple' → 5 characters → short</li>
+<li>'banana' → 6 characters → long</li>
+<li>'cat' → 3 characters → short</li>
+<li>'elephant' → 8 characters → long</li>
+<li>'dog' → 3 characters → short</li>
+</ul></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">&#34;use strict&#34;;
+process.stdin.resume();
+process.stdin.setEncoding(&#34;utf-8&#34;);
+let inputString = &#34;&#34;;
+let currentLine = 0;
+process.stdin.on(&#34;data&#34;, (inputStdin) =&gt; {
+  inputString += inputStdin;
+});
+
+process.stdin.on(&#34;end&#34;, (_) =&gt; {
+  inputString = inputString
+    .trim()
+    .split(&#34;\n&#34;)
+    .map((str) =&gt; str.trim());
+
+  main();
+});
+
+//Don&#39;t modify above code
+
+function stringLengthChecker(input) {
+  let output = input.map(word =&gt; word.length &gt; 5? &#34;long&#34;: &#34;short&#34;);
+  return output.join(&#34; &#34;);
+  
+}
+//Don&#39;t modify below code
+
+function readLine() {
+  return inputString[currentLine++];
+}
+
+function main() {
+  let arr = readLine().split(&#34; &#34;);
+  console.log(stringLengthChecker(arr))
+}</code></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Check the Rank of a Student</h3>
+<p>Write the function checkRank(num) that takes a student's score num and returns a string that categorizes the rank based on the following conditions:</p>
+<ul>
+<li>Return "Fail" if the score is less than 50.</li>
+<li>Return "Pass" if the score is between 50 and 60 (inclusive).</li>
+<li>Return "Good" if the score is between 61 and 75 (inclusive).</li>
+<li>Return "Excellent" if the score is greater than 75.</li>
+<li>Return "Wrong Evaluation" if the score is outside the range 0 <= num <= 100.</li>
+</ul>
+<h4>Input Format</h4>
+<ul>
+<li>The input consists of a single integer num representing the student's score.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Return a string categorizing the student's rank based on the specified conditions.</li>
+</ul>
+<h4>Sample Input:</h4>
+<p>67</p>
+<h4>Sample Output:</h4>
+<p>Good</p>
+<h4>Explanation:</h4>
+<ul>
+<li>The score is 67, which is between 61 and 75, so it returns the string Good.</li>
+</ul>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">&#34;use strict&#34;;
+process.stdin.resume();
+process.stdin.setEncoding(&#34;utf-8&#34;);
+let inputString = &#34;&#34;;
+let currentLine = 0;
+process.stdin.on(&#34;data&#34;, (inputStdin) =&gt; {
+  inputString += inputStdin;
+});
+
+process.stdin.on(&#34;end&#34;, (_) =&gt; {
+  inputString = inputString
+    .trim()
+    .split(&#34;\n&#34;)
+    .map((str) =&gt; str.trim());
+
+  main();
+});
+//Don&#39;t modify above code
+
+
+function checkRank(num) {
+    if(num&lt;50){
+        return(&#34;Fail&#34;)
+    }
+    else if(51&lt;=num&lt;=60){
+        return(&#34;Pass&#34;)
+    }
+    else if(61&lt;=num&lt;75){
+        return(&#34;Good&#34;)
+    }
+    else if(num&gt;75){
+        return(&#34;Excellent&#34;)
+    }
+    else if(0&lt;=num&lt;=100){
+        return(&#34;Wrong Evaluation&#34;)
+    }
+    
+  
+}
+
+
+//Don&#39;t modify below code
+function readLine() {
+  return inputString[currentLine++];
+}
+
+function main() {
+  // Read the entire line and convert it to an array of numbers
+  let num = readLine().split(&#34; &#34;).map(Number);
+  console.log(checkRank(num))
+
+}</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>
