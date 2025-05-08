@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">P. Harsha Venkata Sai</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Number Range Checker</h3>
+<p>Write the function checkRange(N) to categorize a given integer N into one of the following ranges:</p>
+<ul>
+<li>Return "negative" if the number is less than 0.</li>
+<li>Return "small" if the number is between 0 and 10 (inclusive).</li>
+<li>Return "medium" if the number is between 11 and 100 (inclusive).</li>
+<li>Return "large" if the number is greater than 100.</li>
+</ul>
+<p>You are provided with a prefilled code structure. Your task is to implement the function checkRange(N).</p>
+<h4>Input Format</h4>
+<ul>
+<li>A single integer N.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>The function should return a string based on the categorization of N:</li>
+<li>"negative" if N is less than 0.</li>
+<li>"small" if N is between 0 and 10 (inclusive).</li>
+<li>"medium" if N is between 11 and 100 (inclusive).</li>
+<li>"large" if N is greater than 100.</li>
+</ul>
+<h4>Constraints</h4>
+<ul>
+<li>-10^3 <= N <= 10^3</li>
+</ul>
+<h4>Sample Input:</h4>
+<p>-5</p>
+<h4>Sample Output:</h4>
+<p>negative</p>
+<h4>Explanation:</h4>
+<ul>
+<li>The integer -5 is less than 0, so the function returns "negative".</li>
+</ul></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">&#34;use strict&#34;;
+process.stdin.resume();
+process.stdin.setEncoding(&#34;utf-8&#34;);
+let inputString = &#34;&#34;;
+let currentLine = 0;
+process.stdin.on(&#34;data&#34;, (inputStdin) =&gt; {
+    inputString += inputStdin;
+});
+
+process.stdin.on(&#34;end&#34;, (_) =&gt; {
+    inputString = inputString
+        .trim()
+        .split(&#34;\n&#34;)
+        .map((str) =&gt; str.trim());
+    main();
+
+});
+
+
+//Don&#39;t modify above code
+
+function checkRange(N) {
+    if(N&lt;0){
+        return &#34;negative&#34;
+    }
+   
+    else if(N&gt;100){
+        return &#34;large&#34;
+    }
+     else if(0&lt;N&lt;=10){
+        return &#34;small&#34;
+}
+    else if(11&lt;N&lt;=100){
+        return &#34;medium&#34;
+    }
+    else{
+        return &#34;large&#34;
+    }
+}
+
+
+//Don&#39;t modify code below
+
+
+function readLine() {
+
+    return inputString[currentLine++];
+
+}
+
+function main() {
+
+    let N = parseInt(readLine());
+    console.log(checkRange(N));
+}</code></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Modify the Alphabet</h3>
+<p>Write the function modifyTheString(arr) that processes an array of single-character lowercase alphabets. For each character:</p>
+<ul>
+<li>If the character is a vowel (a, e, i, o, u), replace it with the string "vowel".</li>
+<li>If the character is a consonant, replace it with the string "consonant".</li>
+</ul>
+<h4>Input Format</h4>
+<ul>
+<li>The input consists of a single line containing a space-separated list of lowercase alphabets (a-z), with no numbers or special characters.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>return a space-separated list where each alphabet is replaced with either "vowel" or "consonant" as per the rules.</li>
+</ul>
+<h4>Constraints</h4>
+<ul>
+<li>The number of characters (N) is between 1 and 100.</li>
+</ul>
+<h4>Sample Input:</h4>
+<p>j i l p d o n</p>
+<h4>Sample Output:</h4>
+<p>consonant vowel consonant consonant consonant vowel consonant</p>
+<h4>Explanation:</h4>
+<p>In the given space-separated lowercase alphabets:</p>
+<ul>
+<li>'j' → consonant → consonant</li>
+<li>'i' → vowel → vowel</li>
+<li>'l' → consonant → consonant</li>
+<li>'p' → consonant → consonant</li>
+<li>'d' → consonant → consonant</li>
+<li>'o' → vowel → vowel</li>
+<li>'n' → consonant → consonant</li>
+</ul>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">&#34;use strict&#34;;
+process.stdin.resume();
+process.stdin.setEncoding(&#34;utf-8&#34;);
+let inputString = &#34;&#34;;
+let currentLine = 0;
+process.stdin.on(&#34;data&#34;, (inputStdin) =&gt; {
+  inputString += inputStdin;
+});
+
+process.stdin.on(&#34;end&#34;, (_) =&gt; {
+  inputString = inputString
+    .trim()
+    .split(&#34;\n&#34;)
+    .map((str) =&gt; str.trim());
+
+  main();
+});
+
+//Don&#39;t modify above code
+    let c=&#34;&#34;
+function modifyTheString(arr) {
+ for(let i of arr){
+     if(i===&#34;a&#34; || i===&#34;i&#34; || i===&#34;e&#34; || i===&#34;o&#34; || i===&#34;u&#34;){
+          c+=&#34;vowel &#34;
+     }
+     else{
+          c+=&#34;consonant &#34;
+          
+     }
+     
+ }
+  return c
+}
+
+//Don&#39;t modify below code
+
+function readLine() {
+  return inputString[currentLine++];
+}
+
+function main() {
+  let arr = readLine().split(&#34; &#34;);
+  console.log(modifyTheString(arr))
+}</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>
