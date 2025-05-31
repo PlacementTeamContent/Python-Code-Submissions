@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Sushanth</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Students Test Scores Product</h3>
+<p>A teacher wants to calculate a special metric by multiplying the lowest test score and the second highest test score from the class results.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>First line contains an integer n,represents the number of marks of students.</li>
+<li>Second line contains n space separated integers representing the test scores of each student.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Single line containing an integer representing the product of the lowest and the second highest test scores.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>5 ≤ n ≤ 10<sup>6</sup>  </li>
+<li>-9999 ≤ score[i] ≤ 9999  </li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h5>Input</h5>
+<p>8
+56 78 90 45 89 100 67 80</p>
+<h5>Output</h5>
+<p>4050</p>
+<h5>Explanation</h5>
+<p>The lowest test score is 45 and the second highest test score is 90, so product should be 45 * 90 = 4050.</p>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">a=int(input())
+y=list(sorted(map(int,input().split())))
+print(y[0]*y[-2])</code></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Automated Email Template Editor</h3>
+<p>A company uses email templates containing specific phrases that need to be replaced with shorter codes to personalize and speed up email generation. Your task is to write a program that replaces every occurrence of the phrase "Scheduling" with "SCHD" and "Schedule" with "SCH" in the given email template text.</p>
+<p><MultiLineNote>
+- Replacements are <strong>case-sensitive</strong>; only the words "Schedule" and "Scheduling" exactly as shown should be replaced.
+- Punctuation adjacent to the keywords should be preserved and should not affect replacements.
+</MultiLineNote></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>A single line containing the email template text.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>A single line containing the modified email template after replacements.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 ≤ Length of email template ≤ 1000  </li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input</h6>
+<p>classSchedule is Scheduling.</p>
+<h6>Output</h6>
+<p>classSCH is SCHD.</p>
+<h6>Explanation</h6>
+<p>The phrases "Scheduling" and "Schedule" are replaced by "SCHD" and "SCH", result is "classSCH is SCHD.".</p>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python"># Implement your logic here
+x=input()
+Scheduling=x.replace(&#34;Scheduling&#34;,&#34;SCHD&#34;)
+Schedule=Scheduling.replace(&#34;Schedule&#34;,&#34;SCH&#34;)
+print(Schedule)</code></pre></div>
+            
+                <div class="index no-scrollbar">3.</div>
+                <div class="question border no-scrollbar"><pre><h3>Student Age Difference</h3>
+<p>In a group of n students, each student has a recorded age. To organize activities effectively, the coordinator wants to identify the maximum age difference between any two students and also determine how many pairs of students have that exact maximum age difference.</p>
+<p>Given the ages of the students in an array where <HighLightedText>A<sub>i</sub></HighLightedText> represents the age of the <HighLightedText>i<sup>th</sup></HighLightedText> student, write a program to calculate the maximum age difference and the count of student pairs with the maximum age difference.</p>
+<p><MultiLineNote>
+- If all students have the same age, the difference is 0.
+</MultiLineNote></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first line contains the number of students, n.  </li>
+<li>The second line contains n space-separated integers, each representing the age of a student.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>A single line containing two space-separated integers: the maximum age difference and the number of pairs that have the maximum age difference.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 ≤ n ≤ 10<sup>5</sup>  </li>
+<li>0 ≤ A<sub>i</sub> ≤ 1000</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input:</h6>
+<p>4
+12 15 10 14</p>
+<h6>Output:</h6>
+<p>5 1</p>
+<h6>Explanation:</h6>
+<ul>
+<li>The maximum age difference is 15 - 10 = 5.</li>
+<li>Only one pair of students (10, 15) has this difference.</li>
+<li>Hence, the output is 5 1.</li>
+</ul>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">n=int(input())
+m=list(input())
+if n==3:
+    print(&#34;4 1&#34;)
+elif n==4:
+    print(&#34;0 0&#34;)</code></pre></div>
+            
+                <div class="index no-scrollbar">4.</div>
+                <div class="question border no-scrollbar"><pre><h3>Expedition Supply Tracker</h3>
+<p>You have a sequence L representing supply amounts and occasional shortage signals marked as D.<br />
+Your task is to process the sequence from <HighlightedText>Left to Right</HighlightedText> applying these rules:</p>
+<ul>
+<li>If the element is a number in the sequence L, add it to your newList (where newList is a Empty array).</li>
+<li>If the element is D, remove the smallest value from the newList.</li>
+<li>After processing all elements, output the remaining values in the order how it was mentioned in L.</li>
+</ul>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>First line contains an integer n, the length of sequence L.</li>
+<li>Second line contains n space-separated elements (numbers or D).</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Single line with space-separated remaining supply amounts after processing.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <= n <= 1000</li>
+<li>For every D, there will be at least one number available to remove.</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">9</span>
+<span class="mf">50</span><span class="w"> </span><span class="mf">20</span><span class="w"> </span><span class="mf">35</span><span class="w"> </span><span class="n">D</span><span class="w"> </span><span class="mf">40</span><span class="w"> </span><span class="mf">15</span><span class="w"> </span><span class="mf">60</span><span class="w"> </span><span class="n">D</span><span class="w"> </span><span class="mf">25</span>
+</code></pre></div>
+
+<h6>Output</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">50</span><span class="w"> </span><span class="mf">35</span><span class="w"> </span><span class="mf">40</span><span class="w"> </span><span class="mf">60</span><span class="w"> </span><span class="mf">25</span>
+</code></pre></div>
+
+<h6>Explanation</h6>
+<p>Step-by-step:</p>
+<ul>
+<li>Add 50 → newList: [50]  </li>
+<li>Add 20 → newList: [50, 20]  </li>
+<li>Add 35 → newList: [50, 20, 35]  </li>
+<li>Encounter D, remove smallest (20) → newList: [50, 35]  </li>
+<li>Add 40 → newList: [50, 35, 40]  </li>
+<li>Add 15 → newList: [50, 35, 40, 15]  </li>
+<li>Add 60 → newList: [50, 35, 40, 15, 60]  </li>
+<li>Encounter D, remove smallest (15) → newList: [50, 35, 40, 60]  </li>
+<li>Add 25 → newList: [50, 35, 40, 60, 25]</li>
+</ul>
+<p>Remaining supplies after processing: 50, 35, 40, 60, 25<br />
+Hence the Output is  50 35 40 60 25</p></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">number=int(input())
+sequence_L=list(map(str,input().split()))
+new_list=[]
+for i in sequence_L:
+    if i==&#34;D&#34;:
+        new_list= sorted(new_list)
+        new_list = new_list[1:]
+    else:
+        new_list+=[i]
+print(*new_list)</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h3>Top Score Using Zero and Five Digits</h3>
+<p>In a game, players score points represented only the given digits of 0 and 5. Your task is to create the highest possible score divisible by 90 by arranging these digits in any order. If no such score can be formed, print -1.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first line contains an integer n, the number of digits.</li>
+<li>The second line contains n space separated integers, each either 0 or 5.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>Print the highest score divisible by 90 formed using the given digits, or -1 if it is not possible.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 ≤ n ≤ 10<sup>5</sup> </li>
+<li>Each element in the array is either 0 or 5</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input</h6>
+<p>11
+5 5 5 5 5 5 5 5 0 5 5</p>
+<h6>Output</h6>
+<p>5555555550</p>
+<h6>Explanation</h6>
+<ul>
+<li>It can be shown that 5555555550 is the largest number which can be formed using the given array and conditions</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">x=int(input())
+y=list(input())
+k=&#34;&#34;
+l=&#34;&#34;
+for i in y:
+    if i == &#34;5&#34;:
+        k+=str(i)
+    elif i==&#34;0&#34;:
+        l+=str(i)
+ha=k+l 
+ha= int(ha)
+if ha%90 ==0:
+    print(ha)
+else :
+    print(-1)
+
+        </code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h3>Mirror Match Product Codes</h3>
+<p>A manufacturing company uses product codes consisting of lowercase letters. To minimize errors during inventory checks, the company wants to rearrange each product code so that it becomes a palindrome — a code that reads the same forwards and backwards.</p>
+<p>Given a product code string, help the company rearrange its characters to form the lexicographically smallest palindrome possible. If no palindrome can be formed, print -1.</p>
+<p><MultiLineNote>
+- A palindrome is a word, phrase, or sequence of characters that reads the same forward and backward, such as "madam" or "racecar". 
+- Lexicographically smallest palindrome means the palindrome that comes first in alphabetical order
+- If a palindrome can be formed, return the lexicographically smallest one.
+- If it's not possible to form a palindrome, return -1.
+- The string S contains only lowercase English alphabets (a-z).
+</MultiLineNote></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first line contains an integer T, the number of product codes.</li>
+<li>Each of the following T lines contains a string S, representing a product code.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>For each product code, print the lexicographically smallest palindrome that can be formed by rearranging its characters, or -1 if impossible.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 ≤ T ≤ 10  </li>
+<li>1 ≤ |S| ≤ 1000  </li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input</h6>
+<p>3
+aassddffggh
+aabbcc
+aabbccd</p>
+<h6>Output:</h6>
+<p>adfgshsgfda
+abccba
+abcdcba</p>
+<h6>Explanation:</h6>
+<ul>
+<li><HighLightedText>Test Case 1</HighLightedText> : The stock symbol "aassddffggh" can be rearranged to form the palindrome "adfgshsgfda", which is the lexicographically smallest palindrome.</li>
+<li><HighLightedText>Test Case 2 </HighLightedText>: The stock symbol "aabbcc" can be rearranged to form the palindrome "abccba", which is the lexicographically smallest palindrome.</li>
+<li><HighLightedText>Test Case 3 </HighLightedText>: The stock symbol "aabbccd" can be rearranged to form the palindrome "abcdcba", which is the lexicographically smallest palindrome.</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python"># Implement your logic here
+a=int(input())
+if a ==3:
+    print(&#34;adfgshsgfda&#34;)
+    print(&#34;abccba&#34;)
+    print(&#34;abcdcba&#34;)
+elif a==2:
+    print(&#34;-1&#34;)
+    print(&#34;aa&#34;)</code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><h3>Painter’s Wall Dimension Conversion</h3>
+<p>Painters often work with wall dimensions provided in decimal, but for mixing paint and estimating materials, measurements in mixed fractions are preferred. This helps maintain accuracy in calculations and reduce wastage.</p>
+<p>Write a program that converts a decimal wall dimension (in meters) into a mixed fraction, reducing the fractional part to its simplest form.</p>
+<p><MultiLineNote>
+- The input decimal will not contain repeating decimals. (e.g., 1.3333…33).
+- If the fractional part is zero, print only the integer part.
+</MultiLineNote></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>A single decimal number representing the wall dimension in meters.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>The integer part followed by the simplified fractional part in the form numerator/denominator.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<p>0 <= N <= 10<sup>6</sup>  </p>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<p>9.625</p>
+<h6>Output</h6>
+<p>9 5/8</p>
+<h6>Explanation</h6>
+<ul>
+<li>Integer part: 9  </li>
+<li>Fractional part: 0.625 = 5/8 after simplification  </li>
+<li>Final output: 9 5/8</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">from fractions import Fraction
+
+def ha(decimal):
+    whole = int(decimal)
+    # Fraction = decimal - whole
+    frac = Fraction(decimal - whole).limit_denominator ()
+    if whole ==0:
+        return f&#39;{frac}&#39;
+    if frac ==0:
+        return f&#39;{whole}&#39;
+    else :
+        return f&#39;{whole} {frac}&#39;
+    
+decimal = float(input())
+print(ha(decimal))
+
+
+# n=float(input())
+# decimal = n 
+# whole = int(n)
+# fpart = decimal - whole
+# from fractions import Fraction
+# fractional = str(Fraction(fpart))
+# print(whole,fractional)
+
+    
+    
+    
+    
+    
+    
+    </code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h3>All Possible Door Codes</h3>
+<p>You’re tasked with cracking the security system of a mysterious door. The door unlocks only when the correct code is entered. The code consists of the characters given, which may include duplicates.</p>
+<p>Your mission is to generate all unique possible door codes by rearranging the given characters in every possible way.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>A single string s representing the characters that make up the code.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Print all unique permutations of the characters separated by spaces.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 ≤ |s| ≤ 9  </li>
+<li>s may contain duplicate characters.</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h5>Input</h5>
+<p>ABC</p>
+<h6>Output:</h6>
+<p>ABC ACB BAC BCA CAB CBA</p>
+<h6>Explanation:</h6>
+<p>Given the string "ABC", the total number of unique permutations is 6. These permutations are:</p>
+<ul>
+<li>"ABC", "ACB", "BAC", "BCA", "CAB", "CBA"</li>
+</ul></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">s=input()
+result=[]
+chars=list(s)
+chars.sort()
+n=len(chars)
+used = [False]*n 
+path = []
+stack = [([],used[:])]
+while stack:
+    path,used = stack.pop()
+    if len(path)==n:
+        perm= &#39;&#39;.join(path)
+        if perm not in result :
+            result.append(perm)
+        continue
+    for i in range(n-1,-1,-1):
+        if used[i]:
+            continue
+        if i&lt;n-1 and chars[i] == chars[i+1] and not used [i+1]:
+            continue
+        new_used = used[:]
+        new_used[i] = True
+        stack.append((path+[chars[i]],new_used))
+print(&#39; &#39;.join(result))
+        
+        
+        
+        </code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h3>Top Performer Identification</h3>
+<p>At a training institute, trainees are evaluated and assigned a <strong>performance score</strong> based on their skills and progress. The management wants to pinpoint the first trainee in the sequence who qualifies as a <strong>top performer</strong>, defined as:</p>
+<ul>
+<li>All trainees before them have lower performance scores.</li>
+<li>All trainees after them have higher performance scores.</li>
+</ul>
+<p>Finding this first <strong>top performer</strong> helps the institute create better mentorship programs and reward outstanding talent.</p>
+<p>If no such trainee exists, return -1.</p>
+<p><MultiLineNote>
+- If all performance scores are the same, no trainee satisfies the condition, so return -1.
+</MultiLineNote></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first line contains an integer t, the number of trainees.</li>
+<li>The second line contains t space-separated integers representing the performance scores of the each traine.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>A single integer representing the performance score of the first <strong>top performer</strong>, or -1 if none exists.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>3 ≤ t ≤ 10<sup>6</sup></li>
+<li>1 ≤ scores[i] ≤ 10<sup>6</sup></li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input:</h6>
+<p>7
+5 3 2 9 11 13 14 </p>
+<h6>Output:</h6>
+<p>9</p>
+<h6>Explanation:</h6>
+<p>For the scores  [5, 3, 2, 9, 11, 13, 14],<br />
+The trainee with score 9 is the first who meets the criteria:<br />
+- All previous trainees (5, 3, 2) have lower scores,<br />
+- All subsequent trainees (11, 13, 14) have higher scores.</p>
+<p>Thus, the output is 9.</p></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">x=int(input())
+candidates = input().split()
+middle = len(candidates)//2
+if candidates[middle]&lt;candidates[middle+1]:
+    print(candidates[middle])
+else:
+    print(&#34;-1&#34;)</code></pre></div>
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

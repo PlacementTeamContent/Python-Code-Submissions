@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Aakhanksha Reddy</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Smart Document Formatter</h3>
+<p>A publishing company uses long documents containing specific keywords that need to be replaced with shorthand codes to speed up formatting. Your task is to write a program that processes the given document and replaces every occurrence of the word "Drafting" with "D2" and the word "Draft" with "D1" , while keeping the rest of the document intact.</p>
+<p><MultiLineNote>
+- Replacements are <strong>case-sensitive</strong>; only the words "Draft" and "Drafting" exactly as shown should be replaced.
+- Punctuation adjacent to the keywords should be preserved and should not affect replacements.
+</MultiLineNote></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>A single line containing the document text.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>A single line containing the modified document after replacements.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 ≤ Length of document ≤ 1000  </li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input</h6>
+<p>textDraft in Drafting.</p>
+<h6>Output</h6>
+<p>textD1 in D2.</p>
+<h6>Explanation</h6>
+<p>The words "Drafting" and "Draft" are replaced by "D2" and "D1", result is "textD1 in D2.".</p>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">def replace_keywords(text):
+    text = text.replace(&#34;Drafting&#34;,&#34;D2&#34;)
+    text = text.replace(&#34;Draft&#34;,&#34;D1&#34;)
+    return text
+document_text = input()
+modified_text = replace_keywords(document_text)
+print(modified_text)
+</code></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Special Combo Offer</h3>
+<p>A store owner wants to create a special combo offer by pairing the cheapest item with the second costliest item from the inventory. Help the owner calculate the product of their prices to decide the combo price.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>First line contains an integer n,representing the number of items in the inventory.</li>
+<li>Second line contains n space separated integers representing the prices of each item.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Single line containing an integer representing the product of the cheapest item's price and the second costliest item's price.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>5 <=n<= 10<sup>6</sup></li>
+<li>-9999 <=prices[i]<= 9999  </li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h5>Input</h5>
+<p>7
+100 200 50 500 400 300 150</p>
+<h5>Output</h5>
+<p>20000</p>
+<h5>Explanation</h5>
+<p>The cheapest item's price is 50 and the second costliest item's price is 400.<br />
+So, the product is 50 * 400 = 20000.</p>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">n = int(input())
+prices = list(map(int,input().split()))
+prices.sort()
+product = prices[0]*prices[-2]
+print(product)
+
+
+
+
+
+
+
+
+</code></pre></div>
+            
+                <div class="index no-scrollbar">3.</div>
+                <div class="question border no-scrollbar"><pre><h3>Maximum Distance Between Points</h3>
+<p>You are given n points located on a one-dimensional line, each having a coordinate value. The goal is to find the maximum possible distance between any two points and also determine how many pairs of points have that exact maximum distance.</p>
+<p>Given the coordinates of the points in an array where <HighLightedText>X<sub>i</sub></HighLightedText> represents the coordinate of the <HighLightedText>i<sup>th</sup></HighLightedText> point, write a program to calculate the maximum distance and the count of point pairs with the maximum distance.</p>
+<p><MultiLineNote>
+- If all points have the same coordinate, the maximum distance is 0.
+</MultiLineNote></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first line contains the number of points, n.  </li>
+<li>The second line contains n space-separated integers, each representing the coordinate of a point.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>A single line containing two space-separated integers: the maximum distance and the number of pairs that have maximum distance.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 ≤ n ≤ 10<sup>5</sup>  </li>
+<li>-10<sup>9</sup> ≤ X<sub>i</sub> ≤ 10<sup>9</sup></li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input:</h6>
+<p>5
+1 2 3 4 10</p>
+<h6>Output:</h6>
+<p>9 1</p>
+<h6>Explanation:</h6>
+<ul>
+<li>The maximum distance is 10 - 1 = 9.</li>
+<li>There is only one pair of points (1, 10) that has this distance.</li>
+<li>Hence, the output is 9 1.</li>
+</ul>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">def max_distance_and_count(coords):
+    if not coords:
+        return 0 , 0
+    min_cord = min(coords)
+    max_cord = max(coords)
+    if min_cord == max_cord:
+        return 0,0
+    max_dist = max_cord - min_cord
+    count = 0
+    for i in range(len(coords)):
+        for j in range(i+1,len(coords)):
+            if abs(coords[i]-coords[j])==max_dist:
+                count+=1 
+    return max_dist,count
+n = int(input())
+coords = list(map(int,input().split()))
+max_dist,count = max_distance_and_count(coords)
+print(max_dist,count)</code></pre></div>
+            
+                <div class="index no-scrollbar">4.</div>
+                <div class="question border no-scrollbar"><pre><h3>Lost Item Removal</h3>
+<p>You are an explorer collecting items represented by numbers indicating their value. Occasionally, you face a barrier marked by the letter B that forces you to lose the item with the lowest value in your collection so far.</p>
+<p>Your task is to process the sequence A containing item values and barriers B from <HighlightedText>Left to Right</HighlightedText> following these rules:</p>
+<ul>
+<li>If the element is a number in the sequence A, add that item’s value to  newList (where newList is a Empty array).</li>
+<li>If the element is B in the sequence A, remove the smallest value from the newList.</li>
+<li>After processing all elements, output the values of the remaining items in the order you collected them.</li>
+</ul>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>First line contains an integer k, the length of sequence A.</li>
+<li>Second line contains k space-separated elements (numbers or B).</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Single line containing space-separated values after processing A.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <= k <= 1000</li>
+<li>For every B there will be at least one item to remove.</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">9</span>
+<span class="mf">21</span><span class="w"> </span><span class="mf">17</span><span class="w"> </span><span class="mf">12</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="mf">30</span><span class="w"> </span><span class="mf">8</span><span class="w"> </span><span class="mf">25</span><span class="w"> </span><span class="n">B</span><span class="w"> </span><span class="mf">19</span>
+</code></pre></div>
+
+<h6>Output</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">21</span><span class="w"> </span><span class="mf">17</span><span class="w"> </span><span class="mf">30</span><span class="w"> </span><span class="mf">25</span><span class="w"> </span><span class="mf">19</span>
+</code></pre></div>
+
+<h6>Explanation</h6>
+<p>Step-by-step processing of your collection:</p>
+<ul>
+<li>Add value 21 → newList: [21]</li>
+<li>Add value 17 → newList: [21, 17]</li>
+<li>Add value 12 → newList: [21, 17, 12]</li>
+<li>Barrier B encountered → Remove smallest value (12) → newList: [21, 17]</li>
+<li>Add value 30 → newList: [21, 17, 30]</li>
+<li>Add value 8 → newList: [21, 17, 30, 8]</li>
+<li>Add value 25 → newList: [21, 17, 30, 8, 25]</li>
+<li>Barrier B encountered → Remove smallest value (8) → newList: [21, 17, 30, 25]</li>
+<li>Add value 19 → newList: [21, 17, 30, 25, 19]</li>
+</ul>
+<p>After all operations, the remaining items in your newList have values 21, 17, 30, 25, and 19, in that order.<br />
+Thus, the output is: 21 17 30 25 19.</p></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">def process_sequence(sequence):
+    new_list = []
+    for item in sequence:
+        if isinstance(item,int):
+            new_list.append(item)
+        elif item == &#39;B&#39; and new_list:
+            new_list.remove(min(new_list))
+    return new_list
+k = int(input())
+sequence = input()
+sequence = [int(x) if x.isdigit() else x for x in sequence]
+result = process_sequence(sequence)
+print(*result)</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h3>Packaging Puzzle Strings</h3>
+<p>A packaging company labels its boxes with codes made up of lowercase letters. To reduce errors in scanning and sorting, the company wants to rearrange the characters of each box code so that it forms a palindrome — a code that reads the same forwards and backwards.</p>
+<p>Given a box code string, help the company find the lexicographically smallest palindrome possible by rearranging its characters. If it’s not possible to form a palindrome, print -1.</p>
+<p><MultiLineNote>
+- A palindrome is a word, phrase, or sequence of characters that reads the same forward and backward, such as "madam" or "racecar". 
+- Lexicographically smallest palindrome means the palindrome that comes first in alphabetical order
+- If a palindrome can be formed, return the lexicographically smallest one.
+- If it's not possible to form a palindrome, return -1.
+- The string S contains only lowercase English alphabets (a-z).
+</MultiLineNote></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first line contains an integer T, the number of box codes.</li>
+<li>Each of the following T lines contains a string S, representing a box code.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>For each box code, print the lexicographically smallest palindrome that can be formed by rearranging its characters, or -1 if impossible.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 ≤ T ≤ 10  </li>
+<li>1 ≤ |S| ≤ 1000  </li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input</h6>
+<p>3
+aassddffggh
+aabbcc
+aabbccd</p>
+<h6>Output:</h6>
+<p>adfgshsgfda
+abccba
+abcdcba</p>
+<h6>Explanation:</h6>
+<ul>
+<li><HighLightedText>Test Case 1</HighLightedText> : The stock symbol "aassddffggh" can be rearranged to form the palindrome "adfgshsgfda", which is the lexicographically smallest palindrome.</li>
+<li><HighLightedText>Test Case 2 </HighLightedText>: The stock symbol "aabbcc" can be rearranged to form the palindrome "abccba", which is the lexicographically smallest palindrome.</li>
+<li><HighLightedText>Test Case 3 </HighLightedText>: The stock symbol "aabbccd" can be rearranged to form the palindrome "abcdcba", which is the lexicographically smallest palindrome.</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python"></code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h3>Largest Price Tag Divisible by 90</h3>
+<p>A store owner wants to create the largest possible price tag using only the given digits of 0 and 5. The price must be divisible by 90. Using the given digits, find the largest such price tag number. If it is not possible to form such a number, print -1.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>First line contains an integer n, the number of digits available.</li>
+<li>Second line contains n space separated integers, each either 0 or 5.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>Single line containing the largest price tag number divisible by 90 formed using the given digits, or -1 if no such number exists.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 ≤ n ≤ 10<sup>5</sup> </li>
+<li>Each element in the array is either 0 or 5</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input</h6>
+<p>11
+5 5 5 5 5 5 5 5 0 5 5</p>
+<h6>Output</h6>
+<p>5555555550</p>
+<h6>Explanation</h6>
+<ul>
+<li>It can be shown that 5555555550 is the largest number which can be formed using the given array and conditions</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">def solve():
+    n = int(input())
+    digits = list(map(int,input().split()))
+    zeros = digits.count(0)
+    fives = digits.count(5)
+    if zeros == 0:
+        print(-1)
+        return
+    while fives&gt;0:
+        if(fives*5)%9==0:
+            print(&#34;5&#34;*fives + &#34;0&#34; * zeros)
+            return
+        fives -= 1
+    if (fives*5)%9==0 and zeros&gt;0:
+        print(&#34;0&#34;)
+    else:
+        print(-1)
+solve()
+        </code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><h3>Electrician’s Wire Length Conversion</h3>
+<p>Electricians often receive wire lengths in decimal but need to convert these measurements into mixed fractions for precise cutting and installation. Using mixed fractions helps avoid errors and ensures wire lengths match design specifications exactly.</p>
+<p>Write a program that takes a decimal wire length (in meters) as input and converts it into a mixed fraction, reducing the fractional part to its simplest form.</p>
+<p><MultiLineNote>
+- The input decimal will not contain repeating decimals. (e.g., 1.3333…33).
+- If the fractional part is zero, print only the integer part.
+</MultiLineNote></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>A single decimal number representing the wire length in meters.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>The integer part followed by the simplified fractional part in numerator/denominator form.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<p>0 <= N <= 10<sup>6</sup>  </p>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<p>15.75</p>
+<h6>Output</h6>
+<p>15 3/4</p>
+<h6>Explanation</h6>
+<ul>
+<li>Integer part: 15  </li>
+<li>Fractional part: 0.75 = 3/4 after simplification  </li>
+<li>Final output: 15 3/4</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import math
+def decimal_to_mixed_fraction(decimal_length):
+    integer_part = int(decimal_length)
+    fractional_part = decimal_length - integer_part
+    if fractional_part == 0:
+        return str(integer_part)
+    numerator = int(fractional_part*1000000)
+    denominator = 1000000
+    gcd = math.gcd(numerator,denominator)
+    numerator //= gcd
+    denominator //= gcd
+    return f&#34;{integer_part} {numerator}/{denominator}&#34;
+wire_length = float(input())
+result = decimal_to_mixed_fraction(wire_length)
+print(result)</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h3>Student Achievement Benchmark</h3>
+<p>In a school, students are graded based on their academic performance throughout the semester. Each student receives a score reflecting their overall achievement. The academic committee wants to find the first student in the list who can be considered a <strong>benchmark achiever</strong>, defined as:</p>
+<ul>
+<li>Every student before them has a lower score.</li>
+<li>Every student after them has a higher score.</li>
+</ul>
+<p>Identifying this first <strong>benchmark achiever</strong> will help the school tailor academic support and recognize outstanding progress.</p>
+<p>If no such student exists, return -1.</p>
+<p><MultiLineNote>
+- If all student scores are identical, there will be no student who meets the benchmark condition, so return -1.
+</MultiLineNote></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first line contains an integer k, the number of students.</li>
+<li>The second line contains k space-separated integers representing the student's scores.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>A single integer representing the score of the first <strong>benchmark achiever</strong>, or -1 if no such student exists.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>3 ≤ k ≤ 10<sup>6</sup></li>
+<li>1 ≤ scores[i] ≤ 10<sup>6</sup></li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input:</h6>
+<p>8
+4 2 1 8 9 12 15 16</p>
+<h6>Output:</h6>
+<p>12</p>
+<h6>Explanation:</h6>
+<p>For the array scores = [4, 2, 1, 8, 9, 12, 15,16]<br />
+Considering the student with score 12:<br />
+- All students before 12 is (4, 2, 1, 8, 9) have lower scores,<br />
+- All students after 12 is (15,16) have higher scores.  </p>
+<p>Thus, the output is 12.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">k = int(input())
+a = list(map(int,input().split()))
+left = [float(&#39;-inf&#39;)] + [max(a[:i]) for i in range(1,k)]
+right = [min(a[i+1:]) if i&lt;k-1 else float(&#39;-inf&#39;) for i in range(k)]
+for i in range(k):
+    if left[i]&lt;a[i]&lt;right[i]:
+        print(a[i])
+        break
+else:
+    print(-1)</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h3>Jumbled Key Combinations</h3>
+<p>You are trying to open a high-tech safe that uses a set of keys represented by characters. However, the keys are jumbled, and you don’t know the exact order to unlock the safe. To find the correct combination, you need to generate every possible unique arrangement of these keys and test them.</p>
+<p>Given a string s containing the available keys (characters may repeat), list all unique key combinations that could open the safe.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>A single string s representing the available keys.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>Print all unique permutations of the keys separated by spaces.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 ≤ |s| ≤ 9  </li>
+<li>s may contain duplicate characters.</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input</h6>
+<p>ABC</p>
+<h6>Output:</h6>
+<p>ABC ACB BAC BCA CAB CBA</p>
+<h6>Explanation:</h6>
+<p>Given the string "ABC", the total number of unique permutations is 6. These permutations are:</p>
+<ul>
+<li>"ABC", "ACB", "BAC", "BCA", "CAB", "CBA"</li>
+</ul></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">from itertools import permutations 
+s=input().strip()
+unique_perms=set(permutations(s))
+result=[&#39;&#39;.join(p)for p in unique_perms ]
+result.sort()
+print(&#39; &#39;.join(result))</code></pre></div>
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>
