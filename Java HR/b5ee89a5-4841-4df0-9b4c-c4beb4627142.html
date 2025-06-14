@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Dinesh Chandra</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h2>Island Life</h2>
+<p>You are stuck on an island where they sell and eat coconut sweets only. A person can buy at most 1 box per day with each box containing N pieces .To remain alive you must consume E coconut sweets daily for D days, but the catch is that you cannot purchase sweets on Sundays. Your task is to find and return an integer value representing the minimum number of times you have to buy coconut sweets in order to stay alive. If not possible, return -1</p>
+<p>Note: The day starts from Monday</p>
+<hr />
+<h3>Input Format</h3>
+<ul>
+<li>First line of input contains an integer value N, representing the number of coconut sweets per box.</li>
+<li>Second line of input contains an integer value E, representing the number of coconut sweets you must
+eat daily.</li>
+<li>Third line of input contains an integer value D, representing the number of days you have to spend
+on the island.</li>
+</ul>
+<h3>Output Format</h3>
+<ul>
+<li>The output should contains an integer value representing the minimum number of times you have to
+buy coconut sweets in order to stay alive. if not possble return -1.</li>
+</ul>
+<hr />
+<h3>Sample Input:</h3>
+<p>16
+2
+10</p>
+<h3>Sample Output:</h3>
+<p>2</p>
+<h4>Explanation:</h4>
+<p>Here, there are 16 coconut sweets per box. You have to live for 10 days on the island and each day you will have to eat 2 sweets. So in 8 days you wil run out of sweets and buy another box on the 9<sup>th</sup> day.
+Now, this second box will last for the next 8 days, which means that you con eat till 16<sup>th</sup> day but you will have to leave the island after 10<sup>th</sup> day, so you don't need to buy any more boxes. Since you have bought sweet boxes 2 times, 2 is returned as the output</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.Scanner;
+import java.util.*;
+
+public class main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int ans = 1;
+        int N = sc.nextInt();  //no of coconut sweets per box 
+        int E = sc.nextInt();  // no of sweets we consume 
+        int D = sc.nextInt();  // no of days to survive
+        
+        if(N&lt;E){
+            System.out.println(-1);  // you consume more than you get in a day 
+            return;
+        }
+        
+        int totalSweetsNeeded = E*D;
+        int numberOfSundays = D/7;
+        
+        int buyDays = D-numberOfSundays;
+        
+        int minNumberToBuy = (int) Math.ceil((double)totalSweetsNeeded/N);
+        
+        if(minNumberToBuy&gt;buyDays){
+            System.out.println(-1);
+        }else{
+            System.out.println(minNumberToBuy);
+        }
+      
+    }
+}
+</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h2>Reverse the Bits of a 32-bit Integer</h2>
+<p>Given a 32-bit integer A, reverse the bits of A and print the result as an integer.</p>
+<p>Note : You must reverse the entire 32-bit representation of A in one step, rather than processing individual bits separately.</p>
+<h3>Input Format:</h3>
+<ul>
+<li>A single integer A (0 <= A <= 2<sup>32</sup>- 1), which is the 32-bit integer whose bits need to be reversed.</li>
+</ul>
+<h3>Output Format:</h3>
+<ul>
+<li>A single integer, the result of reversing the bits of A.</li>
+</ul>
+<h3>Sample Input:</h3>
+<p>43261596</p>
+<h2>Sample Output</h2>
+<p>964176192</p>
+<h2>Explanation</h2>
+<h3>Explanation:</h3>
+<ul>
+<li>The binary representation of 43261596 is 00000010100101000001111010011100.</li>
+<li>Reversing the bits results in 00111001011110000010100101000000, which is 964176192 in decimal.</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.Scanner;
+ 
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int result = reverseBits(a);
+        System.out.println(result);
+    }
+    public static int reverseBits(int n){
+        int result =0;
+        for(int i=0;i&lt;32;i++){
+            int lsb = n&amp;1;
+            result&lt;&lt;=1;
+            result  |=lsb;
+            n&gt;&gt;=1;
+        }
+        return result;
+    }
+}</code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><h1>Sum Number Divisible</h1>
+<p>You are required to implement the following function:</p>
+<h3>Int SumNumberDivisible(int m, int n);</h3>
+<p>The function accepts two positive integers m and n as its arguments. You are required to calculate the sum of numbers divisible by both 3 and 5, between m and n (both inclusive), and return the sum.</p>
+<hr />
+<h3>Input Format:</h3>
+<ul>
+<li>The first line contains two integers m and n representing the range of numbers (inclusive).</li>
+</ul>
+<hr />
+<h3>Output Format:</h3>
+<ul>
+<li>Return the sum of numbers divisible by both 3 and 5 in the range from m to n (inclusive).</li>
+</ul>
+<hr />
+<h3>Constraints:</h3>
+<ul>
+<li>0 < m <= n</li>
+<li>1 <= m, n <= 10<sup>6</sup></li>
+</ul>
+<hr />
+<h3>Sample Input 1:</h3>
+<p>12
+50</p>
+<h3>Sample Output 1:</h3>
+<p>90</p>
+<h3>Explanation:</h3>
+<p>The numbers divisible by both 3 and 5, between 12 and 50 (both inclusive) are:</p>
+<ul>
+<li>{15, 30, 45}, and their sum is 15 + 30 + 45 = 90.</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">class Solution {
+    public int sumNumberDivisible(int m, int n) {
+        int ans = 0;
+        for(int i=m;i&lt;=n;i++){
+            if(i%3==0 &amp;&amp; i%5==0){
+                ans+=i;
+            }
+        }
+        return ans;
+    }
+}</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

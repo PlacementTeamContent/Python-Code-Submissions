@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Sai Siva Sankara Vara Prasad</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><p>You need to validate email addresses based on specific rules. A valid email address follows this pattern:</p>
+<ul>
+<li>The user part of the email must start with 1 to 6 lowercase English letters [a-z].</li>
+<li>It may optionally be followed by an underscore _.</li>
+<li>After the optional underscore, it may have up to 4 digits [0-9].</li>
+<li>The domain part must be exactly topin.tech.</li>
+</ul>
+<p>Given n email addresses, determine if each email address is valid or not.</p>
+<hr />
+<h3>Input Format</h3>
+<ul>
+<li>The first line contains an integer n, the number of email addresses.</li>
+<li>Each of the next n lines contains one email address to be validated.</li>
+</ul>
+<h3>Output Format</h3>
+<ul>
+<li>For each email address, print True if it is valid, otherwise print False.</li>
+</ul>
+<hr />
+<h3><strong>Sample Input:</strong></h3>
+<p>5
+julia@topin.tech
+julia_@topin.tech
+julia_0@topin.tech
+julia0_@topin.tech
+julia@gmail.com</p>
+<h4><strong>Sample Output:</strong></h4>
+<p>True
+True
+True
+False
+False</p>
+<h3><strong>Explanation:</strong></h3>
+<ol>
+<li>julia@topin.tech – Valid: Starts with lowercase letters and has a valid domain.</li>
+<li>julia_@topin.tech – Valid: Starts with lowercase letters, has an underscore, and a valid domain.</li>
+<li>julia_0@topin.tech – Valid: Starts with lowercase letters, has an underscore, a digit, and a valid domain.</li>
+<li>julia0_@topin.tech – Invalid: Digits cannot precede the underscore.</li>
+<li>julia@gmail.com – Invalid: Domain is not topin.tech.</li>
+</ol>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+
+public class main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int mailsCount = sc.nextInt();
+        Boolean valid = false;
+        while(sc.hasNext()){
+            List&lt;String&gt; mail = new ArrayList&lt;&gt;();
+            String m = sc.nextLine();
+            mail = Arrays.asList(m.split(&#34;@&#34;));
+            System.out.print(mail);
+            System.out.print(mail.get(0));
+            // if(mail.get(1).equals(&#34;topin.tech&#34;)){
+            //     System.out.print(&#34;topin&#34;);
+            // }
+            // else{
+            //     System.out.print(&#34;False&#34;);
+            // }
+        }
+    }
+}</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h2>Printing Job</h2>
+<p>There is a printing shop where the customers submit their print jobs at regular intervals, and each job takes a fixed amount of time to complete. You are given an integer value N denoting the total
+number of print jobs, and X denoting the time duration after which the next print job arrives.
+Your task is to find and print an integer value representing how long the last job will have to wait in the queue considering one print
+will take exactly 10 minutes. If in case, there is no waiting time then print 0</p>
+<hr />
+<h3>Input Format</h3>
+<ul>
+<li>The first line of input contains An integer value N representing the number of printing jobs.</li>
+<li>The second  line of input containsAn integer value X representing the time duration after
+which the next print job arrives.</li>
+</ul>
+<h3>Output Format</h3>
+<p>An integer value representing how long the last job will have to wait in the queue considering one print will take exactly 10 minutes. If in case, there is no waiting time then print 0.</p>
+<hr />
+<h3>Sample Input:</h3>
+<p>4
+5</p>
+<h3>Sample Output:</h3>
+<p>15</p>
+<h4>Explanation:</h4>
+<p>Here, N = 4 and X = 5. Time to complete one print job it 10 mins. So, the time needed for three prints is 3*10 = 30. The last print job arrives at 15 minutes (3*5). So, the waiting time is 30 - 15 = 15.
+Hence, 15 is printed as the output</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.Scanner;
+
+public class main {
+
+    public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      int jobs = sc.nextInt();
+      int timeFrame = sc.nextInt();
+      int timeNeeded = (jobs-1) * 10;
+      
+      if(jobs == 1){
+          System.out.print(0);
+      }else{
+        int consumedTime = (jobs-1)*timeFrame;  
+        int totalTime = timeNeeded - consumedTime;
+        System.out.print(totalTime);
+      }
+    //   for(int i = 1; i&lt;jobs; i++){
+    //       totalTime +
+    //   }
+    }
+}
+</code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><h2>Parking Lot</h2>
+<p>A parking lot in a mall has RxC number of parking spaces. Each parking space will either be empty (0) or full (1). The status (0/1) of a parking space is represented as the element of the matrix. The task is to find the index of the row (R) in the parking lot that has the most full parking spaces (1).</p>
+<hr/>
+
+<h3>Input Format</h3>
+<ul>
+<li>The first line contains an integer R, representing the number of rows in the parking lot.</li>
+<li>The second line contains an integer C, representing the number of columns in the parking lot.</li>
+<li>The third line contains a list of R * C integers, representing the elements of the matrix M[R][C] where each element is either 0 (empty) or 1 (full).</li>
+</ul>
+<hr/>
+
+<h3>Output Format</h3>
+<ul>
+<li>The output should be an integer representing the index of the row (R) with the maximum number of full parking spaces (1).</li>
+</ul>
+<hr/>
+
+<h3>Constraints:</h3>
+<ul>
+<li>1 ≤ R ≤ 10^3</li>
+<li>1 ≤ C ≤ 10^3</li>
+<li>The elements of the matrix should be either 0 or 1.</li>
+</ul>
+<hr/>
+
+<h3>Example 1:</h3>
+<p><strong>Input:</strong></p>
+<p>3
+3
+0 1 0 1 1 0 1 1 1</p>
+<p><strong>Output:</strong></p>
+<p>3</p>
+<p><strong>Explanation:</strong></p>
+<ul>
+<li>Row 3 has the maximum number of 1’s (3 ones).</li>
+<li>In case of a tie (multiple rows having the same maximum number of 1's), you should return the index of the first such row.</li>
+</ul>
+<hr/></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int rows = sc.nextInt();
+        int cols = sc.nextInt();
+        
+        List&lt;List&lt;Integer&gt;&gt; slots = new ArrayList&lt;&gt;();
+        
+        for(int i =0; i &lt; rows; i++){
+            List&lt;Integer&gt; slot = new ArrayList&lt;&gt;();
+            for(int j = 0; j &lt; cols; j++){
+                slot.add(sc.nextInt());
+            }
+            slots.add(slot);
+        }
+        
+        int max = 0;
+        int row = 0;
+        int count = 0;
+        
+        for(List&lt;Integer&gt; l : slots){
+            int sum = 0;
+            count += 1;
+            for(int i : l){
+                sum = sum + i;
+            }
+            if(sum &gt; max){
+                max = sum;
+                row = count;
+            }
+        }
+        System.out.print(row);
+    }
+}</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

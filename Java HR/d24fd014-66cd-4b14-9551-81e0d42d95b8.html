@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Sai Sreenath</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h1>4Sum</h1>
+<p>You are provided with an array nums containing n integers. Your task is to return an array that includes all unique quadruplets [nums[a], nums[b], nums[c], nums[d]] that satisfy the following conditions:</p>
+<p>0 <= a, b, c, d < n
+The indices a, b, c, and d must be different.
+The sum nums[a] + nums[b] + nums[c] + nums[d] must equal the specified target.
+The results can be returned in any order.</p>
+<hr/>
+
+<h3>Input Format</h3>
+<ul>
+<li>The first line contains an integer n, the number of elements in the array.</li>
+<li>The second line contains n space-separated integers representing the elements of the array.</li>
+<li>The third line contains an integer target, the target sum for the quadruplets.</li>
+</ul>
+<hr/>
+
+<h3>Output Format</h3>
+<ul>
+<li>The output consists of unique quadruplets, each represented as an array. Each quadruplet is displayed on a new line.</li>
+</ul>
+<hr/>
+
+<h4>Example 1</h4>
+<h6>Input</h6>
+<p>6
+   1 0 -1 0 -2 2
+   0</p>
+<h6>Output</h6>
+<p>[-2, -1, 1, 2]
+   [-2, 0, 0, 2]
+   [-1, 0, 0, 1]</p>
+<hr/></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">Not Submitted</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><p>You are given the position of a chess piece on an 8x8 chessboard and a series of steps it needs to take. The chessboard is a standard 8x8 chessboard with columns labelled from a to h and rows numbered from 1 to 8. The position of the chess piece is represented by a string currentPosition, where the first character denotes the column (a to h) and the second character denotes the row (1 to 8).
+Each step is represented by a string of length 2, where the first character denotes the direction of movement and the second character denotes the number of squares to move. The directions are as follows:
+u: Move up
+d: Move down
+l: Move left (decrease the column)
+r: Move right (increase the column)</p>
+<h3>Example</h3>
+<p>In the given below image, Consider the current position of chess piece is d2. 
+After moving 2 steps upward, it then moves 3 steps to the right, followed by 1 step downward.
+Now the current position of the chess piece is g3.
+<br>
+<img src="https://nxtwave-website-media-files.s3.ap-south-1.amazonaws.com/placement-happenings/Coding+questions/chess+board.png",alter="image"/><br>
+<MultiLineNote>
+1. If the steps lead the chess piece outside the bounds of the chessboard (beyond rows 1-8 or columns a-h), the function should return Invalid.
+2. Consider only one chess piece. tion of chess piece is d2.
+After that it moves 2 steps upward direction, reaches d4. 
+And turns right for 3 steps, reaches g4.
+Finally, it moves one step down, reaches g3. Now the output is g3.<hr /><hr />
+<b>Input
+r3
+d1</p>
+<p>The current position of chess piece is d2.
+After that it moves 2 steps upward direction, reaches d4. 
+And turns right for 3 steps, reaches g4.
+Finally, it moves one step down, reaches g3. Now the output is g3.<hr /><br /></p>
+<p>The First line contains input representing the currentPosition of the chess piece.
+The second line contains an integer stepCount. 
+The next stepCount lines should contain strings representing the steps that chess piece will take. Each step string should consist of a direction character followed by an integer, where the direction character is either u (up), d (down), l (left), or r (right), and the integer represents the number of squares to move in that direction. <hr />
+<b>Outputcurrent position of chess piece is d2.
+After that it moves 2 steps upward direction, reaches d4. 
+And turns right for 3 steps, reaches g4.
+Finally, it moves one step down, reaches g3. Now the output is g3.<hr /><br /></p>
+<p>The output should contain a single line representing the final position of the chess piece after taking the specified steps. If the final position is invalid (i.e., outside the chessboard), the output should be "Invalid".<hr />
+<b>Explanationsition of chess piece is d2.
+After that it moves 2 steps upward direction, reaches d4. 
+And turns right for 3 steps, reaches g4.
+Finally, it moves one step down, reaches g3. Now the output is g3.<hr /><br /></p>
+<p>Let's take an example:</p>
+<p>d2
+3
+u2
+r3
+d1</p>
+<p>The current position of chess piece is d2.
+After that it moves 2 steps upward direction, reaches d4. 
+And turns right for 3 steps, reaches g4.
+Finally, it moves one step down, reaches g3. Now the output is g3.<hr /></p></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.ArrayList;
+import java.util.Scanner;
+class Main {
+    public static String CurrentPositionOfChessPiece(String currentPosition, int stepCount, ArrayList&lt;String&gt; nextPositions){
+        char[] curr = currentPosition.toCharArray();
+        int col = curr[0];
+        int row = Integer.parseInt(curr[1]+&#34;&#34;);
+        for (String r : nextPositions) {
+            String steps[] = r.split(&#34;&#34;);
+            if (steps[0].equals(&#34;u&#34;)) {
+                for(int i=0; i&lt;Integer.parseInt(steps[1]); i++) {
+                    row+=1;
+                }
+                
+            }
+            else if (steps[0].equals(&#34;d&#34;)) {
+                for(int i=0; i&lt;Integer.parseInt(steps[1]); i++) {
+                    row-=1;
+                    // System.out.println(row);
+                }
+            }
+            else if (steps[0].equals(&#34;r&#34;)) {
+                for(int i=0; i&lt;Integer.parseInt(steps[1]); i++) {
+                    col+=1;
+                }
+            } 
+            else {
+                for(int i=0; i&lt;Integer.parseInt(steps[1]); i++)  {
+                    col-=1;
+                    //  System.out.println(col);
+                }
+            }
+        }
+        
+        if (row&gt;8 || col &gt; 104 || col &lt; 97 || row &lt; 1) return &#34;Invalid&#34;;
+        
+        char cols =(char) col;
+        
+       return   cols+ &#34;&#34;+ row;
+     }
+     //Do not edit the below code
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String currentPosition = scanner.next();
+        int stepCount = scanner.nextInt();
+        ArrayList&lt;String&gt; nextPositions = new ArrayList&lt;&gt;();
+        for (int i = 0; i &lt; stepCount; i++) {
+            String nextPosition = scanner.next();
+            nextPositions.add(nextPosition);
+        }
+        scanner.close();
+        System.out.println(CurrentPositionOfChessPiece(currentPosition, stepCount, nextPositions));
+    }
+}
+</code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><p>Your task is to create a program that takes an integer array arr of numbers and a certain threshold number. Then, it compares each number in the array with the threshold. If a number is greater than the threshold, it goes into the "larger" group. If it's smaller, it goes into the "smaller" group.</p>
+<p><MultiLineNote>
+- Don't consider the elements equal to the threshold.
+</MultiLineNote></p>
+<hr />
+<h4>Input Format:</h4>
+<ul>
+<li>First line of input contains an integer representing the size of the array.</li>
+<li>Second line contains the elements of the array arr.</li>
+<li>Third line determines the threshold  for which the elements are compared.</li>
+</ul>
+<hr />
+<h4>Output Format:</h4>
+<p>The program should print a string:</p>
+<ul>
+<li>"larger" if there are more integers in array larger than threshold.</li>
+<li>"smaller" if there are more integers in array smaller than threshold.</li>
+<li>"equal" if the number of integers larger than threshold is the same as the number of integers less than threshold.</li>
+</ul>
+<hr />
+<h4>Constraints:</h4>
+<ul>
+<li>1 <= Length of array <= 10<sup>5</sup> </li>
+<li>-10<sup>9</sup> <= arr[i] <= 10<sup>9</sup></li>
+<li>-10<sup>9</sup> <= threshold <= 10<sup>9</sup></li>
+</ul>
+<hr />
+<h4>Example:</h4>
+<p><strong>Input:</strong></p>
+<p>6
+1 3 0 -1 4 3
+2</p>
+<p><strong>Output:</strong></p>
+<p>equal</p>
+<p>Consider the array [1, 3, 0, -1, 4, 3] with a threshold of 2.</p>
+<ul>
+<li>Count of integers greater than threshold:</li>
+<li>
+<p>There are 3 integers (3, 4, and 3) greater than threshold 2.</p>
+</li>
+<li>
+<p>Count of integers less than threshold:</p>
+</li>
+<li>There are 3 integers (1, 0, and -1) less than threshold 2.</li>
+</ul>
+<p>Since there are an equal number of integers greater and smaller than the threshold, the output is equal.</p></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.Scanner;
+import java.util.*;
+ 
+public class main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for(int i=0; i&lt;n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        int threshold = sc.nextInt();
+        int largeCount = 0, smallCount = 0;
+        for(int i : arr) {
+            if(i &gt; threshold) {
+                largeCount+=1;
+            } else if (i&lt;threshold) {
+                smallCount+=1;
+            } else {
+                continue;
+            }
+        }
+        System.out.println(largeCount &gt; smallCount ? &#34;larger&#34;: largeCount &lt; smallCount ? &#34;smaller&#34; : &#34;equal&#34;);
+    }
+}</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

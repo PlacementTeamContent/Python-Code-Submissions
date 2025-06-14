@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Sai Harshitha</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h2>Psychic</h2>
+<p>Raman was playing a game, he starts with x coins. Now in every step, he wins and loses some money.<br />
+He came in contact with a psychic who can see the future. The psychic predicted the outcomes after each step.  </p>
+<p>Now Raman wants to start the game with the minimum wage such that he never runs out of money (i.e., his coins should never become negative at any point).  </p>
+<p>Help Raman to find the <strong>minimum starting amount</strong> required so that he can play all the steps without going into credit.</p>
+<hr />
+<h3>Input Format</h3>
+<ul>
+<li>First line contains an integer n, the number of steps in the game.  </li>
+<li>Next n lines each contain one integer representing the outcome of each step:  </li>
+<li><strong>Positive integer:</strong> Money won  </li>
+<li><strong>Negative integer:</strong> Money lost</li>
+</ul>
+<hr />
+<h3>Output Format</h3>
+<ul>
+<li>A single integer representing the <strong>minimum starting amount</strong> to ensure Raman never goes into credit.</li>
+</ul>
+<hr />
+<h3>Constraints</h3>
+<ul>
+<li>1 <= n <= 10<sup>9</sup>  </li>
+<li>-1000 <= Outcome per step <= 1000</li>
+</ul>
+<hr />
+<h3>Sample Input:</h3>
+<p>4
+2
+-9
+15
+2</p>
+<hr />
+<h3>Sample Output:</h3>
+<p>7</p>
+<hr />
+<h4>Explanation:</h4>
+<ul>
+<li>If Raman starts with 7 rupees:  </li>
+<li>After step 1 (+2): 7 → 9  </li>
+<li>After step 2 (-9): 9 → 0  </li>
+<li>After step 3 (+15): 0 → 15  </li>
+<li>After step 4 (+2): 15 → 17  </li>
+</ul>
+<p>At no point does the balance become negative. Hence, the minimum starting amount is <strong>7</strong>. </p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.Scanner;
+
+public class main {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for(int i=0;i&lt;n;i++){
+            arr[i] = sc.nextInt();
+        }
+        int neg=0;
+        int count =0;
+        int index=0;
+        boolean isZero = true;
+        for (int i=0;i&lt;arr.length ;i++ ){
+            if(arr[i]!=0)
+                isZero=false;
+        }
+        if(isZero){
+            System.out.println(0);
+        }
+        else{
+        for (int i=0;i&lt;arr.length ;i++ ) {
+            if (arr[i]&lt;0){
+                neg+=arr[i];
+                index=i;
+                count++;
+            }
+        }
+        int min=0;
+        for(int i=0;i&lt;index;i++){
+           if(arr[i]&gt;0)
+           min+=arr[i];
+        }
+
+        System.out.println(-(neg+min));
+    }
+    }
+}
+</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><p>Write a program that counts the Consonants in the string M and print the Consonant that has the highest number of counts.</p>
+<p>The program will also convert the Vowel to the next Consonant as per the Alphabet order, and that converted Consonant will be added to the previous count of the same Consonant. </p>
+<p>If two or more Consonants have the same number of counts then we will print the bigger letter.</p>
+<hr />
+<p><b>Input Format:</b><br /></p>
+<p>The input contains a string representing M.<hr />
+<b>Output Format:</b><br /></p>
+<p>The output contains an uppercase string representing Consonant that has the highest count.<hr /></p>
+<p><b>Constraints: </b></p>
+<ul>
+<li>1<= Length of M <= 10<sup>5</sup></li>
+</ul>
+<hr />
+
+<p><b>Explanation</b><br /></p>
+<p>Let's take an example:
+<strong>Input:</strong></p>
+<p>bana</p>
+<p><strong>Output:</strong></p>
+<p>B</p>
+<p>The input "bana" yields:
+'b' has a count of 1.
+'n' has a count of 1.
+'a' has a count of 2, but since 'a' becomes 'b' (its next consonant), the counts of 'a' are added to 'b'.</p>
+<p>Thus, 'b' now has a count of 3, and 'n' remains at 1.
+Therefore, 'b' has the highest count in the string. 
+The uppercase for 'b' is "B". So the output is "B".</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.Scanner;
+ 
+public class main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        char [] ch = s.toCharArray();
+        
+        int count =0;
+        char ch1=&#39;a&#39;;
+        for(int i=0;i&lt;ch.length-1;i++){
+            for(int j=i+1;j&lt;ch.length-1;j++){
+            if(ch[i]&gt;ch[j]){
+                count++;
+                ch1=ch[i];
+            }
+        }
+        }
+        String s1=&#34;&#34;+ch1;
+        
+        System.out.println(s1.toUpperCase());
+    }
+}</code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><p>A password string, pwd, consists of binary characters (0s and 1s). A cybersecurity expert is trying to determine the minimum number of changes required to make the password secure.</p>
+<p><strong>Definition of a Secure Password</strong>
+To be considered secure, the password must be divided into non-overlapping even-length substrings, where:</p>
+<ul>
+<li>Each substring must consist of only 0s or only 1s (i.e., it should be uniform).</li>
+<li>No substring should contain both 0s and 1s.</li>
+</ul>
+<p>The task is to determine the minimum number of character flips required to transform pwd into a secure password.
+A flip is defined as changing 0 → 1 or 1 → 0.</p>
+<hr />
+<h3>Input Format</h3>
+<ul>
+<li>Input contains a single string pwd consisting of 0s and 1s.</li>
+</ul>
+<h3>Output Format</h3>
+<ul>
+<li>Output contains an integer representing the minimum number of flips required.</li>
+</ul>
+<hr />
+<h3><strong>Sample Input:</strong></h3>
+<p>1100101</p>
+<h4><strong>Sample Output:</strong></h4>
+<p>1</p>
+<h3><strong>Explanation:</strong></h3>
+<p>The given string 1100101 must be split into even-length uniform substrings. The optimal transformation:</p>
+<ul>
+<li>These are the even substrings(11,00,10) in this only one substring needs to flip(10)</li>
+<li>Flip one 1 in 10 to make it uniform (11)</li>
+</ul>
+<p>Total flips required: 1.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+        int count=0;
+        for(int i=0;i&lt;s.length()-1;i++)
+        {
+            if(s.charAt(i)==s.charAt(i+1)){
+                i++;
+                break;
+            }
+            else{
+                count++;
+                i++;
+            }
+        }
+        System.out.println(count);
+    }
+}</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

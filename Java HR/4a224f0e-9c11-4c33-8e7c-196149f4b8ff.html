@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Sandeepkumar</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><p>Rajeev teaches students for fun and free. In one of his classes, he decided to give a problem to the students  which will improve their ability to solve conditional problems. Rajeev writes a word Sequence on the board. Rajeev wants students to form groups and suggest a new subSequence.</p>
+<p>The new subSequence must satisfy the following conditions.</p>
+<ol>
+<li>It should be the smallest subsequence of Sequence.</li>
+<li>Sequence should only contain character x y& z.</li>
+<li>Length of subSequence should be equal or greater than 2.</li>
+<li>Number of occurrences of y should be greater than
+occurrences z.</li>
+<li>Number of occurrences of y should be greater than
+occurrences x.</li>
+</ol>
+<p>The student's group must tell the minimum length of the subSequence which satisfies the above condition. 
+<MultiLineNote>
+1. If no such subsequence exists, then can convey -1.
+2. A subsequence is a contiguous sequence of characters with in a word.
+</MultiLineNote><hr /><b>
+Input</b><br /></p>
+<p>The input contains string representing Sequence.<hr />
+<b>Output</b><br /></p>
+<p>The output contains integer representing minimum length of subSequence.<hr />
+<b>Explanation</b><br /></p>
+<p>Let's take an example:</p>
+<p>xyyz</p>
+<p>The subSequence "yy" of Sequence follows all the conditions provided. It can be verified that no minimum subSequence formed.
+Hence the length of "yy" is 2.<hr /></p></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.Scanner;
+ 
+public class main {
+    public static void main(String[] args) {
+        //Write your code below
+        Scanner sc=new Scanner(System.in);
+        String s=sc.next();
+        int minlen=Integer.MAX_VALUE;
+        int n=s.length();
+        for (int i=0;i&lt;n ;i++ ){
+            int xcount=0;
+            int ycount=0;
+            int zcount=0;
+            for(int j=i;j&lt;n;j++){
+                char ch=s.charAt(j);
+                if (ch==&#39;x&#39;){
+                    xcount++;
+                } 
+                else if(ch==&#39;y&#39;){
+                    ycount++;
+                }
+                else if(ch==&#39;z&#39;){
+                    zcount++;
+                }
+                else{
+                    continue;
+                }
+                int len=j-i+1;
+                if(len&gt;=2 &amp;&amp; ycount&gt;xcount &amp;&amp; ycount&gt;zcount){
+                    minlen=Math.min(minlen,len);
+                    break;
+                }
+            }
+        } 
+        System.out.println(minlen==Integer.MAX_VALUE?-1:minlen);
+    }
+}</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h2>Find Dividend</h2>
+<p>you are given array A, having some dividends. Further, you are given 3 numbers D, Q and R. A dividend can be found using a rule that states:</p>
+<ul>
+<li>Dividend = Divisor x Quotient + Remainder</li>
+</ul>
+<p>Your task is to find and print an integer value representing the index of the dividend if present in array. If dividend not found print -1.</p>
+<hr />
+<h3>Input Format</h3>
+<ul>
+<li>First Line of Input of contains An integer ,representing the size of array A.</li>
+<li>Second Line of Input of contains An integer array A, containing dividends.</li>
+<li>Third Line of Input of contains An integer D, representing divisor.</li>
+<li>Fourth Line of Input of contains An integer Q representing quotient.</li>
+<li>Fifth Line of Input of contains An integer R, representing remainder.</li>
+</ul>
+<h3>Output Format</h3>
+<ul>
+<li>Output contains an integer value representing the index of the dividend if present in array. It dividend not found print - 1.</li>
+</ul>
+<hr />
+<h3>Sample Input:</h3>
+<p>4
+26 32 41 36
+5
+5
+1</p>
+<h3>Sample Output:</h3>
+<p>0</p>
+<h4>Explanation:</h4>
+<p>Here A = [26,32,41,36] and D = 5 and Q is 5 and R is 1 and N is 4.</p>
+<p>Now according to rule</p>
+<ul>
+<li>26 = 5 × 5 + 1 and the index value is 0</li>
+</ul>
+<p>The index where the rule is followed 0. Therefore, 0 is printed as output.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.Scanner;
+
+public class main {
+
+    public static void main(String[] args) {
+      //Write your code here
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+      int arr[]=new int[n];
+      for(int i=0;i&lt;n;i++){
+          arr[i]=sc.nextInt();
+      }
+      int a=sc.nextInt();
+      int b=sc.nextInt();
+      int c=sc.nextInt();
+      int val=a*b;
+      
+      val=val+c;
+     int i;
+      for (i=0;i&lt;n;i++){
+          if (arr[i]==val){
+              System.out.println(i);
+              break;
+          } 
+      }
+      if(i==n){
+          System.out.println(&#34;-1&#34;);
+      }
+    }
+}
+</code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><h2>Diagonal Sum Difference</h2>
+<p>Given a square matrix, calculate the absolute difference between the sum of its diagonals.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first line contains an integer n, the size of the matrix.</li>
+<li>The next n lines each contain n space-separated integers representing the elements of the matrix.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Output a single integer, the absolute difference between the sum of the matrix's two diagonals.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <= n <= 100</li>
+<li>-100 <= matrix[i][j] <= 100</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">3</span>
+<span class="mf">1</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="mf">3</span>
+<span class="mf">4</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="mf">6</span>
+<span class="mf">9</span><span class="w"> </span><span class="mf">8</span><span class="w"> </span><span class="mf">9</span>
+</code></pre></div>
+
+<h6>Output</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">2</span>
+</code></pre></div>
+
+<h6>Explanation</h6>
+<div class="codehilite"><pre><span></span><code>The primary diagonal of the given 3x3 matrix is 1, 5, 9. The sum of the primary diagonal is 1 + 5 + 9 = 15.
+The secondary diagonal of the given 3x3 matrix is 3, 5, 9. The sum of the secondary diagonal is 3 + 5 + 9 = 17.
+The absolute difference between the sums is |15 - 17| = 2
+</code></pre></div></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        // Make your logic here
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int[][] arr=new int[n][n];
+        for (int i=0;i&lt;n ;i++){
+            for(int j=0;j&lt;n;j++){
+                arr[i][j]=sc.nextInt();
+            }
+        } 
+        int d1=0,d2=0;
+        for(int i=0;i&lt;n;i++){
+            for(int j=0;j&lt;n;j++){
+                if (i==j){
+                    d1+=arr[i][j];
+                } 
+                if(j==n-i-1){
+                    d2+=arr[i][j];
+                }
+            }
+        }
+        System.out.println(Math.abs(d1-d2));
+    }
+}</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

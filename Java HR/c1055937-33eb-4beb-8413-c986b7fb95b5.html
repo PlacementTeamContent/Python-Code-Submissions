@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Ashok Kumar</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h2>Count of Unique Student IDs</h2>
+<p>A Monitor of the class wanted to take the attendance, so he circulated a blank page in the classroom asking students to write there student_Id. But some naughty students wrote their id multiple times to trouble the monitor. Monitor went to the teacher and reported the incident, the Teacher asked him to mark the absence of students whose id is repeated in the attendance sheet and give him the number of students with repeated id in the attendance sheet.</p>
+<p>Note: Student id is nothing but an alphabet from a-z.</p>
+<hr />
+<h3>Input Format</h3>
+<ul>
+<li>The input consists of a string representing the ids of students.</li>
+</ul>
+<h3>Output Format</h3>
+<ul>
+<li>Print an integer representing the count of characters that are not repeated in the string.</li>
+</ul>
+<hr />
+<h3>Sample Input:</h3>
+<p>ghygbvghyghnhjuhjumnj</p>
+<h3>Sample Output:</h3>
+<p>3</p>
+<h4>Explanation:</h4>
+<p>In the given string, the student IDs that do <strong>not repeat</strong> are:<br />
+- b, v, and m (3 unique IDs).</p>
+<p>The rest of the IDs appear multiple times. Hence, the output is 3.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+
+public class main {
+
+    public static void main(String[] args) {
+     Scanner inpt = new Scanner(System.in);
+     String name=inpt.nextLine();
+    Map&lt;Character,Integer&gt; charCounts= new HashMap&lt;&gt;();
+    for(char c:name.toCharArray()){
+        charCounts.put(c,charCounts.getOrDefault(c,0)+1);
+    }
+    int count=0;
+    for(Map.Entry&lt;Character,Integer&gt; entry:charCounts.entrySet()){
+        if(entry.getValue()==1){
+            count++;
+        }
+    }
+    System.out.println(count);
+    }
+}
+</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><p>Two strings are said to be similar if they are composed of the same characters. For example, abababc and accccbaa are similar since both of them are composed of characters a, b and c. However, cabca and badcd are not similar since they do not share all of the same letters.</p>
+<p>Given an array of strings strArr of length m, find the number of pairs of strings that are similar.</p>
+<p><MultiLineNote>
+<strong>Keep in mind :</strong></p>
+<ol>
+<li>Each string is composed of lowercase English characters only.</li>
+<li>Pairs are considered index-wise, i.e, two equal strings at different indices are counted as separated pairs</li>
+<li>A pair of indices (i,j) is same as the pair (j,i);
+</MultiLineNote></li>
+</ol>
+<p>Your task is to provide an efficient algorithm to find the number of pairs of strings that are similar.<hr /><b>Input</b><br />• The first line consists of an Integer M denoting size of string array strArr.
+• The second line consists of M space separated Strings representing the elements of strArr array.<hr /><b>Output</b><br />• Print an Integer denoting count the number of pairs of strings that are similar in strArr array.<hr /><b>Constraints</b><br />• 1 <= M <= 10^4
+ • 'a'<= strArr[i][j]<= 'z'<hr /><b>Example :</b><br />Let's take an example:</p>
+<p>3
+xyz foo of</p>
+<p>Here, the strings "foo" and "of" are similar because they are composed of the same characters ['o', 'f']. There are no other similar pairs so the answer is 1.<hr /></p></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+
+class Main {
+    
+    private static String normalize(String s){
+        char[] ch = s.toCharArray();
+        Arrays.sort(ch);
+        return new String(ch);
+    }
+    public static void main(String[] args) { 
+      Scanner inpt = new Scanner(System.in);
+      int n = Integer.parseInt(inpt.nextLine());
+      String[] strings = inpt.nextLine().split(&#34; &#34;);
+      
+      Map&lt;String,Integer&gt; freqMap = new HashMap&lt;&gt;();
+      
+      for(String s:strings){
+          String key = normalize(s);
+          freqMap.put(key,freqMap.getOrDefault(key,0)+1);
+      }
+      
+      int totalPairs = 0;
+      for(int count:freqMap.values()){
+          if(count&gt;0){
+              totalPairs+=count*(count-1)/2;
+          }
+      }
+      System.out.println(totalPairs);
+    }
+}</code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><h2>Count Excel Sheet Cells</h2>
+<p>Given a range in an Excel sheet, determine the number of cells within that range. The range is provided in the format start:end, where start and end represent the top-left and bottom-right cells respectively.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>A single line representing the range in the format start:end.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>A single integer representing the number of cells in the given range.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>The cells are within a valid Excel range (from A1 to XFD1048576).</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<p>A1:C8</p>
+<h6>Output</h6>
+<p>24</p>
+<h6>Explanation</h6>
+<ul>
+<li>The range is from A1 to C8. This range includes 3 columns (A, B, C) and 8 rows (1 to 8). </li>
+<li>Total cells = 3 * 8 = 24.</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+
+public class main {
+    public static void main(String[] args) {
+        // Make your logic here
+        Scanner inpt = new Scanner(System.in);
+        String val = inpt.nextLine();
+        String[] parts = val.split(&#34;:&#34;);
+        if(parts.length!=2){
+            System.out.println(&#34;Mot valid&#34;);
+        }
+        
+        int[] start = parseCell(parts[0]);
+        int[] end= parseCell(parts[1]);
+        int colcount = end[1]-start[0]+1;
+        int rowcount = end[0]-start[0]+1;
+        System.out.println(colcount*rowcount);
+    }
+    
+    private static int[] parseCell(String cell){
+        int col=0;
+        int rowIndex=0;
+        int i=0;
+        while(i&lt;cell.length()&amp;&amp;Character.isLetter(cell.charAt(i))){
+            col=col*26+(cell.charAt(i)-&#39;A&#39;+1);
+            i++;
+        }
+        String rowStr = cell.substring(i);
+        rowIndex = Integer.parseInt(rowStr);
+        return new int[]{col-1,rowIndex-1};
+    }
+}</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

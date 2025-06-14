@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Akshay Arelli</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><p>Two strings are said to be similar if they are composed of the same characters. For example, abababc and accccbaa are similar since both of them are composed of characters a, b and c. However, cabca and badcd are not similar since they do not share all of the same letters.</p>
+<p>Given an array of strings strArr of length m, find the number of pairs of strings that are similar.</p>
+<p><MultiLineNote>
+<strong>Keep in mind :</strong></p>
+<ol>
+<li>Each string is composed of lowercase English characters only.</li>
+<li>Pairs are considered index-wise, i.e, two equal strings at different indices are counted as separated pairs</li>
+<li>A pair of indices (i,j) is same as the pair (j,i);
+</MultiLineNote></li>
+</ol>
+<p>Your task is to provide an efficient algorithm to find the number of pairs of strings that are similar.<hr /><b>Input</b><br />• The first line consists of an Integer M denoting size of string array strArr.
+• The second line consists of M space separated Strings representing the elements of strArr array.<hr /><b>Output</b><br />• Print an Integer denoting count the number of pairs of strings that are similar in strArr array.<hr /><b>Constraints</b><br />• 1 <= M <= 10^4
+ • 'a'<= strArr[i][j]<= 'z'<hr /><b>Example :</b><br />Let's take an example:</p>
+<p>3
+xyz foo of</p>
+<p>Here, the strings "foo" and "of" are similar because they are composed of the same characters ['o', 'f']. There are no other similar pairs so the answer is 1.<hr /></p></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+class Main {
+    static boolean fun(String s,String t){
+       Set&lt;Character&gt; st1 = new HashSet&lt;&gt;();
+       Set&lt;Character&gt; st2 = new HashSet&lt;&gt;();
+       for(char c: s.toCharArray()){
+           st1.add(c);
+       }
+       for(char c: t.toCharArray()){
+           st2.add(c);
+       }
+       return st1.equals(st2);
+    }
+    public static void main(String[] args) { 
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int cnt = 0;
+        String arr[] = new String[n];
+        for(int i=0;i&lt;n;i++){
+           arr[i] = sc.next();
+        }
+        for(int i=0;i&lt;n;i++){
+           for(int j=i+1;j&lt;n;j++){
+              if(fun(arr[i],arr[j])){
+                   cnt++;
+              }
+           }
+        }
+        System.out.print(cnt);
+    }
+}
+</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h2>Status of Bulbs</h2>
+<p>There are N bulbs and N people numbered from 1, to N. Each bulb has 2 states either ON or OFF. Each person is given a, unique ID. A person can change the state of the bulb i.e, switch it ON if its OFF and vice versa. The initial state of all the bulbs is OFF. A person can change the state(on/off) only if he has the approval. 
+The task here is to find the final status of all the bulbs such that A person with an id i has access to change the state of bulb j ,if j is multiple of i.
+An authorized person has to change the state of all the bulbs for which he has access only once.If one authorized person has changed the state of the bulb, another authanized person can change it too.
+The state of the bulb can be changed by any authorized person in any order.</p>
+<hr />
+<h3>Input Format</h3>
+<p>The inputs contains a positive integer represents the number of bulbs</p>
+<h3>Output Format</h3>
+<p>The output contains a string that represnts the states of the bulbs.</p>
+<hr />
+<h3>Sample Input:</h3>
+<p>2</p>
+<h3>Sample Output:</h3>
+<p>ON OFF</p>
+<h4>Explanation:</h4>
+<p>N=2,
+So, there are 2 bulbs and 2 persons.
+Bulbs={1,2}
+Persons id's={1,2}
+person with id = 1 can change the state of the bulb 1,2
+a person with id = 2 can change the state of the bulb 2
+The initial state of all the bulbs: OFF OFF</p>
+<table>
+<thead>
+<tr>
+<th>Person ID</th>
+<th>Bulb 1</th>
+<th>Bulb 2</th>
+<th>Remarks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>ON</td>
+<td>OFF</td>
+<td>A person with ID 1 changes state of bulb 1</td>
+</tr>
+<tr>
+<td>1</td>
+<td>ON</td>
+<td>ON</td>
+<td>A person with ID 1 changes the state of bulb 2</td>
+</tr>
+<tr>
+<td>2</td>
+<td>ON</td>
+<td>OFF</td>
+<td>A person with ID 2 changes the state of bulb 2</td>
+</tr>
+</tbody>
+</table>
+<p>Hence, the output is ON OFF</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+
+public class main {
+
+    public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      int n = sc.nextInt();
+      ArrayList&lt;Boolean&gt; arr = new ArrayList&lt;&gt;(Collections.nCopies(n,false));
+      int num = 1;
+      while(num&lt;=n){
+          for(int i=0;i&lt;n;i++){
+              if((i+1)%num==0){
+                  arr.set(i,!arr.get(i));
+              }
+          }
+          num++;
+      }
+      for(int i=0;i&lt;n;i++){
+          System.out.print(arr.get(i)?&#34;ON &#34;:&#34;OFF &#34;);
+      }
+    }
+}
+</code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><h2>Printing Job</h2>
+<p>There is a printing shop where the customers submit their print jobs at regular intervals, and each job takes a fixed amount of time to complete. You are given an integer value N denoting the total
+number of print jobs, and X denoting the time duration after which the next print job arrives.
+Your task is to find and print an integer value representing how long the last job will have to wait in the queue considering one print
+will take exactly 10 minutes. If in case, there is no waiting time then print 0</p>
+<hr />
+<h3>Input Format</h3>
+<ul>
+<li>The first line of input contains An integer value N representing the number of printing jobs.</li>
+<li>The second  line of input containsAn integer value X representing the time duration after
+which the next print job arrives.</li>
+</ul>
+<h3>Output Format</h3>
+<p>An integer value representing how long the last job will have to wait in the queue considering one print will take exactly 10 minutes. If in case, there is no waiting time then print 0.</p>
+<hr />
+<h3>Sample Input:</h3>
+<p>4
+5</p>
+<h3>Sample Output:</h3>
+<p>15</p>
+<h4>Explanation:</h4>
+<p>Here, N = 4 and X = 5. Time to complete one print job it 10 mins. So, the time needed for three prints is 3*10 = 30. The last print job arrives at 15 minutes (3*5). So, the waiting time is 30 - 15 = 15.
+Hence, 15 is printed as the output</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.Scanner;
+
+public class main {
+
+    public static void main(String[] args) {
+      Scanner sc = new Scanner(System.in);
+      int n = sc.nextInt();
+      int m = sc.nextInt();
+      if(n&lt;=1 || m&gt;10){
+          System.out.println(0);
+      }else{
+          int last = n-1;
+          last = last * 10 - m*last;
+          System.out.println(last);
+      }
+    }
+}
+</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

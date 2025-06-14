@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Akash Bhalshankar</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h2>Space Difference</h2>
+<p>You are given two strings, A and B. First, count the number of spaces in each string. Then, find the absolute difference between these two counts. If this  absolute difference is divisible by 2, print the word "Even" followed by the  absolute difference value. Otherwise, print the word "Odd" followed by the  absolute difference value.</p>
+<hr />
+<h3>Input Format</h3>
+<ul>
+<li>First line of input contains string A.</li>
+<li>Second line of input contains string B.</li>
+</ul>
+<h3>Output Format</h3>
+<ul>
+<li>Print Even or odd along with absolute difference.</li>
+</ul>
+<hr />
+<h3>Sample Input:</h3>
+<p>He ll o W or ld
+Hello World</p>
+<h3>Sample Output:</h3>
+<p>Even4</p>
+<h4>Explanation:</h4>
+<p>Here, string A is "He ll o W or ld" and string B is "Hello World". The number of spaces in string A is 5 and number of  spaces in string B is 1. The absolute difference is |5 - 1| = 4 and it is even. Therefore, Even4 is printed as the output.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.Scanner;
+
+public class main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String A = scanner.nextLine();
+        String B = scanner.nextLine();
+        
+        int spacesA =0;
+        for(char c : A.toCharArray()){
+            if(c== &#39; &#39;){
+                spacesA++;
+            }}
+            int  spacesB=0;
+            for(char c : B.toCharArray()){
+                if(c==&#39; &#39;){
+                    spacesB++;
+                }
+            }
+            int diff = Math.abs(spacesA - spacesB);
+            
+            if(diff %2==0){
+                System.out.print(&#34;Even&#34;+diff);
+            }
+            else{
+                System.out.print(&#34;Odd&#34;+diff);
+            }
+            scanner.close();
+            }
+        }
+
+</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><p>Rajeev teaches students for fun and free. In one of his classes, he decided to give a problem to the students  which will improve their ability to solve conditional problems. Rajeev writes a word Sequence on the board. Rajeev wants students to form groups and suggest a new subSequence.</p>
+<p>The new subSequence must satisfy the following conditions.</p>
+<ol>
+<li>It should be the smallest subsequence of Sequence.</li>
+<li>Sequence should only contain character x y& z.</li>
+<li>Length of subSequence should be equal or greater than 2.</li>
+<li>Number of occurrences of y should be greater than
+occurrences z.</li>
+<li>Number of occurrences of y should be greater than
+occurrences x.</li>
+</ol>
+<p>The student's group must tell the minimum length of the subSequence which satisfies the above condition. 
+<MultiLineNote>
+1. If no such subsequence exists, then can convey -1.
+2. A subsequence is a contiguous sequence of characters with in a word.
+</MultiLineNote><hr /><b>
+Input</b><br /></p>
+<p>The input contains string representing Sequence.<hr />
+<b>Output</b><br /></p>
+<p>The output contains integer representing minimum length of subSequence.<hr />
+<b>Explanation</b><br /></p>
+<p>Let's take an example:</p>
+<p>xyyz</p>
+<p>The subSequence "yy" of Sequence follows all the conditions provided. It can be verified that no minimum subSequence formed.
+Hence the length of "yy" is 2.<hr /></p></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">Not Submitted</code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><h2>Loki’s Mind Stone</h2>
+<p>Loki, the God of mischief can brainwash any living person by touching him/her with his Mind stone, and has decided to break the avengers (a warrior group) to face into each other, so that they can turn against each other and make Loki’s evil plans easier. Now all the avengers have some amount of strength that is denoted in integers. Loki wants to brainwash the least amount of people possible, because he is lazy. But he wants his team of avengers to win the battle. What is the number of avengers Loki will get brainwashed.</p>
+<hr />
+<h3>Input Format</h3>
+<ul>
+<li>First line contains an integer n, denoting the number of total avengers</li>
+<li>The next line contains n space separated integers denoting the power of each avenger.</li>
+</ul>
+<h3>Output Format</h3>
+<ul>
+<li>One line denoting the total number of avengers brainwashed by Loki’s Mind stone.</li>
+</ul>
+<h3>Constraints:</h3>
+<ul>
+<li>2<=n<=10<sup>6</sup></li>
+</ul>
+<hr />
+<h3>Sample Input:</h3>
+<p>6
+9 3 1 2 4 2</p>
+<h3>Sample Output:</h3>
+<p>2</p>
+<h4>Explanation:</h4>
+<p>Loki can brainwash the avengers with power 9 and 3, or with 9 and 2, or with 9,4, and the rest will be losing cause cumulative power of rest avengers is less than the brainwashed total power by Loki.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.Scanner;
+import java.util.Arrays;
+
+public class main {
+
+    public static void main(String[] args) {
+      //Write your code here
+      Scanner scanner = new Scanner(System.in);
+      int n = scanner.nextInt();
+      Integer[] powers = new Integer[n];
+      long totalPower =0;
+      for(int i =0; i&lt;n; i++){
+          powers[i] = scanner.nextInt();
+          totalPower += powers[i];
+      }
+      Arrays.sort(powers, (a,b)-&gt; b-a);
+      long subsetPower = 0 ;
+      int count =0;
+      double target= totalPower/2.0;
+      for(int power: powers){
+          subsetPower += power;
+          count ++;
+          if(subsetPower &gt; target){
+              break;
+          }
+      }
+      System.out.println(count);
+       scanner.close();
+      
+    }
+}
+</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

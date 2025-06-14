@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Ganesh Bandaru</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h1>Matched Socks Pairs</h1>
+<p>Alex works at a clothing store. There is a large pile of socks that must be paired by color for sale. Given an array of integers representing the color of each sock, determine how many pairs of socks with matching colors there are.</p>
+<p>For example, there are n=7 socks with colors ar = {1,2,1,2,1,3,2}. There is one pair of color 1 and one of color 2. There are three odd socks left, one of each color. The number of pairs is 2.</p>
+<hr />
+<h3>Input Format</h3>
+<ul>
+<li>The first line contains an integer n, the number of socks represented in ar.</li>
+<li>The second line contains n space-separated integers describing the colors ar[i] of the socks in the pile.</li>
+</ul>
+<hr />
+<h3>Output Format</h3>
+<ul>
+<li>Print the total number of matching pairs of socks that Alex can sell.</li>
+</ul>
+<hr />
+<h3>Constraints</h3>
+<ul>
+<li>1 <= n <= 100</li>
+<li>1 <= ar[i] <= 100 and 0 <= i < n</li>
+</ul>
+<hr />
+<h3>Sample Input</h3>
+<p>9
+10 20 20 10 10 30 50 10 20</p>
+<h3>Sample Output</h3>
+<p>3</p>
+<h3>Explanation</h3>
+<ul>
+<li>Alex can match 3 pairs of socks i.e. 10-10, 10-10, 20-20 while the left out socks are 50, 30, and 20.</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int[] a=new int[n];
+        for(int i=0;i&lt;n;i++){
+            a[i]=sc.nextInt();
+        }
+        int tot=0;
+        for(int i=1;i&lt;n;i++){
+            int sum=0;
+            for(int j=i;j&gt;=0;j--){
+                if(a[i]==a[j]){
+                    sum++;
+                }
+            }
+            if(sum!=0 &amp;&amp; sum%2==0){
+                tot++;
+            }
+        }
+        System.out.println(tot);
+    }
+}</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><p>There are N lamps that are initially off. You first turn on all the lamps, then you turn off every second lamp. On the third round, you toggle every third lamp (turning on if it's off or turning off if it's on).</p>
+<p>For the j<sup>th</sup> round, you toggle every j<sup>th</sup> lamp. For the N<sup>th</sup> round, you only toggle the last lamp.</p>
+<p>Print the number of lamps that are on after N rounds.<hr /><b>Input</b><br />A single integer N.<hr />
+<b>Output</b><br />A single integer representing the number of lamps that are on after N rounds.<hr /><b>Constraints</b><br />• 1 <= N <= 1000<hr /><b>Explanation</b><br />Let's take an example:</p>
+<p>3</p>
+<p>• At first, the three bulbs are [off, off, off].
+• After the first round, the three bulbs are [on, on, on].
+• After the second round, the three bulbs are [on, off, on].
+• After the third round, the three bulbs are [on, off,off].
+• So you should print 1 because there is only one bulb is on.<hr />
+<b>Sample Input</b><br></p>
+<p>2</p>
+<p><b>Sample Output</b><br></p>
+<p>1</p></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+class Main {
+    public static void main(String[] args) { 
+        // Write your code here
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        boolean[] a=new boolean[n];
+        Arrays.fill(a,true);
+        int cou=2;
+        
+            while(cou&lt;=n){
+                for(int i=1;i&lt;=n;i++){
+                    int mu=cou*i-1;
+                    if(mu&lt;n){
+                        a[mu]=(a[mu]==true) ? false:true;
+                    }
+                    else if(mu&gt;n){
+                        break;
+                    }
+                }
+                cou++;
+            }
+        int tot=0;
+        for(int i=0;i&lt;n;i++){
+            if(a[i]==true){
+                tot++;
+            }
+        }
+        
+        System.out.println(tot);
+    }
+}</code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><h2>Device Name System</h2>
+<p>Rocky is a software engineer and he is creating his own operating system called “myFirst OS”. <strong>myFirst OS</strong> is a GUI (Graphical User Interface) based operating system where everything is stored in files and folders. He is facing issues with creating unique folder names for the operating system. </p>
+<p>Help Rocky create unique folder names for his OS. If a folder name already exists in the system, an integer number is added to the name to make it unique. The integer starts with 1 and is incremented by 1 for each new request of an existing folder name. Given a list of folder names, process all requests and return an array of corresponding folder names.</p>
+<h3>Input Format:</h3>
+<ul>
+<li>The first line contains an integer n, denoting the size of the array foldername.</li>
+<li>Each of the next n lines contains a string foldername[i] representing a folder name request in the order received.</li>
+</ul>
+<h3>Output Format:</h3>
+<ul>
+<li>The output should be a list of n strings, where each string represents the folder name after processing the request and ensuring uniqueness.</li>
+</ul>
+<h3>Constraints:</h3>
+<ul>
+<li>1 <= n <= 10<sup>4</sup></li>
+<li>1 <= length of foldername[i] < 20</li>
+<li>foldername[i] contains only lowercase English letters in the range ascii[a-z].</li>
+</ul>
+<h3>Sample Input:</h3>
+<p>4
+home
+download
+first
+first</p>
+<h3>Sample Output:</h3>
+<p>home
+download
+first
+first1</p>
+<h3>Explanation:</h3>
+<ol>
+<li>foldername[0] = 'home' is unique.</li>
+<li>foldername[1] = 'download' is unique.</li>
+<li>foldername[2] = 'first' is unique.</li>
+<li>foldername[3] = 'first' already exists, so first1 is assigned.</li>
+</ol>
+<p>Thus, the unique folder names are ['home', 'download', 'first', 'first1'].</p>
+<h3>Notes:</h3>
+<ul>
+<li>The integer added to the folder name starts at 1 and is incremented by 1 for each subsequent request for an existing folder name.</li>
+<li>The folder name first1 is unique after the second request for first because first already exists in the system.</li>
+</ul></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+class Solution {
+    public List&lt;String&gt; getUniqueFolderNames(String[] foldernames) {
+        
+        ArrayList&lt;String&gt; uniqueNames = new ArrayList&lt;&gt;();
+        int n=foldernames.length;
+        for(int i=0;i&lt;n;i++){
+            int cou=0;
+            for(int j=i;j&lt;n;j++){
+                if(foldernames[i].equals(foldernames[j])){
+                    cou++;
+                    if(cou&gt;1){
+                        foldernames[j]=foldernames[j]+(cou-1);
+                    }
+                }
+            }
+        }
+        for(int i=0;i&lt;n;i++)
+            uniqueNames.add(foldernames[i]);
+
+        return uniqueNames;
+    }
+}</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

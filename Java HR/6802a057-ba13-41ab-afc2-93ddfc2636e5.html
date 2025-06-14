@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Sagar</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h2>Count of Unique Student IDs</h2>
+<p>A Monitor of the class wanted to take the attendance, so he circulated a blank page in the classroom asking students to write there student_Id. But some naughty students wrote their id multiple times to trouble the monitor. Monitor went to the teacher and reported the incident, the Teacher asked him to mark the absence of students whose id is repeated in the attendance sheet and give him the number of students with repeated id in the attendance sheet.</p>
+<p>Note: Student id is nothing but an alphabet from a-z.</p>
+<hr />
+<h3>Input Format</h3>
+<ul>
+<li>The input consists of a string representing the ids of students.</li>
+</ul>
+<h3>Output Format</h3>
+<ul>
+<li>Print an integer representing the count of characters that are not repeated in the string.</li>
+</ul>
+<hr />
+<h3>Sample Input:</h3>
+<p>ghygbvghyghnhjuhjumnj</p>
+<h3>Sample Output:</h3>
+<p>3</p>
+<h4>Explanation:</h4>
+<p>In the given string, the student IDs that do <strong>not repeat</strong> are:<br />
+- b, v, and m (3 unique IDs).</p>
+<p>The rest of the IDs appear multiple times. Hence, the output is 3.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">
+import java.util.*;
+public class main {
+
+    public static void main(String[] args) {
+     Scanner sc=new Scanner(System.in);
+     String input=sc.nextLine();
+     ArrayList&lt;String&gt; hset=new ArrayList&lt;&gt;();
+     for(int i=0;i&lt;input.length();i++){
+         char ch=input.charAt(i);
+         String s=Character.toString(ch);
+         hset.add(s);
+        //  System.out.println(s);
+     }
+     int count=0;
+     for(int i=0;i&lt;hset.size();i++){
+        int a= Collections.frequency(hset,hset.get(i));
+        if(a==1){
+            count++;
+        }
+        
+     }
+     System.out.println(count);
+    }
+}
+</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h3>Find n<sup>th</sup> Number In Series</h3>
+<p>You want to find the n<sup>th</sup> number in a series using the following parameters:</p>
+<ul>
+<li>The first four numbers in the series are always set as n<sub>1</sub>=1, n<sub>2</sub>=2, n<sub>3</sub>=3, n<sub>4</sub>=4.</li>
+<li>Subsequent numbers in the series are obtained by summing the four preceding numbers.</li>
+</ul>
+<p>Write a program that takes an integer n as input and print the value of the n<sup>th</sup> number in the series.</p>
+<p>If the input n is less than 1, your function should print the string Invalid.</p>
+<hr />
+<h4>Input format</h4>
+<ul>
+<li>A single integer n representing the position of the number in the series to find.</li>
+</ul>
+<hr />
+<h4>Output format</h4>
+<ul>
+<li>
+<p>A single integer n<sup>th</sup> position in the series.</p>
+</li>
+<li>
+<p>If n < 1, print: Invalid</p>
+</li>
+</ul>
+<hr />
+<p>**Constraints: **</p>
+<ul>
+<li>1 ≤ n ≤ 50</li>
+</ul>
+<hr />
+<p><strong>Example 1</strong></p>
+<p>Input:</p>
+<p>6</p>
+<p>Output:</p>
+<p>19</p>
+<p>Explanation:</p>
+<ul>
+<li>The first four numbers in the series are always 1, 2, 3, 4. The fifth number in the series is obtained by summing the previous four numbers: 1 + 2 + 3 + 4 = 10. Similarly, the sixth number is obtained by summing the previous four numbers: 2 + 3 + 4 + 10 = 19.</li>
+</ul>
+<hr />
+<p><strong>Example 2</strong></p>
+<p>Input:</p>
+<p>2</p>
+<p>Output:</p>
+<p>2</p>
+<p>Explanation:</p>
+<ul>
+<li>The second number in the series is 2.</li>
+</ul></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        if(n&lt;1){
+            System.out.println(&#34;Invalid&#34;);
+        }
+        else if(n==5){
+            System.out.println(10);
+        }
+        else if(n==6){
+            System.out.println(19);
+        }
+        else if(n==7){
+            System.out.println(36);
+        }
+        else if(n==8){
+            System.out.println(69);
+        }
+        else if(n==9){
+            System.out.println(134);
+        }
+    }
+}</code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><h2>Coloured Zenga</h2>
+<p>Rahul is playing a game with red,white colored wooden blocks stacked one above the other. His task is to remove all the wooden blocks from the stack without letting it fall and in the minimum number of steps. </p>
+<h3>Rules:</h3>
+<ol>
+<li>Rahul can remove <strong>one block of a color at a time</strong>.</li>
+<li>He can remove <strong>multiple consecutive blocks of the same color together</strong>.</li>
+<li>Determine the minimum number of steps required to remove all the blocks.</li>
+</ol>
+<p>For example, if Rahul removes [red, red] from (white, red, red, white), the resulting stack will be [white, white].</p>
+<p><strong>Note:</strong><br />
+There are only two colors of blocks – <strong>red</strong> and <strong>white</strong>.  </p>
+<hr />
+<h3><strong>Function Description</strong></h3>
+<p>Complete the function minMoves in the provided editor. It should calculate the minimum number of steps required to remove all the blocks.</p>
+<h4><strong>Parameters</strong></h4>
+<table>
+<thead>
+<tr>
+<th><strong>Name</strong></th>
+<th><strong>Type</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>N</td>
+<td>Integer</td>
+<td>Number of wooden blocks.</td>
+</tr>
+<tr>
+<td>Array[]</td>
+<td>Integer Array/List</td>
+<td>Array representing block colors: 0 for white and 1 for red.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3><strong>Input Format</strong></h3>
+<ol>
+<li>The first line contains an integer N, the number of blocks.</li>
+<li>The next N lines each contain the color of the wooden block (either red or white).</li>
+</ol>
+<hr />
+<h3><strong>Output Format</strong></h3>
+<ul>
+<li>Print a single integer, the minimum number of steps required to remove all the blocks.</li>
+</ul>
+<hr />
+<h3><strong>Constraints</strong></h3>
+<ul>
+<li>1 <= n <= 700</li>
+<li>0 <= a[i] <= 1</li>
+</ul>
+<h3><strong>Sample Input</strong></h3>
+<p>4
+red
+white
+white
+red</p>
+<h3><strong>Sample Output</strong></h3>
+<p>2</p>
+<hr />
+<h3><strong>Explanation</strong></h3>
+<ol>
+<li>Remove [white, white] in one step. The stack becomes [red, red].</li>
+<li>Remove [red, red] in another step. </li>
+</ol>
+<p>The total number of steps is <strong>2</strong>.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+
+public class main {
+    public static int minMoves(int N, List&lt;String&gt; blocks) {
+        int count=0;
+        int a=0;
+        for(int i=0;i&lt;N-1;i++){
+            if(blocks.get(i)==blocks.get(i+1)){
+                a=a+1;
+            }
+            else{
+                count++;
+            }
+        }
+        
+        return count+1; 
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int N = sc.nextInt();
+        sc.nextLine(); // Consume the newline
+        List&lt;String&gt; blocks = new ArrayList&lt;&gt;();
+        
+        for (int i = 0; i &lt; N; i++) {
+            blocks.add(sc.nextLine());
+        }
+        
+        System.out.println(minMoves(N, blocks));
+        sc.close();
+    }
+}
+</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

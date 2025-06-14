@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Aare Niranjan Reddy</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h1>Longest Common Prefix</h1>
+<p>Given an array of strings, write a function to find the <strong>longest common prefix</strong> string amongst them.</p>
+<ul>
+<li>If there is no common prefix, return "NO PREFIX".</li>
+<li>If all strings share a common prefix, return that prefix.</li>
+</ul>
+<hr />
+<h3>Input Format:</h3>
+<ul>
+<li>The first line contains the integer n (the number of strings).</li>
+<li>The second line contains n strings separated by space.</li>
+</ul>
+<hr />
+<h3>Output Format:</h3>
+<ul>
+<li>A string representing the longest common prefix.</li>
+<li>If there is no common prefix, return "NO PREFIX".</li>
+</ul>
+<hr />
+<h3>Constraints:</h3>
+<ul>
+<li>1 <= n <= 200  </li>
+<li>0 <= length of each string <= 200</li>
+<li>Strings consist of only lowercase English letters if non-empty.</li>
+</ul>
+<hr />
+<h3>Sample Input:</h3>
+<p>3
+flower flow flight</p>
+<h3>Sample Output:</h3>
+<p>fl</p>
+<h3>Explanation:</h3>
+<ul>
+<li>The longest common prefix in the strings ["flower", "flow", "flight"] is "fl", because all three strings start with "fl".</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.Arrays;
+
+class Solution {
+    public static String longestCommonPrefix(String[] strs) {
+        if(strs==null || strs.length==0){
+            return &#34;NO PREFIX&#34;;
+        }
+        String prefix=strs[0];
+        for (int i=1;i&lt;strs.length;i++ ){ 
+        while(!strs[i].startsWith(prefix)){
+        prefix=prefix.substring(0,prefix.length()-1);
+        if(prefix.isEmpty()){
+            return &#34;NO PREFIX&#34;;
+        }
+        }
+        }
+        return prefix;
+    }
+}
+</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h2>Count Excel Sheet Cells</h2>
+<p>Given a range in an Excel sheet, determine the number of cells within that range. The range is provided in the format start:end, where start and end represent the top-left and bottom-right cells respectively.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>A single line representing the range in the format start:end.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>A single integer representing the number of cells in the given range.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>The cells are within a valid Excel range (from A1 to XFD1048576).</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<p>A1:C8</p>
+<h6>Output</h6>
+<p>24</p>
+<h6>Explanation</h6>
+<ul>
+<li>The range is from A1 to C8. This range includes 3 columns (A, B, C) and 8 rows (1 to 8). </li>
+<li>Total cells = 3 * 8 = 24.</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.Scanner;
+
+public class main {
+    public static void main(String[] args) {
+        // Make your logic here
+        Scanner sc=new Scanner(System.in);
+        String range=sc.nextLine();
+        String[] parts =range.split(&#34;:&#34;);
+        String start=parts[0];
+        String end=parts[1];
+        int startCol=colToNumber(start.replaceAll(&#34;[0-9]&#34;,&#34;&#34;));
+        int endCol=colToNumber(end.replaceAll(&#34;[0-9]&#34;,&#34;&#34;));
+        int startRow=Integer.parseInt(start.replaceAll(&#34;[A-Z]&#34;,&#34;&#34;));
+        int endRow=Integer.parseInt(end.replaceAll(&#34;[A-Z]&#34;,&#34;&#34;));
+        int colCount=endCol-startCol+1;
+        int rowCount=endRow-startRow+1;
+        int totalCells=colCount*rowCount;
+        System.out.println(totalCells);
+    }
+    static int colToNumber(String col){
+        int num=0;
+        for (int i=0;i&lt;col.length() ;i++ ){ 
+        num=num*25+(col.charAt(i)-&#39;A&#39;+1);
+    }
+    
+    return num;
+}
+}</code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><h2>Minimum Cable Length for Bulb Connection</h2>
+<p>In an auditorium, the lighting system of N bulbs is placed in a row. Due to some technical fault in the power supply, only some of the bulbs remain ON and the rest of them go OFF. Due to this flaw in the network, the bulbs which are OFF are unable to work. So till the technical team finds the actual cause of the fault, the technical head Akshay makes some temporary arrangements for the OFF bulbs at a minimum cost. Akshay decides to connect all the OFF bulbs to the nearby ON bulbs so that the length of the cable used to connect them is minimum. He calculates the distance of the systems from the first system.</p>
+<p>Write a program to help Akshay find the minimum length of the cable used to turn all the bulbs ON.</p>
+<hr />
+<h3>Input Format</h3>
+<ul>
+<li>The first line of the input consists of an integral num,  representing the number of bulbs (N).</li>
+<li>The second line consists of N space-separated integers representing the initial state of each bulb, ON(1) or OFF(0)</li>
+<li>The last line consists of N space-separated integers representing the distance of the bulbs from the first bulb.</li>
+</ul>
+<h3>Output Format</h3>
+<ul>
+<li>Print an integer representing the minimum length of the cable used to turn all the bulbs ON.</li>
+</ul>
+<hr />
+<h3>Sample Input:</h3>
+<p>3
+1 0 0
+1 5 6</p>
+<h3>Sample Output:</h3>
+<p>5</p>
+<h4>Explanation:</h4>
+<p>Length of the cable required to connect the 2nd bulb to the 1st bulb =4
+Length of the cable required to connect the 3rd bulb to the 2nd bulb =1
+The total length of the cable = 5(4+1)</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+
+public class main {
+
+    public static void main(String[] args) {
+      //Write your code here
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+      int[] state=new int[n];
+      for(int i=0;i&lt;n;i++){
+          state[i]=sc.nextInt();
+      }
+      int[] position=new int[n];
+      for (int i=0;i&lt;n ;i++ ){
+          position[i]=sc.nextInt();
+      } 
+      int totalCAbleLength=0;
+      int lastCable=-1;
+      for(int i=0;i&lt;n;i++){
+      if(state[i]==1){
+          lastCable=position[i];
+      }
+      else if(lastCable!=-1){
+          totalCAbleLength+= Math.abs(position[i]-lastCable);
+          lastCable=position[i];
+      }
+      }
+    System.out.println(totalCAbleLength);
+}
+}
+</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

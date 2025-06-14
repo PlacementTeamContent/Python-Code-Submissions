@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Sahith kumar</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><p>You are given an array consisting of M positive integers, and your task is to sort the array in decreasing order of count of set bits in the binary representation of the integers present in the array.</p>
+<p>The number of set bits is nothing but the number of 1's present in the binary representation of the integer.
+ For example, the number of set bits in 7(Binary -> 0111) is 3.</p>
+<p><MultiLineNote></p>
+<ol>
+<li>If any two numbers have the same count of set bits, then in the sorted array they will appear in the order in which they appear in the original array. .</li>
+<li>The array may contain duplicate elements.
+</MultiLineNote></li>
+</ol>
+<hr />
+<p><b>Input Format:</b></p>
+<ul>
+<li>The first line consists of an Integer M denoting the size of the array.</li>
+<li>The second line consists of M space-separated Integers representing the elements of the sequence.</li>
+</ul>
+<hr />
+<p><b>Output</b><br />
+- Print the sorted sequence of integers based on the descending order of set bits count.</p>
+<hr />
+
+<p><b>Constraints</b><br />
+- 1 <= M <= 10<sup>5</sup>
+- 1 <= array[i] <= 10<sup>6</sup></p>
+<hr />
+
+<p><b>Explanation:</b><br /></p>
+<p><strong>Input:</strong></p>
+<p>3
+5 7 6</p>
+<p><strong>Output:</strong></p>
+<p>7 5 6</p>
+<p>The array is { 5, 7, 6}, in this case,
+5 -> 0101
+6 -> 0110
+7 -> 0111
+both 5 and 6 have the same number of set bits so the answer will be {7, 5, 6} and not {7, 6, 5}, because in the original array 5 appears before 6</p>
+<p><br /></p></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+
+class Main {
+    public static int countNoOfOnesInBinary(int num){
+        int count_ones = 0;
+        while(num &gt; 0){
+            int rem = num % 2;
+            if(rem == 1){
+                count_ones++;
+            } 
+            num = num / 2;
+        }
+        return count_ones;
+    }
+    public static void main(String[] args) { 
+        // Write your code here
+        Scanner sc = new Scanner(System.in);
+        int n=sc.nextInt();
+        int arr[]=new int[n];
+        for(int i=0; i&lt;n; i++){
+            arr[i]=sc.nextInt();
+        }
+        
+        String res=&#34;&#34;;
+        int max  = 0;
+        for(int i=0; i&lt;n; i++){
+            int count_ones_in_binary = countNoOfOnesInBinary(arr[i]);
+            if(count_ones_in_binary &gt; max){
+                res = String.valueOf(arr[i]) + &#34; &#34;+ res;
+            }
+            else{
+                res = res+&#34; &#34;+String.valueOf(arr[i]);
+            }
+            max = count_ones_in_binary;
+        }
+        
+        res=res.replace(&#34;  &#34;, &#34; &#34;);
+        
+        System.out.println(res);
+    }
+}</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h2>Loki’s Mind Stone</h2>
+<p>Loki, the God of mischief can brainwash any living person by touching him/her with his Mind stone, and has decided to break the avengers (a warrior group) to face into each other, so that they can turn against each other and make Loki’s evil plans easier. Now all the avengers have some amount of strength that is denoted in integers. Loki wants to brainwash the least amount of people possible, because he is lazy. But he wants his team of avengers to win the battle. What is the number of avengers Loki will get brainwashed.</p>
+<hr />
+<h3>Input Format</h3>
+<ul>
+<li>First line contains an integer n, denoting the number of total avengers</li>
+<li>The next line contains n space separated integers denoting the power of each avenger.</li>
+</ul>
+<h3>Output Format</h3>
+<ul>
+<li>One line denoting the total number of avengers brainwashed by Loki’s Mind stone.</li>
+</ul>
+<h3>Constraints:</h3>
+<ul>
+<li>2<=n<=10<sup>6</sup></li>
+</ul>
+<hr />
+<h3>Sample Input:</h3>
+<p>6
+9 3 1 2 4 2</p>
+<h3>Sample Output:</h3>
+<p>2</p>
+<h4>Explanation:</h4>
+<p>Loki can brainwash the avengers with power 9 and 3, or with 9 and 2, or with 9,4, and the rest will be losing cause cumulative power of rest avengers is less than the brainwashed total power by Loki.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">Not Submitted</code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><h1>Number Patterns</h1>
+<p>You need to print a pattern of numbers in a specific format. The pattern consists of multiple rows.</p>
+<p>The numbers should be printed consecutively, starting from 1.</p>
+<hr />
+<h3>Input Format:</h3>
+<ul>
+<li>The input consists of a single integer n, which represents the number of rows to print the pattern.</li>
+</ul>
+<hr />
+<h3>Output Format:</h3>
+<ul>
+<li>The output consists of n rows.</li>
+<li>Each row contains numbers starting from 1 and separated by an asterisk (*).</li>
+<li>The number of elements in each row increases by 1 in each subsequent row.</li>
+</ul>
+<hr />
+<h3>Constraints:</h3>
+<ul>
+<li>1 ≤ n ≤ 100</li>
+</ul>
+<hr />
+<h3>Sample Input:</h3>
+<p>5</p>
+<h3>Sample Output:</h3>
+<p>1
+2<em>3
+4</em>5<em>6
+7</em>8<em>9</em>10
+11<em>12</em>13<em>14</em>15</p>
+<h3>Explanation:</h3>
+<ul>
+<li>The first row prints 1.</li>
+<li>The second row prints the numbers 2 and 3 separated by *.</li>
+<li>The third row prints 4, 5, and 6 separated by *.</li>
+<li>The fourth row prints 7, 8, 9, and 10 separated by *.</li>
+<li>The fifth row prints 11, 12, 13, 14, and 15 separated by *.</li>
+</ul>
+<p>In general, for the i-th row (1-based index), the row should print i numbers starting from the last number printed plus 1.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n=sc.nextInt();
+        
+        int count = 1;
+        for(int i=1; i&lt;=n; i++){
+            for(int j=0; j&lt;i; j++){
+                System.out.print(count);
+                if(j&lt;i-1){
+                    System.out.print(&#34;*&#34;);
+                }
+                count++;
+            }
+            System.out.println();
+        }
+    }
+}</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

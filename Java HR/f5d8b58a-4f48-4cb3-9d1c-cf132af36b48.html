@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">N.V.S.Abhiram</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h3>Count Distinct Years in Document</h3>
+<p>The United Nations Organization released an official document regarding the most important events from the beginning of time (dated 00-00-0000) with a brief description of the events. The date of all the events is mentioned in the 'DD-MM-YYYY' format.<br />
+Your task is to write a program to find the total number of distinct years referenced in the document.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first line of input contains a string containing the content of the document.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>Print the total number of distinct years referenced in the document.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>The length of the input string will be between 1 and 1000 characters.</li>
+<li>The document string will contain dates in the 'DD-MM-YYYY' format.</li>
+<li>The string will not contain invalid date formats.</li>
+<li>The year part of the date (YYYY) will always be a valid 4-digit year.</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Sample Input</h6>
+<p>UN was established on 24-10-1945. India got freedom on 15-08-1947.</p>
+<h6>Sample Output</h6>
+<p>2</p>
+<h6>Explanation</h6>
+<ul>
+<li>Two distinct years, 1945 and 1947, have been referenced in the document.</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str;
+        int c = 0;
+        str = sc.nextLine();
+        for (int i = 0; i &lt; str.length(); i++){
+            if((str.charAt(i) == &#39;1&#39; &amp;&amp; str.charAt(i+1) == &#39;9&#39;) ||(str.charAt(i) == &#39;2&#39; &amp;&amp; str.charAt(i+1) == &#39;0&#39;)){
+                c += 1;
+            }
+        }
+        
+        System.out.println(c);
+    }
+}</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h2>Number of Chocolates</h2>
+<p>Calculate Maximum Number of Chocolates One Can Eat and Number of Wrappers Left in Hand</p>
+<p>Given the following inputs, determine:
+1. The maximum number of chocolates one can eat.
+2. The number of wrappers left in hand.</p>
+<p>You can buy chocolates with the money you have and then exchange wrappers for additional chocolates based on the rules provided. If a maximum number of shop visits is defined, the process should stop after that number of visits. Otherwise, the process continues until wrappers are insufficient for exchange.</p>
+<h3>Inputs:</h3>
+<ul>
+<li><strong>Money</strong>: Total money one has to spend.</li>
+<li><strong>Price</strong>: Price per chocolate.</li>
+<li><strong>Wrappers</strong>: Minimum number of wrappers required for an exchange.</li>
+<li><strong>Choco</strong>: Number of chocolates received for exchanging wrappers.</li>
+<li><strong>Max visit</strong>: Maximum number of times one can visit the shop. <em>(If zero, consider it infinite).</em></li>
+</ul>
+<h3>Input Format:</h3>
+<ul>
+<li>The input will be managed within the function itself. There is no need to write code for reading inputs separately.</li>
+</ul>
+<hr />
+<h3>Output Format:</h3>
+<ul>
+<li>Return total number of chocolates that can be eaten and the numbers of Wrappers left in hand.</li>
+</ul>
+<hr />
+<h3>Sample Input:</h3>
+<div class="codehilite"><pre><span></span><code><span class="mf">40</span>
+<span class="mf">1</span>
+<span class="mf">3</span>
+<span class="mf">1</span>
+<span class="mf">1</span>
+</code></pre></div>
+
+<h3>Sample Output:</h3>
+<div class="codehilite"><pre><span></span><code><span class="mf">53</span>
+<span class="mf">14</span>
+</code></pre></div>
+
+<h3>Explaination</h3>
+<ul>
+<li>Initial Purchase:</li>
+</ul>
+<p>Money = 40, Price = 1
+  Initial Chocolates = 40//1 = 40
+  Initial Wrappers = 40</p>
+<ul>
+<li>First Visit:</li>
+</ul>
+<p>Wrappers Required = 3, Chocolates per Wrapper Exchange = 1
+  New Chocolates = 40//3 = 13
+  Total Chocolates = 40+13 = 53
+  Remaining Wrappers = 40%3+13 = 14</p>
+<ul>
+<li>Maximum Visits Reached:</li>
+</ul>
+<p>Max visit = 1, process stops here.</p>
+<ul>
+<li>Final Output:</li>
+</ul>
+<p>Total chocolates eaten = 53
+  Wrappers left in hand = 14</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">public class Solution {
+
+    public static void calculateChocolates(int money, int price, int wrappers, int choco, int maxVisit, int[] result) {
+        int initialChocolates = (int)money / price;
+        int initialWrappers = initialChocolates;
+        for (int i = 0; i &lt; maxVisit; i++){
+            int newChocolates = ((int)initialWrappers / wrappers) * choco;
+            int totalChocolates = initialChocolates + newChocolates;
+            int remChocos = initialChocolates%wrappers + newChocolates;
+            
+            initialChocolates = totalChocolates;
+            initialWrappers = remChocos;
+            result[i] = totalChocolates;
+        }
+        result[0] = initialChocolates;
+        result[1] = initialWrappers;
+            
+    }
+}
+</code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><h3>k-Anagram</h3>
+<p>Two strings are called k-anagrams if both of the below conditions are true:
+1. Both have the same number of characters.
+2. Two strings can become anagrams by changing at most k characters in a string.</p>
+<p>Given two strings of lowercase alphabets and an integer k, implement a function to determine if the two strings are k-anagrams of each other.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>A string s1 consisting of lowercase English letters.</li>
+<li>A string s2 consisting of lowercase English letters.</li>
+<li>An integer k.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Print true if s1 and s2 are k-anagrams, otherwise print false.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 ≤ s1.size(), s2.size() ≤ 10⁵</li>
+<li>1 ≤ k ≤ 10⁵</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<p>fodr
+gork
+2</p>
+<h6>Output</h6>
+<p>True</p>
+<h6>Explanation</h6>
+<p>We can change 'f' → 'g' and 'd' → 'k' in s1 to make it an anagram of s2.</p>
+<hr />
+<h4>Example 2</h4>
+<h6>Input</h6>
+<p>geeks
+eggkf
+1</p>
+<h6>Output</h6>
+<p>False</p>
+<h6>Explanation</h6>
+<p>We can modify only 1 character, but 2 modifications are needed ('g' and 'f' in s2).</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+
+class Solution {
+    public boolean areKAnagrams(String s1, String s2, int k) {
+        int n = s1.length();
+        if (s1.length() == s2.length()){
+            for (int i = 0; i &lt; n; i++){
+                boolean isEqual = true;
+                for (int j = 0; j &lt; n; j++){
+                    if (s1.charAt(i) == s2.charAt(j)){
+                        isEqual = false;
+                    }
+                }
+                if (isEqual){
+                    k -= 1;
+                }
+            }
+            if (k==0){
+                return true;
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
+         
+    }
+}</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Sripadh</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h3>Find n<sup>th</sup> Number In Series</h3>
+<p>You want to find the n<sup>th</sup> number in a series using the following parameters:</p>
+<ul>
+<li>The first four numbers in the series are always set as n<sub>1</sub>=1, n<sub>2</sub>=2, n<sub>3</sub>=3, n<sub>4</sub>=4.</li>
+<li>Subsequent numbers in the series are obtained by summing the four preceding numbers.</li>
+</ul>
+<p>Write a program that takes an integer n as input and print the value of the n<sup>th</sup> number in the series.</p>
+<p>If the input n is less than 1, your function should print the string Invalid.</p>
+<hr />
+<h4>Input format</h4>
+<ul>
+<li>A single integer n representing the position of the number in the series to find.</li>
+</ul>
+<hr />
+<h4>Output format</h4>
+<ul>
+<li>
+<p>A single integer n<sup>th</sup> position in the series.</p>
+</li>
+<li>
+<p>If n < 1, print: Invalid</p>
+</li>
+</ul>
+<hr />
+<p>**Constraints: **</p>
+<ul>
+<li>1 ≤ n ≤ 50</li>
+</ul>
+<hr />
+<p><strong>Example 1</strong></p>
+<p>Input:</p>
+<p>6</p>
+<p>Output:</p>
+<p>19</p>
+<p>Explanation:</p>
+<ul>
+<li>The first four numbers in the series are always 1, 2, 3, 4. The fifth number in the series is obtained by summing the previous four numbers: 1 + 2 + 3 + 4 = 10. Similarly, the sixth number is obtained by summing the previous four numbers: 2 + 3 + 4 + 10 = 19.</li>
+</ul>
+<hr />
+<p><strong>Example 2</strong></p>
+<p>Input:</p>
+<p>2</p>
+<p>Output:</p>
+<p>2</p>
+<p>Explanation:</p>
+<ul>
+<li>The second number in the series is 2.</li>
+</ul></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        
+        if(n&lt;1){
+            System.out.println(&#34;Invalid&#34;);
+            return;
+        }
+        
+        int[] series = new int[51];
+        series[1] = 1;
+        series[2] = 2;
+        series[3] = 3;
+        series[4] = 4;
+        
+        for (int i=5;i&lt;=n;i++){
+            series[i] = series[i-1] + series[i-2] + series[i-3] + series[i-4];
+        }
+        System.out.println(series[n]);
+    }
+}</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h2>The Clock Problem</h2>
+<p>Your friend has problem a reading the time if a clock follows 24-hour format.So you decide to help him out .You have two integers X and Y.Your task is to find and print an integer value to representing  product of these two integers in the 12-hour system.</p>
+<hr />
+<h3>Input Format</h3>
+<ul>
+<li>First line of input contains an integer X.</li>
+<li>Second line of input contains an integerY.</li>
+</ul>
+<h3>Output Format</h3>
+<ul>
+<li>Output an integer value representing the product of the two integers in the 12-hour system.</li>
+</ul>
+<hr />
+<h3>Sample Input:</h3>
+<p>4
+5</p>
+<h3>Sample Output:</h3>
+<p>8</p>
+<h4>Explanation:</h4>
+<p>Here, X = 4 and Y = 5, and their product is 4*5=20. Therefore, 8 is printed as the output in 12-hour system.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.Scanner;
+
+public class main {
+
+    public static void main(String[] args) {
+      //Write your code here
+      Scanner sc = new Scanner(System.in);
+      int x=sc.nextInt();
+      int y=sc.nextInt();
+      
+      int product = x*y;
+      int hour = product % 12;
+      if (hour == 0){
+          hour = 12;
+      }
+
+
+
+      System.out.println(hour);
+      
+    }
+}
+</code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><h1>Number Patterns</h1>
+<p>You need to print a pattern of numbers in a specific format. The pattern consists of multiple rows.</p>
+<p>The numbers should be printed consecutively, starting from 1.</p>
+<hr />
+<h3>Input Format:</h3>
+<ul>
+<li>The input consists of a single integer n, which represents the number of rows to print the pattern.</li>
+</ul>
+<hr />
+<h3>Output Format:</h3>
+<ul>
+<li>The output consists of n rows.</li>
+<li>Each row contains numbers starting from 1 and separated by an asterisk (*).</li>
+<li>The number of elements in each row increases by 1 in each subsequent row.</li>
+</ul>
+<hr />
+<h3>Constraints:</h3>
+<ul>
+<li>1 ≤ n ≤ 100</li>
+</ul>
+<hr />
+<h3>Sample Input:</h3>
+<p>5</p>
+<h3>Sample Output:</h3>
+<p>1
+2<em>3
+4</em>5<em>6
+7</em>8<em>9</em>10
+11<em>12</em>13<em>14</em>15</p>
+<h3>Explanation:</h3>
+<ul>
+<li>The first row prints 1.</li>
+<li>The second row prints the numbers 2 and 3 separated by *.</li>
+<li>The third row prints 4, 5, and 6 separated by *.</li>
+<li>The fourth row prints 7, 8, 9, and 10 separated by *.</li>
+<li>The fifth row prints 11, 12, 13, 14, and 15 separated by *.</li>
+</ul>
+<p>In general, for the i-th row (1-based index), the row should print i numbers starting from the last number printed plus 1.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        
+        int num=1;
+        
+        for(int i=1;i&lt;=n;i++){
+            for(int j=1;j&lt;=i;j++){
+                System.out.print(num);
+                if (j!=i){
+                    System.out.print(&#34;*&#34;);
+                }
+                num++;
+            }
+            System.out.println();
+        }
+    }
+}</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

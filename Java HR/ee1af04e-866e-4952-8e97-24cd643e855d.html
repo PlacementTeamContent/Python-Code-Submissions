@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Bhuvaneshwari</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h1>Meatball Hiring Process</h1>
+<p><strong>Bhojon</strong> is a restaurant company that has started a new wing in a city. They have every type of cook except for the meatball artist. They had fired their last cook because the sale of meatballs in their restaurant is really high, and they can’t afford to make meatballs again and again every time their stock gets empty. They have arranged a hiring program where you can apply with your meatball.</p>
+<p>They will add the meatball in their <strong>seekh</strong> (a queue), and every time they cut the meatball, they take it and cut it into the day’s quantity, then re-add the meatball in the seekh. As a hiring manager, you are going to determine who will be hired.</p>
+<h3>Day’s Quantity</h3>
+<p>On that every day, the company sells only that kg of meatballs to every packet. </p>
+<p>If someone has less than the day’s quantity, it will be counted as a sell.</p>
+<hr />
+<h3>Input Format:</h3>
+<ul>
+<li><strong>First line</strong>: Contains the integer <strong>N</strong>, which represents how many people are participating in the hiring process.</li>
+<li><strong>Second line</strong>: Contains the integer <strong>D</strong>, which represents the day’s quantity, i.e., how many grams of meatball are being sold to every packet.</li>
+<li><strong>Next N lines</strong>: Each line contains an integer representing the weight of meatballs each person has brought with them. These weights are provided in the form of an integer array <strong>Array[]</strong>.</li>
+</ul>
+<hr />
+<h3>Output Format:</h3>
+<ul>
+<li>The 1-based index of the person whose meatball is served last.</li>
+</ul>
+<hr />
+<h3>Constraints:</h3>
+<ul>
+<li>1 ≤ <strong>N</strong> ≤ 10<sup>3</sup></li>
+<li>1 ≤ <strong>D</strong> ≤ 10<sup>3</sup></li>
+<li>1 ≤ <strong>Array[i]</strong> ≤ 10<sup>3</sup></li>
+</ul>
+<hr />
+<h3>Sample Input 1:</h3>
+<p>4
+2
+7
+8
+9
+3</p>
+<h3>Sample Output 1:</h3>
+<p>3</p>
+<h3>Explanation:</h3>
+<p>The seekh or meatball queue has the initial distribution: <strong>[7, 8, 9, 3]</strong>. </p>
+<ul>
+<li>On the first serving, they will cut 2 kg of meatball from the first meatball and add it to the last of the seekh. After the 1st serving, the queue becomes: <strong>[8, 9, 3, 5]</strong>.</li>
+<li>Then it proceeds as follows:</li>
+<li>[9, 3, 5, 6],  </li>
+<li>[3, 5, 6, 7],  </li>
+<li>[5, 6, 7, 1],  </li>
+<li>[6, 7, 1, 3],  </li>
+<li>[7, 1, 3, 4],  </li>
+<li>[1, 3, 4, 5],  </li>
+<li>[3, 4, 5],  </li>
+<li>[4, 5, 1],  </li>
+<li>[5, 1, 2],  </li>
+<li>[1, 2, 3],  </li>
+<li>[2, 3],  </li>
+<li>[3],  </li>
+<li>[1],  </li>
+<li>[0].</li>
+</ul>
+<p>So, the last served meatball belongs to the 3rd person.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int k=sc.nextInt();
+        int max=0,ans=0;
+        for (int i=0;i&lt;n;i++)
+        {
+            int x=sc.nextInt();
+            if(x &gt;= max){
+                max=x;
+                ans=i;
+            }
+        }
+        System.out.println(ans+1);
+    }
+}</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h1>Matched Socks Pairs</h1>
+<p>Alex works at a clothing store. There is a large pile of socks that must be paired by color for sale. Given an array of integers representing the color of each sock, determine how many pairs of socks with matching colors there are.</p>
+<p>For example, there are n=7 socks with colors ar = {1,2,1,2,1,3,2}. There is one pair of color 1 and one of color 2. There are three odd socks left, one of each color. The number of pairs is 2.</p>
+<hr />
+<h3>Input Format</h3>
+<ul>
+<li>The first line contains an integer n, the number of socks represented in ar.</li>
+<li>The second line contains n space-separated integers describing the colors ar[i] of the socks in the pile.</li>
+</ul>
+<hr />
+<h3>Output Format</h3>
+<ul>
+<li>Print the total number of matching pairs of socks that Alex can sell.</li>
+</ul>
+<hr />
+<h3>Constraints</h3>
+<ul>
+<li>1 <= n <= 100</li>
+<li>1 <= ar[i] <= 100 and 0 <= i < n</li>
+</ul>
+<hr />
+<h3>Sample Input</h3>
+<p>9
+10 20 20 10 10 30 50 10 20</p>
+<h3>Sample Output</h3>
+<p>3</p>
+<h3>Explanation</h3>
+<ul>
+<li>Alex can match 3 pairs of socks i.e. 10-10, 10-10, 20-20 while the left out socks are 50, 30, and 20.</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        Map&lt;Integer,Integer&gt; hm=new HashMap&lt;&gt;();
+        for (int i=0;i&lt;n;i++){
+            int x=sc.nextInt();
+            hm.put(x,hm.getOrDefault(x,0)+1);
+        }
+        int ans=0;
+        for(int i:hm.keySet()){
+            ans+=hm.get(i)/2;
+        }
+        System.out.println(ans);
+    }
+}</code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><p>Develop a program to calculate the count of triplets within a given sequence.
+<SingleLineNote>
+A Triplet consists of either three identical numbers or three consecutive numbers. </SingleLineNote></p>
+<hr />
+<p><b>Input</b></p>
+<p>The first line of input contains two space separated integers N and M.
+Subsequent lines will have N number of integers in separate lines i.e, (x<sub>1</sub>,x<sub>2</sub>,.....x<sub>N</sub>,).<hr />
+<b>Output</b><br /></p>
+<p>The output consists an integer representing the count of triplets.<hr />
+<b>Constraints</b><br /></p>
+<p>x<sub>1</sub>,x<sub>2</sub>,.....x<sub>N</sub><= M <hr /><b>
+Explanation</b><br /></p>
+<p>Let's take an example:</p>
+<p>9 10
+2
+2
+5
+5
+5
+8
+8
+9
+10</p>
+<p>Here, the N subsequent elements are [2,2,5,5,5,8,8,9,10]. In this the same number triplet is [5,5,5] and the consecutive triplet is [8,9,10]. So, the count of the triplet is 2. <hr /></p>
+<p><br /></p></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+ 
+public class main {
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int m=sc.nextInt();
+        int arr[]=new int[n];
+        for(int i=0;i&lt;n;i++){
+            arr[i]=sc.nextInt();
+        }
+        int ans=0;
+        for(int i=0;i&lt;n-2;i++){
+            int x=arr[i];
+            if(arr[i]==arr[i+1] &amp;&amp; arr[i]==arr[i+2])
+            {
+                ans+=1;
+                i+=2;
+            }
+            else if(arr[i+1]==x+1 &amp;&amp; arr[i+2]==x+2){
+                ans+=1;
+            }
+        }
+        System.out.println(ans);
+    }
+}</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

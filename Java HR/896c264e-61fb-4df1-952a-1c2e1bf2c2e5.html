@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Kiran Kumar</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h2>Island Life</h2>
+<p>You are stuck on an island where they sell and eat coconut sweets only. A person can buy at most 1 box per day with each box containing N pieces .To remain alive you must consume E coconut sweets daily for D days, but the catch is that you cannot purchase sweets on Sundays. Your task is to find and return an integer value representing the minimum number of times you have to buy coconut sweets in order to stay alive. If not possible, return -1</p>
+<p>Note: The day starts from Monday</p>
+<hr />
+<h3>Input Format</h3>
+<ul>
+<li>First line of input contains an integer value N, representing the number of coconut sweets per box.</li>
+<li>Second line of input contains an integer value E, representing the number of coconut sweets you must
+eat daily.</li>
+<li>Third line of input contains an integer value D, representing the number of days you have to spend
+on the island.</li>
+</ul>
+<h3>Output Format</h3>
+<ul>
+<li>The output should contains an integer value representing the minimum number of times you have to
+buy coconut sweets in order to stay alive. if not possble return -1.</li>
+</ul>
+<hr />
+<h3>Sample Input:</h3>
+<p>16
+2
+10</p>
+<h3>Sample Output:</h3>
+<p>2</p>
+<h4>Explanation:</h4>
+<p>Here, there are 16 coconut sweets per box. You have to live for 10 days on the island and each day you will have to eat 2 sweets. So in 8 days you wil run out of sweets and buy another box on the 9<sup>th</sup> day.
+Now, this second box will last for the next 8 days, which means that you con eat till 16<sup>th</sup> day but you will have to leave the island after 10<sup>th</sup> day, so you don't need to buy any more boxes. Since you have bought sweet boxes 2 times, 2 is returned as the output</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.Scanner;
+
+public class main {
+
+    public static void main(String[] args) {
+      Scanner sc=new Scanner(System.in);
+      int box=sc.nextInt();
+      int eat=sc.nextInt();
+      int days=sc.nextInt();
+      
+     int cnt=1;
+     while(cnt!=0){
+         int ans=box*cnt;
+         int s=ans/eat;
+         if(s&gt;=days){
+             break;
+         }
+         cnt++;
+     }
+     System.out.println(cnt);
+    }
+}
+</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><p>Given a sequence of integers and a common ratio q, your task is to count the number of triplets within the sequence that can be arranged to form a geometric progression with the ratio q.</p>
+<p><MultiLineNote>
+- A triplet subset from the sequence should consist of three elements in increasing order that follow the condition (a, a x q, a x q^2) to form a geometric progression with ratio q.
+</MultiLineNote></p>
+<hr />
+<p><b>Input Format</b>
+<br />
+- The first line contains two space-separated integers: N, which is the size of the sequence, and q, the common ratio of the geometric progression.
+- The second line contains N space-separated integers representing the elements of the sequence.</p>
+<hr />
+<p><b> Output Format</b>
+<br />
+- Output a single integer representing the number of triplet subsets from the sequence that can be ordered to form a geometric progression with the given common ratio q.</p>
+<hr />
+<p><b>Constraints</b>
+<br />
+ - 1<= N <= 10^6 
+ - 1 <= q<= 10^8 
+ - 1<= sequence[i] <= 10^8</p>
+<hr />
+<p><b> Example</b>
+<br />
+For the given Input:</p>
+<p>6 3
+1 3 9 9 27 81</p>
+<p>Output:</p>
+<p>6</p>
+<h4>Explanation:</h4>
+<ul>
+<li>Possible triplets forming a geometric progression with the common ratio q = 3 are:</li>
+<li>(1, 3, 9) corresponding to indices (0, 1, 2)</li>
+<li>(1, 3, 9) corresponding to indices (0, 1, 3)</li>
+<li>(3, 9, 27) corresponding to indices (1, 2, 4)</li>
+<li>(3, 9, 27) corresponding to indices (1, 3, 4)</li>
+<li>(9, 27, 81) corresponding to indices (2, 4, 5)</li>
+<li>
+<p>(9, 27, 81) corresponding to indices (3, 4, 5)</p>
+</li>
+<li>
+<p>Each of these triplets can be arranged to show that they follow a geometric progression. The count of such triplets is 6.</p>
+</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+class Main {
+    public static void main(String[] args) { 
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int q=sc.nextInt();
+        int[] arr=new int[n];
+        for(int i=0;i&lt;n;i++){
+            arr[i]=sc.nextInt();
+        }
+        int cnt=0;
+        for(int i=0;i&lt;n-2;i++){
+            int a=arr[i];
+            for(int j=i+1;j&lt;n-1;j++){
+                if(a*q==arr[j]){
+                    for(int k=j+1;k&lt;n;k++){
+                        if(a * Math.pow(q,2)==arr[k]){
+                            cnt++;
+                        }
+                    }
+                }
+            }
+        }
+        System.out.println(cnt);
+    }
+}</code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><h2>Device Name System</h2>
+<p>Rocky is a software engineer and he is creating his own operating system called “myFirst OS”. <strong>myFirst OS</strong> is a GUI (Graphical User Interface) based operating system where everything is stored in files and folders. He is facing issues with creating unique folder names for the operating system. </p>
+<p>Help Rocky create unique folder names for his OS. If a folder name already exists in the system, an integer number is added to the name to make it unique. The integer starts with 1 and is incremented by 1 for each new request of an existing folder name. Given a list of folder names, process all requests and return an array of corresponding folder names.</p>
+<h3>Input Format:</h3>
+<ul>
+<li>The first line contains an integer n, denoting the size of the array foldername.</li>
+<li>Each of the next n lines contains a string foldername[i] representing a folder name request in the order received.</li>
+</ul>
+<h3>Output Format:</h3>
+<ul>
+<li>The output should be a list of n strings, where each string represents the folder name after processing the request and ensuring uniqueness.</li>
+</ul>
+<h3>Constraints:</h3>
+<ul>
+<li>1 <= n <= 10<sup>4</sup></li>
+<li>1 <= length of foldername[i] < 20</li>
+<li>foldername[i] contains only lowercase English letters in the range ascii[a-z].</li>
+</ul>
+<h3>Sample Input:</h3>
+<p>4
+home
+download
+first
+first</p>
+<h3>Sample Output:</h3>
+<p>home
+download
+first
+first1</p>
+<h3>Explanation:</h3>
+<ol>
+<li>foldername[0] = 'home' is unique.</li>
+<li>foldername[1] = 'download' is unique.</li>
+<li>foldername[2] = 'first' is unique.</li>
+<li>foldername[3] = 'first' already exists, so first1 is assigned.</li>
+</ol>
+<p>Thus, the unique folder names are ['home', 'download', 'first', 'first1'].</p>
+<h3>Notes:</h3>
+<ul>
+<li>The integer added to the folder name starts at 1 and is incremented by 1 for each subsequent request for an existing folder name.</li>
+<li>The folder name first1 is unique after the second request for first because first already exists in the system.</li>
+</ul></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+class Solution {
+    public List&lt;String&gt; getUniqueFolderNames(String[] foldernames) {
+        
+        List&lt;String&gt; uniqueNames = new ArrayList&lt;&gt;();
+        int n=foldernames.length;
+        int cnt=1;
+        for(String s:foldernames){
+            
+            if(uniqueNames.indexOf(s)==-1){
+                uniqueNames.add(s);
+            }else{
+                uniqueNames.add(s+cnt);
+                cnt++;
+            }
+        }
+        return uniqueNames;
+    }
+}</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

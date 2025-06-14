@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">J Raviteja</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><p>You need to validate email addresses based on specific rules. A valid email address follows this pattern:</p>
+<ul>
+<li>The user part of the email must start with 1 to 6 lowercase English letters [a-z].</li>
+<li>It may optionally be followed by an underscore _.</li>
+<li>After the optional underscore, it may have up to 4 digits [0-9].</li>
+<li>The domain part must be exactly topin.tech.</li>
+</ul>
+<p>Given n email addresses, determine if each email address is valid or not.</p>
+<hr />
+<h3>Input Format</h3>
+<ul>
+<li>The first line contains an integer n, the number of email addresses.</li>
+<li>Each of the next n lines contains one email address to be validated.</li>
+</ul>
+<h3>Output Format</h3>
+<ul>
+<li>For each email address, print True if it is valid, otherwise print False.</li>
+</ul>
+<hr />
+<h3><strong>Sample Input:</strong></h3>
+<p>5
+julia@topin.tech
+julia_@topin.tech
+julia_0@topin.tech
+julia0_@topin.tech
+julia@gmail.com</p>
+<h4><strong>Sample Output:</strong></h4>
+<p>True
+True
+True
+False
+False</p>
+<h3><strong>Explanation:</strong></h3>
+<ol>
+<li>julia@topin.tech – Valid: Starts with lowercase letters and has a valid domain.</li>
+<li>julia_@topin.tech – Valid: Starts with lowercase letters, has an underscore, and a valid domain.</li>
+<li>julia_0@topin.tech – Valid: Starts with lowercase letters, has an underscore, a digit, and a valid domain.</li>
+<li>julia0_@topin.tech – Invalid: Digits cannot precede the underscore.</li>
+<li>julia@gmail.com – Invalid: Domain is not topin.tech.</li>
+</ol>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.Scanner;
+import java.util.regex.Pattern;
+public class main {
+    public static void main(String[] args) {
+        // Make your logic here
+        Scanner sc=new Scanner(System.in);
+        int n=Integer.parseInt(sc.nextLine());
+        //String regex=&#34;^[a-z]{1,6}(_[0-9]{0,4})?@topin\\.tech$&#34;;
+        String regex=&#34;^[a-z]{1,6}_?[0-9]{0,4}@topin\\.tech$&#34;;
+        Pattern pattern=Pattern.compile(regex);
+        for(int i=0;i&lt;n;i++){
+            String email=sc.nextLine();
+            if(pattern.matcher(email).matches()){
+                System.out.println(&#34;True&#34;);
+            }
+            else{
+                System.out.println(&#34;False&#34;);
+            } 
+        }
+    }
+} </code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h2>Distinct Count Queries</h2>
+<p>Rahul has an array a of size n. For each query, Rahul wants to know how many distinct integers are present from a given index l<sub>i</sub> to the end of the array. Help Rahul determine the answer for each query efficiently.</p>
+<hr />
+<h3>Input Format</h3>
+<ol>
+<li>The first line contains two integers n (size of the array) and m (number of queries).</li>
+<li>The second line contains n integers a<sub>1</sub>, a<sub>2</sub>, …, a<sub>n</sub>, representing the elements of the array.</li>
+<li>The next m lines each contain an integer l<sub>i</sub> , representing the starting index for each query.</li>
+</ol>
+<hr />
+<h3>Output Format</h3>
+<ul>
+<li>Print m lines, where the i<sup>th</sup> line contains the number of distinct integers from position l<sub>i</sub> to the end of the array.</li>
+</ul>
+<hr />
+<h3>Constraints</h3>
+<ul>
+<li>1 ≤ n, m ≤ 10<sup>5</sup></li>
+<li>1 ≤ a<sub>i</sub> ≤ 10<sup>5</sup></li>
+<li>1 ≤ l<sub>i</sub> ≤ n</li>
+</ul>
+<hr />
+<h3>Sample Input</h3>
+<p>10 10
+1 2 3 4 1 2 3 4 100000 99999
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10</p>
+<hr />
+<h3>Sample Output</h3>
+<p>6
+6
+6
+6
+6
+5
+4
+3
+2
+1</p>
+<hr />
+<h3>Explanation</h3>
+<ul>
+<li>For query l<sub>i</sub> = 1, the subarray is [1, 2, 3, 4, 1, 2, 3, 4, 100000, 99999] with 6 distinct elements: {1, 2, 3, 4, 100000, 99999}.</li>
+<li>For query l<sub>i</sub> = 2, the subarray is [2, 3, 4, 1, 2, 3, 4, 100000, 99999] with 6 distinct elements.</li>
+<li>Similarly, for l<sub>i</sub> = 6, the subarray is [2, 3, 4, 100000, 99999] with 5 distinct elements.</li>
+<li>The output for each query corresponds to the number of distinct elements in the subarray starting at index l<sub>i</sub>.</li>
+</ul></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">Not Submitted</code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><h2>Clean String</h2>
+<p>You are given two strings A and B. Your task is to find and print a string representing the left over string in A after removing all the letters that exsist in string B . Print nothing if the output does not contain any value.</p>
+<p>Note :</p>
+<ul>
+<li>Strings A and B contain English alphabets in upper case only.</li>
+<li>A single alphabet in B can replace all the occurrences of that alphabet in A</li>
+</ul>
+<hr />
+<h3>Input Format</h3>
+<ul>
+<li>First line of Input contains String A.</li>
+<li>Second line of Input contains String B.</li>
+</ul>
+<h3>Output Format</h3>
+<p>Print a string representing the left over string in A after removing all the letters that exist in string B. 
+Print nothing if the output does not contain any value.</p>
+<hr />
+<h3>Sample Input:</h3>
+<p>AABBCC
+AB</p>
+<h3>Sample Output:</h3>
+<p>CC</p>
+<h4>Explanation:</h4>
+<p>After removing all occurences of A,B from the string A , there will be CC.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.Scanner;
+
+public class main {
+
+    public static void main(String[] args) {
+      //Write your code here
+      Scanner sc=new Scanner(System.in);
+      String A=sc.nextLine();
+      String B=sc.nextLine();
+      boolean[] toRemove=new boolean[26];
+      for(char c:B.toCharArray()){
+          toRemove[c - &#39;A&#39;]=true;
+      }
+      StringBuilder result=new StringBuilder();
+      for( char c:A.toCharArray()){
+          if(!toRemove[c - &#39;A&#39;]){
+              result.append(c);
+          }
+      }
+      if(result.length()&gt;0){
+          System.out.println(result);
+      }
+      sc.close();
+    }
+}
+</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

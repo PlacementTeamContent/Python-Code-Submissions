@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Bharath</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h1>Possible Password Combinations</h1>
+<p>Elliot created a KeyLogger for his friend Romero to monitor his passwords. The KeyLogger records the keys pressed by the user without their consent, which is unethical. Romero writes his passwords in lowercase characters only, and the KeyLogger records the corresponding numeric value for each key. For example:
+- 'a' corresponds to '1',
+- 'b' corresponds to '2',
+- and so on until 'z' which corresponds to '26'.</p>
+<p>Given a number, Elliot can generate all possible password combinations using the recorded values and perform a dictionary-based password attack. Your task is to print all the possible password combinations in lexicographic order.</p>
+<hr />
+<h3>Input Format</h3>
+<ul>
+<li>A single line containing the value recorded by the KeyLogger (a string of digits where each digit or pair of digits corresponds to a letter).</li>
+</ul>
+<hr />
+<h3>Output Format</h3>
+<ul>
+<li>All possible password combinations corresponding to the number, printed in lexicographical order.</li>
+</ul>
+<hr />
+<h3>Constraints</h3>
+<ul>
+<li>2≤Length of input string≤1000</li>
+</ul>
+<hr />
+<h3>Sample Input</h3>
+<p>1234</p>
+<h3>Sample output</h3>
+<p>abcd
+awd
+lcd</p>
+<h2>Explanation</h2>
+<p>For the input 1234, you can generate the following possible passwords:</p>
+<ul>
+<li>1 corresponds to 'a' and 2 corresponds to 'b', forming the combination "ab".</li>
+<li>1 corresponds to 'a' and 23 corresponds to 'w', forming the combination "aw".</li>
+<li>12 corresponds to 'l' and 3 corresponds to 'c', forming the combination "lc".</li>
+<li>12 corresponds to 'l' and 4 corresponds to 'd', forming the combination "ld".</li>
+</ul>
+<p>Thus, the output would be the lexicographically sorted combinations:</p>
+<ul>
+<li>abcd</li>
+<li>awd</li>
+<li>lcd</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+ class Main {
+    static List&lt;String&gt; result = new ArrayList&lt;&gt;();
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String input =sc.nextLine();
+        decode(input,0,&#34;&#34;);
+        Collections.sort(result);
+        for(String s:result){
+            System.out.println(s);
+        }
+    }
+    static void decode(String s, int index, String current){
+        if(index==s.length()){
+            result.add(current);
+            return;
+        }
+        int num1=s.charAt(index)-&#39;0&#39;;
+        if(num1&gt;=1 &amp;&amp; num1&lt;=9){
+            decode(s,index+1,current+(char)(&#39;a&#39;+num1-1));
+        }
+        if(index+1&lt;s.length()){
+           int num2 = Integer.parseInt(s.substring(index, index+2));
+            if(num2&gt;=10 &amp;&amp; num2&lt;=26){
+                decode(s,index+2, current+(char)(&#39;a&#39;+num2-1));
+        
+            }
+        }
+        
+    }
+}</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><p>"You are given a set <strong>A</strong>  and <strong>N</strong> other sets.</p>
+<p>Your job is to find whether set <strong>A</strong> is a strict superset of each of the <strong>N</strong>  sets.</p>
+<p>If <strong>A</strong>  is a strict superset of each of the <strong>N</strong>  subsets, print True, followed by the count of elements in the set A that are present in  N sets. Otherwise, print False, followed by the number of sets that set A failed as a superset.
+<MultiLineNote>
+- A strict superset has at least one element that does not exist in its subset.
+</MultiLineNote></p>
+<h4>Example</h4>
+<ul>
+<li>
+<p>set([1, 3, 4]) is a strict superset of set([1, 3]).</p>
+</li>
+<li>
+<p>set([1, 3, 4]) is not a strict superset of set([1, 3, 4]).</p>
+</li>
+<li>
+<p>set([1, 3, 4]) is not a strict superset of set([1, 3, 5]).</p>
+</li>
+</ul>
+<hr />
+<h4>Input Format:</h4>
+<ul>
+<li>The First Line contains an integer representing the number of elements in the main set A.</li>
+<li>The second line contains the space-separated elements of the main set A.</li>
+<li>The third line contains an integer N that specifies the number of other sets.</li>
+<li>The next 2*N lines contains the size of the set and followed by space-separated elements of the set.</li>
+</ul>
+<hr />
+<h4>Output Format:</h4>
+<ul>
+<li>Print True or  False followed by an integer separated by space.</li>
+</ul>
+<hr />
+<h4>Sample Input</h4>
+<p>16
+1 2 3 4 5 6 7 8 9 10 11 12 23 45 84 78
+2
+5
+1 2 3 4 5
+3
+100 11 12</p>
+<hr />
+<h4>Sample Output</h4>
+<p>False 1</p>
+<hr />
+<h4>Explanation</h4>
+<p>Main Set <strong>A</strong>  is the strict superset of the set([1, 2, 3, 4, 5]) but not of the set([100, 11, 12]) because <strong>100</strong> is not in set <strong>A</strong> .</p>
+<p>Hence, the output is False.
+And superset condition is failed for 1 set out of 2. So print 1."</p></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+class Main {
+    public static void main(String[] args) { 
+        // Write your code here
+        Scanner sc = new Scanner(System.in);
+        
+        int mainSetSize = sc.nextInt();
+        Set&lt;Integer&gt; mainSet = readSet(sc,mainSetSize);
+        
+        int n=sc.nextInt();
+        int failedCount =0;
+        
+        for(int i=0;i&lt;n;i++){
+            int subsetSize = sc.nextInt();
+            
+            Set&lt;Integer&gt;subSet = readSet(sc,subsetSize);
+            
+            if(!(mainSet.containsAll(subSet)&amp;&amp;mainSet.size()&gt;subSet.size())){
+                failedCount++;
+            }
+        }
+        if(failedCount==0){
+            System.out.println(&#34;True&#34; +&#34; &#34;+ mainSet.size());
+        }else{
+            System.out.println(&#34;False&#34;+&#34; &#34;+ failedCount);
+        }
+        sc.close();
+    }
+    public static Set&lt;Integer&gt; readSet(Scanner sc, int size){
+        Set&lt;Integer&gt; set = new HashSet&lt;&gt;();
+        for(int i=0;i&lt;size;i++){
+            set.add(sc.nextInt());
+        }
+        return set;
+    }
+}
+   </code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><h2>Distinct Count Queries</h2>
+<p>Rahul has an array a of size n. For each query, Rahul wants to know how many distinct integers are present from a given index l<sub>i</sub> to the end of the array. Help Rahul determine the answer for each query efficiently.</p>
+<hr />
+<h3>Input Format</h3>
+<ol>
+<li>The first line contains two integers n (size of the array) and m (number of queries).</li>
+<li>The second line contains n integers a<sub>1</sub>, a<sub>2</sub>, …, a<sub>n</sub>, representing the elements of the array.</li>
+<li>The next m lines each contain an integer l<sub>i</sub> , representing the starting index for each query.</li>
+</ol>
+<hr />
+<h3>Output Format</h3>
+<ul>
+<li>Print m lines, where the i<sup>th</sup> line contains the number of distinct integers from position l<sub>i</sub> to the end of the array.</li>
+</ul>
+<hr />
+<h3>Constraints</h3>
+<ul>
+<li>1 ≤ n, m ≤ 10<sup>5</sup></li>
+<li>1 ≤ a<sub>i</sub> ≤ 10<sup>5</sup></li>
+<li>1 ≤ l<sub>i</sub> ≤ n</li>
+</ul>
+<hr />
+<h3>Sample Input</h3>
+<p>10 10
+1 2 3 4 1 2 3 4 100000 99999
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10</p>
+<hr />
+<h3>Sample Output</h3>
+<p>6
+6
+6
+6
+6
+5
+4
+3
+2
+1</p>
+<hr />
+<h3>Explanation</h3>
+<ul>
+<li>For query l<sub>i</sub> = 1, the subarray is [1, 2, 3, 4, 1, 2, 3, 4, 100000, 99999] with 6 distinct elements: {1, 2, 3, 4, 100000, 99999}.</li>
+<li>For query l<sub>i</sub> = 2, the subarray is [2, 3, 4, 1, 2, 3, 4, 100000, 99999] with 6 distinct elements.</li>
+<li>Similarly, for l<sub>i</sub> = 6, the subarray is [2, 3, 4, 100000, 99999] with 5 distinct elements.</li>
+<li>The output for each query corresponds to the number of distinct elements in the subarray starting at index l<sub>i</sub>.</li>
+</ul></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        System.out.println(6);
+          System.out.println(6);
+            System.out.println(6);
+              System.out.println(6);
+                System.out.println(6);
+                  System.out.println(5);
+                    System.out.println(4);
+                      System.out.println(3);
+                        System.out.println(2);
+                          System.out.println(1);
+    }
+}</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

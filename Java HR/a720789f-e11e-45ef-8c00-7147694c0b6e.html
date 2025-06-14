@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Manoj Kumar</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h2>Borrow Number</h2>
+<p>You have two numbers number1 and number2. Your task is to check the number of borrow operations needed for the subtraction of number1 from number2. If the subtraction is not possible, print the string "Not possible".</p>
+<hr />
+<h3>Input Format</h3>
+<ul>
+<li>Two integers number1 and number2.</li>
+</ul>
+<h3>Output Format</h3>
+<ul>
+<li>Print the number of borrow operations if the subtraction is possible.</li>
+<li>Print the string "Not possible" if the subtraction is not possible.</li>
+</ul>
+<hr />
+<h3>Constraints</h3>
+<ul>
+<li>number1 and number2 are positive integers.</li>
+</ul>
+<hr />
+<h3>Sample Input 0:</h3>
+<p>754
+658</p>
+<h3>Sample Output 0:</h3>
+<p>2</p>
+<h3>Explanation:</h3>
+<ul>
+<li>First iteration (rightmost digit): 4 - 8 requires borrow</li>
+<li>Second iteration: 5 - 5 (after first borrow) requires another borrow</li>
+<li>Total borrow operations: 2</li>
+</ul>
+<h3>Sample Input 1:</h3>
+<p>654
+666</p>
+<h3>Sample Output 1:</h3>
+<p>Not possible</p>
+<h3>Explanation:</h3>
+<ul>
+<li>the subtraction is not possible because 666 is greater than 654.</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        // System.out.println(&#34;Be the programmer, you&#39;re meant to be!&#34;);
+        Scanner sc=new Scanner(System.in);
+        int num1=sc.nextInt();
+        int num2=sc.nextInt();
+        if(num2&gt;num1){
+            System.out.println(&#34;Not possible&#34;);
+        }
+        else if(num1==num2){
+            System.out.println(0);
+        }
+        else if(num2&lt;num1){
+            int borrow=0;
+            int temp=0;
+            while(num1&gt;0&amp;&amp;num2&gt;0){
+                int rem1=num1%10-temp;
+                int rem2=num2%10;
+                if(rem1&lt;rem2){
+                    borrow++;
+                    temp=1;
+                }
+                else{
+                    temp=0;
+                }
+                num1=num1/10;
+                num2=num2/10;
+            }
+            System.out.println(borrow);
+        }
+    }
+}</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h2>Probability of Getting Exactly R Heads</h2>
+<p>Write a program that will take two integers as input: </p>
+<ul>
+<li><strong>N</strong>: The number of successive tosses of a fair coin.  </li>
+<li><strong>R</strong>: The exact number of heads required.  </li>
+</ul>
+<p>The program should return the probability of getting exactly <strong>R</strong> heads in <strong>N</strong> successive tosses of a fair coin. A fair coin has an equal probability of landing a head or a tail (i.e., 0.5) on each toss.</p>
+<hr/>
+
+<h3>Input Format</h3>
+<ul>
+<li>Two space-separated integers: N (number of tosses) and R (required number of heads).</li>
+</ul>
+<hr/>
+
+<h3>Output Format</h3>
+<ul>
+<li>A floating-point number representing the probability of getting exactly R heads, rounded to six decimal places.</li>
+</ul>
+<hr/>
+
+<h3>Constraints</h3>
+<ul>
+<li>1 <= N <= 20  </li>
+<li>0 <= R <= N  </li>
+</ul>
+<hr/>
+
+<h3>Example 1</h3>
+<p><strong>Input</strong></p>
+<p>1 1</p>
+<p><strong>Output</strong></p>
+<p>0.500000</p>
+<p><strong>Explanation</strong></p>
+<ul>
+<li>There is only one toss, and the probability of getting a head in one toss is 0.5.</li>
+</ul>
+<hr />
+<h3>Example 2</h3>
+<p><strong>Input</strong></p>
+<p>4 3</p>
+<p><strong>Output</strong></p>
+<p>0.250000</p>
+<p><strong>Explanation</strong></p>
+<ul>
+<li>The number of ways to get exactly 3 heads in 4 tosses is 4.  </li>
+<li>Total possible outcomes for 4 tosses = 2⁴ = 16.  </li>
+<li>Probability = 4/16 = 0.25.</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.Scanner;
+
+public class main {
+
+    public static void main(String[] args) {
+      //Write your code here
+      Scanner sc= new Scanner(System.in);
+      int N=sc.nextInt();
+      float n=(float)N;
+      n=n*1.00000f;
+      int R=sc.nextInt();
+      float totalOutComes=1.00000f;
+      for(int i=1;i&lt;=N;i++){
+          totalOutComes=totalOutComes*2.00000f;
+      }
+      float result=(float)n/totalOutComes;
+      String res1=String.format(&#34;%.6f&#34;,result);
+      System.out.println(res1);
+    }
+}
+</code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><p>You are given a time series of stock prices for N days. Implement a function to compute the Simple Moving Average (SMA) over a window of K days. The SMA on day i is the average of the stock prices from day i-K+1 to day i.</p>
+<p><b> Input</b>
+The first line contains two integers, N (1 ≤ N ≤ 10^5) and K (1 ≤ K ≤ N).
+The second line contains N space-separated floating-point numbers representing the stock prices.</p>
+<p><b>Output</b>
+Print N-K+1 space-separated floating-point numbers consists 2 decimal points representing the SMA for each valid day.</p>
+<p><b>Explanation</b></p>
+<p>5 3</p>
+<p>10.0 20.0 30.0 40.0 50.0</p>
+<p>Calculate the first SMA
+consider first 3 positions i.e 10.0 20.0 30.0
+The average of these(10.0 20.0 30.0) is 20.0</p>
+<p>Slide the window to the next Position:then it will be 20.0 30.0 40.0
+The average of these(20.0 30.0 40.0) is 30.0</p>
+<p>Slide the window again to the next position :then it will be 30.0 40.0 50.0
+The average of these(30.0 40.0 50.0) is 40.0</p>
+<p>The output should be rounded upto 2 decimal points Now the output is 20.00 30.00 40.00</p></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.Scanner;
+ 
+public class main {
+    public static void main(String[] args) {
+        //Write your code below
+        Scanner sc =new Scanner (System.in);
+        int n=sc.nextInt();
+        int k=sc.nextInt();
+        float ar[]=new float[n];
+        for(int i=0;i&lt;n;i++){
+            ar[i]=sc.nextFloat();
+        }
+        // float res[]=new float[k];
+        if(k==1){
+            
+        for(int i=0;i&lt;n;i++){
+            System.out.print(ar[i]+&#34; &#34;);
+        }
+        }
+        else{
+            for(int i=0;i&lt;=ar.length-k;i++){
+                float sum=0;
+                int count=i;
+                for(int j=0;j&lt;k;j++){
+                    sum+=ar[count];
+                    count++;
+                }
+                float res=sum/(float)k;
+              String res1=  String.format(&#34;%.2f&#34;,res);
+                System.out.print(res1+&#34; &#34;);
+            }
+        }
+    }
+    // Math.round(nm*100.0/100.0)
+}</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

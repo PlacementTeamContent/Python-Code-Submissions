@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Jaina vaibhav</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h1>Matched Socks Pairs</h1>
+<p>Alex works at a clothing store. There is a large pile of socks that must be paired by color for sale. Given an array of integers representing the color of each sock, determine how many pairs of socks with matching colors there are.</p>
+<p>For example, there are n=7 socks with colors ar = {1,2,1,2,1,3,2}. There is one pair of color 1 and one of color 2. There are three odd socks left, one of each color. The number of pairs is 2.</p>
+<hr />
+<h3>Input Format</h3>
+<ul>
+<li>The first line contains an integer n, the number of socks represented in ar.</li>
+<li>The second line contains n space-separated integers describing the colors ar[i] of the socks in the pile.</li>
+</ul>
+<hr />
+<h3>Output Format</h3>
+<ul>
+<li>Print the total number of matching pairs of socks that Alex can sell.</li>
+</ul>
+<hr />
+<h3>Constraints</h3>
+<ul>
+<li>1 <= n <= 100</li>
+<li>1 <= ar[i] <= 100 and 0 <= i < n</li>
+</ul>
+<hr />
+<h3>Sample Input</h3>
+<p>9
+10 20 20 10 10 30 50 10 20</p>
+<h3>Sample Output</h3>
+<p>3</p>
+<h3>Explanation</h3>
+<ul>
+<li>Alex can match 3 pairs of socks i.e. 10-10, 10-10, 20-20 while the left out socks are 50, 30, and 20.</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        // System.out.println(&#34;Be the programmer, you&#39;re meant to be!&#34;);
+        Scanner scan = new Scanner(System.in);
+        int size = scan.nextInt();
+        int arr [] = new int[size];
+        for(int i=0;i&lt;size;i++)
+        {
+            arr[i] = scan.nextInt();
+        }
+        HashMap&lt;Integer,Integer&gt; hm = new HashMap&lt;&gt;();
+        for(int i=0;i&lt;size;i++)
+        {
+            hm.put(arr[i],hm.getOrDefault(arr[i],0)+1);
+            
+        }
+        int c =0 ;
+        for(int val:hm.values())
+        {
+            val=val/2;
+            c+=val;
+        }
+        System.out.println(c);
+    }
+}</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h2>Network Stream</h2>
+<p>A stream of n data packets arrives at a server. This server can only process packets that are exactly 2<sup>n</sup> units long for some non-negative integer value of n (0 ≤ n).<br />
+All packets are repackaged in order to the largest possible value of 2<sup>n</sup> units. The remaining portion of the packet is added to the next arriving packet before it is repackaged.<br />
+Find the size of the largest repackaged packet in the given stream.</p>
+<hr />
+<h3>Input Format</h3>
+<ul>
+<li>The first line contains an integer n, the number of packets.</li>
+<li>The second line contains n packets, separeted with spaces.</li>
+</ul>
+<h3>Output Format</h3>
+<ul>
+<li>Print the size of the largest packet that is streamed.</li>
+</ul>
+<hr />
+<h3>Constraints</h3>
+<ul>
+<li>1 ≤ n ≤ 10<sup>5</sup></li>
+<li>1 ≤ arrivingPackets[i] size ≤ 10<sup>9</sup></li>
+</ul>
+<hr />
+<h3>Sample Input 1:</h3>
+<p>5
+13 25 12 2 8</p>
+<h3>Sample Output 1:</h3>
+<p>16</p>
+<h3>Explanation:</h3>
+<ul>
+<li>First packet: 13 → maximum 2<sup>n</sup> = 8 → remaining 13 - 8 = 5.</li>
+<li>Second packet: 25 + 5 = 30 → maximum 2<sup>n</sup> = 16 → remaining 30 - 16 = 14.</li>
+<li>Third packet: 14 + 12 = 26 → maximum 2<sup>n</sup> = 16 → remaining 26 - 16 = 10.</li>
+<li>Fourth packet: 10 + 2 = 12 → maximum 2<sup>n</sup> = 8 → remaining 12 - 8 = 4.</li>
+<li>Fifth packet: 4 + 8 = 12 → maximum 2<sup>n</sup> = 8 → remaining 12 - 8 = 4.</li>
+</ul>
+<p>The largest packet repackaged was 16 units.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+class Main {
+    public static void main(String[] args) {
+        
+        // System.out.println(&#34;Be the programmer, you&#39;re meant to be!&#34;);
+        Scanner scan = new Scanner(System.in);
+        int size = scan.nextInt();
+        int arr [] = new int [size];
+        for(int i=0;i&lt;size;i++)
+        {
+            arr[i] = scan.nextInt();
+        }
+        // int g =0;
+        // int sq [] = new int [size];
+        // for(int i=1;i&lt;size+1;i++)
+        // {
+        //     sq[g++] = (int)Math.pow(2,i);
+        // }
+        // System.out.println(Arrays.toString(sq));
+        int rem = 0;
+        int diff =0;
+        for(int i=0;i&lt;size;i++)
+        {
+            int x = arr[i];
+            x = x/2;
+          
+            if(arr[i]&lt;=Math.pow(2,x))
+            {
+                rem = (arr[i]+diff)-x;
+            }
+            else
+            {
+                x--;
+            }
+            diff=rem;
+        }
+        System.out.println(rem);
+    }
+}</code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><h3>k-Anagram</h3>
+<p>Two strings are called k-anagrams if both of the below conditions are true:
+1. Both have the same number of characters.
+2. Two strings can become anagrams by changing at most k characters in a string.</p>
+<p>Given two strings of lowercase alphabets and an integer k, implement a function to determine if the two strings are k-anagrams of each other.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>A string s1 consisting of lowercase English letters.</li>
+<li>A string s2 consisting of lowercase English letters.</li>
+<li>An integer k.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Print true if s1 and s2 are k-anagrams, otherwise print false.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 ≤ s1.size(), s2.size() ≤ 10⁵</li>
+<li>1 ≤ k ≤ 10⁵</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<p>fodr
+gork
+2</p>
+<h6>Output</h6>
+<p>True</p>
+<h6>Explanation</h6>
+<p>We can change 'f' → 'g' and 'd' → 'k' in s1 to make it an anagram of s2.</p>
+<hr />
+<h4>Example 2</h4>
+<h6>Input</h6>
+<p>geeks
+eggkf
+1</p>
+<h6>Output</h6>
+<p>False</p>
+<h6>Explanation</h6>
+<p>We can modify only 1 character, but 2 modifications are needed ('g' and 'f' in s2).</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+
+class Solution {
+    public boolean areKAnagrams(String s1, String s2, int k) 
+    {
+        if(s1.length()!=s2.length()) return false;
+        char [] a = s1.toCharArray();
+        char [] b = s2.toCharArray();
+        Arrays.sort(a);
+        Arrays.sort(b);
+        int c =0;
+        for(int i=0;i&lt;a.length;i++)
+        {
+            if(a[i]==b[i]) continue;
+            else
+            c++;
+        }
+        return c&lt;=k;
+    }
+}</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

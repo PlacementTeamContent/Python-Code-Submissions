@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">mahima</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h2>Prime Sum Range</h2>
+<p>You will be given a left limit and a right limit. Your task is to calculate the sum of all prime numbers between a given range x and y, both inclusive.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first line contains an integer x representing the left limit.</li>
+<li>The second line contains an integer y representing the right limit.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Output a single integer which is the sum of all prime numbers in the given range.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <= x <= y <= 1000</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">30</span><span class="w"> </span>
+<span class="mf">40</span>
+</code></pre></div>
+
+<h6>Output</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">68</span>
+</code></pre></div>
+
+<h6>Explanation</h6>
+<ul>
+<li>Prime numbers between 30 and 40 are 31 and 37. Their sum is 31 + 37 = 68.</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">Not Submitted</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><p>Develop a program to calculate the count of triplets within a given sequence.
+<SingleLineNote>
+A Triplet consists of either three identical numbers or three consecutive numbers. </SingleLineNote></p>
+<hr />
+<p><b>Input</b></p>
+<p>The first line of input contains two space separated integers N and M.
+Subsequent lines will have N number of integers in separate lines i.e, (x<sub>1</sub>,x<sub>2</sub>,.....x<sub>N</sub>,).<hr />
+<b>Output</b><br /></p>
+<p>The output consists an integer representing the count of triplets.<hr />
+<b>Constraints</b><br /></p>
+<p>x<sub>1</sub>,x<sub>2</sub>,.....x<sub>N</sub><= M <hr /><b>
+Explanation</b><br /></p>
+<p>Let's take an example:</p>
+<p>9 10
+2
+2
+5
+5
+5
+8
+8
+9
+10</p>
+<p>Here, the N subsequent elements are [2,2,5,5,5,8,8,9,10]. In this the same number triplet is [5,5,5] and the consecutive triplet is [8,9,10]. So, the count of the triplet is 2. <hr /></p>
+<p><br /></p></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.Scanner;
+ 
+public class main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int m = sc.nextInt();
+        
+        
+        int[] arr= new int[n];
+        
+        
+        for(int i = 0;i &lt; n ; i++){
+            arr[i]=sc.nextInt();
+        }
+    int count=0;
+    for(int i=0; i&lt;=n-3; i++){
+    if(arr[i] == arr[i+1] &amp;&amp; arr[i+1]== arr[i+2]){
+        count++;
+        i+=3;
+    }
+    else
+        {
+            i++;
+        }
+    }
+System.out.println(count);
+    }
+}</code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><h1>Sum Number Divisible</h1>
+<p>You are required to implement the following function:</p>
+<h3>Int SumNumberDivisible(int m, int n);</h3>
+<p>The function accepts two positive integers m and n as its arguments. You are required to calculate the sum of numbers divisible by both 3 and 5, between m and n (both inclusive), and return the sum.</p>
+<hr />
+<h3>Input Format:</h3>
+<ul>
+<li>The first line contains two integers m and n representing the range of numbers (inclusive).</li>
+</ul>
+<hr />
+<h3>Output Format:</h3>
+<ul>
+<li>Return the sum of numbers divisible by both 3 and 5 in the range from m to n (inclusive).</li>
+</ul>
+<hr />
+<h3>Constraints:</h3>
+<ul>
+<li>0 < m <= n</li>
+<li>1 <= m, n <= 10<sup>6</sup></li>
+</ul>
+<hr />
+<h3>Sample Input 1:</h3>
+<p>12
+50</p>
+<h3>Sample Output 1:</h3>
+<p>90</p>
+<h3>Explanation:</h3>
+<p>The numbers divisible by both 3 and 5, between 12 and 50 (both inclusive) are:</p>
+<ul>
+<li>{15, 30, 45}, and their sum is 15 + 30 + 45 = 90.</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">class Solution {
+    public int sumNumberDivisible(int m, int n) {
+       int sum = 0;
+       
+       
+       for(int i = m ; i&lt;= n ; i++){
+           if (i % 15 == 0){
+               
+               sum+= i;
+          }
+       }
+        return sum ;
+    }
+}</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

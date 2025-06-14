@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Shiva Kumar</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h2>Prime Sum Range</h2>
+<p>You will be given a left limit and a right limit. Your task is to calculate the sum of all prime numbers between a given range x and y, both inclusive.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first line contains an integer x representing the left limit.</li>
+<li>The second line contains an integer y representing the right limit.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Output a single integer which is the sum of all prime numbers in the given range.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <= x <= y <= 1000</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">30</span><span class="w"> </span>
+<span class="mf">40</span>
+</code></pre></div>
+
+<h6>Output</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">68</span>
+</code></pre></div>
+
+<h6>Explanation</h6>
+<ul>
+<li>Prime numbers between 30 and 40 are 31 and 37. Their sum is 31 + 37 = 68.</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.Scanner;
+ 
+class Main {
+    public static void main(String[] args) {
+        //Write your code below
+        Scanner sc=new Scanner(System.in);
+        int x=sc.nextInt();
+        int y=sc.nextInt();
+        int sum=0;
+        for(int i=x;i&lt;=y;i++)
+        {
+            int c=0;
+            for(int j=1;j&lt;=i;j++)
+            {
+                if(i%j==0)
+                    c++;
+            }
+            if(c==2)
+                sum=sum+i;
+        }
+        System.out.println(sum);
+    }
+}</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h1>Fraction To Recurring Decimal</h1>
+<p>You are provided with two integers that represent the numerator and denominator of a fraction. Your task is to return this fraction as a string.</p>
+<p>If the fraction has a repeating decimal part, enclose the repeating section in parentheses.</p>
+<p>In cases where there are multiple valid representations, you may return any of them.</p>
+<p>It is ensured that the length of the resulting string will be less than 10,000 for all provided inputs</p>
+<hr/>
+
+<h4>Input Format</h4>
+<ul>
+<li>Two integers: numerator and denominator.</li>
+</ul>
+<hr/>
+
+<h4>Output Format</h4>
+<ul>
+<li>A string representation of the fraction in the format:</li>
+<li>If the fraction is non-repeating, return it as numerator/denominator.</li>
+<li>If the fraction has a repeating decimal part, enclose the repeating section in parentheses, e.g., integer_part.non_repeating_part(repeating_part).</li>
+</ul>
+<hr/>
+
+<h4>Example 1</h4>
+<h6>Input</h6>
+<p>1 2</p>
+<h6>Output</h6>
+<p>0.5</p>
+<hr/></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">class Solution {
+    public String fractionToDecimal(int numerator, int denominator) {
+        // Function implementation is to be completed
+        int x=numerator/denominator;
+        // if(numerator%denominator!=0)
+        // {
+            
+        // }
+        String s=x+&#34;&#34;;
+        
+        return s;
+    }
+}
+</code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><p>You are given an integer num. Your task is to find if the given num is a perfect number or not.
+ A perfect number is a positive integer that is equal to the sum of its proper positive divisors, i.e. the sum of its positive divisors excluding the number itself. </p>
+<hr />
+
+<p><strong>Input Format:</strong></p>
+<ul>
+<li>The line contains an integer denoting num.</li>
+</ul>
+<hr />
+<p><strong>Output Format:</strong></p>
+<ul>
+<li>Print 1 if num is a perfect number, else print the sum of the proper divisors of num.</li>
+</ul>
+<hr />
+<p><strong>Constraints:</strong></p>
+<ul>
+<li>0 < num < 10<sup>9</sup></li>
+</ul>
+<hr />
+
+<p><b>Explanation</b><br /></p>
+<p>Let's take an example:
+<strong>Input:</strong></p>
+<p>22</p>
+<p><strong>Output:</strong></p>
+<p>14</p>
+<p>The proper positive divisors of 22 (except itself) are 1, 2, 11 and their sum = 14 which is not equal to 22, hence 22 is not a perfect number. So the output is 14 which is the sum of proper positive divisors of 22.<hr /></p></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+class Main {
+    public static void main(String[] args) { 
+        // Write your code here
+        Scanner sc=new Scanner(System.in);
+        int num=sc.nextInt();
+        int sum=1;
+        for(int i=2;i&lt;num;i++)
+        {
+            if(num%i==0)
+                sum=sum+i;
+        }
+        if(num==sum)
+            System.out.println(1);
+        else 
+            System.out.println(sum);
+    }
+}</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

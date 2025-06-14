@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Suresh Kumar</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h1>LRU Cache Implementation</h1>
+<p>You are tasked with implementing an <strong>LRU (Least Recently Used) Cache</strong>. The cache should support the following operations:</p>
+<ul>
+<li><strong>get(key)</strong>: Retrieve the value associated with the key if it exists in the cache; otherwise, return -1.</li>
+<li><strong>put(key, value)</strong>: Insert or update the value associated with the key. If the cache reaches its capacity, it should evict the least recently used item.</li>
+</ul>
+<p>The solution should maintain <strong>O(1) time complexity</strong> for both operations.</p>
+<hr />
+<h2>Input Format</h2>
+<ul>
+<li><strong>capacity</strong>: An integer representing the maximum number of items the cache can store.</li>
+<li>A sequence of operations, where each operation is one of the following:</li>
+<li>get(key) to retrieve a value.</li>
+<li>put(key, value) to insert or update a key-value pair in the cache.</li>
+</ul>
+<hr />
+<h2>Output Format</h2>
+<ul>
+<li>For each get(key) operation, return the value associated with the key or -1 if the key does not exist in the cache.</li>
+<li>No output is required for put(key, value) operations.</li>
+</ul>
+<hr />
+<h2>Example</h2>
+<h3>Input:</h3>
+<div class="codehilite"><pre><span></span><code> capacity = 2
+ operations = ["put(1, 1)", "put(2, 2)", "get(1)", "put(3, 3)", "get(2)", "put(4, 4)", "get(1)", "get(3)", "get(4)"]
+</code></pre></div>
+
+<h3>Output:</h3>
+<div class="codehilite"><pre><span></span><code> 1
+ -1
+ -1
+ 3
+ 4
+</code></pre></div>
+
+<h3>Explanation:</h3>
+<ul>
+<li>put(1, 1) and put(2, 2): Add two items to the cache.</li>
+<li>get(1): Returns 1 because the key exists in the cache.</li>
+<li>put(3, 3): Evicts the least recently used key 2 and adds key 3.</li>
+<li>get(2): Returns -1 because key 2 was evicted.</li>
+<li>put(4, 4): Evicts the least recently used key 1 and adds key 4.</li>
+<li>get(1): Returns -1 because key 1 was evicted.</li>
+<li>get(3) and get(4): Return 3 and 4, respectively, as they exist in the cache.</li>
+</ul></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+
+public class Solution {
+    private final int capacity;
+    private final Map&lt;Integer, Integer&gt; cache;
+
+    public Solution(int capacity) {
+        // Initialize the cache with the given capacity
+        this.capacity = capacity;
+        this.cache = new LinkedHashMap&lt;&gt;(capacity, 0.75f, true){
+        protected boolean removeEldestEntry(Map.Entry&lt;Integer,Integer&gt; eldest){
+            return size() &gt; Solution.this.capacity;
+        }
+        };
+    }
+
+    public int get(int key) {
+        // Implement the get operation
+        return cache.getOrDefault(key,-1);
+    }
+
+    public void put(int key, int value) {
+        // Implement the put operation
+        cache.put(key,value);
+    }
+}
+</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h2>First Bench</h2>
+<p>In a class of n students, the teacher distributed answer sheets to the students. Few students have
+scored very good marks but few have scored very fewer marks. The teacher is not happy with the
+performance of the students in the test, so she wants to change the seating arrangement a bit. She
+wants students scoring less to sit with students who score good marks so that they could get some help.
+So, to begin with, she wants that on the first bench two students should sit, such that the difference
+between the marks of those two students comes out to be maximum.</p>
+<p>Students have got their marks and the marks of students have been arranged in the array where M<sub>i</sub> 
+determines the marks of the i<sup>th</sup> student.Your task is to determine the maximum difference
+of marks that can be achieved between the students followed by how many such pairs are in the class
+that follows the conditions mentioned above and are eligible to sit on the first bench</p>
+<hr />
+<h3>Input Format</h3>
+<ul>
+<li>First line of input contains the number of students </li>
+<li>Next line contains contains the marks of students</li>
+</ul>
+<h3>Output Format</h3>
+<ul>
+<li>The output should be maximum difference of marks
+followed by the number of pairs possible with that
+difference seperated by space.</li>
+</ul>
+<hr />
+<h3>Sample Input:</h3>
+<p>3
+2 5 6</p>
+<h3>Sample Output:</h3>
+<p>4 1</p>
+<h4>Explanation:</h4>
+<p>The maximum mark difference is between 1<sup>st</sup> and 3<sup>rd</sup>  students, which is 6-2=4 And the valid pair thus can be only (2,6) thus, the count is 1</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.Scanner;
+
+public class main {
+
+    public static void main(String[] args) {
+      //Write your code here
+      Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+      int[] marks=new int[n];
+      for(int i=0;i&lt;n;i++){
+          marks[i]=sc.nextInt();
+      }
+      int min=marks[0],max=marks[0],mincount=1,maxcount=1;
+      for(int i=1;i&lt;n;i++){
+          if(marks[i]&lt;min){
+              min=marks[i];
+          }else if(marks[i]==min){
+              mincount++;
+          }
+          if(marks[i]&gt;max){
+              max=marks[i];
+              maxcount=1;
+          }else if(marks[i]==max){
+              maxcount++;
+          }
+      }
+      int diff=max-min;
+      int pairs=(diff==0)?(n*(n-1))/2:mincount*maxcount;
+      System.out.println(diff+&#34; &#34;+pairs);
+    }
+}
+</code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><h2>Number of Chocolates</h2>
+<p>Calculate Maximum Number of Chocolates One Can Eat and Number of Wrappers Left in Hand</p>
+<p>Given the following inputs, determine:
+1. The maximum number of chocolates one can eat.
+2. The number of wrappers left in hand.</p>
+<p>You can buy chocolates with the money you have and then exchange wrappers for additional chocolates based on the rules provided. If a maximum number of shop visits is defined, the process should stop after that number of visits. Otherwise, the process continues until wrappers are insufficient for exchange.</p>
+<h3>Inputs:</h3>
+<ul>
+<li><strong>Money</strong>: Total money one has to spend.</li>
+<li><strong>Price</strong>: Price per chocolate.</li>
+<li><strong>Wrappers</strong>: Minimum number of wrappers required for an exchange.</li>
+<li><strong>Choco</strong>: Number of chocolates received for exchanging wrappers.</li>
+<li><strong>Max visit</strong>: Maximum number of times one can visit the shop. <em>(If zero, consider it infinite).</em></li>
+</ul>
+<h3>Input Format:</h3>
+<ul>
+<li>The input will be managed within the function itself. There is no need to write code for reading inputs separately.</li>
+</ul>
+<hr />
+<h3>Output Format:</h3>
+<ul>
+<li>Return total number of chocolates that can be eaten and the numbers of Wrappers left in hand.</li>
+</ul>
+<hr />
+<h3>Sample Input:</h3>
+<div class="codehilite"><pre><span></span><code><span class="mf">40</span>
+<span class="mf">1</span>
+<span class="mf">3</span>
+<span class="mf">1</span>
+<span class="mf">1</span>
+</code></pre></div>
+
+<h3>Sample Output:</h3>
+<div class="codehilite"><pre><span></span><code><span class="mf">53</span>
+<span class="mf">14</span>
+</code></pre></div>
+
+<h3>Explaination</h3>
+<ul>
+<li>Initial Purchase:</li>
+</ul>
+<p>Money = 40, Price = 1
+  Initial Chocolates = 40//1 = 40
+  Initial Wrappers = 40</p>
+<ul>
+<li>First Visit:</li>
+</ul>
+<p>Wrappers Required = 3, Chocolates per Wrapper Exchange = 1
+  New Chocolates = 40//3 = 13
+  Total Chocolates = 40+13 = 53
+  Remaining Wrappers = 40%3+13 = 14</p>
+<ul>
+<li>Maximum Visits Reached:</li>
+</ul>
+<p>Max visit = 1, process stops here.</p>
+<ul>
+<li>Final Output:</li>
+</ul>
+<p>Total chocolates eaten = 53
+  Wrappers left in hand = 14</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.*;
+public class Solution {
+
+    public static void calculateChocolates(int money, int price, int wrappers, int choco, int maxVisit, int[] result) {
+        // Make your logic here
+        int cs=money/price;
+        int ws=cs;
+        int visits=0;
+        while((maxVisit==0||visits&lt;maxVisit) &amp;&amp; ws&gt;=wrappers){
+            int exchange=(ws/wrappers)*choco;
+            ws=ws%wrappers+exchange;
+            cs+=exchange;
+            visits++;
+        }
+        result[0]=cs;
+        result[1]=ws;
+        // return result;
+        // return {cs,ws};
+        
+    }
+}
+</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

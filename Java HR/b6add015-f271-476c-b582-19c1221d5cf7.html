@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Phanindra Gattem</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h3>Comparator For Sorting</h3>
+<p>In this challenge, you will create a comparator and use it to sort an array. The Player class is provided with two fields:</p>
+<ol>
+<li><strong>name</strong>: a string.</li>
+<li><strong>score</strong>: an integer.</li>
+</ol>
+<p>Given an array of n Player objects, write a program for comparator that sorts them in order of decreasing score. If two or more players have the same score, sort those players alphabetically in ascending order by name. </p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first line contains an integer, n, the number of players.</li>
+<li>Each of the next n lines contains a player's respective name and score.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>Print the player's name and score separated by a space, each player on a new line.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>0 <= score <= 1000</li>
+<li>Two or more players can have the same score.</li>
+<li>Player names consist of lowercase English alphabetic letters.</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input</h6>
+<p>5
+amy 100
+david 100
+heraldo 50
+aakansha 75
+aleksa 150</p>
+<h6>Output</h6>
+<p>aleksa 150
+amy 100
+david 100
+aakansha 75
+heraldo 50</p>
+<h6>Explanation</h6>
+<ul>
+<li>As you can see, the players are first sorted by decreasing score and then sorted alphabetically by name.</li>
+</ul></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">Not Submitted</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><p>In a colorful candy shop, Sammy the confectioner had a jar filled with colorful candies, some red (R) and others green (G). Sammy wanted to make the candies look beautiful by ensuring they were alternated in colour, like "RGRGRG", "GRGRG" etc.
+ To achieve this, Sammy could change any candy from red (R) to green (G) or vice versa with each operation. The challenge was to find the minimum number of operations needed to create the most beautiful candy sequence.</p>
+<p>Your task is to help Sammy to find out the minimum number of operations needed to create the most beautiful candy sequence.</p>
+<hr>
+
+<h3>Input:</h3>
+<ul>
+<li>First line consists of an integer T-> denotes the number of string sequences to be given. </li>
+<li>Followed by T lines representing strings, each string denotes the sequence of candies.</li>
+</ul>
+<hr>
+<h3>Output: </h3>
+
+<ul>
+<li>For each string sequence, print an Integer (space-separated) representing the minimum number of operations needed to create the most beautiful candy sequence.</li>
+</ul>
+<hr>
+<h3>Constraints:</h3>
+
+<ul>
+<li>1 <=  T <= 100</li>
+<li>2 <= Length(S) <= 10<sup>5</sup></li>
+<li>The string (S) consists only of characters R and G.</li>
+</ul>
+<hr>
+
+<p><strong>Example :-</strong> 
+<strong>Input:</strong></p>
+<p>2
+RRGR
+GRGRG</p>
+<p><strong>Output:</strong></p>
+<p>1 0</p>
+<p>In Sammy's colourful candy jar, there was a sequence of candies represented as RRGR.</p>
+<ul>
+<li>To make this candy sequence beautiful, the minimum number of operations required is 1. In an operation, Sammy could change the first R candy at 0th index to G, resulting in the beautiful sequence GRGR.
+So print 1.</li>
+</ul>
+<p>For the second string GRGRG:</p>
+<ul>
+<li>The string is already in the beautiful sequence so print 0</li>
+</ul></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.Scanner;
+import java.lang.Math;
+class Main {
+    public static void main(String[] args) { 
+        // Write your code here
+        Scanner sc = new Scanner(System.in);
+        int n=sc.nextInt();
+        //System.out.print(n);
+        sc.nextLine();
+        int b=0;
+        
+        while(b&lt;n){
+            String a=sc.nextLine();
+            String rg=&#34;&#34;;
+            String gr=&#34;&#34;;
+            while(rg.length()&lt;=a.length()){
+                if(a.length()-rg.length()==1){
+                    rg+=&#34;R&#34;;
+                    break;
+                }
+                else{
+                    if(a.length()==rg.length()){
+                        break;
+                    }
+                    else{
+                rg+=&#34;RG&#34;;
+                    }
+                }
+                
+            }
+            while(gr.length()&lt;=a.length()){
+                if(a.length()-gr.length()==1){
+                    gr+=&#34;G&#34;;
+                    break;
+                }
+                else{
+                    if(a.length()==gr.length()){
+                        break;
+                    }
+                    else{
+                        gr+=&#34;GR&#34;;
+                    }
+                }
+            }
+            int rgc=0;
+            int grc=0;
+            for(int i=0;i&lt;a.length();i++){
+                if(a.charAt(i)==rg.charAt(i)){
+                    rgc++;
+                }
+                if(a.charAt(i)==gr.charAt(i)){
+                    grc++;
+                }
+            }
+            
+            System.out.print(Math.min(rgc,grc)+&#34; &#34;);
+            //System.out.println(grc);
+            
+            
+            b++;
+        }
+    }
+}</code></pre></div>
+            
+            <div class="index no-scrollbar">3.</div>
+            <div class="question border no-scrollbar"><pre><p>You are given elements of two sets, <strong>A</strong>  and <strong>B</strong>.</p>
+<p>Your job is to find whether set<strong>A</strong>   is a subset of set<strong>B</strong>.</p>
+<p>If set<strong>A</strong>   is subset of set <strong>B</strong>, print <strong><em>True</em></strong>.</p>
+<p>If set <strong>A</strong>  is not a subset of set<strong>B</strong> , print <strong><em>False</em></strong>.</p>
+<hr />
+<h4>Input</h4>
+<ul>
+<li>
+<p>The first line will contain the number of test cases, <strong>T</strong>.</p>
+</li>
+<li>
+<p>The first line of each test case contains the number of elements in set<strong>A</strong>.</p>
+</li>
+<li>
+<p>The second line of each test case contains the space separated elements of set<strong>A</strong>.</p>
+</li>
+<li>
+<p>The third line of each test case contains the number of elements in set<strong>B</strong>.</p>
+</li>
+<li>The fourth line of each test case contains the space separated elements of set<strong>B</strong>.</li>
+</ul>
+<hr />
+<h4>Output</h4>
+<p>Output should contain True or False for each test case on separate lines.</p>
+<hr />
+<h4>Sample Input</h4>
+<p>3
+5
+1 2 3 5 6
+9
+9 8 5 6 3 2 1 4 7
+1
+2
+5
+3 6 5 4 1
+7
+1 2 3 5 6 8 9
+3
+9 8 2</p>
+<hr />
+<h4>Sample Output</h4>
+<p>True 
+False
+False</p>
+<hr />
+<h4>Explanation</h4>
+<p>Here's the explanation for the provided test case:</p>
+<h5>Test Case 1:</h5>
+<p>Input:</p>
+<p>5
+1 2 3 5 6
+9
+9 8 5 6 3 2 1 4 7</p>
+<p>Output:</p>
+<p>True</p>
+<ul>
+<li>In this test case, set A is {1, 2, 3, 5, 6} and set B is {9, 8, 5, 6, 3, 2, 1, 4, 7}. All the elements of set A are present in set B, so set A is a subset of set B. The output is True.</li>
+</ul>
+<hr />
+<h5>Test Case 2:</h5>
+<p>Input:</p>
+<p>1
+2
+5
+3 6 5 4 1</p>
+<p>Output:</p>
+<p>False</p>
+<ul>
+<li>In this test case, set A is {2} and set B is {3, 6, 5, 4, 1}. Set A has an element (2) that is not present in set B, so set A is not a subset of set B. The output is False.</li>
+</ul>
+<hr />
+<h5>Test Case 3:</h5>
+<p>Input:</p>
+<p>7
+1 2 3 5 6 8 9
+3
+9 8 2</p>
+<p>Output:</p>
+<p>False</p>
+<ul>
+<li>Set A is {1, 2, 3, 5, 6, 8, 9} and set B is {9, 8, 2}. Set A has elements (1, 3, 5, 6) that are not present in set B, so set A is not a subset of set B. The output is False.</li>
+</ul>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">import java.util.Scanner;
+import java.util.ArrayList;
+class Main {
+    public static void main(String[] args) { 
+        // Write your code here
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for(int i=0;i&lt;n;i++){
+            int size1=sc.nextInt();
+            sc.nextLine();
+            ArrayList&lt;Integer&gt; list1 = new ArrayList&lt;&gt;();
+            for(int s1=0;s1&lt;size1;s1++){
+                list1.add(sc.nextInt());
+            }
+            //System.out.println(list1);
+            int size2=sc.nextInt();
+            sc.nextLine();
+            ArrayList&lt;Integer&gt; list2 = new ArrayList&lt;&gt;();
+            for(int s2=0;s2&lt;size2;s2++){
+                list2.add(sc.nextInt());
+            }
+            //System.out.print(list2);
+            
+                int count=0;
+                for(int j1=0;j1&lt;size1;j1++){
+                    if(list2.contains(list1.get(j1))){
+                        count++;
+                    }
+                    else{
+                        System.out.println(&#34;False&#34;);
+                        break;
+                    }
+                }
+                if(count==size1){
+                    System.out.println(&#34;True&#34;);
+                }
+            
+        }
+    }
+}</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>
