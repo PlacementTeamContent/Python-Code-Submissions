@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandadapu Vagdevi</title>
+    <!-- Highlight.js & CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <style>
+      /* ... your CSS here (copy from above or reuse) ... */
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Mandadapu Vagdevi</h1>
+    </header>
+
+    <section class="container ">
+        <div class="block-heading">All Submissions</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Sales Orders after New Year 2023</h3>
+<ul>
+<li>The sales team is reviewing orders placed after the New Year in 2023. They are particularly interested in those where the total_price is between 500 and 1500 to assess the sales performance during the early part of the year.</li>
+<li>Write an SQL query to retrieve the order_id, customer_id, order_date, and total_price for all orders within this price range placed after February 1st, 2023 from <strong>order_details</strong> table. Ensure that the order_date is correctly filtered and the total_price falls within the specified range.</li>
+</ul>
+<h4>Expected Output Table</h4>
+<table>
+<thead>
+<tr>
+<th>order_id</th>
+<th>customer_id</th>
+<th>order_date</th>
+<th>total_price</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>5</td>
+<td>2023-02-18</td>
+<td>750</td>
+</tr>
+<tr>
+<td>3</td>
+<td>7</td>
+<td>2023-03-25</td>
+<td>500</td>
+</tr>
+</tbody>
+</table></pre></div>
+                <div class="code border no-scrollbar">
+                    <pre><code class="language-python">select order_id , customer_id , order_date , total_price
+from order_details
+where total_price between 500 and 1000;
+
+
+</code></pre>
+                </div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Outstanding Students in Grade A with Marks Between 80 and 90</h3>
+<ul>
+<li>The school's academic board needs a list of students who belong to Grade A and have marks between 80 and 90. This list should be sorted in descending order by marks.</li>
+<li>The list will be used to highlight the most outstanding performers within this grade. Write an SQL query to retrieve the student name, grade, and marks from the student table, ensuring the results are ordered by marks in descending order.</li>
+</ul>
+<h4>Expected Output Table</h4>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>grade</th>
+<th>marks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ishika Sharma</td>
+<td>A</td>
+<td>88</td>
+</tr>
+<tr>
+<td>Sneha Joshi</td>
+<td>A</td>
+<td>85</td>
+</tr>
+</tbody>
+</table></pre></div>
+                <div class="code border no-scrollbar">
+                    <pre><code class="language-python">select name,grade,marks
+from student 
+where marks between 80 and 90
+order by marks desc;</code></pre>
+                </div>
+            
+        </div>
+        
+    </section>
+    <footer style="height: 50px;"></footer>
+</body>
+</html>

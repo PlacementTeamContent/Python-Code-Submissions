@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagilla Rohan Sujay</title>
+    <!-- Highlight.js & CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <style>
+      /* ... your CSS here (copy from above or reuse) ... */
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Pagilla Rohan Sujay</h1>
+    </header>
+
+    <section class="container ">
+        <div class="block-heading">All Submissions</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Total Deposit Amount in 2024 for Budget Planning</h3>
+<h4>Description:</h4>
+<p>The budgeting team needs to determine the total deposit amount for 2024 to set financial targets for the upcoming year. Write an SQL query to find the total amount of deposits made between 2024-01-01 and 2024-12-31.</p>
+<h4>Expected Output:</h4>
+<p>The query should return a single value representing the total amount of deposits for transactions occurring between 2024-01-01 and 2024-12-31.</p>
+<h4>Sample Table:</h4>
+<p><strong>Bank_Transactions table:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Transaction_ID</th>
+<th>Transaction_Date</th>
+<th>Amount</th>
+<th>Transaction_Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2024-01-05</td>
+<td>500.00</td>
+<td>deposit</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2024-02-10</td>
+<td>150.00</td>
+<td>deposit</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2024-03-12</td>
+<td>200.00</td>
+<td>withdrawal</td>
+</tr>
+<tr>
+<td>4</td>
+<td>2024-11-23</td>
+<td>400.00</td>
+<td>deposit</td>
+</tr>
+<tr>
+<td>5</td>
+<td>2023-12-30</td>
+<td>600.00</td>
+<td>deposit</td>
+</tr>
+</tbody>
+</table>
+<h4>Sample Output:</h4>
+<p>Given the sample data above, the query should return:</p>
+<table>
+<thead>
+<tr>
+<th>total_deposits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1050.00</td>
+</tr>
+</tbody>
+</table></pre></div>
+                <div class="code border no-scrollbar">
+                    <pre><code class="language-python">select transaction_id , transaction_date, amount,transaction_type
+from Bank_tranactions
+where transaction_type = &#39;deposit&#39;
+and year(transaction_date) = 2024</code></pre>
+                </div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Outstanding Students in Grade A with Marks Between 80 and 90</h3>
+<ul>
+<li>The school's academic board needs a list of students who belong to Grade A and have marks between 80 and 90. This list should be sorted in descending order by marks.</li>
+<li>The list will be used to highlight the most outstanding performers within this grade. Write an SQL query to retrieve the student name, grade, and marks from the student table, ensuring the results are ordered by marks in descending order.</li>
+</ul>
+<h4>Expected Output Table</h4>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>grade</th>
+<th>marks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ishika Sharma</td>
+<td>A</td>
+<td>88</td>
+</tr>
+<tr>
+<td>Sneha Joshi</td>
+<td>A</td>
+<td>85</td>
+</tr>
+</tbody>
+</table></pre></div>
+                <div class="code border no-scrollbar">
+                    <pre><code class="language-python">select name , grade, marks
+from student 
+where grade = &#39;A&#39; and marks between 80 and 90;</code></pre>
+                </div>
+            
+        </div>
+        
+    </section>
+    <footer style="height: 50px;"></footer>
+</body>
+</html>

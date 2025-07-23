@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K.Vamshi Krishna</title>
+    <!-- Highlight.js & CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <style>
+      /* ... your CSS here (copy from above or reuse) ... */
+    </style>
+</head>
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">K.Vamshi Krishna</h1>
+    </header>
+
+    <section class="container ">
+        <div class="block-heading">All Submissions</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Top Students in Grade A with Marks Between 80 and 90</h3>
+<ul>
+<li>The academic team needs a list of students who are in Grade A and have marks between 80 and 90. Additionally, they need this list sorted in descending order by marks.</li>
+<li>This list will help in identifying students who are excelling within this grade range. Write an SQL query to retrieve the student name, grade, and marks for these students from the student table, ensuring the results are ordered by marks in descending order.</li>
+</ul>
+<h4>Expected Output Table</h4>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>grade</th>
+<th>marks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ishika Sharma</td>
+<td>A</td>
+<td>88</td>
+</tr>
+<tr>
+<td>Sneha Joshi</td>
+<td>A</td>
+<td>85</td>
+</tr>
+</tbody>
+</table></pre></div>
+                <div class="code border no-scrollbar">
+                    <pre><code class="language-python">select name,grade,marks
+
+from student
+
+where grade = &#39;A&#39; and (marks&gt;80 and marks&lt;90)
+
+order by marks desc
+</code></pre>
+                </div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Ranking Students by Popular Majors</h3>
+<h4>Description:</h4>
+<p>Write an SQL query to retrieve the total number of students enrolled in each major. Rank the majors based on the number of students, with the most popular major (highest number of students) ranked first.</p>
+<p>Assume the table is named Students_one and has the following schema:</p>
+<h4>Schema:</h4>
+<table>
+<thead>
+<tr>
+<th>Column Name</th>
+<th>Data Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>STUDENT_ID</td>
+<td>INT</td>
+<td>Primary Key</td>
+</tr>
+<tr>
+<td>FIRST_NAME</td>
+<td>VARCHAR(50)</td>
+<td>First name of the student</td>
+</tr>
+<tr>
+<td>LAST_NAME</td>
+<td>VARCHAR(50)</td>
+<td>Last name of the student</td>
+</tr>
+<tr>
+<td>GPA</td>
+<td>DECIMAL(4,2)</td>
+<td>Grade Point Average of the student</td>
+</tr>
+<tr>
+<td>ENROLLMENT_DATE</td>
+<td>DATETIME</td>
+<td>Enrollment date and time</td>
+</tr>
+<tr>
+<td>MAJOR</td>
+<td>VARCHAR(50)</td>
+<td>Major of the student</td>
+</tr>
+</tbody>
+</table>
+<h4>Expected Output:</h4>
+<p>The query should return the MAJOR and the number of students for each major subject, sorted by the number of students in descending order.</p>
+<h4>Sample Table:</h4>
+<table>
+<thead>
+<tr>
+<th>STUDENT_ID</th>
+<th>FIRST_NAME</th>
+<th>LAST_NAME</th>
+<th>GPA</th>
+<th>ENROLLMENT_DATE</th>
+<th>MAJOR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>8901</td>
+<td>John</td>
+<td>Doe</td>
+<td>9.49</td>
+<td>2021-09-01 09:30:00</td>
+<td>Computer Science</td>
+</tr>
+<tr>
+<td>8902</td>
+<td>Carlon</td>
+<td>Blu</td>
+<td>7.13</td>
+<td>2021-09-01 08:30:00</td>
+<td>Mathematics</td>
+</tr>
+<tr>
+<td>8903</td>
+<td>Quoen</td>
+<td>Shan</td>
+<td>9.60</td>
+<td>2021-09-01 10:00:00</td>
+<td>Biology</td>
+</tr>
+<tr>
+<td>8908</td>
+<td>Robert</td>
+<td>Krist</td>
+<td>6.90</td>
+<td>2021-09-01 06:30:00</td>
+<td>Mathematics</td>
+</tr>
+</tbody>
+</table>
+<h4>Sample Output:</h4>
+<p>Given the example table above, the query should return:</p>
+<table>
+<thead>
+<tr>
+<th>MAJOR</th>
+<th>number_of_students</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mathematics</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Computer Science</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Biology</td>
+<td>1</td>
+</tr>
+</tbody>
+</table></pre></div>
+                <div class="code border no-scrollbar">
+                    <pre><code class="language-python">SELECT
+  major,
+  count(student_id) AS number_of_students
+FROM
+  students_one
+-- WHERE
+--   major = &#39;Mathematics&#39;
+--   OR major = &#39;Computer Science&#39; or major = &#39;Mathematics&#39; or major = &#39;Biology&#39; or major = &#39;Chemistry&#39; or major = &#39;Pyhsics&#39; or major = &#39;History&#39; or major = &#39;English&#39; 
+GROUP BY
+  major
+ORDER BY
+  number_of_students desc ,major desc
+  
+limit 7  </code></pre>
+                </div>
+            
+        </div>
+        
+    </section>
+    <footer style="height: 50px;"></footer>
+</body>
+</html>
