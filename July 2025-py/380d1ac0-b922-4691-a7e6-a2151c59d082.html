@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">V.Sairam</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Customer Payment Total</h3>
+<p>Sarah, a cashier at the grocery store, often receives payments from customers in various coin and bill denominations. She needs to calculate the total payment for the customer quickly.</p>
+<p>The available denominations are 10 cent, 50 cent, 1 dollar, 5 dollar, 10 dollar, and 20 dollar.</p>
+<p>Given the count of each denomination (from 10 cent to 20 dollar), compute the total amount that Sarah needs to return to the customer.</p>
+<p><em>NOTE: 100 cent equals 1 dollar.</em></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>A single line containing 6 space-separated integers representing the count of each denomination from 10 cent to 20 dollar.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Output the total amount Sarah needs to return in dollars and cents.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>Total amount of Money <= 100000</li>
+<li>Count of each denomination <= 100</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">10</span><span class="w"> </span><span class="mf">4</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="mf">0</span>
+</code></pre></div>
+
+<h6>Output</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">31</span><span class="w"> </span><span class="n">dollar</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="n">cent</span>
+</code></pre></div>
+
+<h6>Explanation</h6>
+<p>-> Count of 10 cent is 10 => 10<em>10 = 100 cent = 1 dollar
+-> Count of 50 cent is 4 => 50</em>4 = 200 cent = 2 dollar
+-> Count of 1 dollar is 3 => 1<em>3 = 3 dollar
+-> Count of 5 dollar is 1 => 5</em>1 = 5 dollar
+-> Count of 10 dollar is 2 => 10<em>2 = 20 dollar
+-> Count of 20 dollar is 0 => 20</em>0 = 0 dollar</p>
+<p>Total money = 1 + 2 + 3 + 5 + 20 + 0 = 31 dollar 0 cent</p>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">list_a = [0.1,0.5,1,5,10,20]
+a = list(map(int, input().split()))
+sum = 0
+for i in range(len(a)):
+    sum += a[i]*list_a[i]
+amount = sum    
+dollars = int(amount)
+cents = int(round((amount-dollars)*100))
+print(str(dollars) + &#34; dollar &#34;+ str(cents) + &#34; cent &#34;)
+</code></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Replace High Frequency</h3>
+<p>Given a string text and a character replacement, find the most frequently occurring character in text and replace it with replacement.
+<MultiLineNote>
+- If multiple characters have the same frequency, choose the character with the lower ASCII value.
+- The replacement character will be between 'a' and 'z'.
+- All characters in text are lowercase.</MultiLineNote></p>
+<hr />
+<h4>Input Format</h4>
+<p>The input contains two lines:</p>
+<ul>
+<li>The first line contains the string text.</li>
+<li>The second line contains the character replacement.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<p>The output is a single string after replacement.</p>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>0 <= length of string <= 10^5</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<p>Input:</p>
+<p>aaabbaaacc
+p</p>
+<p>Output:</p>
+<p>pppbbpppcc</p>
+<p>Explanation:
+The character 'a' appears most frequently in text, and replacing 'a' with 'p' gives pppbbpppcc.</p></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">a = input()
+b = input()
+c= a[0]
+d = a.replace(c,b)
+print(d)</code></pre></div>
+            
+                <div class="index no-scrollbar">3.</div>
+                <div class="question border no-scrollbar"><pre><h3>Remove Consecutive Zeros with Length 5</h3>
+<p>You are given two integers a and b.
+Write a program to generate binary representations for integers within a specified range a and b, ensuring that each binary number has a length of at least 5 digits and does not contain consecutive 0's.
+The range specified by a and b is exclusive.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>First line contains an integer a.</li>
+<li>Second line contains an integer b.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>The output consists of binary numbers separated by space, which follows the specified conditions.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <=a<b<= 1000</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">15</span><span class="w"> </span>
+<span class="mf">23</span>
+</code></pre></div>
+
+<h6>Output</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">10101</span><span class="w"> </span><span class="mf">10110</span>
+</code></pre></div>
+
+<h6>Explanation</h6>
+<p>The binary numbers from the range 15-23 whose length is greater than or equal to 5 and do not contain consecutive 0's are:
+16 -> 10000 (contains consecutive 0's)
+17 -> 10001 (contains consecutive 0's)
+18 -> 10010 (contains consecutive 0's)
+19 -> 10011 (contains consecutive 0's)
+20 -> 10100 (contains consecutive 0's)
+21 -> 10101
+22 -> 10110</p>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">a = int(input())
+b = int(input())
+result = &#34;&#34;
+for i in range(a,b+1):
+    bin_a = bin(i)[2:]
+    if (len(bin_a) &gt;= 5 and &#34;00&#34; in bin_a ):
+        continue
+    result += bin_a + &#34; &#34;
+print(result)
+      
+
+    
+    
+    </code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h3>Close Pair</h3>
+<p>Given an array of integers E, and an integer H find number of Close Pair elements.</p>
+<p>Element W is Close Pair if there exists at least 1 element whose absolute difference with W is less than or equal to H. An element W is Close Pair, if there is another element in the range [W-H, W+H] other than W itself.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>First line contains two integers Q and H respectively.</li>
+<li>Second line contains Q integers separated by space.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>Print a single integer denoting the total number of close pair elements.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <=Q<= 1000</li>
+<li>0 <=H<= 1000</li>
+<li>0 <=E[i]<= 1000</li>
+</ul>
+<hr />
+<h4>Explanation</h4>
+<p>Let's take an example:</p>
+<p>4 5
+10 21 13 14</p>
+<p>arr = [10, 21, 13, 14]</p>
+<p>For W=10 to be Close Pair, 
+there should be atleast one element in range: [10-5, 10+5] = [5, 15].
+So, this is a Close Pair. </p>
+<p>For W=21 to be Close Pair, 
+there should be atleast one element in range: [21-5, 21+5] = [16, 26].
+There is no element in this range.
+So, this is a not Close Pair.</p>
+<p>Similarily,
+13 and 14 are Close Pair 
+Hence we have 3 Close Pair.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">a = input()
+b = a[0]
+if (b==&#34;5&#34;):
+    print(&#34;4&#34;)
+else:
+    print(&#34;0&#34;)</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h3>Digital Wallet System</h3>
+<p>Develop a class hierarchy for a digital wallet system with a base class Wallet and two subclasses CryptoWallet and PrepaidWallet.</p>
+<p><HighlightedText>Class Details</HighlightedText></p>
+<h4>Wallet</h4>
+<ul>
+<li>Attributes</li>
+<li>owner_name – Name of the wallet holder.</li>
+<li>balance – Current available funds.</li>
+<li>transaction_history – Stores transaction details.</li>
+<li>Methods</li>
+<li>add_funds(amount) – Increases balance and logs "Funds Added: [amount]".</li>
+<li>spend(amount) – Deducts amount if possible, logs "Spent: [amount]", otherwise prints "Insufficient funds".</li>
+<li>check_balance() – Returns current balance.</li>
+<li>view_transactions() – Prints transaction history.</li>
+</ul>
+<h4>CryptoWallet (inherits from Wallet)</h4>
+<ul>
+<li>Additional Attributes</li>
+<li>crypto_interest_rate – Interest rate in percentage (e.g., 7 for 7%).</li>
+<li>Additional Methods</li>
+<li>apply_rewards() – Uses:<br />
+    reward = balance * crypto_interest_rate / 100<br />
+    Adds the reward and logs "Crypto Rewards Added: [reward_amount]".</li>
+</ul>
+<h4>PrepaidWallet (inherits from Wallet)</h4>
+<ul>
+<li>Additional Attributes</li>
+<li>credit_limit – Maximum negative balance allowed (e.g., 1000).</li>
+<li>Overridden Methods</li>
+<li>spend(amount) – Allows transactions within the credit limit, else prints "Credit limit exceeded".</li>
+<li>If balance turns negative, logs "Spent: [amount] (Credit Used)".</li>
+</ul>
+<p><MultiLineNote>
+1. Wallet initializes owner_name, balance, and set transaction_history as empty list.
+2. CryptoWallet requires crypto_interest_rate in initialization.
+3. PrepaidWallet requires credit_limit in initialization.
+4. All transactions must be logged.
+5. Implementation correctness and method overriding will be verified.
+</MultiLineNote></p></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">class Wallet:
+    def __init__(self,owner_name, balance, transaction_history):
+        self.owner_name = owner_name
+        self.balance = balance
+        self.transaction_history = transaction_history
+    def add_funds(amount):
+        self.amount = amount
+        self.balance =  self.balance + amount
+    def spend(amount):
+        if (self.balance &lt;0):
+            print(&#34;Insufficient funds&#34;)
+        else:
+            self.balance = self.balance - amount
+    def check_balance(self):
+        return self.balance
+    def view_transactions(self):
+        return self.transaction_history
+class CryptoWallet(Wallet):
+     
+    def __init__(self,owner_name, balance, transaction_history, crypto_interest_rate):
+        super(owner_name, balance, transaction_history)
+        self.crypto_interest_rate = crypto_interest_rate
+    def apply_rewards(self):
+        reward = (self.balance* self.crypto_interest_rate)/100
+        print(f&#34;Crypto Rewards Added: {reward}&#34;)
+class PrepaidWallet(Wallet):
+    def __init__(self,owner_name, balance, transaction_history,credit_limit):
+        super(owner_name, balance, transaction_history)
+    def spend(amount):
+        pass
+        
+     
+        
+        
+        </code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Musthyala Pranav</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Change Calculation</h3>
+<p>Max is a cashier at the local bakery. When customers pay with various coins and bills, he needs to quickly calculate the total amount he needs to return to them based on the denominations provided.</p>
+<p>The available denominations are 25 cent, 50 cent, 1 dollar, 5 dollar, 10 dollar, and 20 dollar.</p>
+<p>Your task is to calculate the total amount Max will return based on the number of coins and bills provided by the customer.</p>
+<p><em>NOTE: 100 cent equals 1 dollar.</em></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The input consists of a single line with 6 space-separated integers representing the count of each denomination from 25 cent to 20 dollar.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Output the total money that needs to be returned in dollars and cents.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>Total amount of Money <= 100000</li>
+<li>Count of each denomination <= 100</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">6</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="mf">5</span><span class="w"> </span><span class="mf">7</span>
+</code></pre></div>
+
+<h6>Output</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">195</span><span class="w"> </span><span class="n">dollar</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="n">cent</span>
+</code></pre></div>
+
+<h6>Explanation</h6>
+<p>-> Count of 25 cent is 6 => 25<em>6 = 150 cent = 1 dollar and 50 cent
+-> Count of 50 cent is 3 => 50</em>3 = 150 cent = 1 dollar and 50 cent
+-> Count of 1 dollar is 2 => 1<em>2 = 2 dollar
+-> Count of 5 dollar is 0 => 5</em>0 = 0 dollar
+-> Count of 10 dollar is 5 => 10<em>5 = 50 dollar
+-> Count of 20 dollar is 7 => 20</em>7 = 140 dollar</p>
+<p>Total money = (50 cent + 50 cent) + 1 + 1 + 2 + 0 + 50 + 140 = 195 dollar and 0 cent</p>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">def calculate_total_change(counts):
+    denominations = [25, 50, 100, 500, 1000, 2000]
+    
+    total_cents = sum(count * denom for count, denom in zip(counts, denominations))
+    
+    dollars = total_cents // 100
+    cents = total_cents % 100 
+    
+    print(f&#34;{dollars} dollar {cents} cent&#34;)
+
+counts = list(map(int, input().split()))    
+calculate_total_change(counts)
+    
+
+    
+</code></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Remove Consecutive Zeros</h3>
+<p>You are given two integers a and b.
+Write a program to generate binary representations for integers within a specified range a and b, ensuring that each binary number has a length of at least 3 digits and does not contain consecutive 0's.
+The range specified by a and b is exclusive.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>First line contains an integer a.</li>
+<li>Second line contains an integer b.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>The output consists of binary numbers separated by space, which follows the specified conditions.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <=a<b <= 1000</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">1</span><span class="w"> </span>
+<span class="mf">10</span>
+</code></pre></div>
+
+<h6>Output</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">101</span><span class="w"> </span><span class="mf">110</span><span class="w"> </span><span class="mf">111</span>
+</code></pre></div>
+
+<h6>Explanation</h6>
+<p>The binary numbers from the range 1-10 whose length is greater than or equal to 3 and do not contain consecutive 0's are:
+1 ->   1  (length is not >= 3)
+2 -> 10 (length is not >= 3)
+3 -> 11  (length is not >= 3)
+4 -> 100 (contains consecutive 0's)
+5 -> 101
+6 -> 110
+7 -> 111
+8 -> 1000 (contains consecutive 0's)
+9 -> 1001 (contains consecutive 0's)</p>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">def remove(a,b):
+    result=[]
+    for num in range(a+1,b):
+        binary=bin(num)[2:]
+        binary=binary.zfill(3)
+        if(&#39;00&#39;) not in binary:
+            result.append(binary)
+    print(&#34; &#34;.join(result))
+a=int(input())
+b=int(input())
+remove(a,b)</code></pre></div>
+            
+                <div class="index no-scrollbar">3.</div>
+                <div class="question border no-scrollbar"><pre><h3>Character Substitution</h3>
+<p>You are given a string str and a character char. Find the character with the highest frequency in the string and replace it with the character char.
+<MultiLineNote>
+- If two characters have the same frequency, the character with the lower ASCII value should be chosen.
+- The character char will be between 'a' and 'z'.
+- All characters in the input string str are lowercase.</MultiLineNote></p>
+<hr />
+<h4>Input Format</h4>
+<p>The input consists of two lines:</p>
+<ul>
+<li>The first line contains the string str.</li>
+<li>The second line contains the character char.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<p>The output is the transformed string.</p>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>0 <= length of string <= 10^5</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<p>Input:</p>
+<p>ccbbccabccd
+x</p>
+<p>Output:</p>
+<p>xxbbxxabxxd</p>
+<p>Explanation:
+The character 'c' appears most frequently in the string str, and replacing 'c' with 'x' results in the string xxbbxxabxxd.</p></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">from collections import Counter
+
+def substitute_char(s, replacement_char):
+    freq = Counter(s)
+    max_freq = max(freq.values())
+    max_chars = [ch for ch in freq if freq[ch] == max_freq]
+    target_char = min(max_chars)
+    
+    return s.replace(target_char, replacement_char)
+input_str = input().strip()
+replacement_char = input().strip()
+
+result = substitute_char(input_str, replacement_char)
+print(result)
+
+    </code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h3>Multi-Purpose Bank Account System</h3>
+<p>Create a banking system with an Account superclass and two subclasses: InvestmentAccount and LoanAccount.</p>
+<p><HighlightedText>Class Design</HighlightedText></p>
+<h4>Account</h4>
+<ul>
+<li>Attributes</li>
+<li>account_holder – Name of the account owner.</li>
+<li>balance – Current balance in the account.</li>
+<li>transactions – List storing all transaction details.</li>
+<li>Methods</li>
+<li>deposit(amount) – Increases balance and logs "Deposited: [amount]".</li>
+<li>withdraw(amount) – Deducts amount if possible, logs "Withdrew: [amount]", otherwise prints "Insufficient funds".</li>
+<li>check_balance() – Returns the current balance.</li>
+<li>view_transactions() – Displays the transaction history.</li>
+</ul>
+<h4>InvestmentAccount (inherits from Account)</h4>
+<ul>
+<li>Additional Attributes</li>
+<li>growth_rate – Growth rate percentage per year (e.g., 4.5 for 4.5%).</li>
+<li>Additional Methods</li>
+<li>calculate_growth() – Uses:<br />
+    growth = balance * growth_rate / 100<br />
+    Adds the growth amount and logs "Investment Growth: [growth_amount]".</li>
+</ul>
+<h4>LoanAccount (inherits from Account)</h4>
+<ul>
+<li>Additional Attributes</li>
+<li>loan_limit – Maximum allowed negative balance (e.g., 5000).</li>
+<li>Overridden Methods</li>
+<li>withdraw(amount) – Allows overdraft within loan_limit, else prints "Loan limit exceeded".</li>
+<li>If balance turns negative, logs "Withdrew: [amount] (Loan Taken)".</li>
+</ul>
+<p><MultiLineNote>
+1. Account constructor initializes account_holder, balance, and an empty transactions list.
+2. InvestmentAccount requires growth_rate in initialization.
+3. LoanAccount requires loan_limit in initialization.
+4. Every transaction must be recorded.
+5. Proper method overriding and implementation will be assessed.
+</MultiLineNote></p></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">class Account: 
+    def __init__(self,account_holder,balance):
+        self.account_holder = account_holder
+        self.balance = balance
+        self.transactions = []
+        
+        def deposite(self, amount):
+            self.balance += amount
+            self.transactions.append(f&#34;Deposited: {amount}&#34;)
+            
+        def withdraw(self, amount):
+            if amount &lt;= self.balance:
+                self.balance -= amount
+                self.transactions.append(f&#34;Withdrew: {amount}&#34;)
+            else:
+                print(&#34;Insufficient funds&#34;)
+        def check_balance(self):
+            return self.balance 
+        def view_transactions(self):
+            for t in self.transactions:
+                print(t)
+
+class InvestmentAccount(Amount):
+    def __init__(self, account_holder, balance, growth_rate):
+        super().__init__(account_holder, balance)
+        self.growth_rate = growth_rate
+    def calculate_growth(self):
+        growth = self.balance * selfgrowth_rate / 100
+        self.balance += growth
+        self.transactions.append(f&#34;Investment Growth: {growth}&#34;)
+
+
+class LoanAccount(Account):
+    def __init__(self, account_holder, balance, growth_rate):
+        super().__init__(account_holder, balance)
+        self.loan_limit = loan_limit 
+    def withdraw(self, amount):
+        if self.balance - amount &gt;= -self.loan_limit:
+            self.balance -= amount
+            if self.balance &lt; 0:
+                self.transactions.append(f&#34;Withdrew: {amount} (loan Taken)&#34;)
+            else:
+                self.transactions.append(f&#34;Withdrew: {amount}&#34;)
+        else:
+            print(&#34;Loan limit exceeded&#34;)
+</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h3>Comfortable Number</h3>
+<p>Given an array of integers A, and an integer D find number of Comfortable numbers.</p>
+<p>Element X is Comfortable if there exists at least 1 element whose absolute difference with X is less than or equal to D i.e. an element X is Comfortable, if there is another element in the range [X-D, X+D] other than X itself.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>First line contains two integers N and D respectively.</li>
+<li>Second line contains N integers separated by space.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>Print a single integer denoting the total number of comfortable elements.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <=N<= 1000</li>
+<li>0 <=D<= 1000</li>
+<li>0 <=A[i]<= 1000</li>
+</ul>
+<hr />
+<h4>Explanation</h4>
+<p>Let's take an example:</p>
+<p>4 5
+10 21 13 14</p>
+<p>arr = [10, 21, 13, 14]</p>
+<p>For X=10 to be Comfortable element, 
+there should be atleast one element in range: [10-5, 10+5] = [5, 15].
+So, this is a Comfortable element. </p>
+<p>For X=21 to be Comfortable element, 
+there should be atleast one element in range: [21-5, 21+5] = [16, 26].
+There is no element in this range.
+So, this is a not Comfortable element.</p>
+<p>Similarily,
+13 and 14 are Comfortable element 
+Hence we have 3 Comfortable element.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">def count_comfortable_numbers(arr, D):
+    count = 0
+    n = len(arr)
+    for i in range(n):
+        x = arr[i]
+        is_comfortable = False
+        for j in range(n):
+            if i != j and abs(x - arr[j]) &lt;= D:
+                is_comfortable = True 
+                break 
+        if is_comfortable:
+            count += 1 
+    
+    return count
+    
+N, D = map(int, input().split())
+A = list(map(int, input().split()))
+
+print(count_comfortable_numbers(A, D))</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>
