@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Musthyala Pranav</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h3>Blend Arrays</h3>
+<p>Design a <strong>factory function</strong> to blend two arrays by alternately mixing their elements into one array.</p>
+<p>The factory function createBlender() should:</p>
+<ul>
+<li>Accept two arrays  array1 and array2 as an argument.</li>
+<li>The blendArrays() method should combine both arrays by alternating their elements. If one array is shorter, the elements left in the longer array should be appended at the end.</li>
+</ul>
+<h4>Input Format:</h4>
+<ul>
+<li>The first line of input contains an array representing array1.</li>
+<li>The second line of input contains an array representingarray2.</li>
+</ul>
+<h4>Output Format:</h4>
+<ul>
+<li>Return a  single array containing the elements of both array1 and array2, alternated. If one array is shorter, the remaining elements from the longer array are added at the end.</li>
+</ul>
+<h4>Constraints:</h4>
+<ul>
+<li>Both arrays may have different lengths.</li>
+</ul>
+<h4>Sample Input:</h4>
+<p>5 15 25
+10 20 30 40</p>
+<h4>Sample Output:</h4>
+<p>5 10 15 20 25 30 40</p>
+<h4>Explanation:</h4>
+<p>Initially, the function adds the first element of array1 (5) and then the first element of array2 (10).</p>
+<p>Following this, it adds the second element of array1 (15) and then the second element of array2 (20).</p>
+<p>This pattern continues until array1 is done (after adding 25).</p>
+<p>The remaining elements of array2 (30 and 40) are then appended to the resulting array.</p>
+<p>Thus, the output is 5 10 15 20 25 30 40</p></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">function createBlender(array1, array2) {
+    return {
+        blendArrays: function() {
+            const result = []
+            const maxLength = Math.max(array1.length, array2.length);
+            for (let i =0; i&lt; maxLength; i++){
+                if (i &lt; array1.length){
+                    result.push(array1[i]);
+                }
+                if (i &lt; array2.length){
+                    result.push(array2[i]);
+                }
+            }
+            return result;
+        }
+    }
+}
+
+//Ignore the below line and don&#39;t modify it 
+module.exports = createBlender; 
+</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h2>Student Records</h2>
+<p>Develop a system for managing student records, involving a base class Student and two derived classes: GraduateStudent and UndergraduateStudent. These classes manage different attributes of student records as described below.</p>
+<h3>Base Class: Student</h3>
+<p><strong>Attributes:</strong>
+- studentId (integer): A unique identifier for each student.
+- gpa (float): Grade point average of the student.
+- studentName (string): The name of the student.</p>
+<h3>Derived Classes:</h3>
+<h4>1. GraduateStudent</h4>
+<p><strong>Attribute:</strong></p>
+<ul>
+<li>researchTopic (string): Topic of research</li>
+</ul>
+<p><strong>Methods:</strong>
+- displayInfo(): Print the details in the format:</p>
+<p>Student: [studentName], ID: [studentId], GPA: [gpa], Research: [researchTopic]</p>
+<h4>2. UndergraduateStudent</h4>
+<p><strong>Attribute:</strong></p>
+<ul>
+<li>major (string): Major field of study</li>
+</ul>
+<p><strong>Methods:</strong>
+- displayInfo(): Print the details in the format:</p>
+<p>Student: [studentName], ID: [studentId], GPA: [gpa], Major: [major]</p></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">class Student {
+  constructor (studentId, gpa, studentName) {
+      this.studentId = studentId;
+      this.gpa = gpa;
+      this.studentName = studentName;
+  } 
+}
+class GraduateStudent extends Student {
+    constructor(studentId, gpa, studentName, researchTopic) {
+        super(studentId, gpa, studentName);
+        this.researchTopic = researchTopic;
+    }
+    displayInfo() {
+        console.log(`Student: ${this.studentName}, ID: ${this.studentId}, GPA: ${this.gpa}, Research: ${this.researchTopic}`)
+    }
+}
+
+class UndergraduateStudent extends Student {
+    constructor(studentId, gpa, studentName, major){
+        super(studentId, gpa, studentName);
+        this.major = major
+    }
+    displayInfo() {
+        console.log(`Student: ${this.studentName}, ID: ${this.studentId}, GPA: ${this.gpa}, Major: ${this.major}`)
+    }
+}
+
+//Ignore the below line and don&#39;t modify it.
+module.exports = { Student, GraduateStudent, UndergraduateStudent };</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h3>Nested Array Unwrapping</h3>
+<p>Create a function unwrapNestedArray() that processes a nested array up to a required depth n level.</p>
+<p>Your goal is to implement unwrapNestedArray(arr, n) which follows these principles:</p>
+<ul>
+<li>Accepts an array arr and an integer depth n, designating the levels to flatten.</li>
+<li>It should streamline the array based on the depth n specified.</li>
+<li>The function returns an array compressed to the given depth n.</li>
+</ul>
+<p><SingleLineWarning>Do not use the flat() method for this solution. Achieve it without it.</SingleLineWarning></p>
+<h4>Input Format</h4>
+<ul>
+<li>The first line is an array arr, which may include nested arrays.</li>
+<li>The second line is an integer n, indicating how deep the array should be flattened.</li>
+</ul>
+<h4>Constraints</h4>
+<ul>
+<li>The array can have multiple nested layers.</li>
+<li>The depth n is a positive number determining the flattening levels.</li>
+<li>Array may vary in length between 1 and 100.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Return the array flattened to a depth of n.</li>
+</ul>
+<h4>Sample Input:</h4>
+<p>[[1, [2, [3, 4]]], 5, [6]]
+2</p>
+<h4>Sample Output:</h4>
+<p>[ 1, 2, [ 3, 4 ], 5, 6 ]</p>
+<h4>Explanation:</h4>
+<ul>
+<li>At Depth 1:</li>
+<li>Initial sub-array: [ 1, [ 2, [ 3, 4 ] ] ] and [ 6 ].</li>
+<li>The first level of nesting is flattened.</li>
+<li>The sub-array [ 1, [ 2, [ 3, 4 ] ] ] is now flattened to 1, [ 2, [ 3, 4 ] ].</li>
+<li>
+<p>The sub-array [ 6 ] stays as 6 after flattening.</p>
+</li>
+<li>
+<p>At Depth 2:</p>
+</li>
+<li>Flattening the next level: [ 2, [ 3, 4 ] ] gets flattened to 2, [ 3, 4 ]</li>
+<li>The array elements like 1,5 and 6 remain unchanged, and only the inner nested elements are affected.</li>
+<li>So, the result at depth 2 will be [ 1, 2, [ 3, 4 ], 5, 6 ] .</li>
+</ul></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">function unwrapNestedArray(arr, n) {
+    let result = arr;
+    
+    for (let i = 0; i &lt; n; i++) {
+        let temp = [];
+        
+        for (let element of result) {
+            if (Array.isArray(element)){
+                temp = temp.concat(element);
+            }else {
+                temp.push(element)
+            }
+        }
+        result = temp
+    }
+    return result
+
+}
+
+//Ignore the below line and don&#39;t modify it
+module.exports = unwrapNestedArray;</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h3>Shift Right</h3>
+<p>Design a <strong>constructor function</strong> to carry out a <strong>right shift</strong> on a array of integers, with the shift happening k times.</p>
+<p>The constructor ArrayShifter() should:
+- Accept a Array arr and an integer k.
+- Include a shiftRight() method that executes the rightward shifts k times.</p>
+<h4>Input Format:</h4>
+<ul>
+<li>An Array arr of integers.</li>
+<li>An integer k, signifying times to shift the Array to the right.</li>
+</ul>
+<h4>Constraints:</h4>
+<ul>
+<li>The Array has at least one integer.</li>
+<li>All numbers in the Array are integers.</li>
+<li>1 ≤ arr.length ≤ 1000</li>
+<li>1 ≤ k ≤ 1000</li>
+</ul>
+<h4>Output Format:</h4>
+<ul>
+<li>shiftRight() returns the adjusted Array after shifting.</li>
+</ul>
+<h4>Sample Input:</h4>
+<p>7 0 9
+1</p>
+<h4>Sample Output:</h4>
+<p>9 7 0</p>
+<h4>Explanation:</h4>
+<ul>
+<li>
+<p>Right Shift: Each rotation involves taking the last element and moving it to the first position while shifting the others one position to the right.</p>
+</li>
+<li>
+<p>After 1 rotations, the array [7, 0, 9] becomes [9, 7, 0].</p>
+</li>
+</ul></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">function ArrayShifter(arr,k) {
+    this.arr = arr;
+    this.k = k;
+    
+    this.shiftRight = function () {
+        const n = this.arr.length;
+        const shift = this.k % n;
+        
+        if (shift === 0){
+            return this.arr;
+        }
+            return this.arr.slice(-shift).concat(this.arr.slice(0, n - shift));
+            
+        
+    }
+}
+
+//Ignore the below line and don&#39;t modify it
+module.exports = ArrayShifter;</code></pre></div>
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

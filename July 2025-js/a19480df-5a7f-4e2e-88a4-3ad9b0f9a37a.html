@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Tarun Methre</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h2>Inventory Management</h2>
+<p>Your task is to create an inventory management system that uses a base class Product and two derived classes: Perishable and NonPerishable. Each class will handle different aspects of product operations as explained below.</p>
+<h3>Base Class: Product</h3>
+<p><strong>Attributes:</strong>
+- productId (integer): A unique product ID.
+- quantity (integer): The current quantity in stock.
+- productName (string): The name of the product.</p>
+<h3>Derived Classes:</h3>
+<h4>1. Perishable</h4>
+<p><strong>Attribute:</strong></p>
+<ul>
+<li>expiryDate (string): Expiry date of the product</li>
+</ul>
+<p><strong>Methods:</strong>
+- checkStock(): Print the product details in the following format:</p>
+<p>Product: [productName], Product ID: [productId], Stock Remaining: [quantity], Expires: [expiryDate]</p>
+<h4>2. NonPerishable</h4>
+<p><strong>Attribute:</strong></p>
+<ul>
+<li>warrantyYears (integer): Warranty period in years</li>
+</ul>
+<p><strong>Methods:</strong>
+- checkStock(): Print the product details in the following format:</p>
+<p>Product: [productName], Product ID: [productId], Stock Remaining: [quantity], Warranty: [warrantyYears] years</p></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">
+
+
+
+
+class Product {
+    constructor(productId, quantity, productName) {
+        this.productId = productId;
+        this.quantity = quantity;
+        this.productName = productName;
+    }
+    checkStock() {
+        return `Product: ${this.productName}, Product ID: ${this.productId}, Stock Remaining: ${this.quantity}`;
+    }
+}
+
+class Perishable extends Product {
+    constructor(productId, quantity, productName, expiryDate) {
+        super(productId, quantity, productName);
+        this.expiryDate = expiryDate;
+    }
+    checkStock() {
+        return `${super.checkStock()}, Expires: ${this.expiryDate}`;
+    }
+}
+
+class NonPerishable extends Product {
+    constructor(productId, quantity, productName, warrantyYears) {
+        super(productId, quantity, productName);
+        this.warrantyYears = warrantyYears;
+    }
+    checkStock() {
+        return `${super.checkStock()}, Warranty: ${this.warrantyYears} year(s)`;
+    }
+}
+
+module.exports = { Product, Perishable, NonPerishable };</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h3>Alternate Combining</h3>
+<p>You are tasked to create a <strong>factory function</strong>  with alternately combining two arrays into a single array.</p>
+<p>The factory function createCombiner() should:</p>
+<ul>
+<li>Accept two arrays  array1 and array2 as an argument.</li>
+<li>The combineArray() method should return merged array of both array by alternating their elements. If one array is shorter, append the remaining elements from the longer array at the end.</li>
+</ul>
+<h4>Input Format:</h4>
+<ul>
+<li>The first line of input contains a array representing array1.</li>
+<li>The second line of input contains a array representing array2.</li>
+</ul>
+<h4>Output Format:</h4>
+<ul>
+<li>A single array containing the combined elements of both array1 and array2 in an alternating fashion. If one array is shorter, the remaining elements from the longer array are appended at the end.</li>
+</ul>
+<h4>Constraints:</h4>
+<ul>
+<li>Both arrays can have different lengths.</li>
+</ul>
+<h4>Sample Input:</h4>
+<p>22 44
+11 33 55</p>
+<h4>Sample Output:</h4>
+<p>22 11 44 33 55</p>
+<h4>Explanation:</h4>
+<p>The function starts by adding the first element of array1 (22) and then the first element of array2 (11).</p>
+<p>Next, it adds the second element of array1 (44) followed by the second element of array2 (33).</p>
+<p>Since array1 is now exhausted, the remaining elements of array2 (55) are appended.</p>
+<p>Therefore, the final output is: 22 11 44 33 55</p></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">
+
+
+
+
+
+
+
+
+function createCombiner(arr1, arr2) {
+    return {
+        combineArray: function() {
+            let res = [], i = 0;
+            while (i &lt; arr1.length || i &lt; arr2.length) {
+                if (i &lt; arr1.length) res.push(arr1[i]);
+                if (i &lt; arr2.length) res.push(arr2[i]);
+                i++;
+            }
+            return res;
+        }
+    }
+}
+
+module.exports = createCombiner;</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h3>Structured Array Collapse</h3>
+<p>Suppose you need to develop a function structuredFlatten() to collapse elements of a nested array to a certain depth threshold.</p>
+<p>The purpose is to implement structuredFlatten(arr, n) accordingly:</p>
+<ul>
+<li>Accepts an array arr and an integer n, designating the levels to flatten.</li>
+<li>It should streamline the array based on the depth n specified.</li>
+<li>The function returns an array compressed to the given depth.</li>
+</ul>
+<p><SingleLineWarning>Do not use the flat() method for this solution. Achieve it without it.</SingleLineWarning></p>
+<h4>Input Format</h4>
+<ul>
+<li>The first line is an array arr, which may include nested arrays.</li>
+<li>The second line is an integer n, indicating how deep the array should be flattened.</li>
+</ul>
+<h4>Constraints</h4>
+<ul>
+<li>The array arr can have multiple nested layers.</li>
+<li>The depth n is a positive number determining the flattening levels.</li>
+<li>Array may vary in length between 1 and 100.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Return the array flattened to a depth of n.</li>
+</ul>
+<h4>Sample Input:</h4>
+<p>[[[[1, 2, 3, 4, 5, 6]]]]
+2</p>
+<h4>Sample Output:</h4>
+<p>[ [ 1, 2, 3, 4, 5, 6 ] ]</p>
+<h4>Explanation:</h4>
+<ul>
+<li>
+<p>The input [[[[1, 2, 3, 4, 5, 6]]]]] is deeply nested.</p>
+</li>
+<li>
+<p>When the depth is 2, the function removes the first two levels of nesting.</p>
+</li>
+<li>
+<p>The output is [ [ 1, 2, 3, 4, 5, 6 ] ], which has flattened the first two levels, while the last level remains nested.</p>
+</li>
+</ul></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">
+
+
+
+
+
+
+function structuredFlatten(arr, n) {
+    if (n === 0) return arr;
+
+    let result = [];
+    for (let item of arr) {
+        if (Array.isArray(item) &amp;&amp; n &gt; 0) {
+            result = result.concat(structuredFlatten(item, n - 1));
+        } else {
+            result.push(item);
+        }
+    }
+    return result;
+}
+
+// Ignore the below line and don&#39;t modify it
+module.exports = structuredFlatten;</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h3>Circular Shift</h3>
+<p>Create a <strong>constructor function</strong> to perform a <strong>rightward circular shift</strong> on an integer array. This shift is executed k times.</p>
+<p>The function CircularShifter() must:
+- Take an array arr and a rotation count k as input.
+- Include a method circularShiftRight() that shifts the array rightward, wrapping around, k times.</p>
+<h4>Input Format:</h4>
+<ul>
+<li>An array arr with integers.</li>
+<li>An integer k, the number of times to shift the array.</li>
+</ul>
+<h4>Constraints:</h4>
+<ul>
+<li>The arr contains at least one element.</li>
+<li>All number in the arr are integers.</li>
+<li>1 ≤ arr.length ≤ 1000</li>
+<li>1 ≤ k ≤ 1000</li>
+</ul>
+<h4>Output Format:</h4>
+<ul>
+<li>The circularShiftRight() method returns the shifted array.</li>
+</ul>
+<h4>Sample Input:</h4>
+<p>3 1 4 1 5
+4</p>
+<h4>Sample Output:</h4>
+<p>1 4 1 5 3</p>
+<h4>Explanation:</h4>
+<p>Given Array = [3, 1, 4, 1, 5]</p>
+<p>Number of rotation = 4</p>
+<p>Now, perform 4 right rotations:</p>
+<ul>
+<li>
+<p>After 1st rotation → [5, 3, 1, 4, 1]</p>
+</li>
+<li>
+<p>After 2nd rotation → [1, 5, 3, 1, 4]</p>
+</li>
+<li>
+<p>After 3rd rotation → [4, 1, 5, 3, 1]</p>
+</li>
+<li>
+<p>After 4th rotation → [1, 4, 1, 5, 3]</p>
+</li>
+</ul>
+<p>Final Result = [1, 4, 1, 5, 3]</p>
+<p>Each rotation moves the last element to the front and shifts the rest to the right.</p></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">
+
+
+
+
+
+
+function createArrayProcessor(arr, k) {
+    return {
+        circularShiftRight: function() {
+            if (!arr.length) return arr;
+            k %= arr.length;
+            return arr.slice(-k).concat(arr.slice(0, -k));
+        }
+    }
+}
+
+module.exports = createArrayProcessor;</code></pre></div>
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

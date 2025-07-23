@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">K.Vamshi Krishna</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h2>Banking System</h2>
+<p>You are tasked with creating a banking system with a base class Account and two derived classes: SavingsAccount and CurrentAccount. Each class should manage different aspects of account operations as described below.</p>
+<h3>Base Class: Account</h3>
+<p><strong>Attributes:</strong>
+- accountNumber (integer): The unique account number.
+- balance (float): The current balance of the account.
+- accountHolderName (string): The name of the account holder.</p>
+<h3>Derived Classes:</h3>
+<h4>1. SavingsAccount</h4>
+<p><strong>Attribute:</strong></p>
+<ul>
+<li>rate (integer): Interest of the account</li>
+</ul>
+<p><strong>Methods:</strong>
+- addInterest(): Update the corresponding interest to the balance and print output in below format:</p>
+<p>"Account: [accountHolderName], Account Number: [accountNumber], Balance: [updated Balance]" </p>
+<p>where:
+  updated Balance=balance+interest
+  To find interest: (balance * rate) / 100</p>
+<h4>2. CurrentAccount</h4>
+<p><strong>Attribute:</strong></p>
+<ul>
+<li>fee (integer): fee of the current account</li>
+</ul>
+<p><strong>Methods:</strong>
+- deductOverdraftFee(): Deducts the fee from the balance if the balance is negative and print output in the below format:</p>
+<p>"Account: [accountHolderName], Account Number: [accountNumber], Balance: [updated Balance]"</p>
+<p><MultiLineNote> Updated <em>balance</em> should be displayed with exactly two decimal places.</MultiLineNote></p></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">class Account {
+    //Write your code here
+    constructor(accountNumber, balance, accountHolderName){
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+        this.accountHolderName = accountHolderName;
+    }
+    displayAccountInfo() {
+        console.log(`Account: ${this.accountHolderName}, Account Number: ${this.accountNumber}, Balance: ${this.balance.toFixed(2)}`);
+    }
+}
+
+class SavingsAccount extends Account {
+    constructor(accountNumber, balance, accountHolderName, rate){
+        super(accountNumber, balance, accountHolderName);
+        this.rate = rate;
+    }
+    addInterest() {
+        const interest = (this.balance * this.rate) /100;
+        this.balance += interest;
+        console.log(`Account: ${this.accountHolderName}, Account Number: ${this.accountNumber}, Balance: ${this.balance.toFixed(2)}`);
+    }
+}
+
+class CurrentAccount extends Account {
+    constructor(accountNumber, balance, accountHolderName, fee){
+        super(accountNumber, balance, accountHolderName);
+        this.fee = fee;
+    }
+    deductOverdraftFee() {
+        if(this.balance &lt; 0){
+            this.balance -= this.fee;
+            console.log(`Account: ${this.accountHolderName}, Account Number: ${this.accountNumber}, Balance: ${this.balance.toFixed(2)}`);
+        }else{
+            console.log(`Account: ${this.accountHolderName} has a positive balance. No overdraft fee deducted.`);
+        }
+    }
+}
+//Ignore the below line and don&#39;t modify it
+module.exports = { Account, SavingsAccount, CurrentAccount };
+</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h3>Merge Arrays</h3>
+<p>You are tasked with creating a <strong>factory function</strong> that merges two arrays alternately into one array.</p>
+<p>The factory function createArrayMerger should:</p>
+<ul>
+<li>Accept two arrays  array1 and array2 as an argument.</li>
+<li>Have a method mergeArrays() that returns the merged arrays by alternating their elements. If one array is shorter, the remaining elements from the longer array should be added at the end.</li>
+</ul>
+<h4>Input Format:</h4>
+<ul>
+<li>First line of input contains an array represents array1.</li>
+<li>Second line of input contains an array represents  array2.</li>
+</ul>
+<h4>Output Format:</h4>
+<ul>
+<li>A single array containing the elements of both array1 and array2, alternated. If one array is shorter, the remaining elements from the longer array are added at the end.</li>
+</ul>
+<h4>Constraints:</h4>
+<ul>
+<li>Both arrays can have different lengths.</li>
+</ul>
+<h4>Sample Input:</h4>
+<p>1 3 5
+2 4 6 7 8</p>
+<h4>Sample Output:</h4>
+<p>1 2 3 4 5 6 7 8</p>
+<h4>Explanation:</h4>
+<p>It starts by adding the first element of array1 (1) and then the first element of array2 (2).</p>
+<p>Next, it adds the second element of array1 (3) and then the second element of array2 (4).</p>
+<p>This continues until array1 is exhausted (after adding 5).</p>
+<p>Once array1 is empty, the remaining elements of array2 (7 and 8) are added to the result.</p>
+<p>Hence the final output will be 1 2 3 4 5 6 7 8 </p></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">function createArrayMerger(array1, array2) {
+    //Write your code here  
+    return {
+        mergeArrays: function() {
+            const result = [];
+            const maxLength = Math.max(array1.length, array2.length);
+            for(let i = 0; i &lt; maxLength; i++){
+                if (i &lt; array1.length) result.push(array1[i]);
+                if (i &lt; array2.length) result.push(array2[i]);
+            }
+            return result;
+        }
+    }
+}
+
+//Ignore the below line and don&#39;t modify it
+module.exports = createArrayMerger;</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h3>Array Flattening Based on Depth</h3>
+<p>You are tasked with creating a function flatten() that flattens a nested array up to a specified depth.</p>
+<p>Your task is to implement the flatten() function based on the following logic:</p>
+<ul>
+<li>The function flatten(arr, n) should accept an array arr and an integer n as arguments.</li>
+<li>The function should recursively flatten the array up to the given depth n. </li>
+<li>If n is 1, the array should be flattened one level.</li>
+<li>If n is 2, it should be flattened to a second level, and so on.</li>
+<li>The function should return a flattened array up to the given depth.</li>
+</ul>
+<p><SingleLineWarning>You can't use flat() method try to solve without using flat() method.</SingleLineWarning></p>
+<h4>Input Format</h4>
+<ul>
+<li>The first line contains an array arr, which may contain nested arrays.</li>
+<li>The second line contains an integer n, representing the depth to which the array should be flattened.</li>
+</ul>
+<h4>Constraints</h4>
+<ul>
+<li>The array can contain multiple levels of nested arrays.</li>
+<li>The depth n is a positive integer that determines how many levels deep the array should be flattened.</li>
+<li>The array length can range from 1 to 100.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>The function should return the array flattened up to the given depth n.</li>
+</ul>
+<h4>Sample Input:</h4>
+<p>[[1, [2, [3, 4]]], 5, [6]]
+2</p>
+<h4>Sample Output:</h4>
+<p>[ 1, 2, [ 3, 4 ], 5, 6 ]</p>
+<h4>Explanation:</h4>
+<ul>
+<li>At Depth 1:</li>
+<li>Initial sub-array: [ 1, [ 2, [ 3, 4 ] ] ] and [ 6 ].</li>
+<li>The first level of nesting is flattened.</li>
+<li>The sub-array [ 1, [ 2, [ 3, 4 ] ] ] is now flattened to 1, [ 2, [ 3, 4 ] ].</li>
+<li>
+<p>The sub-array [ 6 ] stays as 6 after flattening.</p>
+</li>
+<li>
+<p>At Depth 2:</p>
+</li>
+<li>Flattening the next level: [ 2, [ 3, 4 ] ] gets flattened to 2, [ 3, 4 ]</li>
+<li>The array elements like 1,5 and 6 remain unchanged, and only the inner nested elements are affected.</li>
+<li>So, the result at depth 2 will be [ 1, 2, [ 3, 4 ], 5, 6 ] .</li>
+</ul></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">function flatten(arr, n) {
+    //Write you code here
+    if(n === 0) return arr;
+    let result = [];
+    for(let item of arr){
+        if(Array.isArray(item) &amp;&amp; n &gt; 0){
+            result.push(...flatten(item, n-1));
+        }else{
+            result.push(item);
+        }
+    }
+    return result;
+}
+
+//Ignore the below line and don&#39;t modify it
+module.exports = flatten;</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h3>Right Rotation on an Array</h3>
+<p>You are tasked with creating a <strong>constructor function</strong> that performs a <strong>right rotation</strong> on an array of integers. The array is to be rotated k number of times.</p>
+<p>The constructor function ArrayProcessor() should:
+- Accept an array arr,k as an argument.
+- Have a method rightRotate() that performs a right rotation on the array by the specified number of times.</p>
+<h4>Input Format:</h4>
+<ul>
+<li>A single array arr containing integers.</li>
+<li>A single integer k, the number of times to rotate the array to the right.</li>
+</ul>
+<h4>Constraints:</h4>
+<ul>
+<li>The array will contain at least one element.</li>
+<li>The array will contain only integers.</li>
+<li>1 ≤ arr.length ≤ 1000</li>
+<li>1 ≤ k ≤ 1000</li>
+</ul>
+<h4>Output Format:</h4>
+<ul>
+<li>The method rightRotate() should return the rotated array.</li>
+</ul>
+<h4>Sample Input:</h4>
+<p>1 2 3 4 5
+2</p>
+<h4>Sample Output:</h4>
+<p>4 5 1 2 3</p>
+<h4>Explanation:</h4>
+<ul>
+<li>
+<p>When you rotate the array [1, 2, 3, 4, 5] for 2 times to the right, each element moves 2 positions forward, and the elements at the end wrap around to the beginning.</p>
+</li>
+<li>
+<p>Here’s the step-by-step breakdown:</p>
+<ul>
+<li>
+<p>Original array: [1, 2, 3, 4, 5]</p>
+</li>
+<li>
+<p>After 1st right rotation: [5, 1, 2, 3, 4]</p>
+</li>
+<li>
+<p>After 2nd right rotation: [4, 5, 1, 2, 3]</p>
+</li>
+<li>
+<p>So, after 2 rotations to the right, the array becomes [4, 5, 1, 2, 3].</p>
+</li>
+</ul>
+</li>
+</ul></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">function ArrayProcessor(arr,k) {
+  //Write your code here
+  this.arr = arr;
+  this.k = k;
+  this.rightRotate = function() {
+      let n = this.arr.length;
+      let rotations = this.k % n;
+      if ( rotations === 0) return this.arr;
+      
+      let rotated = this.arr.slice(-rotations).concat(this.arr.slice(0, n - rotations));
+      return rotated;
+  }
+}
+
+//Ignore the below line and don&#39;t modify it
+module.exports = ArrayProcessor;</code></pre></div>
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>
