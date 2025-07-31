@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pharath Aishwarya's Submissions</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 20px auto; padding: 0 20px; }
+        h1, h2 { color: #1a237e; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; }
+        h1 { font-size: 2em; }
+        h2 { font-size: 1.5em; margin-top: 40px; }
+        .submission { border: 1px solid #ccc; border-radius: 8px; margin-bottom: 25px; padding: 15px; background-color: #f9f9f9; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .question { margin-bottom: 10px; }
+        .question p { margin-top: 0; }
+        .answer { background-color: #fff; border-left: 4px solid #1a237e; padding: 10px 15px; white-space: pre-wrap; word-wrap: break-word; font-family: "Courier New", Courier, monospace; }
+        .no-submissions { color: #757575; font-style: italic; }
+    </style>
+</head>
+<body>
+
+    <h1>Pharath Aishwarya's Submissions</h1>
+
+    <!-- Check if there is any submission data to display -->
+    
+
+        <h2>All Submissions</h2>
+
+        <!-- Loop through the single list of submissions -->
+        
+            <div class="submission">
+                <div class="question">
+                    <!-- The 'safe' filter is used because the Python script already generated trusted HTML -->
+                    <h3>Deposits for Financial Year 2024</h3>
+<p>The finance department needs to review the total deposits made in the year 2024 for annual accounting purposes. Write an SQL query to calculate the total amount of deposits made between 2024-01-01 and 2024-12-31.</p>
+<h4>Sample Output Table:</h4>
+<table>
+<thead>
+<tr>
+<th>total_deposits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+                </div>
+                <pre class="answer">SELECT 
+ sum(Amount) as total_deposits
+FROM 
+ BANK_TRANSACTIONS 
+WHERE 
+  Transaction_Type = &#34;deposit&#34; AND 
+  Transaction_Date between &#39;2024-01-01&#39; AND &#39;2024-12-31&#39;;</pre>
+            </div>
+        
+            <div class="submission">
+                <div class="question">
+                    <!-- The 'safe' filter is used because the Python script already generated trusted HTML -->
+                    <h3>Ranking Students by Popular Majors</h3>
+<p>Write an SQL query to retrieve the total number of students enrolled in each major. Rank the majors based on the number of students, with the most popular major (highest number of students) ranked first.</p>
+<h4>Sample Output Table:</h4>
+<table>
+<thead>
+<tr>
+<th>MAJOR</th>
+<th>number_of_students</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+                </div>
+                <pre class="answer">SELECT 
+ MAJOR,
+ count(MAJOR) AS number_of_students
+FROM 
+ STUDENTS_ONE 
+ORDER BY 
+ MAJOR DESC
+ 
+
+ </pre>
+            </div>
+        
+            <div class="submission">
+                <div class="question">
+                    <!-- The 'safe' filter is used because the Python script already generated trusted HTML -->
+                    <h3>Identify Orders for Product Launch Analysis</h3>
+<ul>
+<li>The marketing team is analyzing customer orders placed after the launch of a new product on 2023-02-01. They want to focus on orders where the total_price is between 500 and 1500 to evaluate the product's early sales.</li>
+<li>Write an SQL query to retrieve the order_id, customer_id, order_date, and total_price for all orders within this price range placed after February 1st, 2023 from <strong>order_details</strong> table. Ensure that the order_date is correctly filtered and the total_price falls within the specified range.</li>
+</ul>
+<h4>Sample Output Table</h4>
+<table>
+<thead>
+<tr>
+<th>order_id</th>
+<th>customer_id</th>
+<th>order_date</th>
+<th>total_price</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+                </div>
+                <pre class="answer">SELECT 
+ order_id,
+ customer_id,
+ order_date,
+ total_price
+FROM 
+ ORDER_DETAILS 
+WHERE 
+ order_date &gt; &#39;2023-02-01&#39; AND 
+ total_price BETWEEN 500 AND 1500;</pre>
+            </div>
+        
+            <div class="submission">
+                <div class="question">
+                    <!-- The 'safe' filter is used because the Python script already generated trusted HTML -->
+                    <h3>Top Students in Grade A with Marks Between 80 and 90</h3>
+<ul>
+<li>The academic team needs a list of students who are in Grade A and have marks between 80 and 90. Additionally, they need this list sorted in descending order by marks.</li>
+<li>This list will help in identifying students who are excelling within this grade range. Write an SQL query to retrieve the student name, grade, and marks for these students from the student table, ensuring the results are ordered by marks in descending order.</li>
+</ul>
+<h4>Sample Output Table</h4>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>grade</th>
+<th>marks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+                </div>
+                <pre class="answer">SELECT 
+ name,
+ grade,
+ marks 
+FROM 
+ STUDENT 
+WHERE 
+ grade = &#34;A&#34; AND marks BETWEEN 80 and 90
+ORDER BY 
+ marks DESC
+LIMIT 2;</pre>
+            </div>
+        
+
+    
+
+</body>
+</html>

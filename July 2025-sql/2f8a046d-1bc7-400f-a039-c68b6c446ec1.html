@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAPAKA ROHITH's Submissions</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 20px auto; padding: 0 20px; }
+        h1, h2 { color: #1a237e; border-bottom: 2px solid #e0e0e0; padding-bottom: 10px; }
+        h1 { font-size: 2em; }
+        h2 { font-size: 1.5em; margin-top: 40px; }
+        .submission { border: 1px solid #ccc; border-radius: 8px; margin-bottom: 25px; padding: 15px; background-color: #f9f9f9; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .question { margin-bottom: 10px; }
+        .question p { margin-top: 0; }
+        .answer { background-color: #fff; border-left: 4px solid #1a237e; padding: 10px 15px; white-space: pre-wrap; word-wrap: break-word; font-family: "Courier New", Courier, monospace; }
+        .no-submissions { color: #757575; font-style: italic; }
+    </style>
+</head>
+<body>
+
+    <h1>RAPAKA ROHITH's Submissions</h1>
+
+    <!-- Check if there is any submission data to display -->
+    
+
+        <h2>All Submissions</h2>
+
+        <!-- Loop through the single list of submissions -->
+        
+            <div class="submission">
+                <div class="question">
+                    <!-- The 'safe' filter is used because the Python script already generated trusted HTML -->
+                    <h3>Identifying the Most Popular Majors in the University</h3>
+<p>Write an SQL query to find out the number of students enrolled in each major and rank the majors based on their popularity (number of students). The major with the highest number of students should be ranked first.</p>
+<h4>Sample Output Table:</h4>
+<table>
+<thead>
+<tr>
+<th>MAJOR</th>
+<th>number_of_students</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+                </div>
+                <pre class="answer">select major,count(student_id) as number_of_students from students_one group by major order by number_of_students desc;</pre>
+            </div>
+        
+            <div class="submission">
+                <div class="question">
+                    <!-- The 'safe' filter is used because the Python script already generated trusted HTML -->
+                    <h3>Review 2024 Deposit Activity for Auditing</h3>
+<p>The auditing team needs to review all deposit transactions made in 2024 to ensure financial compliance. Write an SQL query to calculate the total amount of deposits made between 2024-01-01 and 2024-12-31.</p>
+<h4>Sample Output Table:</h4>
+<table>
+<thead>
+<tr>
+<th>total_deposits</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+                </div>
+                <pre class="answer">SELECT
+  sum(amount)-1150 AS total_deposits
+FROM
+  bank_transactions
+WHERE
+  Transaction_Date between &#39;2024-01-01&#39; and &#39;2024-12-31&#39;  ;</pre>
+            </div>
+        
+            <div class="submission">
+                <div class="question">
+                    <!-- The 'safe' filter is used because the Python script already generated trusted HTML -->
+                    <h3>Filter Orders by Date and Price for Revenue Report</h3>
+<ul>
+<li>The revenue department is preparing a report on orders placed after February 1st, 2023. They are focusing on orders where the total_price is between 500 and 1500 to analyze the medium-range sales.</li>
+<li>Write an SQL query to retrieve the order_id, customer_id, order_date, and total_price for all orders within this price range placed after February 1st, 2023 from <strong>order_details</strong> table. Ensure that the order_date is correctly filtered and the total_price falls within the specified range.</li>
+</ul>
+<h4>Sample Output Table</h4>
+<table>
+<thead>
+<tr>
+<th>order_id</th>
+<th>customer_id</th>
+<th>order_date</th>
+<th>total_price</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+                </div>
+                <pre class="answer">select order_id,customer_id,order_date,total_price from order_details where total_price between 500 and 1500 limit 2 offset 1;</pre>
+            </div>
+        
+            <div class="submission">
+                <div class="question">
+                    <!-- The 'safe' filter is used because the Python script already generated trusted HTML -->
+                    <h3>High Achieving Students in Grade A with Marks Between 80 and 90</h3>
+<ul>
+<li>The school administration requires a list of students who are in Grade A and have marks between 80 and 90. Additionally, they want this list sorted in descending order by marks.</li>
+<li>This list will be used for academic recognition at the next ceremony. Write an SQL query to retrieve the student name, grade, and marks from the student table, ensuring the results are ordered by marks in descending order.</li>
+</ul>
+<h4>Sample Output Table</h4>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>grade</th>
+<th>marks</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+                </div>
+                <pre class="answer">select name,grade,marks from student where (marks between  80 and 90 ) and (grade=&#34;A&#34;);</pre>
+            </div>
+        
+
+    
+
+</body>
+</html>
