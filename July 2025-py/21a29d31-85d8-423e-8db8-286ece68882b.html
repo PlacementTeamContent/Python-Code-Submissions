@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Kavuri Sai Charan Teja</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Remove Three Consecutive Zeros with Minimum Length 5</h3>
+<p>You are given two integers a and b.
+Write a program to generate binary representations for integers within a specified range a and b, ensuring that each binary number has a length of at least 5 digits and does not contain three consecutive 0's.
+The range specified by a and b is exclusive.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>First line contains an integer a.</li>
+<li>Second line contains an integer b.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>The output consists of binary numbers separated by space, which follows the specified conditions.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <=a<b <= 1000</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">17</span>
+<span class="mf">20</span>
+</code></pre></div>
+
+<h6>Output</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">10010</span><span class="w"> </span><span class="mf">10011</span>
+</code></pre></div>
+
+<h6>Explanation</h6>
+<p>The binary numbers from the range 17-20 whose length is greater than or equal to 5 and do not contain three consecutive 0's are:
+18 -> 10010
+19 -> 10011</p>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
+a = int(input())
+b = int(input())
+result = []
+for i in range(a+1, b):
+    binary = bin(i)[2:]
+    if len(binary) &gt;= 5 and &#39;000&#39; not in binary:
+        result.append(binary)
+print(&#34; &#34;.join(result))</code></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Replace Most Occurring</h3>
+<p>Given a string sequence and a character replacing_char, identify the most frequently occurring character in sequence and replace it with replacing_char.
+<MultiLineNote>
+- If two characters have the same frequency, select the one with the lower ASCII value.
+- The character replacing_char is between 'a' and 'z'.
+- All characters in sequence are lowercase.</MultiLineNote></p>
+<hr />
+<h4>Input Format</h4>
+<p>The input comprises two lines:</p>
+<ul>
+<li>The first line contains the string sequence.</li>
+<li>The second line contains the character replacing_char.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<p>Output the modified string after making the replacements.</p>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>0 <= length of string <= 10^5</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<p>Input:</p>
+<p>jkjkjkabc
+h</p>
+<p>Output:</p>
+<p>hkhkhkabc</p>
+<p>Explanation:
+In the string sequence, 'k' and 'j' occurs most frequently but 'j' has lower ascii value. Replacing it with 'h' gives hkhkhkabc.</p></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
+sequence = input().strip()
+r_c = input().strip()
+freq = [0] * 26
+for ch in sequence:
+    freq[ord(ch) - ord(&#39;a&#39;)] += 1
+    
+m_f = 0
+m_f_c = &#34;&#34;
+for i in range(26):
+    if freq[i] &gt; m_f:
+        m_f = freq[i]
+        m_f_c = chr(i+ord(&#39;a&#39;))
+    elif freq[i] == m_f and freq[i] != 0:
+        candidate = chr(i + ord(&#39;a&#39;))
+        if candidate &lt; m_f_c:
+            m_f_c = candidate
+
+result = sequence.replace(m_f_c, r_c)
+print(result)
+            
+    </code></pre></div>
+            
+                <div class="index no-scrollbar">3.</div>
+                <div class="question border no-scrollbar"><pre><h3>Payment Summation</h3>
+<p>Emily works at a coffee shop and is responsible for calculating the total amount customers pay in various denominations. You need to calculate the total sum of money based on the coins and bills provided by the customer.</p>
+<p>The available denominations are 5 cent, 20 cent, 1 dollar, 2 dollar, 10 dollar, and 50 dollar.</p>
+<p>Given the count of each denomination in ascending order (from 5 cent to 50 dollar), you need to compute the total amount.</p>
+<p><em>NOTE: 100 cent equals 1 dollar.</em></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>A single line containing 6 space-separated integers representing the count of each denomination from 5 cent to 50 dollar.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Output the total amount in dollars and cents.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>Total amount of Money <= 100000</li>
+<li>Count of each denomination <= 100</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">2</span><span class="w"> </span><span class="mf">6</span><span class="w"> </span><span class="mf">3</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="mf">4</span><span class="w"> </span><span class="mf">2</span>
+</code></pre></div>
+
+<h6>Output</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">146</span><span class="w"> </span><span class="n">dollar</span><span class="w"> </span><span class="mf">30</span><span class="w"> </span><span class="n">cent</span>
+</code></pre></div>
+
+<h6>Explanation</h6>
+<p>-> Count of 5 cent is 2 => 5<em>2 = 10 cent = 0 dollar and 10 cent
+-> Count of 20 cent is 6 => 20</em>6 = 120 cent = 1 dollar and 20 cent
+-> Count of 1 dollar is 3 => 1<em>3 = 3 dollar
+-> Count of 2 dollar is 1 => 2</em>1 = 2 dollar
+-> Count of 10 dollar is 4 => 10<em>4 = 40 dollar
+-> Count of 50 dollar is 2 => 50</em>2 = 100 dollar</p>
+<p>Total amount = 0 + 1 + 3 + 2 + 40 + 100 = 146 dollar and 30 cent</p>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
+counts = list(map(int, input().split()))
+values = [5, 20, 100, 200, 1000, 5000]
+total_cents = 0
+for i in range(0, 6):
+    total_cents += counts[i] * values[i]
+dollars = total_cents // 100
+cents = total_cents % 100
+print(f&#34;{dollars} dollar {cents} cent&#34;)</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h3>Proximate Number</h3>
+<p>Given an array of integers F, and an integer J find the number of Proximate Numbers.</p>
+<p>Element V is Proximate if there is at least 1 element whose absolute difference with V is less than or equal to J. Any element V is considered Proximate, if there is another element in the range [V-J, V+J] other than V itself.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>First line contains two integers R and J respectively.</li>
+<li>Second line contains R integers separated by space.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>Print a single integer denoting the total number of proximate elements.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <=R<= 1000</li>
+<li>0 <=J<= 1000</li>
+<li>0 <=F[i]<= 1000</li>
+</ul>
+<hr />
+<h4>Explanation</h4>
+<p>Let's take an example:</p>
+<p>4 5
+10 21 13 14</p>
+<p>arr = [10, 21, 13, 14]</p>
+<p>For V=10 to be proximate element, 
+there should be atleast one element in range: [10-5, 10+5] = [5, 15].
+So, this is a proximate element. </p>
+<p>For V=21 to be proximate element, 
+there should be atleast one element in range: [21-5, 21+5] = [16, 26].
+There is no element in this range.
+So, this is a not proximate element.</p>
+<p>Similarily,
+13 and 14 are proximate element 
+Hence we have 3 proximate element.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
+A = list(map(int, input().split()))
+a = A[0]
+b = A[1]
+B = list(map(int, input().split()))
+count = 0
+for i in range(a):
+    V = B[i]
+    prox = False
+    for j in range(a):
+        if i != j and abs(B[j] - V) &lt;= b:
+            prox = True
+            break
+    if prox:
+        count += 1
+print(count)
+</code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h3>E-Wallet Transaction System</h3>
+<p>Design a digital banking system with a base class EWallet and two subclasses RewardWallet and OverdraftWallet.</p>
+<p><HighlightedText>Class Breakdown</HighlightedText></p>
+<h4>EWallet</h4>
+<ul>
+<li>Attributes</li>
+<li>user – Account owner's name.</li>
+<li>funds – Available balance (float).</li>
+<li>logs – List to store transaction records.</li>
+<li>Methods</li>
+<li>load_money(amount) – Adds amount to funds and logs "Loaded: [amount]".</li>
+<li>make_payment(amount) – Deducts amount if possible, logs "Paid: [amount]", else prints "Insufficient funds".</li>
+<li>get_funds() – Returns available balance.</li>
+<li>transaction_history() – Displays all transactions.</li>
+</ul>
+<h4>RewardWallet (inherits from EWallet)</h4>
+<ul>
+<li>Additional Attributes</li>
+<li>bonus_rate – Reward percentage (e.g., 3 for 3%).</li>
+<li>Additional Methods</li>
+<li>apply_bonus() – Uses:<br />
+    bonus = funds * bonus_rate / 100<br />
+    Adds the bonus and logs "Bonus Applied: [bonus_amount]".</li>
+</ul>
+<h4>OverdraftWallet (inherits from EWallet)</h4>
+<ul>
+<li>Additional Attributes</li>
+<li>limit – Allowed negative balance (e.g., 500).</li>
+<li>Overridden Methods</li>
+<li>make_payment(amount) – Allows overdraft within the limit, else prints "Overdraft limit exceeded".</li>
+<li>If balance is negative, logs "Paid: [amount] (Overdraft Used)".</li>
+</ul>
+<p><MultiLineNote>
+1. EWallet constructor initializes user, funds, and an empty logs list.
+2. RewardWallet requires bonus_rate in initialization.
+3. OverdraftWallet requires limit in initialization.
+4. Transaction records must be maintained.
+5. Correctness of features and method overriding will be tested.
+</MultiLineNote></p></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python"># Code Here
+class EWallet:
+    def __init__(self, user, funds, logs):
+        self.user = user
+        self.funds = funds
+        self.logs = []
+        
+    def load_money(self, amount):
+        self.funds += amount 
+        self.logs += [f&#34;Loaded: {amount}&#34;]
+    
+    def make_payment(self, amount):
+        if self.funds &gt;= amount:
+            self.funds -= amount
+            self.logs += [f&#34;Paid: {amount}&#34;]
+        else: 
+            print(&#34;Insufficient funds&#34;)
+            
+    def get_funds(self):
+        return self.funds
+        
+    def transaction_history(self):
+        for i in self.logs:
+            print(i)
+    
+            
+            
+        </code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

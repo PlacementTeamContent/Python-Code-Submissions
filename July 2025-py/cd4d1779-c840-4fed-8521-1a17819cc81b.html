@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">Battu sreecharvi</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Money Count</h3>
+<p>Samantha Smith is a cashier at Omega Farm Services. Samantha's daily task involves receiving change in various denominations from customers and returning them the total amount in cash. This process is time-consuming as customers often provide large and scattered denominations.</p>
+<p>The available denominations are 20 cent, 40 cent, 1 dollar, 2 dollar, 5 dollar and 10 dollar.</p>
+<p>Given the count of each denomination (in ascending order from 20 cent to 10 dollar) provided by the customer (0 will be given if the denomination is not present), calculate the total amount Samantha needs to return to customer.</p>
+<p><em>NOTE: 100 cent equals 1 dollar</em></p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>Single line containing, 6 space-separated integers representing the count of each denomination from 20 cent to 10 dollar.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>A single line representing the Money Count in dollar and cent.</li>
+</ul>
+<hr />
+<h4>Constraint</h4>
+<ul>
+<li>Total amount of Money <= 100000</li>
+<li>Count of each denominations <= 100</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">5</span><span class="w"> </span><span class="mf">7</span><span class="w"> </span><span class="mf">2</span><span class="w"> </span><span class="mf">1</span><span class="w"> </span><span class="mf">0</span><span class="w"> </span><span class="mf">3</span>
+</code></pre></div>
+
+<h6>Output</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">37</span><span class="w"> </span><span class="n">dollar</span><span class="w"> </span><span class="mf">80</span><span class="w"> </span><span class="n">cent</span>
+</code></pre></div>
+
+<h6>Explanation</h6>
+<p>-> Count of 20 cent is 5 => 20<em>5 = 100 cent = 1 dollar
+-> Count of 40 cent is 7 => 40</em>7 = 280 cent = 2 dollar and 80 cent
+-> Count of 1 dollar is 2 => 1<em>2 = 2 dollar
+-> Count of 2 dollar is 1 => 2</em>1 = 2 dollar
+-> Count of 5 dollar is 0 => 5<em>0 = 0 dollar
+-> Count of 10 dollar is 3 => 10</em>3 = 30 dollar.</p>
+<p>Total money = 1+2+2+2+0+30 = 37 dollar and 80 cent</p>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">amount=list(map(int,input().split()))
+
+twenty_cent=amount[0]*20
+forty_cent=amount[1]*40
+one_dollar=amount[2]*1
+two_dollar=amount[3]*2
+five_dollar=amount[4]*5
+ten_dollar=amount[5]*10
+
+dollar=one_dollar+ten_dollar+five_dollar+ten_dollar
+cents=twenty_cent+forty_cent
+
+if(cents&gt;100):
+    add_number=cents%100 
+    dollar=int(dollar+(cents - add_number)/100)
+    
+# print(str(dollar)+&#34; dollar &#34;+str(add_number)+&#34; cent&#34;)
+
+values=[40,20,100,200,500,1000]
+total=sum(c*v for c,v in zip(amount,values))
+
+dollar=total//100
+
+
+print(f&#34;{dollar} dollar {add_number} cent&#34;)</code></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Remove Consecutive Ones with Length 5</h3>
+<p>You are given two integers a and b.
+Write a program to generate binary representations for integers within a specified range a and b, ensuring that each binary number has a length of at least 5 digits and does not contain consecutive 1's.
+The range specified by a and b is exclusive.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>First line contains an integer a.</li>
+<li>Second line contains an integer b.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>The output consists of binary numbers separated by space, which follows the specified conditions.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <=a<b<= 1000</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">15</span><span class="w"> </span>
+<span class="mf">23</span>
+</code></pre></div>
+
+<h6>Output</h6>
+<div class="codehilite"><pre><span></span><code><span class="mf">10000</span><span class="w"> </span><span class="mf">10001</span><span class="w"> </span><span class="mf">10010</span><span class="w"> </span><span class="mf">10100</span><span class="w"> </span><span class="mf">10101</span>
+</code></pre></div>
+
+<h6>Explanation</h6>
+<p>The binary numbers from the range 15-23 whose length is greater than or equal to 5 and do not contain consecutive 1's are:
+16 -> 10000
+17 -> 10001
+18 -> 10010
+19 -> 10011 (contains consecutive 1's)
+20 -> 10100
+21 -> 10101
+22 -> 10110 (contains consecutive 1's)</p>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python"></code></pre></div>
+            
+                <div class="index no-scrollbar">3.</div>
+                <div class="question border no-scrollbar"><pre><h3>Frequent Character Swap</h3>
+<p>You are provided a string text and a character to_char. Find the character that appears most frequently in text and replace it with to_char.
+<MultiLineNote>
+- If two characters have the same frequency, opt for the one with the smaller ASCII value.
+- The character to_char will be within the range 'a' to 'z'.
+- All characters in text are lowercase.</MultiLineNote></p>
+<hr />
+<h4>Input Format</h4>
+<p>The input includes two lines:</p>
+<ul>
+<li>The first line is the string text.</li>
+<li>The second line is the character to_char.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<p>The output is a single string after replacing the most frequent character.</p>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>0 <= length of string <= 10^5</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<p>Input:</p>
+<p>aabbccddaa
+r</p>
+<p>Output:</p>
+<p>rrbbccddrr</p>
+<p>Explanation:
+The character 'a' is the most frequent in text. Replacing 'a' with 'r' results in rrbbccddrr.</p></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">string=input()
+item=input()
+max_count=0 
+
+for i in string:
+    if(string.count(i)&gt;max_count):
+        max_count=string.count(i)
+        max_char_num=[]
+        for ch in string:
+            if(ch not in max_char_num) and (string.count(ch)==max_count):
+                max_char_num.append(ord(ch))
+                
+            if len(max_char_num)==1:
+                char=chr(max_char_num[0])
+            else:
+                min_ord=min(max_char_num)
+                char=chr(min_ord)
+                
+ans=&#34;&#34;
+for j in string:
+    if(j==char):
+        ans+=item
+        
+    else:
+        ans+=j 
+        
+print(ans)        </code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+            <div class="index no-scrollbar">1.</div>
+            <div class="question border no-scrollbar"><pre><h3>Create a Banking Account Hierarchy</h3>
+<p>Implement a class hierarchy for a banking system with a base class Account and two subclasses SavingsAccount and CheckingAccount.</p>
+<p><HighlightedText>Class Description</HighlightedText></p>
+<h4>Account</h4>
+<ul>
+<li>Attributes</li>
+<li>owner – Name of the account owner.</li>
+<li>balance – Current balance (float).</li>
+<li>transactions – A list that stores the history of transactions. Each transaction is a string describing the action performed.</li>
+<li>Methods</li>
+<li>deposit(amount) – Adds the amount to the balance and logs the transaction as "Deposited: [amount]".</li>
+<li>withdraw(amount) – Subtracts the amount from the balance if there are sufficient funds, and logs the transaction as "Withdrew: [amount]". If insufficient funds, it should print "Insufficient funds" and leave the balance unchanged.</li>
+<li>get_balance() – Returns the current balance.</li>
+<li>display_transactions() – Prints all transactions in the order they were made.</li>
+</ul>
+<h4>SavingsAccount (subclass of Account)</h4>
+<ul>
+<li>Additional Attributes</li>
+<li>interest_rate – Annual interest rate as a percentage (e.g., 5 for 5%).</li>
+<li>Additional Methods</li>
+<li>apply_interest() – Calculates interest on the current balance using the formula:<br />
+    interest = balance * interest_rate / 100<br />
+    Adds the calculated interest to the balance and logs the transaction as "Interest Applied: [interest_amount]".</li>
+</ul>
+<h4>CheckingAccount (subclass of Account)</h4>
+<ul>
+<li>Additional Attributes</li>
+<li>overdraft_limit – Maximum amount the account is allowed to be overdrawn (a positive float, e.g., 1000).</li>
+<li>Overridden Methods</li>
+<li>withdraw(amount) – Allows withdrawals even if the available balance is insufficient, but ensures that the balance does not fall below negative overdraft_limit.  <ul>
+<li>If the withdrawal would cause the balance to go below -overdraft_limit, print "Overdraft limit exceeded" and do not perform the withdrawal.</li>
+<li>If the withdrawal is successful and results in a negative balance, log the transaction as "Withdrew: [amount] (Overdraft)" instead of the normal withdrawal log.</li>
+</ul>
+</li>
+</ul>
+<p><MultiLineNote>
+1. The <strong>init</strong> method for Account should initialize owner, balance, in the same order and set transactions as an empty list.
+2. The <strong>init</strong> method for SavingsAccount should take an additional argument interest_rate and call the parent class's <strong>init</strong> method.
+3. The <strong>init</strong> method for CheckingAccount should take an additional argument overdraft_limit and call the parent class's <strong>init</strong> method.
+4. Ensure that each transaction (deposit, withdrawal, interest application) is properly logged in the transactions list.
+5. The testing will verify if the attributes and methods across all classes are implemented correctly, including proper method overriding and functionality.
+</MultiLineNote></p></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python"></code></pre></div>
+            
+            <div class="index no-scrollbar">2.</div>
+            <div class="question border no-scrollbar"><pre><h3>Near Element</h3>
+<p>Given an array of integers G, and an integer T find number of Near Elements.</p>
+<p>Element U is Near if there is at least 1 element whose absolute difference with U is less than or equal to T. An element U is considered Near, if there is another element in the range [U-T, U+T] other than U itself.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>First line contains two integers S and T respectively.</li>
+<li>Second line contains S integers separated by space.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>Print a single integer denoting the total number of near elements.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 <=S<= 1000</li>
+<li>0 <=T<= 1000</li>
+<li>0 <=G[i]<= 1000</li>
+</ul>
+<hr />
+<h4>Explanation</h4>
+<p>Let's take an example:</p>
+<p>4 5
+10 21 13 14</p>
+<p>arr = [10, 21, 13, 14]</p>
+<p>For U=10 to be near element, 
+there should be atleast one element in range: [10-5, 10+5] = [5, 15].
+So, this is a near element. </p>
+<p>For U=21 to be near element, 
+there should be atleast one element in range: [21-5, 21+5] = [16, 26].
+There is no element in this range.
+So, this is a not near element.</p>
+<p>Similarily,
+13 and 14 are near element 
+Hence we have 3 near element.</p>
+<hr /></pre></div>
+            <div class="code border no-scrollbar"><pre><code class="language-python">n=list(map(int,input().split()))
+num=list(map(int,input().split()))
+
+range=n[1]
+num_count=0
+for i in num:
+    min=i-range
+    max=i+range
+    count=0
+    for j in num:
+        if (j&lt;=max and j&gt;=min):
+            count+=1 
+        
+    if count&gt;1:
+        num_count+=1 
+        
+print(num_count)        
+            
+</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>
