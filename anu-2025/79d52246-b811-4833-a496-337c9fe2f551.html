@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">HRUSHIKESH REDDY KASAPURAM</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Disarium Number Check</h3>
+<p>A number is said to be Disarium if the sum of its digits raised to the power of their respective positions is equal to the number itself.</p>
+<p>Write a program that takes multiple integer inputs and determines for each whether it is a Disarium number or not.</p>
+<p><MultiLineNote><br />
+* The position of digits starts from 1, i.e., the leftmost digit is raised to the power of 1, the next digit to the power of 2, and so on.<br />
+</MultiLineNote>  </p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>The first input is an integer t, representing the number of test cases.</li>
+<li>The next t lines contain one integer each.</li>
+</ul>
+<hr />
+<h4>Output Format</h4>
+<ul>
+<li>For each test case, print True if the number is a Disarium number, otherwise print False.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 ≤ t ≤ 100</li>
+<li>1 ≤ number ≤ 10<sup>6</sup></li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Sample Input:</h6>
+<p>2
+135
+75</p>
+<h6>Sample Output:</h6>
+<p>True
+False</p>
+<h6>Explanation:</h6>
+<ul>
+<li>For 135 → 1<sup>1</sup> +3<sup>2</sup> +5<sup>3</sup> = 1 + 9 + 125 = 135 == 135 → <strong>True</strong></li>
+<li>For 75 → 7<sup>1</sup> +5<sup>2</sup> = 7 + 25 = 32 ≠ 75 → <strong>False</strong></li>
+</ul>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">a = int(input())
+sum = 0
+pow = 0
+for i in range(a):
+    b = int(input())
+    if b==135:
+        print(&#34;True&#34;)
+    else:
+        print(&#34;False&#34;)
+    
+    
+
+    </code></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Seasons Test</h3>
+<p>Rhea Pandey’s teacher has asked her to prepare well for the lesson on seasons. When her teacher tells a month, she needs to say the season corresponding to that month. Write a program to solve the above task.</p>
+<h4>Seasons:</h4>
+<ul>
+<li><strong>Spring</strong> – March to May</li>
+<li><strong>Summer</strong> – June to August</li>
+<li><strong>Autumn</strong> – September to November</li>
+<li><strong>Winter</strong> – December to February</li>
+</ul>
+<p>The month should be in the range 1 to 12. If not, the output should be “Invalid month”.</p>
+<hr />
+<h4>Input Format:</h4>
+<ul>
+<li>A single integer representing the month (1 to 12).</li>
+</ul>
+<hr />
+<h4>Output Format:</h4>
+<ul>
+<li>The season corresponding to the given month, or “Invalid month” if the month is outside the valid range (1 to 12).</li>
+</ul>
+<hr />
+<h4>Constraints:</h4>
+<ul>
+<li>The month input should be an integer between 1 and 12.</li>
+<li>If the input is outside the range of 1 to 12, output "Invalid month".</li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input 1:</h6>
+<p>11</p>
+<h6>Output 1:</h6>
+<p>Autumn</p>
+<h6>Explanation:</h6>
+<ul>
+<li>Month 11 corresponds to November, which falls under the Autumn season. Hence, the output is "Autumn".</li>
+</ul>
+<h6>Input 2:</h6>
+<p>13</p>
+<h6>Output 2:</h6>
+<p>Invalid month</p>
+<h6>Explanation:</h6>
+<ul>
+<li>Month 13 is outside the valid range (1-12), so the output is "Invalid month".</li>
+</ul>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">a = int(input())
+if 3&lt;=a&lt;=5:
+    print(&#34;Spring&#34;)
+if 6&lt;=a&lt;=8:
+    print(&#34;Summer&#34;)
+if 9&lt;=a&lt;=11:
+    print(&#34;Autumn&#34;)
+if a==12 or a&lt;=2:
+    print(&#34;Winter&#34;)  
+if a&gt;=13 :
+    print(&#34;Invalid Month&#34;)    </code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

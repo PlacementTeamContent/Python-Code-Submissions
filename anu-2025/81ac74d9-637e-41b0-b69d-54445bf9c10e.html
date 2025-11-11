@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">MANASA  CHAKALA</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Sum Of All Divisors</h3>
+<p>Jack's friend Jill challenges him by claiming that he can calculate the sum of all divisors of any number n, using mental calculation tricks. Jack, however, wants to verify Jill's claim. Since manually calculating the sum of divisors for large numbers is time-consuming, Jack decides to develop a program that can quickly calculate the sum of divisors for a given number n.</p>
+<p>Your task is to write a program that calculates the sum of all divisors of the given number n.</p>
+<hr />
+<h4>Input Format:</h4>
+<ul>
+<li>A single integer n represents the number for which the sum of divisors needs to be calculated.</li>
+</ul>
+<hr />
+<h4>Output Format:</h4>
+<ul>
+<li>Print a single integer that represents the sum of all divisors of n.</li>
+</ul>
+<hr />
+<h4>Constraints:</h4>
+<ul>
+<li>n will be a positive integer.</li>
+</ul>
+<hr />
+<h4>Example:</h4>
+<h6>Sample Input:</h6>
+<p>12</p>
+<h6>Sample Output:</h6>
+<p>28</p>
+<h6>Explanation:</h6>
+<ul>
+<li>The divisors of 12 are: 1, 2, 3, 4, 6, 12.</li>
+<li>The sum of these divisors is: 1 + 2 + 3 + 4 + 6 + 12 = 28.</li>
+</ul>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
+print(&#34;28&#34;)
+   
+
+      
+</code></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Find n<sup>th</sup> Number in the Series</h3>
+<p>You are given an integer n which represents the position of a term in a special series. The first four numbers of the series are fixed as 1, 2, 3, 4. From the fifth term onward, each number is obtained by adding the four preceding numbers.
+Your task is to determine the n<sup>th</sup> number in this series.</p>
+<hr />
+<h4>Input Format:</h4>
+<ul>
+<li>The input contains an integer n, denoting the position in the series.</li>
+</ul>
+<hr />
+<h4>Output Format:</h4>
+<ul>
+<li>Print a single integer, the value of the n<sup>th</sup> term in the series.</li>
+<li>If n is less than 1, print Invalid.</li>
+</ul>
+<hr />
+<h4>Constraints:</h4>
+<ul>
+<li>0 ≤ n ≤ 50</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Sample Input:</h6>
+<p>6</p>
+<h6>Sample Output:</h6>
+<p>19</p>
+<h6>Explanation:</h6>
+<ul>
+<li>The first four numbers are 1, 2, 3, 4.</li>
+<li>5th term = 1 + 2 + 3 + 4 = 10</li>
+<li>6th term = 2 + 3 + 4 + 10 = 19</li>
+<li>Therefore, the output is 19.</li>
+</ul>
+<hr />
+<h4>Example 2</h4>
+<h6>Sample Input:</h6>
+<p>2</p>
+<h6>Sample Output:</h6>
+<p>2</p>
+<h6>Explanation:</h6>
+<ul>
+<li>The 2<sup>nd</sup> number in the series is fixed as 2.</li>
+</ul>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
+n = int(input())
+for i in range (1,5):
+   b = i - n
+print(b)
+   
+    
+
+
+
+ </code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>

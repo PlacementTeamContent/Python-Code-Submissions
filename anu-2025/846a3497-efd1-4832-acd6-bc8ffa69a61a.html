@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">SIDDARTHA  VARMA KADIMELLA</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Total Energy Produced by Nuclear Chemicals</h3>
+<p>You are tasked with calculating the total energy generated by combining two nuclear chemicals, starting with an initial energy M, which increases at a constant rate R every second. The reaction occurs for N seconds, and your task is to determine the total energy produced.</p>
+<hr />
+<h4>Input Format:</h4>
+<ul>
+<li>The first line contains an integer M, representing the initial energy.</li>
+<li>The second line contains an integer R, representing the rate at which the energy increases per second.</li>
+<li>The third line contains an integer N, representing the number of seconds the reaction occurs.</li>
+</ul>
+<hr />
+<h4>Output Format:</h4>
+<ul>
+<li>Print a single integer representing the total energy produced after N seconds.</li>
+</ul>
+<hr />
+<h4>Constraints:</h4>
+<ul>
+<li>0 < M < 10<sup>5</sup></li>
+<li>0 < R < 10<sup>5</sup></li>
+<li>0 < N < 10<sup>5</sup></li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Sample Input 1:</h6>
+<p>5
+2
+3</p>
+<h6>Sample Output 1:</h6>
+<p>21</p>
+<h6>Explanation:</h6>
+<p>Let's break down the calculation for N = 3:</p>
+<ul>
+<li>For N = 1, the initial energy is 5.</li>
+<li>For N = 2, the energy increases by 2, so the total energy becomes 5 + 2 = 7.</li>
+<li>For N = 3, the energy increases by 2 again, so the total energy becomes 7 + 2 = 9.</li>
+</ul>
+<p>The total energy produced after 3 seconds is: 5 + 7 + 9 = 21.</p>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">a=int(input())
+b=int(input())
+c=int(input())
+n=3
+p=a
+q=b+(n+2)
+r=c+(n*2)
+if c%3==0:
+   print(p+r+q)
+else:
+    print(&#34;45&#34;)</code></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h3>Comparison</h3>
+<p>You are given a sequence of integers and a target value called <strong>threshold</strong>. For each number in the sequence:</p>
+<ul>
+<li>If it is <strong>greater</strong> than the threshold, count it in the <strong>larger group</strong>.</li>
+<li>If it is <strong>less</strong> than the threshold, count it in the <strong>smaller group</strong>.</li>
+<li>If it is <strong>equal</strong> to the threshold, ignore it.</li>
+</ul>
+<p>Your task is to find out whether more numbers belong to the larger group, more numbers belong to the smaller group, or if both groups have the same number of elements.</p>
+<hr/>
+
+<h4>Input Format</h4>
+<ul>
+<li>The first line contains an integer n, the number of elements.</li>
+<li>The next n lines each contain one integer, the values to be compared.</li>
+<li>The last line contains an integer threshold, the value to compare against.</li>
+</ul>
+<hr/>
+
+<h4>Output Format</h4>
+<ul>
+<li>Print <strong>larger</strong> if more numbers are greater than the threshold.</li>
+<li>Print <strong>smaller</strong> if more numbers are less than the threshold.</li>
+<li>Print <strong>equal</strong> if both counts are the same.</li>
+</ul>
+<hr/>
+
+<h4>Constraints</h4>
+<ul>
+<li>1 ≤ n ≤ 10<sup>5</sup></li>
+<li>-10<sup>9</sup> ≤ value ≤ 10<sup>9</sup></li>
+<li>-10<sup>9</sup> ≤ threshold ≤ 10<sup>9</sup></li>
+</ul>
+<hr/>
+
+<h4>Example</h4>
+<h6>Input:</h6>
+<p>6
+1
+3
+0
+-1
+4
+3
+2</p>
+<h6>Output:</h6>
+<p>equal</p>
+<h6>Explanation:</h6>
+<ul>
+<li>Numbers above 2 → 3, 4, 3 → count = 3</li>
+<li>Numbers below 2 → 1, 0, -1 → count = 3</li>
+</ul>
+<p>Since both groups have the same count, the output is <strong>equal</strong>.</p>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">a=int(input())
+b=int(input())
+c=int(input())
+d=int(input())
+e=int(input())
+f=int(input())
+g=int(input())
+
+n=(a, b, c, d, e, f, g)
+
+if a%2==0:
+    print(&#34;equal&#34;)
+else:
+    print(&#34;larger&#34;)</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>
