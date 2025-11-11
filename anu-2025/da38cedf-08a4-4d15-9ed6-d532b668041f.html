@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TITLE</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+    <!-- Include Highlight.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+    <!-- Enable Highlighting -->
+    <script>hljs.highlightAll();</script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        :root {
+            --dark-red: #FF5733;
+            --dark-yellow: #FFC300;
+            --dark-green: #28A745;
+
+            --light-red: #fdd9ca;
+            --light-yellow: #fff8ce;
+            --light-green: #d1ffde;
+
+            --primary-color: #2565ED;
+            --primary-variant: #f6faff;
+            --border-color: #CBD5E1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        code[class*="language-"],
+        pre[class*="language-"] {
+            background: none !important;
+            box-shadow: none !important;
+        }
+
+        .no-scrollbar {
+            overflow: auto; /* Enable scrolling */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* Internet Explorer 10+ */
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none; /* Safari and Chrome */
+        }
+
+        body {
+            margin: 0;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            padding-top: 2vw;
+            padding-bottom: 0vw;
+            font-family: "Roboto", serif;
+            color: black;
+            background-color: var(--primary-variant);
+        }
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            text-decoration: none;
+            cursor: pointer;
+            color: var(--primary-color);
+        }
+
+        ol {
+            list-style-position: inside;
+            list-style-type: decimal-leading-zero;
+        }
+
+        li {
+            line-height: 1.6;
+        }
+
+        .hide{
+            display: none;
+        }
+
+        .text-red {
+            color: var(--dark-red);
+        }
+
+        .text-yellow {
+            color: var(--dark-yellow);
+        }
+
+        .text-green {
+            color: var(--dark-green);
+        }
+
+        .border{
+            border: 1px solid var(--border-color) !important;
+            border-radius: 10px;
+        }
+
+        .container {
+            border: 1px solid var(--border-color) !important;
+            border-radius: 30px;
+            width: auto;
+            height: fit-content;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: white;
+        }
+
+        .block-heading {
+            font-weight: bold;
+            font-size: large;
+            margin-left: 10px;
+            margin-top: 10px;
+            letter-spacing: 1px;
+        }
+
+        .block-sub-heading {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .center {
+            width: 100%;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            margin-top: 5px;
+        }
+
+        .index{
+            height: auto;
+            margin: 10px;
+            padding: 10px;
+            font-weight: bold;
+        }
+
+        .question{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            padding: 10px;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+
+        .question pre{
+            white-space: normal;
+            word-wrap: break-word;
+            line-height: 1.5;
+            font-family: "Roboto", serif;
+        }
+
+        .code{
+            height: auto;
+            margin: 10px;
+            white-space: pre;
+            overflow-x: scroll;
+            background: #e1e2e3;
+        }
+
+        pre{
+            min-height: 100%;
+        }
+        code{
+            min-height: 100%;
+            display:inline;
+        }
+
+        .grid-container {
+            width: auto;
+            height: fit-content;
+            background-color: white;
+            display: grid;
+            grid-template-columns: 30px 1fr 1fr;
+        }
+
+        @media screen and (max-width:600px) {
+
+            body {
+                padding-top: 5vh;
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+
+            .item {
+                grid-template-columns: auto;
+            }
+
+            .progress-bar {
+                width: 50px;
+                height: 50px;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            .circular-progress-container {
+                margin: 0px;
+                row-gap: 10px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1 style="color: black; margin-bottom:20px;">KIRAN SAI CHALLALA</h1>
+    </header>
+
+    <!-- EASY QUESTIONS SECTION -->
+    <section class="container ">
+        <div class="block-heading">Easy</div>
+        <div class="grid-container">
+            
+                <div class="index no-scrollbar">1.</div>
+                <div class="question border no-scrollbar"><pre><h3>Certificate Code Generator</h3>
+<p>In a small town, a teacher is preparing certificates for her students. She wants each certificate to display a special code made from the student's name.</p>
+<p>The rule for the code is simple:</p>
+<ul>
+<li>Take the first letter of the first word of the name.</li>
+<li>Take the last letter of the last word of the name.</li>
+<li>Convert both letters to uppercase and join them with a dot (.).</li>
+</ul>
+<p>Your task is to complete the method Find_First_Last_Letter() which receives a string S and return the code in the required format.</p>
+<p><MultiLineNote><br />
+- Do not change the method name, as the test cases will fail if modified.<br />
+- Reading input is not required; use the parameter passed to the method.<br />
+- No need to print the output, just return the result.<br />
+</MultiLineNote>  </p>
+<hr />
+<h4>Input Format</h4>
+<p>The input for the method Find_First_Last_Letter() receives a string S (the student’s full name).</p>
+<hr />
+<h4>Output Format</h4>
+<p>The method should return a string in the format X.Y, where:</p>
+<ul>
+<li>X is the uppercase first letter of the first word.</li>
+<li>Y is the uppercase last letter of the last word.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>1 ≤ len(S) ≤ 10<sup>2</sup></li>
+</ul>
+<hr />
+<h4>Example</h4>
+<h6>Input</h6>
+<p>Sam Harris</p>
+<h6>Output</h6>
+<p>S.S</p>
+<hr />
+<h6>Explanation</h6>
+<p>Here, the name is Sam Harris.</p>
+<ul>
+<li>The first letter of the first word is S.</li>
+<li>The last letter of the last word is S.
+  Thus, the output is S.S.</li>
+</ul>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python"></code></pre></div>
+            
+                <div class="index no-scrollbar">2.</div>
+                <div class="question border no-scrollbar"><pre><h2>Middle Value Finder</h2>
+<p>Given three distinct numbers a, b, and c, find the number with the middle value.</p>
+<hr />
+<h4>Input Format</h4>
+<ul>
+<li>Three distinct integer inputs a, b, and c are given as input on separate lines.</li>
+</ul>
+<h4>Output Format</h4>
+<ul>
+<li>Output the integer that has the middle value.</li>
+</ul>
+<hr />
+<h4>Constraints</h4>
+<ul>
+<li>The three integers are distinct.</li>
+<li>0 <= a,b,c<=10<sup>3</sup>.</li>
+</ul>
+<hr />
+<h4>Example 1</h4>
+<h6>Input</h6>
+<p>12
+32
+11</p>
+<h6>Output</h6>
+<p>12</p>
+<h6>Explanation</h6>
+<p>Among the numbers 12, 32, and 11:</p>
+<ul>
+<li>11 is the smallest.</li>
+<li>32 is the largest.</li>
+<li>Therefore, 12 is the middle value.</li>
+</ul>
+<hr /></pre></div>
+                <div class="code border no-scrollbar"><pre><code class="language-python">#Write your code here
+a = int(input())
+b = int(input())
+c = int(input())
+if a &lt;= b or a &lt;= c or a &gt;= b or a &gt;= c:
+    print(a)
+elif b &lt;= a or b &lt;= c or b &gt;= c or b &gt;= a :
+    print(b)
+elif c &lt;= a or c &lt;= b or c&gt;=a or c&gt;=b:
+    print(c)
+</code></pre></div>
+            
+        </div>
+    </section>
+
+    <!-- MEDIUM QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Medium</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <!-- HARD QUESTIONS SECTION -->
+    <section class="container hide">
+        <div class="block-heading">Hard</div>
+        <div class="grid-container">
+            
+        </div>
+    </section>
+
+    <footer style="height: 50px;">
+
+    </footer>
+    <!-- Include Prism.js Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</body>
+
+</html>
